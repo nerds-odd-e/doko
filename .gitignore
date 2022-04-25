@@ -6,3 +6,5 @@ tmp
 vendor
 .env
 tdd
+
+pgsql/
