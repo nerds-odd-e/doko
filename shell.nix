@@ -66,9 +66,34 @@ in mkShell {
     export PGSQL_DATADIR="''${PGSQL_DATADIR:-$PGSQL_HOME/data}"
     export PGSQL_PID_FILE=$PGSQL_HOME/pgsql.pid
     export PGSQL_TCP_PORT=5439
+    export PGSQL_ROOTUSER=postgres
+    export PGSQL_DBUSER=doko
+    export PGSQL_DOKO_DEV_DB=doko_development
+    export PGSQL_DOKO_TEST_DB=doko_test
+    export PGSQL_DOKO_E2E_TEST_DB=doko_e2e_test
 
     export PATH=$GO_BASE_PATH/bin:$GOPATH/bin:$NODE_HOME/bin:$PGSQL_BASEDIR/bin:$PATH
     export GOPATH=$GOPATH:$PWD/goprojects
+
+    create_doko_db() {
+      DB_NAME=$1
+      if psql -h localhost -p $PGSQL_TCP_PORT $PGSQL_ROOTUSER -lqt | cut -d \| -f 1 | grep -qw $DB_NAME; then
+        echo "PostgreSQL doko DB $DB_NAME already exists. Continuing..."
+      else
+        createdb -h localhost -p $PGSQL_TCP_PORT -U $PGSQL_DBUSER $DB_NAME
+      fi
+    }
+
+    cleanup()
+    {
+      echo -e "\nBYE!!! EXITING doko NIX DEVELOPMENT ENVIRONMENT."
+      rm -f $PGSQL_HOME/init_doko_db.sql
+      export PGSQLD_PID=$(ps -ax | grep -v " grep " | grep $PGSQL_BASEDIR/bin/postgres | awk '{ print $1 }')
+      if [[ ! -z "$PGSQLD_PID" ]]; then
+        echo -e "PostgreSQL Server still running on Port: $PGSQL_TCP_PORT, at PID: $PGSQLD_PID"
+        echo -e "You may choose to SHUTDOWN PostgreSQL Server by issuing '$PGSQL_BASEDIR/bin/pg_ctl -D $PGSQL_DATADIR stop && rm -f $PGSQL_HOME/logfile'\n"
+      fi
+    }
 
     echo "###################################################################################################################"
     echo "                                                                                "
@@ -87,15 +112,21 @@ in mkShell {
 
     export PGSQLD_PID=$(ps -ax | grep -v " grep " | grep $PGSQL_BASEDIR/bin/postgres | awk '{ print $1 }')
     if [[ -z "$PGSQLD_PID" ]]; then
-      [ ! "$(ls -A ''${PGSQL_DATADIR})" ] && rm -rf $PGSQL_HOME/logfile && $PGSQL_BASEDIR/bin/pg_ctl -U postgres -D $PGSQL_DATADIR initdb
-      $PGSQL_BASEDIR/bin/pg_ctl -U postgres -D $PGSQL_DATADIR -o "-p ''${PGSQL_TCP_PORT}" -l $PGSQL_HOME/logfile start
+      [ ! "$(ls -A ''${PGSQL_DATADIR})" ] && rm -rf $PGSQL_HOME/logfile && $PGSQL_BASEDIR/bin/pg_ctl -U $PGSQL_ROOTUSER -D $PGSQL_DATADIR initdb
+      $PGSQL_BASEDIR/bin/pg_ctl -U $PGSQL_ROOTUSER -D $PGSQL_DATADIR -o "-p ''${PGSQL_TCP_PORT}" -l $PGSQL_HOME/logfile start
       export PGSQLD_PID=$!
 
-      createuser -h localhost -p $PGSQL_TCP_PORT -d -r -S -e doko
+      if psql -h localhost -p $PGSQL_TCP_PORT $PGSQL_ROOTUSER -t -c '\du' | cut -d \| -f 1 | grep -qw $PGSQL_DBUSER; then
+        echo "PostgreSQL DB User $PGSQL_DBUSER already exists."
+      else
+        createuser -h localhost -p $PGSQL_TCP_PORT -d -r -S -e $PGSQL_DBUSER
+      fi
 
-      createdb -h localhost -p $PGSQL_TCP_PORT -U doko doko_development
-      createdb -h localhost -p $PGSQL_TCP_PORT -U doko doko_test
-      createdb -h localhost -p $PGSQL_TCP_PORT -U doko doko_e2e_test
+      create_doko_db $PGSQL_DOKO_DEV_DB
+
+      create_doko_db $PGSQL_DOKO_TEST_DB
+
+      create_doko_db $PGSQL_DOKO_E2E_TEST_DB
     fi
 
     export GPG_TTY=$(tty)
@@ -105,17 +136,7 @@ in mkShell {
     fi
 
     export GPG_TTY='(tty)'
-
-    cleanup()
-    {
-      echo -e "\nBYE!!! EXITING doko NIX DEVELOPMENT ENVIRONMENT."
-      rm -f $PGSQL_HOME/init_doko_db.sql
-      export PGSQLD_PID=$(ps -ax | grep -v " grep " | grep $PGSQL_BASEDIR/bin/postgres | awk '{ print $1 }')
-      if [[ ! -z "$PGSQLD_PID" ]]; then
-        echo -e "PostgreSQL Server still running on Port: $PGSQL_TCP_PORT, at PID: $PGSQLD_PID"
-        echo -e "You may choose to SHUTDOWN PostgreSQL Server by issuing 'pg_ctl -D $PGSQL_DATADIR stop && rm -f $PGSQL_HOME/logfile'\n"
-      fi
-    }
+    echo "DOKO NIX DEVELOPMENT ENVIRONMENT READY ;) !!!"
     trap cleanup EXIT
   '';
 }
