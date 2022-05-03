@@ -1,13 +1,21 @@
-.idea
-.DS_Store
-.env
+**/.DS_Store
 secrets
 tmp
 vendor
-.env
 tdd
 
 pgsql/
-golibs
+golibs/
+node_modules/
+
 .env
 *.rdb
+**/nohup.out
+.direnv/
+**/.vscode/
+**/*.code-workspace
+**/.idea/
+**/*.iml
+**/*.ipr
+**/*.iws
+**/.tool-versions
