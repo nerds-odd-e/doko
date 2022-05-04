@@ -6,6 +6,8 @@ DOKO_ROOT will henceforth be the directory onto which you have cloned git@github
 As non-root user, go into `$DOKO_ROOT` and execute `./setup-doko-env.sh`.
 Exit the above shell when done and start a new shell.
 
+- NB: Should you hit any issues installing nix for doko development, please refer to [official nix installation guide](https://nixos.org/download.html#download-nix)
+
 ### [Start doko nix development environment](#start-doko-nix)
 
 After successful [doko nix environment setup](#setup-doko-nix) from above, you may enter the doko nix environment with:
