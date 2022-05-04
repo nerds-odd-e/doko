@@ -10,7 +10,7 @@ import (
 
 func truncate(db migrations.DB) {
 	fmt.Println("truncate tables...")
-	_, e := db.Exec("TRUNCATE CLIENT_VIEW_USERS RESTART IDENTITY CASCADE;")
+	_, e := db.Exec("TRUNCATE USERS RESTART IDENTITY CASCADE;")
 	panicIfErr(e)
 }
 
