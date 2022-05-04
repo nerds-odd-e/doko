@@ -8,7 +8,6 @@ in mkShell {
   PGSQL_HOME = builtins.getEnv "PGSQL_HOME";
   PGSQL_DATADIR = builtins.getEnv "PGSQL_DATADIR";
   PGSQL_TCP_PORT = builtins.getEnv "PGSQL_TCP_PORT";
-  REDIS_TCP_PORT = builtins.getEnv "REDIS_TCP_PORT";
   buildInputs = [
     bash
     zsh
@@ -61,7 +60,7 @@ in mkShell {
   ];
   shellHook = ''
     export DOKO_ROOT=$PWD
-    source $DOKO_ROOT/scripts/durable-storage-utils.sh
+    . $DOKO_ROOT/scripts/durable-storage-utils.sh
 
     export NIXPKGS_ALLOW_UNFREE=1
     export GPG_TTY=$(tty)
@@ -94,6 +93,7 @@ in mkShell {
       if [[ ! -f ".env" ]]; then
         cp ./env.example ./.env
         sed -i 's/test-postgres_tdd/localhost/g'
+        . ./.env
       fi
     }
 
