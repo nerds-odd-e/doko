@@ -124,7 +124,7 @@ in mkShell {
 
     echo -e "Generating .env file from env.example if required..." && generate_dotenv
 
-    echo -e "Init and run PostgreSQL DB Server..." && init_psql_db_cluster
+    start_psql_db_cluster
 
     echo -e "Create DB user/s..." && create_doko_db_user $PGSQL_ROOTUSER
 

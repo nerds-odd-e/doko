@@ -1,11 +1,20 @@
 #!/bin/bash
 
 init_psql_db_cluster() {
+    if [ ! "$(ls -A $PGSQL_DATADIR)" ]; then
+        echo -e "Initialising PostgreSQL DB Cluster..."
+        rm -rf "${PGSQL_HOME}"/logfile
+        "${PGSQL_BASEDIR}"/bin/pg_ctl -U "${PGSQL_ROOTUSER}" -D "${PGSQL_DATADIR}" initdb
+    fi
+}
+
+start_psql_db_cluster() {
     mkdir -p "${PGSQL_HOME}"
     mkdir -p "${PGSQL_DATADIR}"
     export PGSQLD_PID=$(ps -ax | grep -v " grep " | grep "${PGSQL_BASEDIR}"/bin/postgres | awk '{ print $1 }')
     if [ -z "${PGSQLD_PID}" ]; then
-        [ ! $(ls -A "${PGSQL_DATADIR}") ] && rm -rf "${PGSQL_HOME}"/logfile && "${PGSQL_BASEDIR}"/bin/pg_ctl -U "${PGSQL_ROOTUSER}" -D "${PGSQL_DATADIR}" initdb
+        init_psql_db_cluster
+        echo -e "Starting up PostgreSQL DB Server..."
         "${PGSQL_BASEDIR}"/bin/pg_ctl -U "${PGSQL_ROOTUSER}" -D "${PGSQL_DATADIR}" -o "-p ${PGSQL_TCP_PORT}" -l "${PGSQL_HOME}"/logfile start
         export PGSQLD_PID=$!
     fi
