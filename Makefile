@@ -26,3 +26,6 @@ truncate:
 tcr: test
 	git add .
 	git commit -am "tcring"
+
+limbo: tcr
+	git pull --rebase | grep "Already up to date"
