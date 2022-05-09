@@ -24,9 +24,9 @@ truncate:
 	@cd migrations && DB_HOST=localhost DB_NAME=$(DB_NAME)_test go run *.go truncate;
 
 tcr:
-	@make test || (git reset --hard; echo "----- TCR reverted -----"; exit 123)
+	@make test || (git reset --hard; echo "----- TCR reverted -----"; exit 1)
 	@git add .
-	@ git commit -am "tcring"
+	@ git commit -am "tcring" | tee | grep -E "nothing to commit$$"
 
 limbo: tcr
-	set -o pipefail; git pull --rebase | grep -E "up to date\.$$" && git push
+	set -o pipefail; (git pull --rebase | grep -E "up to date\.$$") && git push || make limbo
