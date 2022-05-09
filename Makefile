@@ -28,4 +28,4 @@ tcr: test
 	git commit -am "tcring"
 
 limbo: tcr
-	git pull --rebase | grep "Already up to date"
+	git pull --rebase
