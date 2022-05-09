@@ -26,7 +26,7 @@ truncate:
 tcr:
 	@make test || (git reset --hard; echo "----- TCR reverted -----"; exit 1)
 	@git add .
-	@git commit -am "tcring" | tee | grep -E "nothing to commit$$" || /bin/true
+	@git commit -am "tcring" | tee | grep -E "nothing to commit$$" || echo "TCR: nothing to commit"
 
 limbo: tcr
 	set -o pipefail; (git pull --rebase | grep -E "up to date\.$$") && git push || make limbo
