@@ -21,4 +21,4 @@ Run `make migration` to perform the PostgreSQL DB migrations.
 
 ### [Run full Unit Test Suite](#run-test-suite)
 
-After successful completion of [TDD DB migrations](#db-migrations), run the full unit test suite with `make test`
+After successful completion of [TDD DB migrations](#db-migrations), run the full unit test suite with `make test`.
