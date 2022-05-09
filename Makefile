@@ -24,7 +24,7 @@ truncate:
 	@cd migrations && DB_HOST=localhost DB_NAME=$(DB_NAME)_test go run *.go truncate;
 
 tcr:
-	make test || (git reset --hard; echo "----- TCR reverted -----"; exit 0)
+	make test || git reset --hard && echo "----- TCR reverted -----" && exit 0
 	git add .
 	git commit -am "tcring" | tee | grep "working tree clean$$" || (echo "----- TCR passed -----"; exit 0)
 	echo "----- TCR no change found -----"
