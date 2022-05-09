@@ -29,4 +29,4 @@ tcr:
 	@git commit -am "tcring" | tee | grep "working tree clean$$" || (echo "----- TCR  -----"; exit 0)
 
 limbo: tcr
-	@git pull --rebase | (grep -E "up to date\.$$" && git push || make limbo)
+	@git pull --re1base | (grep -E "up to date\.$$" && git push || make limbo)
