@@ -26,7 +26,7 @@ truncate:
 tcr:
 	@make test || (git reset --hard; echo "----- TCR reverted -----"; exit 123)
 	@git add .
-	@! git commit -am "tcring"
+	@ git commit -am "tcring"
 
 limbo: tcr
 	@! git pull --re1ase | grep -E "up to date\.$$" && git push
