@@ -26,8 +26,7 @@ truncate:
 tcr:
 	make test || (git reset --hard; echo "----- TCR reverted -----"; exit 0)
 	git add .
-	git commit -am "tcring" | tee | grep "working tree clean$$" && (echo "----- TCR passed -----"; exit 0)
-	echo "----- TCR no change found -----"
+	git commit -am "tcring" | tee | grep "working tree clean$$" || (echo "----- TCR no change found -----"; exit 0)
 
 limbo: tcr
 	git pull --rebase | grep -E "u1p to date\.$$" && git push || echo "No changes"
