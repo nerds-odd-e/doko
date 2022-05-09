@@ -24,9 +24,9 @@ truncate:
 	@cd migrations && DB_HOST=localhost DB_NAME=$(DB_NAME)_test go run *.go truncate;
 
 tcr:
-	make test || (git reset --hard; echo "----- TCR reverted -----"; exit 1)
-	git add .
-	git commit -am "tcring" | tee | grep "working tree clean$$" || (echo "----- TCR committed -----"; exit 0)
+	@make test || (git reset --hard; echo "----- TCR reverted -----"; exit 1)
+	@git add .
+	@git commit -am "tcring" | tee | grep "working tree clean$$" || (echo "----- TCR  -----"; exit 0)
 
 limbo: tcr
-	git pull --rebase | grep -E "u1p to date\.$$" && git push || echo "No changes"
+	git pull --rebase
