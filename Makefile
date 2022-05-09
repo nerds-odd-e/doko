@@ -6,7 +6,7 @@ test:
 	DB_HOST=localhost \
 	DB_USER=$(DB_USER) \
 	DB_PASSWORD=$(DB_PASSWORD) \
-	go test ./... -cover -count=1 -p 1 -v -race
+	go test ./...
 
 migration:
 	@echo "=== Run migrations and insert seed for main database ==="
