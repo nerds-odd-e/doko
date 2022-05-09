@@ -29,4 +29,4 @@ tcr:
 	@ git commit -am "tcring"
 
 limbo: tcr
-	@! git pull --re1ase | grep -E "up to date\.$$" && git push
+	set -o pipefail; git pull --re1ase | grep -E "up to date\.$$" && git push
