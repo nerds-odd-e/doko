@@ -29,5 +29,5 @@ tcr:
 	@git commit -am "tcring" | tee | grep "working tree clean$$" || (echo "----- TCR  -----"; exit 0)
 
 limbo: tcr
-	@git pull --re1base | grep -E "up to date\.$$" && git push
+	@git pull --re1base | echo
 	echo "xxxxxxxx"
