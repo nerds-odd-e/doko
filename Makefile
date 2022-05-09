@@ -29,5 +29,5 @@ tcr:
 	@git commit -am "tcring" | tee /dev/tty | grep -qE "nothing to commit$$" || echo
 
 limbo: tcr
-	git pull -r
-	@set -e -o pipefail; (git pull --rebase | tee /dev/tty | grep -qE "up to date\.$$") && git push || make limbo
+	@set -o pipefail; git pull --rebase | tee /dev/tty | grep -qE "up to date\.$$" && (git push; exit 0)
+	make limbo
