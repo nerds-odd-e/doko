@@ -30,6 +30,6 @@ tcr:
 
 limbo: tcr
 	@git pull --re1ase; echo "222222222222222222222"
-	echo $!
+	echo "$$!"
 	#grep -E "up to date\.$$" && git push
 	#echo "xxxxxxxx"
