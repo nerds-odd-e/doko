@@ -4,7 +4,7 @@ init_psql_db_cluster() {
     if [ ! "$(ls -A $PGSQL_DATADIR)" ]; then
         echo -e "Initialising PostgreSQL DB Cluster..."
         rm -rf "${PGSQL_HOME}"/logfile
-        "${PGSQL_BASEDIR}"/bin/pg_ctl -U "${PGSQL_ROOTUSER}" -D "${PGSQL_DATADIR}" initdb
+        "${PGSQL_BASEDIR}"/bin/pg_ctl -U "${PGSQL_ROOTUSER}" -D "${PGSQL_DATADIR}" initdb -o "-E=UTF8 --no-locale"
     fi
 }
 
@@ -15,7 +15,7 @@ start_psql_db_cluster() {
     if [ -z "${PGSQLD_PID}" ]; then
         init_psql_db_cluster
         echo -e "Starting up PostgreSQL DB Server..."
-        "${PGSQL_BASEDIR}"/bin/pg_ctl -U "${PGSQL_ROOTUSER}" -D "${PGSQL_DATADIR}" -o "-p ${PGSQL_TCP_PORT}" -l "${PGSQL_HOME}"/logfile start
+        "${PGSQL_BASEDIR}"/bin/pg_ctl -U "${PGSQL_ROOTUSER}" -D "${PGSQL_DATADIR}" -o "-p ${PGSQL_TCP_PORT} -k ${PGSQL_HOME}" -l "${PGSQL_HOME}"/logfile start
         export PGSQLD_PID=$!
     fi
 }
