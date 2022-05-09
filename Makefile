@@ -23,7 +23,8 @@ truncate:
 	@echo "=== Run truncate for test database ==="
 	@cd migrations && DB_HOST=localhost DB_NAME=$(DB_NAME)_test go run *.go truncate;
 
-tcr: test
+tcr:
+	make test || (git reset --hard; exit 1)
 	git add .
 	git commit -am "tcring"
 
