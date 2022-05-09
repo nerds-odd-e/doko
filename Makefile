@@ -28,4 +28,4 @@ tcr: test
 	git commit -am "tcring"
 
 limbo: tcr
-	git pull --rebase | grep -E "u1p to date\.$$"
+	git pull --rebase | grep -E "u1p to date\.$$" && git push
