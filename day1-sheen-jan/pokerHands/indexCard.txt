@@ -1,0 +1,32 @@
+given a list of games, stored in a text file, tell how many times player 1 win
+    - can lose some accuracy
+    FOR HIGH CARD
+    - 0 - given an empty list, should return zero
+    - 1
+        - given a list of size 1 where player 1 wins, return 1
+        - given a list of size 1 where player 2 wins, return 0
+    - N=2
+        - given a list of size 2 where player 1 wins twice, return 2
+        - given a list of size 2 where player 2 wins twice, return 0
+        - given a list of size 2 where player 1 and player 2 win once each, return 1
+
+
+    FOR ONE PAIR
+    - 1
+        - given a list of size 1 where player 1 wins, return 1
+        - given a list of size 1 where player 2 wins, return 0
+
+
+ - given two hands decide which hand wins
+   - define the type of poker hand given a hand
+     - given a high card hand, should return HIGH CARD value
+        - given [2,3,4,5,6] and [2,3,4,5,7] define that player 2 wins
+        - 
+     - given one pair, should return ONE PAIR value
+       - given two cards, check if they are same number
+     - ... 
+       - 
+
+
+
+card sorting are not guaranteed
