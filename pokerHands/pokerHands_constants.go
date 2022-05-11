@@ -1,0 +1,8 @@
+package pokerhands
+
+type POKER_HANDS_INPUT string
+
+const (
+	HIGH_CARD_HIGHEST                   POKER_HANDS_INPUT = "3S 4H 5S 8S 9S"
+	HIGH_CARD_SAME_HIGHEST_LOWER_SECOND POKER_HANDS_INPUT = "3S 4H 5S 7S 9S"
+)
