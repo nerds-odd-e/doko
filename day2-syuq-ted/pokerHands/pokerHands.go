@@ -22,7 +22,7 @@ func pokerHands(hands []string) int {
 
 func (game Game) p1Wins() bool {
 	p1Card, p2Card := game.getPlayerCards()
-	return p1Card.xx() > p2Card.xx()
+	return p1Card.getRank() > p2Card.getRank()
 }
 
 func (game Game) getPlayerCards() (Card, Card) {
@@ -38,7 +38,7 @@ func (game Game) getPlayerCards() (Card, Card) {
 	return p1Card, p2Card
 }
 
-func (card Card) xx() int {
+func (card Card) getRank() int {
 	rank, err := strconv.Atoi(string(card[0]))
 	if err != nil {
 		if string(card[0]) == "T" {
