@@ -45,8 +45,12 @@ func NewRound(input string) *Round {
 }
 
 func (r *Round) IsP1Winner() bool {
-	p1HighestCard := getHighestCard(r.P1Hand)
-	p2HighestCard := getHighestCard(r.P2Hand)
+	return r.P1Hand.Wins(r.P2Hand)
+}
+
+func (myHand Hand) Wins(opponent Hand) bool {
+	p1HighestCard := getHighestCard(myHand)
+	p2HighestCard := getHighestCard(opponent)
 
 	if p1HighestCard.Rank > p2HighestCard.Rank {
 		return true
