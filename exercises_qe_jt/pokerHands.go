@@ -49,7 +49,7 @@ func IsCardABiggerThanCardB(cardA, cardB string) bool{
 		"A":14,
 	}
 
-	return strings.Contains(cardA,"A") || numericValue[cardA[:1]] > numericValue[cardB[:1]]
+	return numericValue[cardA[:1]] > numericValue[cardB[:1]]
 }
 
 
