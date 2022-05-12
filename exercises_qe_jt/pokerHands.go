@@ -32,10 +32,10 @@ func pokerHands(games []string) int {
 func(game Game) p1Wins() bool {
 	// get index of highest unequal card
 
-	// p1Hand, p2Hand := game[:5],game[5:] 
+	p1Hand, p2Hand := game[:5],game[5:] 
 	for i := 4; i > 0; i-- {
-		if game.getCard(i) != game.getCard(5 + i) {
-			return IsCardABiggerThanCardB(game.getCard(i), game.getCard(5 + i)) 
+		if p1Hand[i] != p2Hand[i] {
+			return IsCardABiggerThanCardB(p1Hand[i], p2Hand[i]) 
 		}
 	}
 	return false
