@@ -31,7 +31,7 @@ func pokerHands(games []string) int {
 
 func(game Game) p1Wins() bool {
 	left, right := 4, 9
-	for game[left] == game[right] && left > 0 && right > 5 {
+	for game.getCard(left) == game[right] && left > 0 && right > 5 {
 		left -= 1
 		right -= 1
 	}
