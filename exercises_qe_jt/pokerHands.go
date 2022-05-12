@@ -33,7 +33,7 @@ func createGame(game string) Game {
 
 func(game Game) p1Wins() bool {
 	p1Hand, p2Hand := game.getPlayersHand()
-	return p1Hand.isBiggerThanOtherHand(p2Hand)
+	return p1Hand.isBiggerThan(p2Hand)
 }
 
 func (game Game)getPlayersHand() (Hand,Hand){
@@ -41,7 +41,7 @@ func (game Game)getPlayersHand() (Hand,Hand){
 }
 
 type Hand []string
-func (hand1 Hand) isBiggerThanOtherHand(hand2 Hand) bool{
+func (hand1 Hand) isBiggerThan(hand2 Hand) bool{
 	hand1.sort()
 	hand2.sort()
 
