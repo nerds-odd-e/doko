@@ -71,7 +71,7 @@ var numericValue = map[string]int{
 
 func (hand Hand) sort(){
 	sort.Slice(hand, func(i int, j int) bool{
-		return numericValue[hand[i][:1]] < numericValue[hand[j][:1]] 
+		return !IsCardABiggerThanCardB(hand[i],hand[j])
 	})
 }
 
