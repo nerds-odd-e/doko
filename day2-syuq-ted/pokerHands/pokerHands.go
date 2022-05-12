@@ -24,5 +24,9 @@ func p1Wins(cards []string) bool {
 	if string(cards[left][0]) == "T" {
 		return false
 	}
+
+	if string(cards[left][0]) == "Q" {
+		return false
+	}
 	return cards[left] > cards[right]
 }

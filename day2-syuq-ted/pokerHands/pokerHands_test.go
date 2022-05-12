@@ -20,7 +20,7 @@ func TestSingleInputP1Wins(t *testing.T) {
 func TestSingleInputP2Wins(t *testing.T) {
 	assert.Equal(t, 0, pokerHands([]string{fmt.Sprintf("%s %s", HIGH_CARD_LOWEST, HIGH_CARD_HIGHEST)}))
 	assert.Equal(t, 0, pokerHands([]string{fmt.Sprintf("%s %s", HIGH_CARD_LOWEST_TEN, HIGH_CARD_HIGHEST_ACE)}))
-	assert.Equal(t, 1, pokerHands([]string{fmt.Sprintf("%s %s", HIGH_CARD_HIGHEST_QUEEN, HIGH_CARD_HIGHEST_KING)}))
+	assert.Equal(t, 0, pokerHands([]string{fmt.Sprintf("%s %s", HIGH_CARD_HIGHEST_QUEEN, HIGH_CARD_HIGHEST_KING)}))
 }
 
 func TestMultipleInputP1Wins(t *testing.T) {
