@@ -1,6 +1,9 @@
 package exercises_qe_jt
 
-import "strings"
+import (
+	"sort"
+	"strings"
+)
 
 const (
 
@@ -33,6 +36,9 @@ func(game Game) p1Wins() bool {
 	// get index of highest unequal card
 
 	p1Hand, p2Hand := game.getPlayersHand()
+	// sort hand
+
+
 	for i := 4; i > 0; i-- {
 		if p1Hand[i] != p2Hand[i] {
 			return IsCardABiggerThanCardB(p1Hand[i], p2Hand[i]) 
@@ -41,17 +47,7 @@ func(game Game) p1Wins() bool {
 	return false
 }
 
-type Hand []string
-func (game Game)getPlayersHand() (Hand,Hand){
-	return Hand(game[:5]),Hand(game[5:])
-}
-
-func (game Game) getCard(index int) string {
-	return game[index]
-}
-
-func IsCardABiggerThanCardB(cardA, cardB string) bool{
-	numericValue := map[string]int{
+var numericValue = map[string]int{
 		"2":2,
 		"3":3,
 		"4":4,
@@ -67,6 +63,22 @@ func IsCardABiggerThanCardB(cardA, cardB string) bool{
 		"A":14,
 	}
 
+type Hand []string
+func (hand Hand) sort(){
+	sort.Slice(hand, func(i int, j int) bool{
+		return numericValue[hand[i][:1]] < numericValue[hand[j][:1]] 
+	})
+}
+
+func (game Game)getPlayersHand() (Hand,Hand){
+	return Hand(game[:5]),Hand(game[5:])
+}
+
+func (game Game) getCard(index int) string {
+	return game[index]
+}
+
+func IsCardABiggerThanCardB(cardA, cardB string) bool{
 	return numericValue[cardA[:1]] > numericValue[cardB[:1]]
 }
 
