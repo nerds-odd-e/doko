@@ -26,7 +26,7 @@ func (game Game) p1Wins() bool {
 		return false
 	}
 
-	return p1Card > p2Card
+	return p1Card.xx() > p2Card.xx()
 }
 
 func (game Game) getPlayerCards() (Card, Card) {
