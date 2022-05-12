@@ -20,5 +20,5 @@ func TestOnePrimeFactors(t *testing.T) {
 }
 
 func TestTwoPrimeFactors(t *testing.T) {
-	assert.Equal(t, []int{3}, primeFactors(6))
+	assert.Equal(t, []int{2, 3}, primeFactors(6))
 }
