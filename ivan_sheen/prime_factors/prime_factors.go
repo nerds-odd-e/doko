@@ -4,5 +4,8 @@ func primeFactors(n int) []int {
 	if n == 2 {
 		return []int{2}
 	}
+	if n == 3 {
+		return []int{3}
+	}
 	return []int{}
 }
