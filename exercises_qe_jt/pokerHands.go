@@ -1,6 +1,7 @@
 package exercises_qe_jt
 
 import (
+	"fmt"
 	"sort"
 	"strings"
 )
@@ -37,7 +38,8 @@ func(game Game) p1Wins() bool {
 
 	p1Hand, p2Hand := game.getPlayersHand()
 	// sort hand
-
+	 p1Hand.sort()
+	fmt.Println("sorted", p1Hand)
 
 	for i := 4; i > 0; i-- {
 		if p1Hand[i] != p2Hand[i] {
