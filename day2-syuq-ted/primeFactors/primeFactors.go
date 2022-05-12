@@ -1,6 +1,9 @@
 package primeFactors
 
 func primeFactors(number int) []int {
+	if number == 1 {
+		return []int{}
+	}
 	if number%3 == 0 {
 		return []int{3}
 	}
