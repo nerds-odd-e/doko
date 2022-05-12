@@ -51,7 +51,7 @@ func (r *Round) IsP1Winner() bool {
 	if p1HighestCard.Rank > p2HighestCard.Rank {
 		return true
 	}
-	if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.Suite > p2HighestCard.Suite {
+	if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.isCardSuiteHigher(&p2HighestCard) {
 		return true
 	}
 	return false
@@ -82,6 +82,10 @@ func pokerHands(hands []string) int {
 		}
 	}
 	return player1Points
+}
+
+func (p1Card *Card) isCardSuiteHigher(p2Card *Card) bool {
+	return p1Card.Suite > p2Card.Suite
 }
 
 func getHighestCard(hand Hand) Card {
