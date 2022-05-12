@@ -45,3 +45,6 @@ func TestSingleInputP1WinsByFaceCardUnsorted(t *testing.T) {
 func TestSingleInputP1WinsBySuite(t *testing.T) {
 	assert.Equal(t, 1, pokerHands([]string{fmt.Sprintf("%s %s", "3S 4H 5S 2S AS", "3S 4H 5S 8S AD")}))
 }
+func TestSingleInputP1WinsByPair(t *testing.T) {
+	assert.Equal(t, 1, pokerHands([]string{fmt.Sprintf("%s %s", "3S 4H 5S AD AS", "3S 4H 5S 8S 8D")}))
+}
