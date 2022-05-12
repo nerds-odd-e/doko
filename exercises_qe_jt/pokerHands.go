@@ -15,7 +15,7 @@ const (
 
 type Games []string 
 
-func pokerHands(games Games) int {
+func pokerHands(games []string) int {
 	winCount := 0
 	for i := range games {
 		if p1Wins(strings.Fields(games[i])) {
