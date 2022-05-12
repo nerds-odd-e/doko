@@ -12,4 +12,5 @@ const (
 	HIGH_CARD_LOWEST                    string = "2S 2H 2D 2C 3S"
 	HIGH_CARD_LOWEST_TEN                string = "2S 2H 2D 2C TS"
 	P1_WINS_INPUT                       string = "3S 4H 5S 8S 9S 2S 2H 2D 2C 9C"
+	P1_WINS_INPUT_SPECIAL               string = "3S 4H 5S 8S KS 2S 2H 2D 2C QC"
 )
