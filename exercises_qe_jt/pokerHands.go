@@ -29,9 +29,12 @@ func p1Wins(cards []string) bool {
 		left -= 1
 		right -= 1
 	}
-	return strings.Contains(cards[left],"A") || cards[left] > cards[right]
+	return strings.Contains(cards[left],"A") || IsCardABiggerThanCardB(cards[left],cards[right]) 
 }
 
+func IsCardABiggerThanCardB(cardA, cardB string) bool{
+	return cardA > cardB
+}
 
 
 // 2 3 4 5 6 7 8 9 T J Q K A
