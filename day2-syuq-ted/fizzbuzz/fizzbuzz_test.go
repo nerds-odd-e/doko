@@ -9,3 +9,7 @@ import (
 func TestConfirmFail(t *testing.T) {
 	assert.Equal(t, true, true)
 }
+
+func TestOneReturnOne(t *testing.T) {
+	assert.Equal(t, true, true)
+}
