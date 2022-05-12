@@ -1,6 +1,7 @@
 package sheenan_ys_pokerhands
 
 import (
+	"fmt"
 	"strings"
 )
 
@@ -49,6 +50,8 @@ func (r *Round) IsP1Winner() bool {
 	p2HighestCard := getHighestCard(r.P2Hand)
 
 	if p1HighestCard.Rank > p2HighestCard.Rank {
+		fmt.Println("p1", p1HighestCard.Rank)
+		fmt.Println("p2", p2HighestCard.Rank)
 		return true
 	}
 	// if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.Suite > p2HighestCard.Suite {
