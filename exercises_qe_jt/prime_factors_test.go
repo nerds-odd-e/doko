@@ -20,7 +20,7 @@ func TestPrimeFactors3(t * testing.T) {
 }
 
 func TestPrimeFactors4(t * testing.T) {
-	assert.Equal(t, "", PrimeFactors(4))
+	assert.Equal(t, "4", PrimeFactors(4))
 }
 
 func TestPrimeFactors5(t * testing.T) {
