@@ -1,10 +1,13 @@
 package pokerhands
 
-import "strings"
+import (
+	"strconv"
+	"strings"
+)
 
 type Game []string
 
-type Card string
+type Card string // 9S
 
 func pokerHands(hands []string) int {
 	winCount := 0
@@ -52,7 +55,21 @@ func (card Card) checkSpecial() int {
 	return 0
 }
 
-func (card Card) xx() Card {
-
-	return card
+func (card Card) xx() int {
+	rank, err := strconv.Atoi(string(card[0]))
+	if err != nil {
+		if string(card[0]) == "T" {
+			return 10
+		}
+		if string(card[0]) == "Q" {
+			return 12
+		}
+		if string(card[0]) == "K" {
+			return 13
+		}
+		if string(card[0]) == "A" {
+			return 14
+		}
+	}
+	return rank
 }
