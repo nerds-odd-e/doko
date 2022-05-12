@@ -32,16 +32,17 @@ func (cards Game) p1Wins() bool {
 
 func p1Wins(game Game) bool {
 	left, right := 4, 9
-	for game[left] == game[right] && left > 0 && right > 5 {
+	p1Hand := game[left]
+	for p1Hand == game[right] && left > 0 && right > 5 {
 		left -= 1
 		right -= 1
 	}
 	if string(game[right][0]) == "T" {
 		return true
 	}
-	if string(game[left][0]) == "T" || string(game[left][0]) == "Q" {
+	if string(p1Hand[0]) == "T" || string(p1Hand[0]) == "Q" {
 		return false
 	}
 
-	return game[left] > game[right]
+	return p1Hand > game[right]
 }
