@@ -18,5 +18,8 @@ func p1Wins(cards []string) bool {
 		left -= 1
 		right -= 1
 	}
+	if string(cards[left][0]) == "A" {
+		return true
+	}
 	return cards[left] > cards[right]
 }
