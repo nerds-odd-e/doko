@@ -11,9 +11,7 @@ const (
 	HIGH_CARD_SAME_HIGHEST_LOWER_FOURTH string = "3S 3H 5S 8S 9S"
 	HIGH_CARD_LOWEST                    string = "2S 2H 2D 2C 3S"
 	P1_WINS_INPUT                       string = "3S 4H 5S 8S 9S 2S 2H 2D 2C 3S"
-
 )
-
 
 func pokerHands(hands []string) int {
 	winCount := 0
@@ -31,5 +29,5 @@ func p1Wins(cards []string) bool {
 		left -= 1
 		right -= 1
 	}
-	return cards[left] > cards[right]
+	return cards[left] == "AS" || cards[left] > cards[right]
 }
