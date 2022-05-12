@@ -7,14 +7,15 @@ type Game []string
 func pokerHands(hands []string) int {
 	winCount := 0
 	for i := range hands {
-		if p1Wins(strings.Fields(hands[i])) {
+		game := Game(strings.Fields(hands[i]))
+		if p1Wins(game) {
 			winCount += 1
 		}
 	}
 	return winCount
 }
 
-func p1Wins(cards []string) bool {
+func p1Wins(cards Game) bool {
 	left, right := 4, 9
 	for cards[left] == cards[right] && left > 0 && right > 5 {
 		left -= 1
