@@ -13,7 +13,7 @@ func TestReturnOne(t *testing.T) {
 	assert.Equal(t, []int{2}, primeFactors(2))
 	assert.Equal(t, []int{3}, primeFactors(3))
 	assert.Equal(t, []int{2}, primeFactors(4))
-	assert.Equal(t, []int{8}, primeFactors(8))
+	assert.Equal(t, []int{2}, primeFactors(8))
 }
 
 func TestReturnTwo(t *testing.T) {
