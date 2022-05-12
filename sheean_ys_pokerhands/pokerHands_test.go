@@ -34,16 +34,16 @@ func TestOneGameUnsorted(t *testing.T) {
 }
 
 func HighestCardSameRankSecondHigher() string {
-	return "2C 6H 4D 5D 9S"
+	return "2C 4D 5D 6H 9C"
 }
 
 func HighestCardSameRankSecondLower() string {
-	return "9H 3D 4D 5C 2C"
+	return "2C 3D 4D 5C 9H"
 }
 
 func TestOneGameSameRank(t *testing.T) {
-	assert.Equal(t, 0, pokerHands([]string{HighestCardSameRankSecondLower() + " " + HighestCardSameRankSecondHigher()}))
-	assert.Equal(t, 1, pokerHands([]string{HighestCardSameRankSecondHigher() + " " + HighestCardSameRankSecondLower()}))
+	assert.Equal(t, 1, pokerHands([]string{HighestCardSameRankSecondLower() + " " + HighestCardSameRankSecondHigher()}))
+	assert.Equal(t, 0, pokerHands([]string{HighestCardSameRankSecondHigher() + " " + HighestCardSameRankSecondLower()}))
 }
 
 func LowHandWithCourtCards() string {
