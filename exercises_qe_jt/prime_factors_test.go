@@ -14,7 +14,7 @@ func PrimeFactors(n int) string {
 	if n == 5 {
 		return "5"
 	}
-	
+
 	return "2"
 }
 
@@ -28,4 +28,8 @@ func TestPrimeFactors3(t * testing.T) {
 
 func TestPrimeFactors5(t * testing.T) {
 	assert.Equal(t, "5", PrimeFactors(5))
+}
+
+func TestPrimeFactors6(t * testing.T) {
+	assert.Equal(t, "2", PrimeFactors(6))
 }
