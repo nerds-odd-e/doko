@@ -22,7 +22,7 @@ func (game Game) p1Wins() bool {
 	if p2Card.checkTen() {
 		return true
 	}
-	if p1Card.checkTen() || string(p1Card[0]) == "Q" {
+	if p1Card.checkTen() || p1Card.checkQueen() {
 		return false
 	}
 
@@ -44,4 +44,7 @@ func (game Game) getPlayerCards() (Card, Card) {
 
 func (card Card) checkTen() bool {
 	return string(card[0]) == "T"
+}
+func (card Card) checkQueen() bool {
+	return string(card[0]) == "Q"
 }
