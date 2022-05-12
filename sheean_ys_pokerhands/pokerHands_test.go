@@ -19,7 +19,7 @@ func TestPlayer1WinsWithHighCard(t *testing.T) {
 	assert.Equal(t, 1, pokerHands([]string{HighCardHandSorted() + " " + LowCardHandSorted()}))
 }
 func TestPlayer2WinsWithHighCard(t *testing.T) {
-	assert.Equal(t, 0, pokerHands([]string{"2C 3D 4D 5C 6C 2C 3H 4D 5D 7S"}))
+	assert.Equal(t, 0, pokerHands([]string{LowCardHandSorted() + " " + HighCardHandSorted()}))
 }
 func TestOneGameUnsorted(t *testing.T) {
 	assert.Equal(t, 0, pokerHands([]string{"7C 3D 4D 5C 2C 2C 6H 4D 5D 9S"}))
