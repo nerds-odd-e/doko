@@ -49,9 +49,7 @@ func (r *Round) IsP1Winner() bool {
 }
 
 func (myHand Hand) Wins(opponent Hand) bool {
-	p1HighestCard := myHand.getHighestCard()
-	p2HighestCard := opponent.getHighestCard()
-	return p1HighestCard.isHigherRank(p2HighestCard)
+	return myHand.getHighestCard().isHigherRank(opponent.getHighestCard())
 }
 
 func (card1 Card) isHigherRank(card2 Card) bool {
