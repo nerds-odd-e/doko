@@ -16,6 +16,7 @@ func pokerHands(hands []string) int {
 	}
 	return winCount
 }
+
 func (game Game) p1Wins() bool {
 	left, right := 4, 9
 	p1Card := Card(game[left])
@@ -34,4 +35,17 @@ func (game Game) p1Wins() bool {
 	}
 
 	return p1Card > p2Card
+}
+
+func (game Game) xx() (Card, Card) {
+	left, right := 4, 9
+	p1Card := Card(game[left])
+	p2Card := Card(game[right])
+	for p1Card == p2Card && left > 0 && right > 5 {
+		left -= 1
+		right -= 1
+		p1Card = Card(game[left])
+		p2Card = Card(game[right])
+	}
+	return p1Card, p2Card
 }
