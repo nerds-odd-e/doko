@@ -33,3 +33,7 @@ func Test3ReturnFizz(t *testing.T){
 func Test5ReturnBuzz(t *testing.T){
 	assert.Equal(t,"buzz",FizzBuzz(5))
 }
+
+func Test6ReturnFizz(t *testing.T){
+	assert.Equal(t,"6",FizzBuzz(6))
+}
