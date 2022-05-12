@@ -73,6 +73,13 @@ var RankMap = map[string]int{
 	"A": 14,
 }
 
+var SuiteMap = map[string]int{
+	"D": 1,
+	"C": 2,
+	"H": 3,
+	"S": 4,
+}
+
 func pokerHands(hands []string) int {
 	player1Points := 0
 	for _, hand := range hands {
@@ -85,7 +92,7 @@ func pokerHands(hands []string) int {
 }
 
 func (p1Card *Card) isCardSuiteHigher(p2Card *Card) bool {
-	return p1Card.Suite > p2Card.Suite
+	return SuiteMap[p1Card.Suite] > SuiteMap[p2Card.Suite]
 }
 
 func getHighestCard(hand Hand) Card {
