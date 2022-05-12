@@ -7,9 +7,9 @@ import (
 )
 
 func PrimeFactors(n int) string {
-	return ""
+	return "2"
 }
 
 func TestPrimeFactors2(t * testing.T) {
-	assert.Equal(t, "", PrimeFactors(2))
+	assert.Equal(t, "2", PrimeFactors(2))
 }
