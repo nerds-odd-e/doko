@@ -15,10 +15,14 @@ const (
 
 type Game []string
 
+func createGame(game string) Game {
+	return Game(strings.Fields(game))
+}
+
 func pokerHands(games []string) int {
 	winCount := 0
 	for i := range games {
-		if Game(strings.Fields(games[i])).p1Wins() {
+		if createGame(games[i]).p1Wins() {
 			winCount += 1
 		}
 	}
