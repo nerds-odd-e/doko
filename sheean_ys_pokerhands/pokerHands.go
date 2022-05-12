@@ -49,8 +49,8 @@ func (r *Round) IsP1Winner() bool {
 }
 
 func (myHand Hand) Wins(opponent Hand) bool {
-	p1HighestCard := getHighestCard(myHand)
-	p2HighestCard := getHighestCard(opponent)
+	p1HighestCard := myHand.getHighestCard()
+	p2HighestCard := opponent.getHighestCard()
 
 	if p1HighestCard.Rank > p2HighestCard.Rank {
 		return true
@@ -87,8 +87,8 @@ var SuiteMap = map[string]int{
 func pokerHands(hands []string) int {
 	player1Points := 0
 	for _, hand := range hands {
-		round := NewRound(hand)
-		if round.IsP1Winner() {
+		r := NewRound(hand)
+		if r.P1Hand.Wins(r.P2Hand) {
 			player1Points += 1
 		}
 	}
@@ -99,7 +99,7 @@ func (p1Card *Card) isCardSuiteHigher(p2Card *Card) bool {
 	return SuiteMap[p1Card.Suite] > SuiteMap[p2Card.Suite]
 }
 
-func getHighestCard(hand Hand) Card {
+func (hand Hand) getHighestCard() Card {
 	currHighestCard := hand[0]
 	for _, card := range hand {
 		if card.Rank > currHighestCard.Rank {
