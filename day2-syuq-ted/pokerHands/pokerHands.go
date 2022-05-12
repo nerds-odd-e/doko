@@ -51,3 +51,8 @@ func (card Card) checkSpecial() int {
 	}
 	return 0
 }
+
+func (card Card) xx() Card {
+
+	return card
+}
