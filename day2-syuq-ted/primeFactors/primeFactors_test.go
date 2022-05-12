@@ -13,6 +13,6 @@ func TestOnePrimeFactors(t *testing.T) {
 
 	// squares
 	assert.Equal(t, []int{2}, primeFactors(4))
-	assert.Equal(t, []int{2}, primeFactors(9))
-	assert.Equal(t, []int{2}, primeFactors(25))
+	assert.Equal(t, []int{3}, primeFactors(9))
+	assert.Equal(t, []int{5}, primeFactors(25))
 }
