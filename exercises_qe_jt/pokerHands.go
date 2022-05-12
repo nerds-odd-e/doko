@@ -41,8 +41,9 @@ func(game Game) p1Wins() bool {
 	return false
 }
 
-func (game Game)getPlayersHand() ([]string,[]string){
-	return game[:5],game[5:] 
+type Hand []string
+func (game Game)getPlayersHand() (Hand,Hand){
+	return Hand(game[:5]),Hand(game[5:])
 }
 
 func (game Game) getCard(index int) string {
