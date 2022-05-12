@@ -18,9 +18,19 @@ type Card struct {
 	Suite string
 }
 
+type Hand []Card
+
+func buildHand(cards []string) Hand {
+	hand := []Card{}
+	for _, card := range cards {
+		hand = append(hand, *NewCard(card))
+	}
+	return hand
+}
+
 // Constructor
 func NewCard(card string) *Card {
-	c := &Card{getRank(card[:1]), card[1:]}
+	c := &Card{getRank(string(card[0])), string(card[1])}
 	return c
 }
 
@@ -37,15 +47,15 @@ func pokerHands(hands []string) int {
 	for _, hand := range hands {
 		cards := strings.Split(hand, " ")
 
-		// card := NewCard(cards[0])
+		p1Hand := buildHand(cards[:5])
+		p2Hand := buildHand(cards[5:])
+		p1HighestCard := getHighestCard(p1Hand)
+		p2HighestCard := getHighestCard(p2Hand)
 
-		p1HighestRank, p1HighestSuite := getHighestCard(cards[:5])
-		p2HighestRank, p2HighestSuite := getHighestCard(cards[5:])
-
-		if p1HighestRank > p2HighestRank {
+		if p1HighestCard.Rank > p2HighestCard.Rank {
 			player1Points += 1
 		}
-		if p1HighestRank == p2HighestRank && p1HighestSuite > p2HighestSuite {
+		if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.Suite > p2HighestCard.Suite {
 			player1Points += 1
 		}
 	}
@@ -61,15 +71,13 @@ func getRank(rank string) int {
 	return rankInt
 }
 
-func getHighestCard(hand []string) (int, string) {
+func getHighestCard(hand Hand) Card {
 	currentHighestRank := 0
-	highestSuite := ""
+	var currHighestCard Card
 	for _, card := range hand {
-		cardRank := getRank(string(card[0]))
-		if cardRank > currentHighestRank {
-			currentHighestRank = cardRank
-			highestSuite = string(card[1])
+		if card.Rank > currentHighestRank {
+			currHighestCard = card
 		}
 	}
-	return currentHighestRank, highestSuite
+	return currHighestCard
 }
