@@ -2,6 +2,8 @@ package pokerhands
 
 import "strings"
 
+type Game []string
+
 func pokerHands(hands []string) int {
 	winCount := 0
 	for i := range hands {
