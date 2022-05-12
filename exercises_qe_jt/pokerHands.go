@@ -45,6 +45,9 @@ func (hand1 Hand) isBiggerThan(hand2 Hand) bool{
 	hand1.sort()
 	hand2.sort()
 
+	// both has pairs
+	
+
 	for i := 4; i > 0; i-- {
 		if hand1[i] != hand2[i] {
 			return IsCardABiggerThanCardB(hand1[i], hand2[i]) 
