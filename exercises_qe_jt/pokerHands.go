@@ -13,12 +13,12 @@ const (
 	P1_WINS_INPUT                       string = "3S 4H 5S 8S 9S 2S 2H 2D 2C 3S"
 )
 
-type Hand []string 
+type Game []string 
 
-func pokerHands(hands Hand) int {
+func pokerHands(game Game) int {
 	winCount := 0
-	for i := range hands {
-		if p1Wins(strings.Fields(hands[i])) {
+	for i := range game {
+		if p1Wins(strings.Fields(game[i])) {
 			winCount += 1
 		}
 	}
