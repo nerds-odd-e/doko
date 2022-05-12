@@ -21,3 +21,7 @@ func TestPrimeFactors3(t *testing.T) {
 func TestPrimeFactors4(t *testing.T) {
 	assert.Equal(t, []int{2}, primeFactors(4))
 }
+
+func TestPrimeFactors5(t *testing.T) {
+	assert.Equal(t, []int{2}, primeFactors(4))
+}
