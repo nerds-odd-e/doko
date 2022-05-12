@@ -13,18 +13,18 @@ const (
 	P1_WINS_INPUT                       string = "3S 4H 5S 8S 9S 2S 2H 2D 2C 3S"
 )
 
+type Game []string
 
 func pokerHands(games []string) int {
 	winCount := 0
 	for i := range games {
-		if p1Wins(strings.Fields(games[i])) {
+		if p1Wins(Game(strings.Fields(games[i]))) {
 			winCount += 1
 		}
 	}
 	return winCount
 }
 
-type Game []string
 
 func (game Game)p1Wins() bool {
 	left, right := 4, 9
