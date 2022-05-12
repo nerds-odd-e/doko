@@ -30,6 +30,6 @@ func TestPrimeFactors5(t * testing.T) {
 	assert.Equal(t, "5", PrimeFactors(5))
 }
 
-func xTestPrimeFactors6(t * testing.T) {
-	assert.Equal(t, "6", PrimeFactors(6))
+func TestPrimeFactors6(t * testing.T) {
+	assert.Equal(t, "2", PrimeFactors(6))
 }
