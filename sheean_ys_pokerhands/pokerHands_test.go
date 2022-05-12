@@ -38,7 +38,7 @@ func HighestCardSameRankSecondHigher() string {
 }
 
 func HighestCardSameRankSecondLower() string {
-	return "9S 3D 4D 5C 2C"
+	return "9H 3D 4D 5C 2C"
 }
 
 func TestOneGameSameRank(t *testing.T) {
