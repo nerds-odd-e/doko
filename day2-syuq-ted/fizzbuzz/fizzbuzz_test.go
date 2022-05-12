@@ -19,3 +19,7 @@ func TestDivisible3(t *testing.T) {
 	assert.Equal(t, "FIZZ", fizzbuzz(3))
 	assert.Equal(t, "FIZZ", fizzbuzz(6))
 }
+
+func TestDivisible5(t *testing.T) {
+	assert.Equal(t, "5", fizzbuzz(5))
+}
