@@ -1,7 +1,6 @@
 package exercises_qe_jt
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -15,7 +14,6 @@ func PrimeFactors(n int) []int {
 }
 
 func TestPrimeFactors2(t * testing.T) {
-	fmt.Println(PrimeFactors(2))
 	assert.Equal(t, []int{2}, PrimeFactors(2))
 }
 
