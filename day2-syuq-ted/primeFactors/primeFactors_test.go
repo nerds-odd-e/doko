@@ -7,5 +7,5 @@ import (
 )
 
 func TestZeroPrimeFactors(t *testing.T) {
-	assert.Equal(t, true, true)
+	assert.Equal(t, []int{}, primeFactors(2))
 }
