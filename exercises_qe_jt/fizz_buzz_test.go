@@ -1,16 +1,18 @@
 package exercises_qe_jt
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
 func FizzBuzz(number int)string{
-	if number == 1 {
-		return "1"
+	if number == 3 {
+		return "fizz"
 	}
-	return "2"
+
+	return fmt.Sprintf("%v",number)
 }
 
 func Test1Return1(t *testing.T){
@@ -21,5 +23,5 @@ func Test2Return2(t *testing.T){
 	assert.Equal(t,"2",FizzBuzz(2))
 }
 func Test3ReturnFizz(t *testing.T){
-	assert.Equal(t,"2",FizzBuzz(3))
+	assert.Equal(t,"fizz",FizzBuzz(3))
 }
