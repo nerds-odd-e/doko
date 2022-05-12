@@ -41,7 +41,7 @@ func HighestCardSameRankCompareSuiteLower() string {
 	return "2C 3D 4D 5C 9C"
 }
 
-func TestOneGameSameRank(t *testing.T) {
+func TestOneGameSameRankDifferentSuite(t *testing.T) {
 	assert.Equal(t, 0, pokerHands([]string{HighestCardSameRankCompareSuiteLower() + " " + HighestCardSameRankCompareSuiteHigher()}))
 	assert.Equal(t, 1, pokerHands([]string{HighestCardSameRankCompareSuiteHigher() + " " + HighestCardSameRankCompareSuiteLower()}))
 }
@@ -71,14 +71,27 @@ func TestTwoGames(t *testing.T) {
 	assert.Equal(t, 2, pokerHands([]string{HandsWithPlayer1Higher(), HandsWithPlayer1Higher()}))
 }
 
-func HighestCardSameRankThirdHigher() string {
+func HighestCardSameRankSecondHigher() string {
 	return "2C 3H 6D 8D 9S"
 }
 
-func HighestCardSameRankThirdLower() string {
-	return "2C 3H 5D 8D 9S"
+func HighestCardSameRankSecondLower() string {
+	return "2C 3H 6D 7D 9S"
 }
 
-func TestTopTwoHighCardSameRank(t *testing.T) {
-	assert.Equal(t, 0, pokerHands([]string{HighestCardSameRankThirdHigher() + " " + HighestCardSameRankThirdLower()}))
+func TestTopOneHighCardSameRank(t *testing.T) {
+	assert.Equal(t, 0, pokerHands([]string{HighestCardSameRankSecondLower() + " " + HighestCardSameRankSecondHigher()}))
+	assert.Equal(t, 0, pokerHands([]string{HighestCardSameRankSecondHigher() + " " + HighestCardSameRankSecondLower()}))
 }
+
+// func HighestCardSameRankThirdHigher() string {
+// 	return "2C 3H 6D 8D 9S"
+// }
+
+// func HighestCardSameRankThirdLower() string {
+// 	return "2C 3H 5D 8D 9S"
+// }
+
+// func TestTopTwoHighCardSameRank(t *testing.T) {
+// 	assert.Equal(t, 0, pokerHands([]string{HighestCardSameRankThirdHigher() + " " + HighestCardSameRankThirdLower()}))
+// }
