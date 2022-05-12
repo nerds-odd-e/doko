@@ -5,6 +5,7 @@ package pokerhands
 const (
 	HIGH_CARD_HIGHEST                   string = "3S 4H 5S 8S 9S"
 	HIGH_CARD_HIGHEST_ACE               string = "3S 4H 5S 8S AS"
+	HIGH_CARD_HIGHEST_KING              string = "3S 4H 5S 8S KS"
 	HIGH_CARD_SAME_HIGHEST_LOWER_SECOND string = "3S 4H 5S 7S 9S"
 	HIGH_CARD_SAME_HIGHEST_LOWER_THIRD  string = "3S 4H 4S 8S 9S"
 	HIGH_CARD_SAME_HIGHEST_LOWER_FOURTH string = "3S 3H 5S 8S 9S"
