@@ -19,7 +19,7 @@ func pokerHands(hands []string) int {
 
 func (game Game) p1Wins() bool {
 	p1Card, p2Card := game.getPlayerCards()
-	if p2Card.checkTen() == 10 {
+	if p2Card.checkSpecial() == 10 {
 		return true
 	}
 	if p1Card.checkSpecial() == 10 || p1Card.checkSpecial() == 12 {
