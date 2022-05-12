@@ -8,7 +8,7 @@ func pokerHands(hands []string) int {
 	winCount := 0
 	for i := range hands {
 		game := Game(strings.Fields(hands[i]))
-		if p1Wins(game) {
+		if game.p1Wins() {
 			winCount += 1
 		}
 	}
