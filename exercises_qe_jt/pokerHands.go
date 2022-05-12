@@ -27,7 +27,6 @@ func pokerHands(games []string) int {
 }
 
 type Game []string
-
 func createGame(game string) Game {
 	return Game(strings.Fields(game))
 }
@@ -39,10 +38,6 @@ func(game Game) p1Wins() bool {
 
 func (game Game)getPlayersHand() (Hand,Hand){
 	return Hand(game[:5]),Hand(game[5:])
-}
-
-func (game Game) getCard(index int) string {
-	return game[index]
 }
 
 type Hand []string
@@ -73,7 +68,7 @@ var numericValue = map[string]int{
 		"K":13,
 		"A":14,
 	}
-	
+
 func (hand Hand) sort(){
 	sort.Slice(hand, func(i int, j int) bool{
 		return numericValue[hand[i][:1]] < numericValue[hand[j][:1]] 
