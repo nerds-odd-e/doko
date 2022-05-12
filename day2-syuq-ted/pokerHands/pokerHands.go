@@ -3,9 +3,11 @@ package pokerhands
 import (
 	"strconv"
 	"strings"
+
+	"github.com/thoas/go-funk"
 )
 
-type Game []string
+type Game []Hand
 
 type Hand []Card
 
@@ -14,7 +16,13 @@ type Card string // 9S
 func pokerHands(games []string) int {
 	winCount := 0
 	for i := range games {
-		game := Game(strings.Fields(games[i]))
+		allCards := funk.Map(strings.Fields(games[i]), func(x string) Card {
+			return Card(x)
+		}).([]Card)
+		p1Hand := allCards[:5]
+		p2Hand := allCards[5:]
+
+		game := Game([]Hand{p1Hand, p2Hand})
 		if game.p1Wins() {
 			winCount += 1
 		}
@@ -28,15 +36,16 @@ func (game Game) p1Wins() bool {
 }
 
 func (game Game) getPlayerCards() (Card, Card) {
-	left, right := 4, 9
+	index := 4
 
-	p1Card := Card(game[left])
-	p2Card := Card(game[right])
-	for p1Card == p2Card && left > 0 && right > 5 {
-		left -= 1
-		right -= 1
-		p1Card = Card(game[left])
-		p2Card = Card(game[right])
+	p1Hand := game[0]
+	p2Hand := game[1]
+	p1Card := p1Hand[index]
+	p2Card := p2Hand[index]
+	for p1Card == p2Card && index > 0 {
+		index -= 1
+		p1Card = p1Hand[index]
+		p2Card = p2Hand[index]
 	}
 	return p1Card, p2Card
 }
