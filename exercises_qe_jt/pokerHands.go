@@ -13,7 +13,6 @@ const (
 	P1_WINS_INPUT                       string = "3S 4H 5S 8S 9S 2S 2H 2D 2C 3S"
 )
 
-type Games []string 
 
 func pokerHands(games []string) int {
 	winCount := 0
@@ -24,6 +23,8 @@ func pokerHands(games []string) int {
 	}
 	return winCount
 }
+
+type Game []string
 
 func p1Wins(cards []string) bool {
 	left, right := 4, 9
