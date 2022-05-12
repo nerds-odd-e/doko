@@ -19,3 +19,4 @@ node_modules/
 **/*.ipr
 **/*.iws
 **/.tool-versions
+./limbo.local
