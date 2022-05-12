@@ -1,4 +1,4 @@
-package fizzbuzz
+package fizzbuzz_jon_syuq
 
 import (
 	"testing"
