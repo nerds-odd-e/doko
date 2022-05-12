@@ -51,9 +51,9 @@ func (r *Round) IsP1Winner() bool {
 	if p1HighestCard.Rank > p2HighestCard.Rank {
 		return true
 	}
-	if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.Suite > p2HighestCard.Suite {
-		return true
-	}
+	// if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.Suite > p2HighestCard.Suite {
+	// 	return true
+	// }
 	return false
 }
 
