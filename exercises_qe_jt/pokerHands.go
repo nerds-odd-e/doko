@@ -26,13 +26,21 @@ func pokerHands(games []string) int {
 
 type Game []string
 
-func p1Wins(cards Game) bool {
+func p1Wins1(game Game) bool {
 	left, right := 4, 9
-	for cards[left] == cards[right] && left > 0 && right > 5 {
+	for game[left] == game[right] && left > 0 && right > 5 {
 		left -= 1
 		right -= 1
 	}
-	return  IsCardABiggerThanCardB(cards[left],cards[right]) 
+	return  IsCardABiggerThanCardB(game[left],game[right]) 
+}
+func p1Wins(game Game) bool {
+	left, right := 4, 9
+	for game[left] == game[right] && left > 0 && right > 5 {
+		left -= 1
+		right -= 1
+	}
+	return  IsCardABiggerThanCardB(game[left],game[right]) 
 }
 
 func IsCardABiggerThanCardB(cardA, cardB string) bool{
