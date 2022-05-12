@@ -8,7 +8,7 @@ import (
 )
 
 func FizzBuzz(number int)string{
-	if number == 3 {
+	if number % 3 == 0 {
 		return "fizz"
 	}
 
@@ -35,5 +35,5 @@ func Test5ReturnBuzz(t *testing.T){
 }
 
 func Test6ReturnFizz(t *testing.T){
-	assert.Equal(t,"6",FizzBuzz(6))
+	assert.Equal(t,"fizz",FizzBuzz(6))
 }
