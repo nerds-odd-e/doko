@@ -13,6 +13,7 @@ func TestEmptyInput(t *testing.T) {
 
 func TestSingleInputP1Wins(t *testing.T) {
 	assert.Equal(t, 1, pokerHands([]string{fmt.Sprintf("%s %s", HIGH_CARD_HIGHEST, HIGH_CARD_LOWEST)}))
+	assert.Equal(t, 1, pokerHands([]string{fmt.Sprintf("%s %s", HIGH_CARD_HIGHEST, HIGH_CARD_LOWEST)}))
 }
 
 func TestSingleInputP2Wins(t *testing.T) {
