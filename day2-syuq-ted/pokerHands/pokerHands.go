@@ -14,7 +14,7 @@ func pokerHands(hands []string) int {
 	}
 	return winCount
 }
-func p1Wins1(cards Game) bool {
+func (cards Game) p1Wins() bool {
 	left, right := 4, 9
 	for cards[left] == cards[right] && left > 0 && right > 5 {
 		left -= 1
