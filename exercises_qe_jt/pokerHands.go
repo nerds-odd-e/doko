@@ -76,8 +76,10 @@ func (hand Hand) sort(){
 }
 
 func IsCardABiggerThanCardB(cardA, cardB string) bool{
-	if numericValue[cardA[:1]] == numericValue[cardB[:1]] {
+	rankA := numericValue[cardA[:1]]
+	rankB := numericValue[cardB[:1]]
+	if rankA == rankB {
 		return cardA[:2] > cardB[:2]
 	}
-	return numericValue[cardA[:1]] > numericValue[cardB[:1]]
+	return rankA > rankB
 }
