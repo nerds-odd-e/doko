@@ -37,18 +37,7 @@ func(game Game) p1Wins() bool {
 
 	p1Hand, p2Hand := game.getPlayersHand()
 
-	// sort hand
-	p1Hand.sort()
-	p2Hand.sort()
-
 	return p1Hand.isBiggerThanOtherHand(p2Hand)
-
-	// for i := 4; i > 0; i-- {
-	// 	if p1Hand[i] != p2Hand[i] {
-	// 		return IsCardABiggerThanCardB(p1Hand[i], p2Hand[i]) 
-	// 	}
-	// }
-	// return false
 }
 
 var numericValue = map[string]int{
@@ -70,6 +59,9 @@ var numericValue = map[string]int{
 type Hand []string
 
 func (hand1 Hand) isBiggerThanOtherHand(hand2 Hand) bool{
+	hand1.sort()
+	hand2.sort()
+
 	for i := 4; i > 0; i-- {
 		if hand1[i] != hand2[i] {
 			return IsCardABiggerThanCardB(hand1[i], hand2[i]) 
