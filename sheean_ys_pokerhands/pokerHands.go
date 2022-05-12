@@ -61,6 +61,9 @@ func (myHand Hand) Wins(opponent Hand) bool {
 	return false
 }
 
+func (card1 Card) isHigherRank(card2 Card) bool{
+	return true
+}
 var RankMap = map[string]int{
 	"2": 2,
 	"3": 3,
