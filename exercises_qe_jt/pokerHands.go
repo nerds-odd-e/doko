@@ -31,6 +31,8 @@ func pokerHands(games []string) int {
 
 func(game Game) p1Wins() bool {
 	// get index of highest unequal card
+
+	// 
 	index := game.GetHighestCard()
 	return IsCardABiggerThanCardB(game.getCard(index), game.getCard(5 + index)) 
 }
