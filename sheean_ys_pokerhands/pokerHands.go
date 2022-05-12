@@ -1,7 +1,6 @@
 package sheenan_ys_pokerhands
 
 import (
-	"strconv"
 	"strings"
 )
 
@@ -19,7 +18,7 @@ type Card struct {
 }
 
 func NewCard(card string) *Card {
-	c := &Card{getRank(string(card[0])), string(card[1])}
+	c := &Card{RankMap[string(card[0])], string(card[1])}
 	return c
 }
 
@@ -47,9 +46,28 @@ func NewRound(input string) *Round {
 	return &round
 }
 
-// Constructor
+func (r *Round) IsP1Winner() bool {
+	p1HighestCard := getHighestCard(r.P1Hand)
+	p2HighestCard := getHighestCard(r.P2Hand)
+
+	if p1HighestCard.Rank > p2HighestCard.Rank {
+		return true
+	}
+	if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.Suite > p2HighestCard.Suite {
+		return true
+	}
+	return false
+}
 
 var RankMap = map[string]int{
+	"2": 2,
+	"3": 3,
+	"4": 4,
+	"5": 5,
+	"6": 6,
+	"7": 7,
+	"8": 8,
+	"9": 9,
 	"T": 10,
 	"J": 11,
 	"Q": 12,
@@ -69,15 +87,6 @@ func pokerHands(hands []string) int {
 	return player1Points
 }
 
-func getRank(rank string) int {
-	rankInt, err := strconv.Atoi(rank)
-
-	if err != nil {
-		rankInt = RankMap[rank]
-	}
-	return rankInt
-}
-
 func getHighestCard(hand Hand) Card {
 	currentHighestRank := 0
 	var currHighestCard Card
@@ -87,17 +96,4 @@ func getHighestCard(hand Hand) Card {
 		}
 	}
 	return currHighestCard
-}
-
-func (r *Round) IsP1Winner() bool {
-	p1HighestCard := getHighestCard(r.P1Hand)
-	p2HighestCard := getHighestCard(r.P2Hand)
-
-	if p1HighestCard.Rank > p2HighestCard.Rank {
-		return true
-	}
-	if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.Suite > p2HighestCard.Suite {
-		return true
-	}
-	return false
 }
