@@ -3,7 +3,7 @@ package ivan_sheen
 import "fmt"
 
 func fizzbuzz(n int) string {
-	if isDivisibleBy(n, 5) && isDivisibleBy(n, 3) {
+	if isDivisibleBy(n, 15) {
 		return "fizzbuzz"
 	}
 	if isDivisibleBy(n, 5) {
