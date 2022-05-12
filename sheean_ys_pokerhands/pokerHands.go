@@ -61,15 +61,18 @@ func pokerHands(hands []string) int {
 	player1Points := 0
 	for _, hand := range hands {
 		round := NewRound(hand)
-		p1HighestCard := getHighestCard(round.P1Hand)
-		p2HighestCard := getHighestCard(round.P2Hand)
+		if round.IsP1Winner() {
+			player1Points += 1
+		}
+		// p1HighestCard := getHighestCard(round.P1Hand)
+		// p2HighestCard := getHighestCard(round.P2Hand)
 
-		if p1HighestCard.Rank > p2HighestCard.Rank {
-			player1Points += 1
-		}
-		if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.Suite > p2HighestCard.Suite {
-			player1Points += 1
-		}
+		// if p1HighestCard.Rank > p2HighestCard.Rank {
+		// 	player1Points += 1
+		// }
+		// if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.Suite > p2HighestCard.Suite {
+		// 	player1Points += 1
+		// }
 	}
 	return player1Points
 }
@@ -92,4 +95,17 @@ func getHighestCard(hand Hand) Card {
 		}
 	}
 	return currHighestCard
+}
+
+func (r *Round) IsP1Winner() bool {
+	p1HighestCard := getHighestCard(r.P1Hand)
+	p2HighestCard := getHighestCard(r.P2Hand)
+
+	if p1HighestCard.Rank > p2HighestCard.Rank {
+		return true
+	}
+	if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.Suite > p2HighestCard.Suite {
+		return true
+	}
+	return false
 }
