@@ -29,14 +29,17 @@ func pokerHands(games []string) int {
 	return winCount
 }
 
-
 func(game Game) p1Wins() bool {
 	left, right := 4, 9
 	for game[left] == game[right] && left > 0 && right > 5 {
 		left -= 1
 		right -= 1
 	}
-	return  IsCardABiggerThanCardB(game[left],game[right]) 
+	return IsCardABiggerThanCardB(game[left],game[right]) 
+}
+
+func (game Game) getCard(index int) string {
+	return game[index]
 }
 
 
