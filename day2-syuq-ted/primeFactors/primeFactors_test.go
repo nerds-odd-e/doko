@@ -6,10 +6,10 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestOneReturnEmpty(t *testing.T) {
+func TestReturnEmpty(t *testing.T) {
 	assert.Equal(t, []int{}, primeFactors(1))
 }
-func TestOneReturnOne(t *testing.T) {
+func TestReturnOne(t *testing.T) {
 	assert.Equal(t, []int{2}, primeFactors(2))
 	assert.Equal(t, []int{3}, primeFactors(3))
 }
