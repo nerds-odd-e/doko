@@ -20,6 +20,17 @@ func NewCard(card string) *Card {
 	return c
 }
 
+func (card1 Card) isHigherRank(card2 Card) bool {
+	if card1.Rank > card2.Rank {
+		return true
+	}
+	if card1.Rank == card2.Rank && card1.isCardSuiteHigher(card2) {
+		return true
+	}
+	return false
+}
+
+
 type Hand []Card
 
 func NewHand(cards []string) Hand {
@@ -28,6 +39,10 @@ func NewHand(cards []string) Hand {
 		hand = append(hand, *NewCard(card))
 	}
 	return hand
+}
+
+func (myHand Hand) Wins(opponentHand Hand) bool {
+	return myHand.getHighestCard().isHigherRank(opponentHand.getHighestCard())
 }
 
 type Round struct {
@@ -44,23 +59,10 @@ func NewRound(input string) *Round {
 	return &round
 }
 
-func (r *Round) IsP1Winner() bool {
+func (r Round) IsP1Winner() bool {
 	return r.P1Hand.Wins(r.P2Hand)
 }
 
-func (myHand Hand) Wins(opponent Hand) bool {
-	return myHand.getHighestCard().isHigherRank(opponent.getHighestCard())
-}
-
-func (card1 Card) isHigherRank(card2 Card) bool {
-	if card1.Rank > card2.Rank {
-		return true
-	}
-	if card1.Rank == card2.Rank && card1.isCardSuiteHigher(card2) {
-		return true
-	}
-	return false
-}
 
 var RankMap = map[string]int{
 	"2": 2,
