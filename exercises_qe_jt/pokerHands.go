@@ -36,16 +36,19 @@ func(game Game) p1Wins() bool {
 	// get index of highest unequal card
 
 	p1Hand, p2Hand := game.getPlayersHand()
+
 	// sort hand
 	p1Hand.sort()
 	p2Hand.sort()
 
-	for i := 4; i > 0; i-- {
-		if p1Hand[i] != p2Hand[i] {
-			return IsCardABiggerThanCardB(p1Hand[i], p2Hand[i]) 
-		}
-	}
-	return false
+	return p1Hand.isBiggerThanOtherHand(p2Hand)
+
+	// for i := 4; i > 0; i-- {
+	// 	if p1Hand[i] != p2Hand[i] {
+	// 		return IsCardABiggerThanCardB(p1Hand[i], p2Hand[i]) 
+	// 	}
+	// }
+	// return false
 }
 
 var numericValue = map[string]int{
@@ -65,6 +68,17 @@ var numericValue = map[string]int{
 	}
 
 type Hand []string
+
+func (hand1 Hand) isBiggerThanOtherHand(hand2 Hand) bool{
+	for i := 4; i > 0; i-- {
+		if hand1[i] != hand2[i] {
+			return IsCardABiggerThanCardB(hand1[i], hand2[i]) 
+		}
+	}
+	return false
+}
+
+
 func (hand Hand) sort(){
 	sort.Slice(hand, func(i int, j int) bool{
 		return numericValue[hand[i][:1]] < numericValue[hand[j][:1]] 
