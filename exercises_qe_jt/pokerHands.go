@@ -16,12 +16,6 @@ const (
 	P1_WINS_INPUT                       string = "3S 4H 5S 8S 9S 2S 2H 2D 2C 3S"
 )
 
-type Game []string
-
-func createGame(game string) Game {
-	return Game(strings.Fields(game))
-}
-
 func pokerHands(games []string) int {
 	winCount := 0
 	for i := range games {
@@ -32,12 +26,23 @@ func pokerHands(games []string) int {
 	return winCount
 }
 
+type Game []string
+
+func createGame(game string) Game {
+	return Game(strings.Fields(game))
+}
+
 func(game Game) p1Wins() bool {
-	// get index of highest unequal card
-
 	p1Hand, p2Hand := game.getPlayersHand()
-
 	return p1Hand.isBiggerThanOtherHand(p2Hand)
+}
+
+func (game Game)getPlayersHand() (Hand,Hand){
+	return Hand(game[:5]),Hand(game[5:])
+}
+
+func (game Game) getCard(index int) string {
+	return game[index]
 }
 
 var numericValue = map[string]int{
@@ -57,7 +62,6 @@ var numericValue = map[string]int{
 	}
 
 type Hand []string
-
 func (hand1 Hand) isBiggerThanOtherHand(hand2 Hand) bool{
 	hand1.sort()
 	hand2.sort()
@@ -75,14 +79,6 @@ func (hand Hand) sort(){
 	sort.Slice(hand, func(i int, j int) bool{
 		return numericValue[hand[i][:1]] < numericValue[hand[j][:1]] 
 	})
-}
-
-func (game Game)getPlayersHand() (Hand,Hand){
-	return Hand(game[:5]),Hand(game[5:])
-}
-
-func (game Game) getCard(index int) string {
-	return game[index]
 }
 
 func IsCardABiggerThanCardB(cardA, cardB string) bool{
