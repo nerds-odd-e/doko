@@ -43,7 +43,7 @@ func HighestCardSameRankSecondLower() string {
 
 func TestOneGameSameRank(t *testing.T) {
 	assert.Equal(t, 0, pokerHands([]string{HighestCardSameRankSecondLower() + " " + HighestCardSameRankSecondHigher()}))
-	assert.Equal(t, 1, pokerHands([]string{"9S 3D 4D 5C 2C 2C 6H 4D 5D 9C"}))
+	assert.Equal(t, 1, pokerHands([]string{HighestCardSameRankSecondHigher() + " " + HighestCardSameRankSecondLower()}))
 }
 func TestOneGameWithCourtCards(t *testing.T) {
 	assert.Equal(t, 0, pokerHands([]string{"9C JD 4D 5C 2C KC 6H 4D 5D 8S"}))
