@@ -29,5 +29,5 @@ func p1Wins(cards []string) bool {
 		left -= 1
 		right -= 1
 	}
-	return cards[left] == "AS" || cards[left] > cards[right]
+	return strings.Contains(cards[left],"A") || cards[left] > cards[right]
 }
