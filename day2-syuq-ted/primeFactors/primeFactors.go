@@ -4,10 +4,7 @@ func primeFactors(number int) []int {
 	if number == 1 {
 		return []int{}
 	}
-	if number == 4 {
-		return []int{2}
-	}
-	if number == 8 {
+	if number%4 == 0 {
 		return []int{2}
 	}
 	if number == 6 {
