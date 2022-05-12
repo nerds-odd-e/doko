@@ -14,8 +14,16 @@ func PrimeFactors(n int) string {
 	return fmt.Sprintf("%v", n)
 }
 
+func PrimeFactors1(n int) []int {
+	if n % 2 == 0 {
+		return []int{2}
+	}
+	return []int{n}
+}
+
 func TestPrimeFactors2(t * testing.T) {
-	assert.Equal(t, "2", PrimeFactors(2))
+	fmt.Println(PrimeFactors1(2))
+	assert.Equal(t, []int{2}, PrimeFactors1(2))
 }
 
 func TestPrimeFactors3(t * testing.T) {
