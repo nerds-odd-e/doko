@@ -68,5 +68,5 @@ func HandsWithPlayer2Higher() string{
 func TestTwoGames(t *testing.T) {
 	assert.Equal(t, 0, pokerHands([]string{HandsWithPlayer2Higher(), HandsWithPlayer2Higher()}))
 	assert.Equal(t, 1, pokerHands([]string{HandsWithPlayer1Higher(), HandsWithPlayer2Higher()}))
-	assert.Equal(t, 2, pokerHands([]string{"3S AD 4D 5C 2C 2C 6H QD 5D 9C", "3S AD 4D 5C 2C 2C 6H QD 5D 9C"}))
+	assert.Equal(t, 2, pokerHands([]string{HandsWithPlayer1Higher(), HandsWithPlayer1Higher()}))
 }
