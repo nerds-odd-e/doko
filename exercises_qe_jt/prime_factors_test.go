@@ -13,3 +13,7 @@ func PrimeFactors(n int) string {
 func TestPrimeFactors2(t * testing.T) {
 	assert.Equal(t, "2", PrimeFactors(2))
 }
+
+func TestPrimeFactors3(t * testing.T) {
+	assert.Equal(t, "2", PrimeFactors(3))
+}
