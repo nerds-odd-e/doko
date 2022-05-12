@@ -14,3 +14,7 @@ func TestReturnOne(t *testing.T) {
 	assert.Equal(t, []int{3}, primeFactors(3))
 	assert.Equal(t, []int{2}, primeFactors(4))
 }
+
+func TestReturnTwo(t *testing.T) {
+	assert.Equal(t, []int{6}, primeFactors(6))
+}
