@@ -14,6 +14,21 @@ func pokerHands(hands []string) int {
 	}
 	return winCount
 }
+func p1Wins1(cards Game) bool {
+	left, right := 4, 9
+	for cards[left] == cards[right] && left > 0 && right > 5 {
+		left -= 1
+		right -= 1
+	}
+	if string(cards[right][0]) == "T" {
+		return true
+	}
+	if string(cards[left][0]) == "T" || string(cards[left][0]) == "Q" {
+		return false
+	}
+
+	return cards[left] > cards[right]
+}
 
 func p1Wins(cards Game) bool {
 	left, right := 4, 9
