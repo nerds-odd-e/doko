@@ -46,15 +46,15 @@ func TestOneGameSameRank(t *testing.T) {
 	assert.Equal(t, 1, pokerHands([]string{HighestCardSameRankSecondHigher() + " " + HighestCardSameRankSecondLower()}))
 }
 
-func LowHandWithCourtCards() string{
-	return "9C JD 4D 5C 2C"
+func LowHandWithCourtCards() string {
+	return "9C JD 4D KC TC"
 }
 
-func HighHandWithCourtCards() string{
-	return "KC 6H 4D 5D 8S"
+func HighHandWithCourtCards() string {
+	return "QC 6H 4D 5D AS"
 }
 func TestOneGameWithCourtCards(t *testing.T) {
-	assert.Equal(t, 0, pokerHands([]string{ LowHandWithCourtCards() + " " + HighHandWithCourtCards()}))
+	assert.Equal(t, 0, pokerHands([]string{LowHandWithCourtCards() + " " + HighHandWithCourtCards()}))
 	assert.Equal(t, 1, pokerHands([]string{"3S AD 4D 5C 2C 2C 6H QD 5D 9C"}))
 }
 
