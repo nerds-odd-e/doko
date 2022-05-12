@@ -18,8 +18,8 @@ const (
 
 func pokerHands(games []string) int {
 	winCount := 0
-	for i := range games {
-		if createGame(games[i]).p1Wins() {
+	for _, game := range games {
+		if createGame(game).p1Wins() {
 			winCount += 1
 		}
 	}
@@ -78,6 +78,3 @@ func (hand Hand) sort(){
 func IsCardABiggerThanCardB(cardA, cardB string) bool{
 	return numericValue[cardA[:1]] > numericValue[cardB[:1]]
 }
-
-
-// 2 3 4 5 6 7 8 9 T J Q K A
