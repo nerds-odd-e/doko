@@ -15,6 +15,12 @@ func TestNoGames(t *testing.T) {
 	assert.Equal(t, 0, pokerHands([]string{}))
 }
 
+func HighCardHandUnSorted() string{
+ return "2C 6H 4D 5D 9S"
+}
+func LowCardHandUnSorted() string{
+ return "7C 3D 4D 5C 2C"
+}
 func TestPlayer1WinsWithHighCard(t *testing.T) {
 	assert.Equal(t, 1, pokerHands([]string{HighCardHandSorted() + " " + LowCardHandSorted()}))
 }
@@ -22,8 +28,8 @@ func TestPlayer2WinsWithHighCard(t *testing.T) {
 	assert.Equal(t, 0, pokerHands([]string{LowCardHandSorted() + " " + HighCardHandSorted()}))
 }
 func TestOneGameUnsorted(t *testing.T) {
-	assert.Equal(t, 0, pokerHands([]string{"7C 3D 4D 5C 2C 2C 6H 4D 5D 9S"}))
-	assert.Equal(t, 1, pokerHands([]string{"9C 3D 4D 5C 2C 2C 6H 4D 5D 7S"}))
+	assert.Equal(t, 0, pokerHands([]string{LowCardHandUnSorted() + " " + HighCardHandUnSorted()}))
+	assert.Equal(t, 1, pokerHands([]string{HighCardHandUnSorted() + " " + LowCardHandUnSorted()}))
 }
 
 func TestOneGameSameRank(t *testing.T) {
