@@ -26,7 +26,7 @@ func pokerHands(games []string) int {
 
 type Game []string
 
-func p1Wins1(game Game) bool {
+func (game Game)p1Wins() bool {
 	left, right := 4, 9
 	for game[left] == game[right] && left > 0 && right > 5 {
 		left -= 1
