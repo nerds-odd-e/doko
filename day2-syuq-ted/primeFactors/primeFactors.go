@@ -13,7 +13,7 @@ func primeFactors(number int) []int {
 		factors = append(factors, 3)
 	}
 	if number%5 == 0 {
-		return []int{5}
+		factors = append(factors, 5)
 	}
 	return factors
 }
