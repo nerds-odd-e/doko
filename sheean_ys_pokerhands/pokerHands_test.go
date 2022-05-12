@@ -55,7 +55,7 @@ func HighHandWithCourtCards() string {
 }
 func TestOneGameWithCourtCards(t *testing.T) {
 	assert.Equal(t, 0, pokerHands([]string{LowHandWithCourtCards() + " " + HighHandWithCourtCards()}))
-	assert.Equal(t, 1, pokerHands([]string{"3S AD 4D 5C 2C 2C 6H QD 5D 9C"}))
+	assert.Equal(t, 1, pokerHands([]string{HighHandWithCourtCards() + " " + LowHandWithCourtCards()}))
 }
 
 func TestOneGamme(t *testing.T) {
