@@ -1,5 +1,5 @@
 package primeFactors
 
 func primeFactors(number int) []int {
-	return []int{}
+	return []int{2}
 }
