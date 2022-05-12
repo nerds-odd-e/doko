@@ -23,5 +23,5 @@ func TestFizzBuzz3(t *testing.T) {
 }
 
 func TestFizzBuzz6(t *testing.T) {
-	assert.Equal(t, "fizz", fizzbuzz(3))
+	assert.Equal(t, "fizz", fizzbuzz(6))
 }
