@@ -6,7 +6,7 @@ func fizzbuzz(n int) string {
 	if isDivisibleBy(n, 5) {
 		return "buzz"
 	}
-	if n%3 == 0 {
+	if isDivisibleBy(n, 3) {
 		return "fizz"
 	}
 	return fmt.Sprint(n)
