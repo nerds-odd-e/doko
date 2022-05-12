@@ -47,7 +47,17 @@ func NewRound(input string) *Round {
 	return &round
 }
 
-// Constructor
+type Player struct {
+	Id string
+	Points int
+}
+
+func NewPlayer(playerId string) *Player{
+	return &Player{
+		Id: playerId,
+		Points: 0,
+	}
+}
 
 var RankMap = map[string]int{
 	"T": 10,
@@ -58,23 +68,14 @@ var RankMap = map[string]int{
 }
 
 func pokerHands(hands []string) int {
-	player1Points := 0
+	player1:=NewPlayer("1")
 	for _, hand := range hands {
 		round := NewRound(hand)
 		if round.IsP1Winner() {
-			player1Points += 1
+			player1.Points += 1
 		}
-		// p1HighestCard := getHighestCard(round.P1Hand)
-		// p2HighestCard := getHighestCard(round.P2Hand)
-
-		// if p1HighestCard.Rank > p2HighestCard.Rank {
-		// 	player1Points += 1
-		// }
-		// if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.Suite > p2HighestCard.Suite {
-		// 	player1Points += 1
-		// }
 	}
-	return player1Points
+	return player1.Points
 }
 
 func getRank(rank string) int {
