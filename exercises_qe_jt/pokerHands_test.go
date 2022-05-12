@@ -34,4 +34,6 @@ func TestSingleInputP1WinsTopTwoSameHighestCard(t *testing.T) {
 
 func TestSingleInputP1WinsByFaceCard(t *testing.T) {
 	assert.Equal(t, 1, pokerHands([]string{fmt.Sprintf("%s %s", "3S 4H 5S 8S KS", HIGH_CARD_LOWEST)}))
+	assert.Equal(t, 1, pokerHands([]string{fmt.Sprintf("%s %s", "3S 4H 5S 8S QS", HIGH_CARD_LOWEST)}))
+	// assert.Equal(t, 1, pokerHands([]string{fmt.Sprintf("%s %s", "3S 4H 5S 8S KS", HIGH_CARD_LOWEST)}))
 }
