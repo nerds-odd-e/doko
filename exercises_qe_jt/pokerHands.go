@@ -45,6 +45,19 @@ func (game Game) getCard(index int) string {
 	return game[index]
 }
 
+type Hand []string
+func (hand1 Hand) isBiggerThanOtherHand(hand2 Hand) bool{
+	hand1.sort()
+	hand2.sort()
+
+	for i := 4; i > 0; i-- {
+		if hand1[i] != hand2[i] {
+			return IsCardABiggerThanCardB(hand1[i], hand2[i]) 
+		}
+	}
+	return false
+}
+
 var numericValue = map[string]int{
 		"2":2,
 		"3":3,
@@ -60,21 +73,7 @@ var numericValue = map[string]int{
 		"K":13,
 		"A":14,
 	}
-
-type Hand []string
-func (hand1 Hand) isBiggerThanOtherHand(hand2 Hand) bool{
-	hand1.sort()
-	hand2.sort()
-
-	for i := 4; i > 0; i-- {
-		if hand1[i] != hand2[i] {
-			return IsCardABiggerThanCardB(hand1[i], hand2[i]) 
-		}
-	}
-	return false
-}
-
-
+	
 func (hand Hand) sort(){
 	sort.Slice(hand, func(i int, j int) bool{
 		return numericValue[hand[i][:1]] < numericValue[hand[j][:1]] 
