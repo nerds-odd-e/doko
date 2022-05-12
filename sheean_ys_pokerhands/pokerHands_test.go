@@ -58,13 +58,15 @@ func TestOneGameWithCourtCards(t *testing.T) {
 	assert.Equal(t, 1, pokerHands([]string{HighHandWithCourtCards() + " " + LowHandWithCourtCards()}))
 }
 
-func TestOneGamme(t *testing.T) {
-	assert.Equal(t, 0, pokerHands([]string{"2C 3D 4D 5C 6C 2C 3H 4D 5D 7S"}))
-	assert.Equal(t, 1, pokerHands([]string{"2C 3D 4D 5C 7C 2C 3H 4D 5D 6S"}))
+func HandsWithPlayer1Higher() string{
+	return HighCardHandSorted() + " " + LowCardHandSorted()
 }
 
+func HandsWithPlayer2Higher() string{
+	return LowCardHandSorted() + " " + HighCardHandSorted()
+}
 func TestTwoGames(t *testing.T) {
-	assert.Equal(t, 0, pokerHands([]string{"9C JD 4D 5C 2C KC 6H 4D 5D 8S", "9C JD 4D 5C 2C KC 6H 4D 5D 8S"}))
+	assert.Equal(t, 0, pokerHands([]string{HandsWithPlayer2Higher(), HandsWithPlayer2Higher()}))
 	assert.Equal(t, 1, pokerHands([]string{"3S AD 4D 5C 2C 2C 6H QD 5D 9C", "9C JD 4D 5C 2C KC 6H 4D 5D 8S"}))
 	assert.Equal(t, 2, pokerHands([]string{"3S AD 4D 5C 2C 2C 6H QD 5D 9C", "3S AD 4D 5C 2C 2C 6H QD 5D 9C"}))
 }
