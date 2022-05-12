@@ -1,7 +1,7 @@
 package ivan_sheen
 
 func primeFactors(n int) []int {
-	if n == 2 || n == 4 {
+	if n%2 == 0 {
 		return []int{2}
 	}
 	if n == 3 {
