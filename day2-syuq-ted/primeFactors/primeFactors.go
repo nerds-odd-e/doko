@@ -4,14 +4,16 @@ func primeFactors(number int) []int {
 	if number == 1 {
 		return []int{}
 	}
+
+	factors := []int{}
+	if number%2 == 0 {
+		factors = append(factors, 2)
+	}
 	if number%3 == 0 {
-		if number%2 == 0 {
-			return []int{2, 3}
-		}
-		return []int{3}
+		factors = append(factors, 3)
 	}
 	if number%5 == 0 {
 		return []int{5}
 	}
-	return []int{2}
+	return factors
 }
