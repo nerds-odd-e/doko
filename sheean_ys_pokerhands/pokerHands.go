@@ -30,7 +30,6 @@ func (card1 Card) isHigherRank(card2 Card) bool {
 	return false
 }
 
-
 type Hand []Card
 
 func NewHand(cards []string) Hand {
@@ -62,7 +61,6 @@ func NewRound(input string) *Round {
 func (r Round) IsP1Winner() bool {
 	return r.P1Hand.Wins(r.P2Hand)
 }
-
 
 var RankMap = map[string]int{
 	"2": 2,
