@@ -9,3 +9,7 @@ import (
 func TestFizzBuzz1(t *testing.T) {
 	assert.Equal(t, "1", fizzbuzz(1))
 }
+
+func TestFizzBuzz2(t *testing.T) {
+	assert.Equal(t, "1", fizzbuzz(2))
+}
