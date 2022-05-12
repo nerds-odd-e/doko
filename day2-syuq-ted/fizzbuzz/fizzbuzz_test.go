@@ -16,5 +16,5 @@ func TestNormalReturnNormal(t *testing.T) {
 }
 
 func TestDivisible3(t *testing.T) {
-	assert.Equal(t, "1", fizzbuzz(3))
+	assert.Equal(t, "FIZZ", fizzbuzz(3))
 }
