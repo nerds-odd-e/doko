@@ -39,5 +39,5 @@ func TestPrimeFactors5(t * testing.T) {
 }
 
 func TestPrimeFactors6(t * testing.T) {
-	assert.Equal(t, "2", PrimeFactors(6))
+	assert.Equal(t, []int{2}, PrimeFactors1(6))
 }
