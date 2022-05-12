@@ -7,5 +7,8 @@ func primeFactors(number int) []int {
 	if number%5 == 0 {
 		return []int{5}
 	}
+	if number%7 == 0 {
+		return []int{7}
+	}
 	return []int{2}
 }
