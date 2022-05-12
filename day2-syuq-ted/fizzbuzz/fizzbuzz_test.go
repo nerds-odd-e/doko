@@ -22,4 +22,5 @@ func TestDivisible3(t *testing.T) {
 
 func TestDivisible5(t *testing.T) {
 	assert.Equal(t, "BUZZ", fizzbuzz(5))
+	assert.Equal(t, "BUZZ", fizzbuzz(10))
 }
