@@ -30,18 +30,18 @@ func (cards Game) p1Wins() bool {
 	return cards[left] > cards[right]
 }
 
-func p1Wins(cards Game) bool {
+func p1Wins(game Game) bool {
 	left, right := 4, 9
-	for cards[left] == cards[right] && left > 0 && right > 5 {
+	for game[left] == game[right] && left > 0 && right > 5 {
 		left -= 1
 		right -= 1
 	}
-	if string(cards[right][0]) == "T" {
+	if string(game[right][0]) == "T" {
 		return true
 	}
-	if string(cards[left][0]) == "T" || string(cards[left][0]) == "Q" {
+	if string(game[left][0]) == "T" || string(game[left][0]) == "Q" {
 		return false
 	}
 
-	return cards[left] > cards[right]
+	return game[left] > game[right]
 }
