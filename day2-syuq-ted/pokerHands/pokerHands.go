@@ -29,21 +29,3 @@ func (cards Game) p1Wins() bool {
 
 	return cards[left] > cards[right]
 }
-
-func p1Wins(game Game) bool {
-	left, right := 4, 9
-	p1Hand := game[:left]
-	p2Hand := game[left:right]
-	index := len(p1Hand)
-	for p1Hand[index] == p2Hand[index] && index > 0 {
-		index -= 1
-	}
-	if string(p2Hand[0]) == "T" {
-		return true
-	}
-	if string(p1Hand[0]) == "T" || string(p1Hand[0]) == "Q" {
-		return false
-	}
-
-	return p1Hand[index] > p2Hand[index]
-}
