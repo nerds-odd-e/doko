@@ -31,18 +31,21 @@ func pokerHands(games []string) int {
 
 func(game Game) p1Wins() bool {
 	// get index of highest unequal card
+	index := game.GetHighestCard()
+	return IsCardABiggerThanCardB(game.getCard(index), game.getCard(5 + index)) 
+}
+
+func (game Game) GetHighestCard() int {
 	index:= 4
-	p2Offset:=5
-	for game.getCard(index) == game.getCard(p2Offset + index) && index > 0 {
+	for game.getCard(index) == game.getCard(5 + index) && index > 0 {
 		index -= 1
 	}
-	return IsCardABiggerThanCardB(game.getCard(index), game.getCard(p2Offset + index)) 
+	return index
 }
 
 func (game Game) getCard(index int) string {
 	return game[index]
 }
-
 
 func IsCardABiggerThanCardB(cardA, cardB string) bool{
 	numericValue := map[string]int{
