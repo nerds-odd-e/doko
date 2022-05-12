@@ -42,12 +42,6 @@ func (game Game) getPlayerCards() (Card, Card) {
 	return p1Card, p2Card
 }
 
-func (card Card) checkTen() int {
-	if string(card[0]) == "T" {
-		return 10
-	}
-	return 0
-}
 func (card Card) checkSpecial() int {
 	if string(card[0]) == "T" {
 		return 10
