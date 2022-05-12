@@ -5,9 +5,7 @@ import (
 )
 
 // Game
-// Deck (2 hands)
 // Hand
-// Player
 // Card
 // Rank (e.g. A,2,3,...T,J,Q,K)
 // Suite(e.g. D,H,C,S)
@@ -82,7 +80,6 @@ func pokerHands(hands []string) int {
 		if round.IsP1Winner() {
 			player1Points += 1
 		}
-
 	}
 	return player1Points
 }
