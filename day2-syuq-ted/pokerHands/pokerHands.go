@@ -7,12 +7,14 @@ import (
 
 type Game []string
 
+type Hand []Card
+
 type Card string // 9S
 
-func pokerHands(hands []string) int {
+func pokerHands(games []string) int {
 	winCount := 0
-	for i := range hands {
-		game := Game(strings.Fields(hands[i]))
+	for i := range games {
+		game := Game(strings.Fields(games[i]))
 		if game.p1Wins() {
 			winCount += 1
 		}
@@ -27,6 +29,7 @@ func (game Game) p1Wins() bool {
 
 func (game Game) getPlayerCards() (Card, Card) {
 	left, right := 4, 9
+
 	p1Card := Card(game[left])
 	p2Card := Card(game[right])
 	for p1Card == p2Card && left > 0 && right > 5 {
