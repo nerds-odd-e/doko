@@ -55,15 +55,22 @@ func (myHand Hand) Wins(opponent Hand) bool {
 	if p1HighestCard.Rank > p2HighestCard.Rank {
 		return true
 	}
-	if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.isCardSuiteHigher(&p2HighestCard) {
+	if p1HighestCard.Rank == p2HighestCard.Rank && p1HighestCard.isCardSuiteHigher(p2HighestCard) {
 		return true
 	}
 	return false
 }
 
-func (card1 Card) isHigherRank(card2 Card) bool{
-	return true
+func (card1 Card) isHigherRank(card2 Card) bool {
+	if card1.Rank > card2.Rank {
+		return true
+	}
+	if card1.Rank == card2.Rank && card1.isCardSuiteHigher(card2) {
+		return true
+	}
+	return false
 }
+
 var RankMap = map[string]int{
 	"2": 2,
 	"3": 3,
@@ -98,7 +105,7 @@ func pokerHands(hands []string) int {
 	return player1Points
 }
 
-func (p1Card *Card) isCardSuiteHigher(p2Card *Card) bool {
+func (p1Card Card) isCardSuiteHigher(p2Card Card) bool {
 	return SuiteMap[p1Card.Suite] > SuiteMap[p2Card.Suite]
 }
 
