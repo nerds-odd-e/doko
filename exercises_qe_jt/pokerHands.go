@@ -34,14 +34,7 @@ func (game Game)p1Wins() bool {
 	}
 	return  IsCardABiggerThanCardB(game[left],game[right]) 
 }
-func p1Wins(game Game) bool {
-	left, right := 4, 9
-	for game[left] == game[right] && left > 0 && right > 5 {
-		left -= 1
-		right -= 1
-	}
-	return  IsCardABiggerThanCardB(game[left],game[right]) 
-}
+
 
 func IsCardABiggerThanCardB(cardA, cardB string) bool{
 	numericValue := map[string]int{
