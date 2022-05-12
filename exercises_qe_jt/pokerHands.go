@@ -13,6 +13,8 @@ const (
 	P1_WINS_INPUT                       string = "3S 4H 5S 8S 9S 2S 2H 2D 2C 3S"
 )
 
+type Hand []string 
+
 func pokerHands(hands []string) int {
 	winCount := 0
 	for i := range hands {
