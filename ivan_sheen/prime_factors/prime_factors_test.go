@@ -9,3 +9,7 @@ import (
 func TestPrimeFactors1(t *testing.T) {
 	assert.Equal(t, []int{}, primeFactors(1))
 }
+
+func TestPrimeFactors2(t *testing.T) {
+	assert.Equal(t, []int{}, primeFactors(2))
+}
