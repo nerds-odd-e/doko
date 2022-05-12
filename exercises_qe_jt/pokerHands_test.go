@@ -31,17 +31,7 @@ func TestSingleInputP1WinsTopTwoSameHighestCard(t *testing.T) {
 	assert.Equal(t, 1, pokerHands([]string{fmt.Sprintf("%s %s", HIGH_CARD_HIGHEST, HIGH_CARD_SAME_HIGHEST_LOWER_THIRD)}))
 }
 
-// func readFile(fileName string) string {
-// 	file, err := os.Open(fileName)
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// 	defer func() {
-// 		if err = file.Close(); err != nil {
-// 			log.Fatal(err)
-// 		}
-// 	}()
 
-// 	b, err := ioutil.ReadAll(file)
-// 	return string(b)
-// }
+func TestSingleInputP1WinsByFaceCard(t *testing.T) {
+	assert.Equal(t, 1, pokerHands([]string{fmt.Sprintf("%s %s", "3S 4H 5S 8S KS", HIGH_CARD_LOWEST)}))
+}
