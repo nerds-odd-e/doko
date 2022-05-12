@@ -29,3 +29,7 @@ func TestFizzBuzz6(t *testing.T) {
 func TestFizzBuzz5(t *testing.T) {
 	assert.Equal(t, "buzz", fizzbuzz(5))
 }
+
+func TestFizzBuzz10(t *testing.T) {
+	assert.Equal(t, "10", fizzbuzz(10))
+}
