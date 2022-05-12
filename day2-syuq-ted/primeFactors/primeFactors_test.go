@@ -6,6 +6,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestZeroPrimeFactors(t *testing.T) {
+func TestOnePrimeFactors(t *testing.T) {
 	assert.Equal(t, []int{2}, primeFactors(2))
 }
