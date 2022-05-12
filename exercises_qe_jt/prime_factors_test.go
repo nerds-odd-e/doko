@@ -7,10 +7,13 @@ import (
 )
 
 func PrimeFactors(n int) []int {
+	result := []int{}
 	if n % 2 == 0 {
-		return []int{2}
+		// remainder := n / 2
+		result = append(result, 2)
+		return result
 	}
-	return []int{n}
+	return append(result, n)
 }
 
 func TestPrimeFactors2(t * testing.T) {
@@ -29,6 +32,6 @@ func TestPrimeFactors5(t * testing.T) {
 	assert.Equal(t, []int{5}, PrimeFactors(5))
 }
 
-func TestPrimeFactors6(t * testing.T) {
-	assert.Equal(t, []int{2}, PrimeFactors(6))
+func xTestPrimeFactors6(t * testing.T) {
+	assert.Equal(t, []int{2, 3}, PrimeFactors(6))
 }
