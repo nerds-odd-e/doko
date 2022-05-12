@@ -7,9 +7,9 @@ import (
 )
 
 func FizzBuzz(number int)string{
-	return ""
+	return "1"
 }
 
 func Test1Return1(t *testing.T){
-	assert.Equal(t,"",FizzBuzz(1))
+	assert.Equal(t,"1",FizzBuzz(1))
 }
