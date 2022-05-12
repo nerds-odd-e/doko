@@ -11,5 +11,5 @@ func TestConfirmFail(t *testing.T) {
 }
 
 func TestOneReturnOne(t *testing.T) {
-	assert.Equal(t, true, true)
+	assert.Equal(t, "1", fizzbuzz(1))
 }
