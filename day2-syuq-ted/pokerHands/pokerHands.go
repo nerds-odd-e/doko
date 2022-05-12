@@ -38,16 +38,6 @@ func (game Game) getPlayerCards() (Card, Card) {
 	return p1Card, p2Card
 }
 
-func (card Card) checkSpecial() int {
-	if string(card[0]) == "T" {
-		return 10
-	}
-	if string(card[0]) == "Q" {
-		return 12
-	}
-	return 0
-}
-
 func (card Card) xx() int {
 	rank, err := strconv.Atoi(string(card[0]))
 	if err != nil {
