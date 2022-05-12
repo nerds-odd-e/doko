@@ -35,7 +35,7 @@ func(game Game) p1Wins() bool {
 		left -= 1
 		right -= 1
 	}
-	return IsCardABiggerThanCardB(game[left],game[right]) 
+	return IsCardABiggerThanCardB(game.getCard(left), game.getCard(right)) 
 }
 
 func (game Game) getCard(index int) string {
