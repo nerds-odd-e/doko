@@ -31,3 +31,7 @@ func p1Wins(cards []string) bool {
 	}
 	return strings.Contains(cards[left],"A") || cards[left] > cards[right]
 }
+
+
+
+// 2 3 4 5 6 7 8 9 T J Q K A
