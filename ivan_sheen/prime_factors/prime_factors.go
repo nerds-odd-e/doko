@@ -8,8 +8,8 @@ func primeFactors(n int) []int {
 	if n%3 == 0 {
 		primes = append(primes, 3)
 	}
-	if n == 5 {
-		return []int{5}
+	if n%5 == 0 {
+		primes = append(primes, 5)
 	}
 	return primes
 }
