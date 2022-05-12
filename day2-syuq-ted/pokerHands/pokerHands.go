@@ -18,7 +18,7 @@ func pokerHands(hands []string) int {
 }
 
 func (game Game) p1Wins() bool {
-	p1Card, p2Card := game.xx()
+	p1Card, p2Card := game.getPlayerCards()
 	if string(p2Card[0]) == "T" {
 		return true
 	}
@@ -29,7 +29,7 @@ func (game Game) p1Wins() bool {
 	return p1Card > p2Card
 }
 
-func (game Game) xx() (Card, Card) {
+func (game Game) getPlayerCards() (Card, Card) {
 	left, right := 4, 9
 	p1Card := Card(game[left])
 	p2Card := Card(game[right])
