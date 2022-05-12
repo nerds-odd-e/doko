@@ -8,4 +8,5 @@ import (
 
 func TestOnePrimeFactors(t *testing.T) {
 	assert.Equal(t, []int{}, primeFactors(1))
+	assert.Equal(t, []int{}, primeFactors(2))
 }
