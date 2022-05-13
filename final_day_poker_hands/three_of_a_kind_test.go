@@ -11,5 +11,5 @@ func makeP1WinThreeOfAKind() []string {
 }
 
 func TestReturn1IfP1HasThreeOfAKind(t *testing.T) {
-	assert.Equal(t, true, true)
+	assert.Equal(t, 1, pokerhands(makeP1WinThreeOfAKind()))
 }
