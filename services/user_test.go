@@ -8,6 +8,17 @@ import (
 	"tdd.com/v1/models"
 )
 
+func TestListUsersx(t *testing.T) {
+	const size = int(10000)
+	a := [size][size]int{}
+	for i := 0; i < size; i++ {
+		for j := 0; j < size; j++ {
+			a[i][j] = i * j
+		}
+	}
+	assert.Equal(t, (size-1)*(size-1), a[size-1][size-1])
+}
+
 func TestListUsers(t *testing.T) {
 	ctx := context.Background()
 
