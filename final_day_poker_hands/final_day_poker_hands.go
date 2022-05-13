@@ -23,6 +23,9 @@ func getFaceValue(face string) int {
 	if face == "A" {
 		return 14
 	}
+	if face == "K" {
+		return 13
+	}
 	faceValue, err := strconv.Atoi(face)
 	if err != nil {
 		return faceValue
@@ -45,7 +48,7 @@ func P1WinsCompareHighCard(game []string) bool {
 	if getFaceValue(game[4][:1]) == 14 {
 		return true
 	}
-	if game[4][:1] == "K" {
+	if getFaceValue(game[4][:1]) == 13 {
 		return true
 	}
 
