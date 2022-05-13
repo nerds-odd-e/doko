@@ -41,13 +41,29 @@ func P1WinsOnePair(cards []string) bool {
 	return cards[3][0] == cards[4][0]
 }
 
-func P1WinsCompareHighCard(game []string) bool {
+type Hand []string
 
-	hand1, hand2 := game[:5], game[5:]
+func (hand1 Hand) isBiggerThan(hand2 Hand)bool{
 	for i := 4; i >= 0; i-- {
 		if hand1[i][:1] != hand2[i][:1] {
-			return getFaceValue(hand1[i][:1]) > getFaceValue(hand2[i][:1])
+			return hand1[i][:1] > hand2[i][:1]
 		}
+	}
+	return false
+}
+
+func P1WinsCompareHighCard(game []string) bool {
+
+	if getFaceValue(game[4][:1]) == 14 {
+		return true
+	}
+	if getFaceValue(game[4][:1]) == 13 {
+		return true
+	}
+
+	hand1,hand2 := game[:5],game[5:]
+	if Hand(hand1).isBiggerThan(Hand(hand2)){
+		return true
 	}
 
 	return false
