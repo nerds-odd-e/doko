@@ -1,5 +1,6 @@
 package qing_en_sheen
 
 func fizzbuzz(n int) string {
-	return "1"	
+	if n == 1 {return "1"	}
+	return "2"
 }
