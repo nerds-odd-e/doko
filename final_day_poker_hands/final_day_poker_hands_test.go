@@ -69,3 +69,9 @@ func TestSortTwoCards1(t *testing.T) {
 	expected := Hand{"3C", "9H"}
 	assert.Equal(t, expected, hand.sort())
 }
+
+func xTestSortTwoCards1(t *testing.T) {
+	hand := Hand{"AH", "TC"}
+	expected := Hand{"TC", "AH"}
+	assert.Equal(t, expected, hand.sort())
+}
