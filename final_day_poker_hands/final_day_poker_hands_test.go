@@ -28,3 +28,14 @@ func TestReturn0IfP2HasHighestCardIfHandIsSorted(t *testing.T) {
 	assert.Equal(t, 0, pokerhands([]string{makeP2HighestCardHighCard()}))
 }
 
+func xTestReturn1IfP1HasHighestCardAbove10IfHandIsSorted(t *testing.T) {
+	assert.Equal(t, 1, pokerhands([]string{makeP1HighestCardHighCardWithJack()}))
+}
+
+func makeP1HighestCardHighCardWithJack() string {
+	return "2S 3C 4D 5H JH 2S 3D 4C 5H 6D"
+}
+
+func TestP1WinsHighCardTwiceOfTwoGames(t *testing.T) {
+
+}
