@@ -42,33 +42,3 @@ func getFaceValue(face string) int {
 	faceValue, _ := strconv.Atoi(face)
 	return faceValue
 }
-
-
-func (hand1 Hand) WinsByHighCard(hand2 Hand) bool {
-	for i := 4; i >= 0; i-- {
-		if hand1[i][:1] != hand2[i][:1] {
-			return getFaceValue(hand1[i][:1]) > getFaceValue(hand2[i][:1])
-		}
-	}
-	return false
-}
-
-type Hand []string
-
-func (hand1 Hand) Wins(hand2 Hand) bool {
-	return hand1.WinsByOnePair() || hand1.WinsByHighCard(hand2)
-}
-
-func (h Hand) sort() Hand {
-	sorted := make(Hand, len(h))
-	copy(sorted, h)
-	sort.Slice(sorted, func(i, j int) bool {
-		return card2isBigger(sorted[i], sorted[j])
-	})
-	return sorted
-}
-
-
-func card2isBigger(c1, c2 string) bool {
-	return getFaceValue(c1[:1]) < getFaceValue(c2[:1])
-}

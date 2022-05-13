@@ -33,7 +33,11 @@ func (h Hand) sort() Hand {
 	sorted := make(Hand, len(h))
 	copy(sorted, h)
 	sort.Slice(sorted, func(i, j int) bool {
-		return getFaceValue(sorted[i][:1]) < getFaceValue(sorted[j][:1])
+		return card2isBigger(sorted[i], sorted[j])
 	})
 	return sorted
+}
+
+func card2isBigger(c1, c2 string) bool {
+	return getFaceValue(c1[:1]) < getFaceValue(c2[:1])
 }
