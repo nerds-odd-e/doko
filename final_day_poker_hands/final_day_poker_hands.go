@@ -25,12 +25,15 @@ func getFaceValue(face string) int {
 		return 14
 	case "K":
 		return 13
+	case "Q":
+		return 12
+	case "J":
+		return 11
+	case "T":
+		return 10
 	}
-	faceValue, err := strconv.Atoi(face)
-	if err != nil {
-		return faceValue
-	}
-	return 0
+	faceValue, _ := strconv.Atoi(face)
+	return faceValue
 }
 
 func P1WinsOnePair(cards []string) bool {
@@ -49,7 +52,7 @@ func P1WinsCompareHighCard(game []string) bool {
 		return true
 	}
 
-	hand1,hand2 := game[:5],game[5:]
+	hand1, hand2 := game[:5], game[5:]
 	for i := 4; i >= 0; i-- {
 		if hand1[i][:1] != hand2[i][:1] {
 			return hand1[i][:1] > hand2[i][:1]
