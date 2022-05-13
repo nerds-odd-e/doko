@@ -8,15 +8,41 @@ import (
 
 func pokerhands(games []string) int {
 	p1WinCount := 0
-	for _, game := range games {
-		cards := strings.Split(game, " ")
-		if P1WinsCompareHighCard(cards) || P1WinsOnePair(cards) {
+	for _, g := range games {
+		cards := strings.Split(g, " ")
+		game := NewGame(cards)
+		if game.P1WinsCompareHighCard() || P1WinsOnePair(cards) {
 			p1WinCount += 1
 		}
 
 	}
 	return p1WinCount
 }
+
+type Game struct {
+	MyHand Hand
+	OpponentHand Hand
+}
+
+func NewGame(cards []string) *Game{
+	return &Game{
+		MyHand: cards[:5],
+		OpponentHand: cards[5:],
+	}
+}
+
+func (game Game) P1WinsCompareHighCard() bool {
+
+	if getFaceValue(game.MyHand[4][:1]) == 14 {
+		return true
+	}
+	if getFaceValue(game.MyHand[4][:1]) == 13 {
+		return true
+	}
+	
+	return game.MyHand.isBiggerThan(game.OpponentHand)
+}
+
 
 func getFaceValue(face string) int {
 	switch face {
@@ -55,22 +81,6 @@ func (hand1 Hand) isBiggerThan(hand2 Hand) bool {
 	return false
 }
 
-type Game struct {
-	MyHand       Hand
-	OpponentHand Hand
-}
-
-func NewGame(cards []string) *Game {
-	return &Game{
-		MyHand:       cards[:5],
-		OpponentHand: cards[5:],
-	}
-}
-
-func P1WinsCompareHighCard(cards []string) bool {
-	game := NewGame(cards)
-	return game.MyHand.isBiggerThan(game.OpponentHand)
-}
 
 func (h Hand) sort() Hand {
 	sorted := sort.StringSlice(h)
