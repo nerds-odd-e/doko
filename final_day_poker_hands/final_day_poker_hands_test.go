@@ -8,7 +8,7 @@ import (
 
 //https://bicyclecards.com/how-to-play/basics-of-poker/
 // c d h s
-func xTestReturn0WinsIfInputIsEmpty(t *testing.T) {
+func TestReturn0WinsIfInputIsEmpty(t *testing.T) {
 	assert.Equal(t, 0, pokerhands([]string{}))
 }
 
