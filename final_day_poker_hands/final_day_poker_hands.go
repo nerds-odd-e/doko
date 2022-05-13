@@ -26,3 +26,7 @@ func pokerhands(games []string) int {
 func P1WinsCompareHighCard(cards []string) bool {
 	return cards[4] > cards[9]
 }
+
+func (c Cards) sort() Cards {
+	return c
+}

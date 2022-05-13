@@ -16,10 +16,6 @@ func makeP1HighestCardHighCard() string {
 	return "2S 3C 4D 5H 9H 2S 3D 4C 5H 6D"
 }
 
-func makeUnsortedHand() string {
-	return "9H 3C 4D 5H 2S"
-}
-
 func TestReturn1IfP1HasHighestCardIfHandIsSorted(t *testing.T) {
 	assert.Equal(t, 1, pokerhands([]string{makeP1HighestCardHighCard()}))
 }
@@ -58,4 +54,10 @@ func makeP1HighestCardHighCardWithKing() string {
 
 func TestReturn1IfP1HasHighestCardWithKing(t *testing.T) {
 	assert.Equal(t, 1, pokerhands([]string{makeP1HighestCardHighCardWithKing()}))
+}
+
+func xTestSortCards(t *testing.T) {
+	hand := Cards{"9H", "3C"}
+	expected := Cards{"3C", "9H"}
+	assert.Equal(t, expected, hand.sort())
 }
