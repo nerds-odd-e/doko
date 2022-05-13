@@ -32,5 +32,4 @@ pull_rebase:
 	@set -o pipefail; git pull --rebase | tee /dev/tty > ./limbo.local
 	
 limbo: tcr pull_rebase
-	@cat ./limbo.local | grep -qE "up to date\.$$" && git push
-	echo "should do limbo one more time."
+	@grep -qE "up to date\.$$" ./limbo.local && git push || echo "should do limbo one more time."
