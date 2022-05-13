@@ -19,13 +19,19 @@ func pokerhands(games []string) int {
 }
 
 type Game struct {
-	MyHand Hand
+	MyHand       Hand
 	OpponentHand Hand
 }
 
-func NewGame(cards []string) *Game{
+type Hand []string
+type Card struct {
+	Face  string
+	Suite string
+}
+
+func NewGame(cards []string) *Game {
 	return &Game{
-		MyHand: cards[:5],
+		MyHand:       cards[:5],
 		OpponentHand: cards[5:],
 	}
 }
@@ -33,7 +39,6 @@ func NewGame(cards []string) *Game{
 func (game Game) isP1Winner() bool {
 	return game.MyHand.isBiggerThan(game.OpponentHand)
 }
-
 
 func getFaceValue(face string) int {
 	switch face {
@@ -61,8 +66,6 @@ func P1WinsOnePair(cards []string) bool {
 	return false
 }
 
-type Hand []string
-
 func (hand1 Hand) isBiggerThan(hand2 Hand) bool {
 	if P1WinsOnePair(hand1) {
 		return true
@@ -74,7 +77,6 @@ func (hand1 Hand) isBiggerThan(hand2 Hand) bool {
 	}
 	return false
 }
-
 
 func (h Hand) sort() Hand {
 	sorted := sort.StringSlice(h)
