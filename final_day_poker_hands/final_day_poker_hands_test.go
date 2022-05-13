@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func xTestReturn0WinsIfInputIsEmpty(t *testing.T) {
+func TestReturn0WinsIfInputIsEmpty(t *testing.T) {
 	assert.Equal(t, 0, pokerhands([]string{}))
 }
 
