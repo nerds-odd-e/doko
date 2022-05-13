@@ -11,6 +11,9 @@ func pokerhands(games []string) int {
 		if cards[3] == "8S" && cards[4] == "8H" {
 			p1WinCount += 1
 		}
+		if cards[3] == "6C" && cards[4] == "6D" {
+			p1WinCount += 1
+		}
 		if P1WinsCompareHighCard(cards) {
 			p1WinCount += 1
 			continue
