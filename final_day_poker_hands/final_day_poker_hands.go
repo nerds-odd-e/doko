@@ -65,13 +65,6 @@ func P1WinsOnePair(cards []string) bool {
 type Hand []string
 
 func (hand1 Hand) isBiggerThan(hand2 Hand) bool {
-	if getFaceValue(hand1[4][:1]) == 14 {
-		return true
-	}
-	if getFaceValue(hand1[4][:1]) == 13 {
-		return true
-	}
-
 	for i := 4; i >= 0; i-- {
 		if hand1[i][:1] != hand2[i][:1] {
 			return getFaceValue(hand1[i][:1]) > getFaceValue(hand2[i][:1])
