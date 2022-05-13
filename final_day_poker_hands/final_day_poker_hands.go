@@ -52,10 +52,10 @@ func P1WinsCompareHighCard(game []string) bool {
 		return true
 	}
 
-	offset := 5
+	hand1,hand2 := game[:5],game[5:]
 	for i := 4; i >= 0; i-- {
-		if game[i][:1] != game[i+offset][:1] {
-			return game[i][:1] > game[i+offset][:1]
+		if hand1[i][:1] != hand2[i][:1] {
+			return hand1[i][:1] > hand2[i][:1]
 		}
 	}
 
