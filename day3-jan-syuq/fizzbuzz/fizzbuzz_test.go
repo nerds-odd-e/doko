@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestThreeReturnFizz(t *testing.T) {
+func TestDivisbleByThreeReturnFizz(t *testing.T) {
 	assert.Equal(t, "Fizz", FizzBuzz(3))
 }
 
@@ -16,4 +16,8 @@ func TestFourReturnFour(t *testing.T) {
 
 func TestFiveReturnBuzz(t *testing.T) {
 	assert.Equal(t, "Buzz", FizzBuzz(5))
+}
+
+func TestSevenReturnSeven(t *testing.T) {
+	assert.Equal(t, "Fizz", FizzBuzz(7))
 }
