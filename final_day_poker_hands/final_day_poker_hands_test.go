@@ -71,7 +71,7 @@ func TestSortTwoCards1(t *testing.T) {
 }
 
 func TestSortTwoCardsAboveTen(t *testing.T) {
-	hand := Hand{"AH", "TC"}
-	expected := Hand{"TC", "AH"}
+	hand := Hand{"AS", "QS", "KS", "JS", "TS", "2S"}
+	expected := Hand{"2S", "TS", "JS", "QS", "KS", "AS"}
 	assert.Equal(t, expected, hand.sort())
 }
