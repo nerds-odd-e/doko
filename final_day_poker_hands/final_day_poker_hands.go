@@ -2,6 +2,8 @@ package final_day_poker_hands
 
 import "strings"
 
+type Cards []string
+
 func pokerhands(games []string) int {
 	p1WinCount := 0
 	for _, game := range games {
