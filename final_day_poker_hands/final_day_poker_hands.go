@@ -23,22 +23,22 @@ func pokerhands(games []string) int {
 }
 
 func P1WinsCompareHighCard(cards []string) bool {
-	if cards[4][:1] == cards[9][:1] {
-		if cards[3] > cards[8] {
-			return true
-		}
-		if cards[3][:1] == cards[8][:1] {
-			if cards[2] > cards[7] {
-				return true
-			}
-		}
-	}
+
 	if cards[4][:1] == "A" {
 		return true
 	}
 	if cards[4][:1] == "K" {
 		return true
 	}
+
+	for i := 4; i > 0; i-- {
+		if cards[i][:1] == cards[i+5][:1] {
+			continue
+		}
+
+		return cards[i][:1] > cards[i+5][:1]
+	}
+
 	return cards[4] > cards[9]
 }
 
