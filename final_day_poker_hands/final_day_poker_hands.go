@@ -1,9 +1,9 @@
 package final_day_poker_hands
 
 import (
+	"sort"
 	"strconv"
 	"strings"
-	"sort"
 )
 
 type Cards []string
@@ -62,11 +62,7 @@ func P1WinsCompareHighCard(game []string) bool {
 	}
 
 	hand1,hand2 := game[:5],game[5:]
-	if Hand(hand1).isBiggerThan(Hand(hand2)){
-		return true
-	}
-
-	return false
+	return Hand(hand1).isBiggerThan(Hand(hand2))
 }
 
 func (c Cards) sort() Cards {
