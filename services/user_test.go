@@ -8,7 +8,7 @@ import (
 	"tdd.com/v1/models"
 )
 
-func TestListUsersx(t *testing.T) {
+func TestPopulatingA2DArray(t *testing.T) {
 	const size = int(10000)
 	a := [size][size]int{}
 	for i := 0; i < size; i++ {
