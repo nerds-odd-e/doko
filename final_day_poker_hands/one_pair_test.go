@@ -27,3 +27,7 @@ func TestP1WinsOnePair(t *testing.T) {
 func makeP2WinOnePair() []string {
 	return []string{"2S 3D 4C 5H 9H 2S 2C 4D 6C 7D"}
 }
+
+func TestP2WinsOnePair(t *testing.T) {
+
+}
