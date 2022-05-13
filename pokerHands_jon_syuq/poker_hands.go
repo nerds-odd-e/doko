@@ -44,6 +44,7 @@ func getHighestCard(hand []string) (int, string) {
 		if cardRank > currentHighestRank {
 			currentHighestRank = cardRank
 			highestSuite = string(card[1])
+			
 		}
 	}
 	return currentHighestRank, highestSuite
