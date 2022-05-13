@@ -22,6 +22,11 @@ func P1WinsCompareHighCard(cards []string) bool {
 		if cards[3] > cards[8] {
 			return true
 		}
+		if cards[3][:1] == cards[8][:1] {
+			if cards[2] > cards[7] {
+				return true
+			}
+		}
 	}
 	if cards[4][:1] == "A" {
 		return true
