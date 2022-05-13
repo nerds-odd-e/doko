@@ -23,3 +23,7 @@ func TestP1WinsOnePair(t *testing.T) {
 	assert.Equal(t, 1, pokerhands(makeP1WinOnePairAnotherFace()))
 	assert.Equal(t, 1, pokerhands(makeP1WinOnePairSmallerFace()))
 }
+
+func makeP2WinOnePair() []string {
+	return []string{"2S 3D 4C 5H 9H 2S 2C 4D 6C 7D"}
+}
