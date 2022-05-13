@@ -3,6 +3,7 @@ package final_day_poker_hands
 import (
 	"strconv"
 	"strings"
+	"sort"
 )
 
 type Cards []string
@@ -53,5 +54,7 @@ func P1WinsCompareHighCard(game []string) bool {
 }
 
 func (c Cards) sort() Cards {
-	return Cards{"3C", "9H"}
+	sorted := sort.StringSlice(c)
+	sorted.Sort()
+	return Cards(sorted)
 }
