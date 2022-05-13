@@ -8,10 +8,7 @@ func pokerhands(games []string) int {
 	p1WinCount := 0
 	for _, game := range games {
 		cards := strings.Split(game, " ")
-		if cards[3] == "8S" && cards[4] == "8H" {
-			p1WinCount += 1
-		}
-		if cards[3] == "6C" && cards[4] == "6D" {
+		if P1WinsOnePair(cards) {
 			p1WinCount += 1
 		}
 		if P1WinsCompareHighCard(cards) {
@@ -31,6 +28,16 @@ func pokerhands(games []string) int {
 
 func getFaceValue(face string) int {
 	return 14
+}
+
+func P1WinsOnePair(cards []string) bool {
+	if cards[3] == "8S" && cards[4] == "8H" {
+		return true
+	}
+	if cards[3] == "6C" && cards[4] == "6D" {
+		return true
+	}
+	return false
 }
 
 func P1WinsCompareHighCard(cards []string) bool {
