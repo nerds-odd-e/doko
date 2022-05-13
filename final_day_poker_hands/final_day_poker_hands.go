@@ -65,18 +65,22 @@ func P1WinsOnePair(cards []string) bool {
 	return false
 }
 
-type Hand []string
-
-func (hand1 Hand) Wins(hand2 Hand) bool {
-	if P1WinsOnePair(hand1) {
-		return true
-	}
+func (hand1 Hand) P1WinsByHighCard(hand2 Hand) bool {
 	for i := 4; i >= 0; i-- {
 		if hand1[i][:1] != hand2[i][:1] {
 			return getFaceValue(hand1[i][:1]) > getFaceValue(hand2[i][:1])
 		}
 	}
 	return false
+}
+
+type Hand []string
+
+func (hand1 Hand) Wins(hand2 Hand) bool {
+	if P1WinsOnePair(hand1) {
+		return true
+	}
+	return hand1.P1WinsByHighCard(hand2)
 }
 
 func (h Hand) sort() Hand {
