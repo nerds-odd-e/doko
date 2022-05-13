@@ -8,6 +8,6 @@ import (
 
 
 
-func xTestReturn0WinsIfInputIsEmpty(t *testing.T){
+func TestReturn0WinsIfInputIsEmpty(t *testing.T){
 	assert.Equal(t,0,pokerhands([]string{}))
 }
