@@ -53,7 +53,7 @@ func TestReturn1IfP1HasHighestCardWithAce(t *testing.T) {
 }
 
 func makeP1HighestCardHighCardWithKing() string {
-	return "2S 3C 4D 5H KH 2S 3D 4C 5H JD"
+	return "2S 3C 4D 5H KH 2S 3D 4C 5H 9D"
 }
 
 func TestReturn1IfP1HasHighestCardWithKing(t *testing.T) {
