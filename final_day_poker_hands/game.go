@@ -5,8 +5,8 @@ type Game struct {
 	OpponentHand Hand
 }
 
-func NewGame(cards []string) *Game {
-	return &Game{
+func NewGame(cards []string) Game {
+	return Game{
 		MyHand:       cards[:5],
 		OpponentHand: cards[5:],
 	}
