@@ -1,6 +1,9 @@
 package final_day_poker_hands
 
-import "strings"
+import (
+	"strconv"
+	"strings"
+)
 
 type Cards []string
 
@@ -24,7 +27,14 @@ func pokerhands(games []string) int {
 }
 
 func getFaceValue(face string) int {
-	return 14
+	if face == "A" {
+		return 14
+	}
+	faceValue, err := strconv.Atoi(face)
+	if err != nil {
+		return faceValue
+	}
+	return 0
 }
 
 func P1WinsOnePair(cards []string) bool {
@@ -39,7 +49,7 @@ func P1WinsOnePair(cards []string) bool {
 
 func P1WinsCompareHighCard(cards []string) bool {
 
-	if cards[4][:1] == "A" {
+	if getFaceValue(cards[4][:1]) == 14 {
 		return true
 	}
 	if cards[4][:1] == "K" {
