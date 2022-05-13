@@ -31,6 +31,5 @@ tcr:
 pull_rebase:
 	@set -o pipefail; git pull --rebase | tee /dev/tty > ./limbo.local
 	
-	
 limbo: tcr pull_rebase
 	@grep -qE "up to date\.$$" ./limbo.local && git push || make limbo
