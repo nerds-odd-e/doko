@@ -1,8 +1,7 @@
 package qing_en_sheen
 
+import "fmt"
+
 func fizzbuzz(n int) string {
-	if n == 1 {
-		return "1"	
-	}
-	return "2"
+	return fmt.Sprint(n)
 }
