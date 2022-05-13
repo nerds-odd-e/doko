@@ -7,5 +7,5 @@ import (
 )
 
 func TestThreeReturnFizz(t *testing.T) {
-	assert.Equal(t, "", FizzBuzz(3))
+	assert.Equal(t, "Fizz", FizzBuzz(3))
 }
