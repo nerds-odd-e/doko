@@ -37,10 +37,7 @@ func getFaceValue(face string) int {
 }
 
 func P1WinsOnePair(cards []string) bool {
-	if cards[3][0] == cards[4][0] {
-		return true
-	}
-	return false
+	return cards[3][0] == cards[4][0]
 }
 
 func P1WinsCompareHighCard(game []string) bool {
