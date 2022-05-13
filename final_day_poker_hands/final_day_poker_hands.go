@@ -81,7 +81,10 @@ func (hand1 Hand) Wins(hand2 Hand) bool {
 }
 
 func (h Hand) sort() Hand {
-	sorted := sort.StringSlice(h)
-	sorted.Sort()
-	return Hand(sorted)
+	sorted := make(Hand, len(h))
+	copy(sorted, h)
+	sort.Slice(sorted, func(i, j int) bool {
+		return getFaceValue(sorted[i][:1]) < getFaceValue(sorted[j][:1])
+	})
+	return sorted
 }
