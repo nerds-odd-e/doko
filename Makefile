@@ -33,3 +33,4 @@ pull_rebase:
 	
 limbo: tcr pull_rebase
 	@cat ./limbo.local | grep -qE "up to date\.$$" && git push
+	echo "should do limbo one more time."
