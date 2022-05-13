@@ -11,5 +11,5 @@ func TestGetOneReturnOne(t *testing.T) {
 }
 
 func TestGetTwoReturnTwo(t *testing.T) {
-	assert.Equal(t, "1", fizzbuzz(2))
+	assert.Equal(t, "2", fizzbuzz(2))
 }
