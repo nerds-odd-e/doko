@@ -36,10 +36,12 @@ func getFaceValue(face string) int {
 }
 
 func P1WinsOnePair(cards []string) bool {
-	if cards[0][0] == cards[1][0] {
-		return true
+	for i := 0; i < 4; i++ {
+		if cards[i][0] == cards[i+1][0] {
+			return true
+		}
 	}
-	return cards[3][0] == cards[4][0]
+	return false
 }
 
 type Hand []string
