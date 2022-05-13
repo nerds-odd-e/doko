@@ -50,7 +50,7 @@ func P1WinsCompareHighCard(game []string) bool {
 		}
 	}
 
-	return game[4] > game[9]
+	return false
 }
 
 func (c Cards) sort() Cards {
