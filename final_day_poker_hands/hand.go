@@ -19,10 +19,11 @@ func (hand1 Hand) WinsByOnePair() bool {
 
 func (hand1 Hand) WinsByHighCard(hand2 Hand) bool {
 	for i := 4; i >= 0; i-- {
-		currentHand1CardRank := hand1[i][:1]
-		currentHand2CardRank := hand2[i][:1]
-		if currentHand1CardRank != currentHand2CardRank {
-			return getFaceValue(currentHand1CardRank) > getFaceValue(currentHand2CardRank)
+		card1 := Card{hand1[i][:1],hand1[i][1:]}
+		card2 := Card{hand2[i][:1],hand2[i][1:]}
+
+		if card1.Face != card2.Face {
+			return card1.isRankBiggerThan(card2)
 		}
 	}
 	return false

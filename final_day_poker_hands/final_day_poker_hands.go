@@ -22,6 +22,10 @@ type Card struct {
 	Suite string
 }
 
+func (card1 Card) isRankBiggerThan(card2 Card) bool{
+	return getFaceValue(card1.Face[:1]) > getFaceValue(card2.Face[:1])
+}
+
 func getFaceValue(face string) int {
 	switch face {
 	case "A":
