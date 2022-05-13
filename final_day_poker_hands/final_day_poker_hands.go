@@ -1,8 +1,16 @@
 package final_day_poker_hands
 
-func pokerhands(game []string) int {
-	if len(game) > 0 {
-		if game[0][12] > game[0][27] {
+import "strings"
+
+
+
+type Card string
+type Cards []Card
+
+func pokerhands(games []string) int {
+	if len(games) > 0 {
+		cards := strings.Split(games[0]," ")
+		if cards[4] > cards[9] {
 			return 1
 		}
 	}
