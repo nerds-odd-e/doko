@@ -8,7 +8,7 @@ import (
 
 func TestDivisbleByThreeReturnFizz(t *testing.T) {
 	assert.Equal(t, "Fizz", FizzBuzz(3))
-	assert.Equal(t, "6", FizzBuzz(6))
+	assert.Equal(t, "Fizz", FizzBuzz(6))
 }
 
 func TestFourReturnFour(t *testing.T) {
