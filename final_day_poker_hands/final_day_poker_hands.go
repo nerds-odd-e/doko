@@ -41,23 +41,23 @@ func P1WinsOnePair(cards []string) bool {
 	return false
 }
 
-func P1WinsCompareHighCard(cards []string) bool {
+func P1WinsCompareHighCard(game []string) bool {
 
-	if getFaceValue(cards[4][:1]) == 14 {
+	if getFaceValue(game[4][:1]) == 14 {
 		return true
 	}
-	if cards[4][:1] == "K" {
+	if game[4][:1] == "K" {
 		return true
 	}
 
 	offset := 5
 	for i := 4; i >= 0; i-- {
-		if cards[i][:1] != cards[i+offset][:1] {
-			return cards[i][:1] > cards[i+offset][:1]
+		if game[i][:1] != game[i+offset][:1] {
+			return game[i][:1] > game[i+offset][:1]
 		}
 	}
 
-	return cards[4] > cards[9]
+	return game[4] > game[9]
 }
 
 func (c Cards) sort() Cards {
