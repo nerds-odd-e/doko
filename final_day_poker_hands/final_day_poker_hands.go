@@ -18,25 +18,9 @@ func pokerhands(games []string) int {
 	return p1WinCount
 }
 
-type Game struct {
-	MyHand       Hand
-	OpponentHand Hand
-}
-
 type Card struct {
 	Face  string
 	Suite string
-}
-
-func NewGame(cards []string) *Game {
-	return &Game{
-		MyHand:       cards[:5],
-		OpponentHand: cards[5:],
-	}
-}
-
-func (game Game) isP1Winner() bool {
-	return game.MyHand.Wins(game.OpponentHand)
 }
 
 func getFaceValue(face string) int {
