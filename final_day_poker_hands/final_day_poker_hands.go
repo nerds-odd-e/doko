@@ -13,24 +13,22 @@ func pokerhands(games []string) int {
 			continue
 		}
 
-		if cards[4][:1] == cards[9][:1] {
-			if cards[3] > cards[8] {
-				p1WinCount += 1
-				continue
-			}
-		}
-
-		if cards[4][:1] == "A" {
-			p1WinCount += 1
-		}
-		if cards[4][:1] == "K" {
-			p1WinCount += 1
-		}
 	}
 	return p1WinCount
 }
 
 func P1WinsCompareHighCard(cards []string) bool {
+	if cards[4][:1] == cards[9][:1] {
+		if cards[3] > cards[8] {
+			return true
+		}
+	}
+	if cards[4][:1] == "A" {
+		return true
+	}
+	if cards[4][:1] == "K" {
+		return true
+	}
 	return cards[4] > cards[9]
 }
 
