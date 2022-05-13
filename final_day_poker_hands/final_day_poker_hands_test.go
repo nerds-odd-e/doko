@@ -11,7 +11,7 @@ func TestReturn0WinsIfInputIsEmpty(t *testing.T) {
 }
 
 func makeP1HighestCardHighCard() string {
-	return "9H 2S 3C 4D 5H 6D 2S 3D 4C 5H"
+	return "2S 3C 4D 5H 9H 6D 2S 3D 4C 5H"
 }
 
 func xTestReturn1IfP1HasHighestCardAtPosition5(t *testing.T) {
