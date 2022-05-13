@@ -8,11 +8,11 @@ import (
 	"tdd.com/v1/models"
 )
 
-func TestPopulatingA2DArray(t *testing.T) {
-	const size = int(10000)
+func XTestPopulatingA2DArray(t *testing.T) {
+	const size = int(100)
 	a := [size][size]int{}
 	for i := 0; i < size; i++ {
-		for j := 0; j < size; j++ {
+		for j := 0; j < size; j++ {		
 			a[i][j] = i * j
 		}
 	}
