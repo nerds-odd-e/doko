@@ -9,3 +9,7 @@ import (
 func TestThreeReturnFizz(t *testing.T) {
 	assert.Equal(t, "Fizz", FizzBuzz(3))
 }
+
+func TestFourReturnFour(t *testing.T) {
+
+}
