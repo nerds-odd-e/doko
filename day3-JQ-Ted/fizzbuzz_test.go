@@ -7,5 +7,5 @@ import (
 )
 
 func TestGetOneReturnOne(t *testing.T) {
-	assert.Equal(t, "", fizzbuzz(1))
+	assert.Equal(t, "1", fizzbuzz(1))
 }
