@@ -9,8 +9,7 @@ import (
 func pokerhands(games []string) int {
 	p1WinCount := 0
 	for _, g := range games {
-		cards := strings.Split(g, " ")
-		game := NewGame(cards)
+		game := NewGame(strings.Split(g, " "))
 		if game.isP1Winner(){
 			p1WinCount += 1
 		}
