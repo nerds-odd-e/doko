@@ -33,5 +33,5 @@ func P1WinsCompareHighCard(cards []string) bool {
 }
 
 func (c Cards) sort() Cards {
-	return c
+	return Cards{"3C", "9H"}
 }

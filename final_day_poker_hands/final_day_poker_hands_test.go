@@ -56,7 +56,7 @@ func TestReturn1IfP1HasHighestCardWithKing(t *testing.T) {
 	assert.Equal(t, 1, pokerhands([]string{makeP1HighestCardHighCardWithKing()}))
 }
 
-func xTestSortCards(t *testing.T) {
+func TestSortCards(t *testing.T) {
 	hand := Cards{"9H", "3C"}
 	expected := Cards{"3C", "9H"}
 	assert.Equal(t, expected, hand.sort())
