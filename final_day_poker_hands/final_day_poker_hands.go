@@ -56,25 +56,18 @@ func (hand1 Hand) isBiggerThan(hand2 Hand) bool {
 }
 
 type Game struct {
-	MyHand Hand
+	MyHand       Hand
 	OpponentHand Hand
 }
 
-func NewGame(cards []string) *Game{
+func NewGame(cards []string) *Game {
 	return &Game{
-		MyHand: cards[:5],
+		MyHand:       cards[:5],
 		OpponentHand: cards[5:],
 	}
 }
 
 func P1WinsCompareHighCard(cards []string) bool {
-
-	if getFaceValue(cards[4][:1]) == 14 {
-		return true
-	}
-	if getFaceValue(cards[4][:1]) == 13 {
-		return true
-	}
 	game := NewGame(cards)
 	return game.MyHand.isBiggerThan(game.OpponentHand)
 }
