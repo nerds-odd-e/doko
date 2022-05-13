@@ -1,7 +1,12 @@
 package final_day_poker_hands
 
 import "sort"
+
 type Hand []string
+
+func (hand1 Hand) Wins(hand2 Hand) bool {
+	return hand1.WinsByOnePair() || hand1.WinsByHighCard(hand2)
+}
 
 func (hand1 Hand) WinsByOnePair() bool {
 	for i := 0; i < 4; i++ {
@@ -21,9 +26,6 @@ func (hand1 Hand) WinsByHighCard(hand2 Hand) bool {
 	return false
 }
 
-func (hand1 Hand) Wins(hand2 Hand) bool {
-	return hand1.WinsByOnePair() || hand1.WinsByHighCard(hand2)
-}
 
 func (h Hand) sort() Hand {
 	sorted := make(Hand, len(h))
