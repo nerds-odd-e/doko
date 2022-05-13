@@ -11,5 +11,5 @@ func makeP1WinHighestCardHighCardTwoGames() []string {
 }
 
 func TestP1WinsHighCardTwiceOfTwoGames(t *testing.T) {
-	assert.Equal(t, 1, pokerhands(makeP1WinHighestCardHighCardTwoGames()))
+	assert.Equal(t, 2, pokerhands(makeP1WinHighestCardHighCardTwoGames()))
 }
