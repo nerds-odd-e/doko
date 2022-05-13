@@ -56,9 +56,9 @@ func getFaceValue(face string) int {
 	return faceValue
 }
 
-func P1WinsOnePair(cards []string) bool {
+func (hand1 Hand) P1WinsOnePair() bool {
 	for i := 0; i < 4; i++ {
-		if cards[i][0] == cards[i+1][0] {
+		if hand1[i][0] == hand1[i+1][0] {
 			return true
 		}
 	}
@@ -77,7 +77,7 @@ func (hand1 Hand) P1WinsByHighCard(hand2 Hand) bool {
 type Hand []string
 
 func (hand1 Hand) Wins(hand2 Hand) bool {
-	if P1WinsOnePair(hand1) {
+	if hand1.P1WinsOnePair() {
 		return true
 	}
 	return hand1.P1WinsByHighCard(hand2)
