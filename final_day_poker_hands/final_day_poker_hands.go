@@ -21,6 +21,9 @@ func pokerhands(games []string) int {
 		if cards[4][:1] == "A" {
 			p1WinCount += 1
 		}
+		if cards[4][:1] == "K" {
+			p1WinCount += 1
+		}
 	}
 	return p1WinCount
 }
