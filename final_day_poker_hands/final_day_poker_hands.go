@@ -6,8 +6,6 @@ import (
 	"strings"
 )
 
-type Cards []string
-
 func pokerhands(games []string) int {
 	p1WinCount := 0
 	for _, game := range games {
@@ -61,8 +59,8 @@ func P1WinsCompareHighCard(game []string) bool {
 	return Hand(hand1).isBiggerThan(Hand(hand2))
 }
 
-func (c Cards) sort() Cards {
-	sorted := sort.StringSlice(c)
+func (h Hand) sort() Hand {
+	sorted := sort.StringSlice(h)
 	sorted.Sort()
-	return Cards(sorted)
+	return Hand(sorted)
 }
