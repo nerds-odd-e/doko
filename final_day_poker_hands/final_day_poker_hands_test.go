@@ -70,7 +70,7 @@ func TestSortTwoCards1(t *testing.T) {
 	assert.Equal(t, expected, hand.sort())
 }
 
-func xTestSortTwoCards1(t *testing.T) {
+func TestSortTwoCardsAboveTen(t *testing.T) {
 	hand := Hand{"AH", "TC"}
 	expected := Hand{"TC", "AH"}
 	assert.Equal(t, expected, hand.sort())
