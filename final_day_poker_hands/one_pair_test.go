@@ -29,5 +29,5 @@ func makeP2WinOnePair() []string {
 }
 
 func TestP2WinsOnePair(t *testing.T) {
-
+	assert.Equal(t, 1, pokerhands(makeP2WinOnePair()))
 }
