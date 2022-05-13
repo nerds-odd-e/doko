@@ -34,10 +34,7 @@ func getFaceValue(face string) int {
 }
 
 func P1WinsOnePair(cards []string) bool {
-	if cards[3] == "8S" && cards[4] == "8H" {
-		return true
-	}
-	if cards[3] == "6C" && cards[4] == "6D" {
+	if cards[3][0] == cards[4][0] {
 		return true
 	}
 	return false
