@@ -3,7 +3,7 @@
 
 ### [Setup the doko nix development environment](#setup-doko-nix)
 
-DOKO_ROOT will henceforth be the directory onto which you have cloned git@github.com:nerds-odd-e/doko.git
+DOKO_ROOT  will henceforth be the directory onto which you have cloned git@github.com:nerds-odd-e/doko.git
 As non-root user, go into `$DOKO_ROOT` and execute `./setup-doko-env.sh`.
 Exit the above shell when done and start a new shell.
 
