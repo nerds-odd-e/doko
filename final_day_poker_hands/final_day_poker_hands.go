@@ -10,6 +10,7 @@ func pokerhands(games []string) int {
 		cards := strings.Split(game, " ")
 		if P1WinsCompareHighCard(cards) {
 			p1WinCount += 1
+			continue
 		}
 
 		if cards[4][:1] == cards[9][:1] {
