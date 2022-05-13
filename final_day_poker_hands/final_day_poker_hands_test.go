@@ -25,3 +25,4 @@ func makeP2HighestCardHighCard() string {
 func xTestReturn0IfP2HasHighestCardIfHandIsSorted(t *testing.T){
 	assert.Equal(t,0,pokerhands([]string{makeP2HighestCardHighCard()}))
 }
+
