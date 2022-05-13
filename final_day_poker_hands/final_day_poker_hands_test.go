@@ -9,5 +9,5 @@ import (
 
 
 func xTestReturn0WinsIfInputIsEmpty(t *testing.T){
-	assert.Equal(t,true,true)
+	assert.Equal(t,0,pokerhands([]string{}))
 }
