@@ -29,6 +29,10 @@ func pokerhands(games []string) int {
 	return p1WinCount
 }
 
+func getFaceValue(face string) int {
+	return 14
+}
+
 func P1WinsCompareHighCard(cards []string) bool {
 
 	if cards[4][:1] == "A" {
