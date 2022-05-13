@@ -11,6 +11,6 @@ func TestReturn0WinsIfInputIsEmpty(t *testing.T) {
 }
 
 
-func xTestReturn1IfP1HasHighestCard(t *testing.T){
+func xTestReturn1IfP1HasHighestCardAtPosition5(t *testing.T){
 	assert.Equal(t,1,pokerhands([]string{"8C TS KC 9H AS 4S 7D 2S 5D 3S"}))
 }
