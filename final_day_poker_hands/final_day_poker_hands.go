@@ -77,10 +77,7 @@ func (hand1 Hand) P1WinsByHighCard(hand2 Hand) bool {
 type Hand []string
 
 func (hand1 Hand) Wins(hand2 Hand) bool {
-	if hand1.P1WinsOnePair() {
-		return true
-	}
-	return hand1.P1WinsByHighCard(hand2)
+	return hand1.P1WinsOnePair() || hand1.P1WinsByHighCard(hand2)
 }
 
 func (h Hand) sort() Hand {
