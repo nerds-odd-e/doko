@@ -16,12 +16,6 @@ func pokerhands(games []string) int {
 			continue
 		}
 
-		if cards[4][:1] == cards[9][:1] {
-			if cards[3] > cards[8] {
-				p1WinCount += 1
-			}
-		}
-
 	}
 	return p1WinCount
 }
