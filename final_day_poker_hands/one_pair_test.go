@@ -21,5 +21,5 @@ func makeP1WinOnePairSmallerFace() []string {
 func TestP1WinsOnePair(t *testing.T) {
 	assert.Equal(t, 1, pokerhands(makeP1WinOnePair()))
 	assert.Equal(t, 1, pokerhands(makeP1WinOnePairAnotherFace()))
-	assert.Equal(t, 0, pokerhands(makeP1WinOnePairSmallerFace()))
+	assert.Equal(t, 1, pokerhands(makeP1WinOnePairSmallerFace()))
 }
