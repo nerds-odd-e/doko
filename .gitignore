@@ -20,3 +20,4 @@ node_modules/
 **/*.iws
 **/.tool-versions
 **/limbo.local
+shell.nix

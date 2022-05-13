@@ -59,6 +59,8 @@ in mkShell {
     xvfb-run
   ];
   shellHook = ''
+    #!/bin/bash
+    bash --posix
     export DOKO_ROOT=$PWD
     . $DOKO_ROOT/scripts/durable-storage-utils.sh
 
