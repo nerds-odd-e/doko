@@ -23,7 +23,7 @@ type Card struct {
 }
 
 func (card1 Card) isRankBiggerThan(card2 Card) bool{
-	return getFaceValue(card1.Face[:1]) > getFaceValue(card2.Face[:1])
+	return getFaceValue(card1.Face) > getFaceValue(card2.Face)
 }
 
 func getFaceValue(face string) int {
