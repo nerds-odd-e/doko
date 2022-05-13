@@ -11,7 +11,7 @@ func pokerhands(games []string) int {
 	for _, g := range games {
 		cards := strings.Split(g, " ")
 		game := NewGame(cards)
-		if game.P1WinsCompareHighCard() || P1WinsOnePair(cards) {
+		if game.isP1Winner() || P1WinsOnePair(cards) {
 			p1WinCount += 1
 		}
 
@@ -31,15 +31,7 @@ func NewGame(cards []string) *Game{
 	}
 }
 
-func (game Game) P1WinsCompareHighCard() bool {
-
-	if getFaceValue(game.MyHand[4][:1]) == 14 {
-		return true
-	}
-	if getFaceValue(game.MyHand[4][:1]) == 13 {
-		return true
-	}
-	
+func (game Game) isP1Winner() bool {
 	return game.MyHand.isBiggerThan(game.OpponentHand)
 }
 
@@ -73,6 +65,13 @@ func P1WinsOnePair(cards []string) bool {
 type Hand []string
 
 func (hand1 Hand) isBiggerThan(hand2 Hand) bool {
+	if getFaceValue(hand1[4][:1]) == 14 {
+		return true
+	}
+	if getFaceValue(hand1[4][:1]) == 13 {
+		return true
+	}
+
 	for i := 4; i >= 0; i-- {
 		if hand1[i][:1] != hand2[i][:1] {
 			return getFaceValue(hand1[i][:1]) > getFaceValue(hand2[i][:1])
