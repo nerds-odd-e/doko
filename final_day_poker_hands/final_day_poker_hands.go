@@ -38,9 +38,10 @@ func P1WinsCompareHighCard(cards []string) bool {
 		return true
 	}
 
+	offset := 5
 	for i := 4; i > 0; i-- {
-		if cards[i][:1] != cards[i+5][:1] {
-			return cards[i][:1] > cards[i+5][:1]
+		if cards[i][:1] != cards[i+offset][:1] {
+			return cards[i][:1] > cards[i+offset][:1]
 		}
 	}
 
