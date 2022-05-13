@@ -34,3 +34,13 @@ func makeP1HighCardWinBySuite() string {
 func xTestReturn1IfP1WinBySuiteIfHandIsSorted(t *testing.T){
 	assert.Equal(t,1,pokerhands([]string{makeP1HighCardWinBySuite()}))
 }
+
+
+func makeP2HighCardWinBySuite() string {
+	return "2S 3D 4C 5H 9H 2S 3C 4D 5H 9S"
+}
+
+func xTestReturn0IfP2WinBySuiteIfHandIsSorted(t *testing.T){
+	assert.Equal(t,0,pokerhands([]string{makeP2HighCardWinBySuite()}))
+}
+
