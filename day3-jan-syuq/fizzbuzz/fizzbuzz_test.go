@@ -15,4 +15,5 @@ func TestFourReturnFour(t *testing.T) {
 }
 
 func TestFiveReturnBuzz(t *testing.T) {
+	assert.Equal(t, "Buzz", FizzBuzz(5))
 }
