@@ -47,7 +47,7 @@ func makeP1HighestCardHighCardWithAce() string {
 
 func TestReturn1IfP1HasHighestCardWithAce(t *testing.T) {
 	assert.Equal(t, 1, pokerhands([]string{makeP1HighestCardHighCardWithAce()}))
-	assert.Equal(t, 2, pokerhands([]string{"2S 3C 4D 5H AH 2S 3D 4C 4H AS"}))
+	assert.Equal(t, 1, pokerhands([]string{"2S 3C 4D 5H AH 2S 3D 4C 4H AS"}))
 }
 
 func makeP1HighestCardHighCardWithKing() string {
