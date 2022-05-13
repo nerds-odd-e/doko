@@ -19,13 +19,14 @@ func (hand1 Hand) WinsByOnePair() bool {
 
 func (hand1 Hand) WinsByHighCard(hand2 Hand) bool {
 	for i := 4; i >= 0; i-- {
-		if hand1[i][:1] != hand2[i][:1] {
-			return getFaceValue(hand1[i][:1]) > getFaceValue(hand2[i][:1])
+		currentHand1CardRank := hand1[i][:1]
+		currentHand2CardRank := hand2[i][:1]
+		if currentHand1CardRank != currentHand2CardRank {
+			return getFaceValue(currentHand1CardRank) > getFaceValue(currentHand2CardRank)
 		}
 	}
 	return false
 }
-
 
 func (h Hand) sort() Hand {
 	sorted := make(Hand, len(h))
