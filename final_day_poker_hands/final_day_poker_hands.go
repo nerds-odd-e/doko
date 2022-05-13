@@ -20,10 +20,10 @@ func pokerhands(games []string) int {
 }
 
 func getFaceValue(face string) int {
-	if face == "A" {
+	switch face {
+	case "A":
 		return 14
-	}
-	if face == "K" {
+	case "K":
 		return 13
 	}
 	faceValue, err := strconv.Atoi(face)
