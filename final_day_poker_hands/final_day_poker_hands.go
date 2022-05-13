@@ -23,7 +23,6 @@ type Game struct {
 	OpponentHand Hand
 }
 
-type Hand []string
 type Card struct {
 	Face  string
 	Suite string
@@ -37,7 +36,7 @@ func NewGame(cards []string) *Game {
 }
 
 func (game Game) isP1Winner() bool {
-	return game.MyHand.isBiggerThan(game.OpponentHand)
+	return game.MyHand.Wins(game.OpponentHand)
 }
 
 func getFaceValue(face string) int {
@@ -66,7 +65,9 @@ func P1WinsOnePair(cards []string) bool {
 	return false
 }
 
-func (hand1 Hand) isBiggerThan(hand2 Hand) bool {
+type Hand []string
+
+func (hand1 Hand) Wins(hand2 Hand) bool {
 	if P1WinsOnePair(hand1) {
 		return true
 	}
