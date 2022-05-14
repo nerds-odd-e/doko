@@ -59,8 +59,10 @@ in mkShell {
     xvfb-run
   ];
   shellHook = ''
-    #!/bin/bash
-    bash --posix
+    #!/usr/bin/env bash
+
+    bash --posix $(whoami)
+
     export DOKO_ROOT=$PWD
     . $DOKO_ROOT/scripts/durable-storage-utils.sh
 
