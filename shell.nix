@@ -61,7 +61,10 @@ in mkShell {
   shellHook = ''
     #!/usr/bin/env bash
 
-    bash --posix $(whoami)
+    OS_TYPE=$(uname -s)
+    if [ $OS_TYPE = "Linux" ]; then
+      bash --posix $(whoami)
+    fi
 
     export DOKO_ROOT=$PWD
     . $DOKO_ROOT/scripts/durable-storage-utils.sh
