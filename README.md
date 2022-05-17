@@ -11,6 +11,8 @@ Exit the above shell when done and start a new shell.
 
 ### [Start doko nix development environment](#start-doko-nix)
 
+Ensure your OS (WSL2/Ubuntu/Fedora, etc) has `/bin/sh` point to `bash`.
+If you are using Ubuntu where `/bin/sh` is symlinked to `dash`, please run `sudo dpkg-reconfigure dash` and answer "No" to reconfigure to `bash` as default.
 After successful [doko nix environment setup](#setup-doko-nix) from above, you may enter the doko nix environment with:
 `nix develop`
 
