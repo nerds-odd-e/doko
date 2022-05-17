@@ -59,11 +59,11 @@ in mkShell {
     xvfb-run
   ];
   shellHook = ''
-    #!/bin/bash
+    #!/usr/bin/env bash
 
     OS_TYPE=$(uname -s)
     if [ $OS_TYPE = "Linux" ]; then
-      bash --posix $(whoami)
+      bash --posix
     fi
 
     export DOKO_ROOT=$PWD
