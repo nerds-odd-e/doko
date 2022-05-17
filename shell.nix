@@ -59,7 +59,7 @@ in mkShell {
     xvfb-run
   ];
   shellHook = ''
-    #!/usr/bin/env bash
+    #!/bin/bash
 
     OS_TYPE=$(uname -s)
     if [ $OS_TYPE = "Linux" ]; then
