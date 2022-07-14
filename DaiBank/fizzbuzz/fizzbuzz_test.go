@@ -8,7 +8,7 @@ import (
 
 func TestNormalNumber(t *testing.T) {
 	assert.Equal(t, "1", findFizzBuzz(1))
-	assert.Equal(t, "1", findFizzBuzz(2))
+	assert.Equal(t, "2", findFizzBuzz(2))
 }
 
 func TestFizz(t *testing.T) {
