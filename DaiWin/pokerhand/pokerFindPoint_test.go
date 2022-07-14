@@ -36,10 +36,10 @@ func findHighCardPointInHand(hand string) int {
 		"2": "2",
 	}
 
-	arrCardInHand := strings.Split(hand, " ")
-	firstCard := arrCardInHand[0]
+	cardsInHand := strings.Split(hand, " ")
+	firstCard := cardsInHand[0]
 	highCard, _ := strconv.Atoi(mapPointWithHonorCard[string(firstCard[0])])
-	for _, cardInHand := range arrCardInHand {
+	for _, cardInHand := range cardsInHand {
 		currentCard, _ := strconv.Atoi(mapPointWithHonorCard[string(cardInHand[0])])
 		if highCard < currentCard {
 			highCard = currentCard
