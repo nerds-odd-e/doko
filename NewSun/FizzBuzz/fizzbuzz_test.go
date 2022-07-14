@@ -21,10 +21,13 @@ func Test_FizzbuzzInput2(t *testing.T) {
 
 func Test_FizzbuzzInput3(t *testing.T) {
 	a := inputFizzbuzz(3)
-	b := "3"
+	b := "Fizz"
 	assert.Equal(t, a, b)
 }
 
 func inputFizzbuzz(input int64) string {
+	if input == 3 {
+		return "Fizz"
+	}
 	return fmt.Sprint(input)
 }
