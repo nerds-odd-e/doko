@@ -111,10 +111,8 @@ func isPlayer1Win(row string) bool {
 		"3": "3",
 		"2": "2",
 	}
-	covertP1Card := string(row[12])
-	covertP2Card := string(row[27])
-	covertP1Card = mapPointWithHonorCard[covertP1Card]
-	covertP2Card = mapPointWithHonorCard[covertP2Card]
+	covertP1Card := mapPointWithHonorCard[string(row[12])]
+	covertP2Card := mapPointWithHonorCard[string(row[27])]
 
 	p1CardPoint, err := strconv.Atoi(covertP1Card)
 	if err != nil {
