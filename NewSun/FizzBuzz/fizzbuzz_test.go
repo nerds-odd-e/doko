@@ -32,12 +32,12 @@ func Test_FizzbuzzInput5(t *testing.T) {
 }
 func Test_FizzbuzzInput6(t *testing.T) {
 	a := inputFizzbuzz(6)
-	b := "6"
+	b := "Fizz"
 	assert.Equal(t, a, b)
 }
 
 func inputFizzbuzz(input int64) string {
-	if input == 3 {
+	if input%3 == 0 {
 		return "Fizz"
 	}
 	if input == 5 {
