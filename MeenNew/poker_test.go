@@ -21,7 +21,7 @@ func TestPlayer1(t *testing.T) {
 func TestNoRecord(t *testing.T) {
 	records := []string{}
 	winRateP1 := PokerHand(records)
-	assert.Equal(t, winRateP1, 0.0)
+	assert.Equal(t, winRateP1, 0)
 }
 
 func TestOneRecord(t *testing.T) {

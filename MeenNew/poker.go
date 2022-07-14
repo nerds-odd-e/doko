@@ -2,7 +2,7 @@ package meennew
 
 import "math"
 
-func PokerHand(records []string) float64 {
+func PokerHand(records []string) interface{} {
 	// winRecord := 0
 	// if records[0] == "5S TD TS 3H 2S" {
 
