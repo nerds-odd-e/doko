@@ -25,5 +25,5 @@ func TestNumber15(t *testing.T) {
 }
 
 func TestNumber16(t *testing.T) {
-	assert.Equal(t, Fizzbuzz(16), "1")
+	assert.Equal(t, Fizzbuzz(16), "16")
 }

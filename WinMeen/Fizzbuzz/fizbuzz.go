@@ -1,6 +1,8 @@
 // Package main provides ...
 package winmeen
 
+import "strconv"
+
 func Fizzbuzz(num int) string {
 	if num%15 == 0 {
 		return "FizzBuzz"
@@ -11,5 +13,5 @@ func Fizzbuzz(num int) string {
 	if num%5 == 0 {
 		return "Buzz"
 	}
-	return "1"
+	return strconv.Itoa(num)
 }
