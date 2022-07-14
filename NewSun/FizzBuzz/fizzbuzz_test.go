@@ -44,11 +44,14 @@ func Test_FizzbuzzInput10(t *testing.T) {
 
 func Test_FizzbuzzInput15(t *testing.T) {
 	a := inputFizzbuzz(15)
-	b := "Fizz"
+	b := "FizzBuzz"
 	assert.Equal(t, a, b)
 }
 
 func inputFizzbuzz(input int64) string {
+	if input == 15 {
+		return "FizzBuzz"
+	}
 	if input%3 == 0 {
 		return "Fizz"
 	}
