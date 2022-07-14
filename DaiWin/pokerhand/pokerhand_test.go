@@ -97,50 +97,19 @@ func ValidatePokerFile(list []string) int {
 
 func isPlayer1Win(row string) bool {
 	mapPointWithHonorCard := map[string]string{
-		"K": "13",
 		"A": "14",
+		"K": "13",
+		"Q": "12",
+		"J": "11",
+		"T": "10",
+		"9": "9",
+		"8": "8",
+		"7": "7",
 	}
 	covertP1Card := string(row[12])
 	covertP2Card := string(row[27])
-	if covertP1Card == "K" {
-		covertP1Card = mapPointWithHonorCard[covertP1Card]
-	}
-
-	if covertP1Card == "A" {
-		covertP1Card = mapPointWithHonorCard[covertP1Card]
-	}
-
-	if covertP1Card == "Q" {
-		covertP1Card = "12"
-	}
-
-	if covertP1Card == "J" {
-		covertP1Card = "11"
-	}
-
-	if covertP1Card == "T" {
-		covertP1Card = "10"
-	}
-
-	if covertP2Card == "K" {
-		covertP2Card = "13"
-	}
-
-	if covertP2Card == "A" {
-		covertP2Card = "14"
-	}
-
-	if covertP2Card == "Q" {
-		covertP2Card = "12"
-	}
-
-	if covertP2Card == "J" {
-		covertP2Card = "11"
-	}
-
-	if covertP2Card == "T" {
-		covertP2Card = "10"
-	}
+	covertP1Card = mapPointWithHonorCard[covertP1Card]
+	covertP2Card = mapPointWithHonorCard[covertP2Card]
 
 	p1CardPoint, err := strconv.Atoi(covertP1Card)
 	if err != nil {
