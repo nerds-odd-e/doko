@@ -29,21 +29,3 @@ func TestOneRecord(t *testing.T) {
 	winRateP1 := PokerHand(records)
 	assert.Equal(t, winRateP1, 1)
 }
-
-func xTestTwoRecord(t *testing.T) {
-	records := []string{"5S TD TS 3H 2S", "4H 2H AH 6S QS", "5S TD TS 3H 2S", "4H 2H AH 6S QS"}
-	winRateP1 := PokerHand(records)
-	assert.Equal(t, winRateP1, 100.0)
-}
-
-func xTestThreeRecord(t *testing.T) {
-	records := []string{"5S TD TS 3H 2S", "4H 2H AH 6S QS", "5S TD TS 3H 2S", "4H 2H AH 6S QS", "4H 2H AH 6S QS", "5S TD TS 3H 2S"}
-	winRateP1 := PokerHand(records)
-	assert.Equal(t, winRateP1, 66.66)
-}
-
-func xTestThreeRecordP1OneWin(t *testing.T) {
-	records := []string{"5S TD TS 3H 2S", "4H 2H AH 6S QS", "4H 2H AH 6S QS", "5S TD TS 3H 2S", "4H 2H AH 6S QS", "5S TD TS 3H 2S"}
-	winRateP1 := PokerHand(records)
-	assert.Equal(t, winRateP1, 33.33)
-}
