@@ -27,15 +27,15 @@ func calculatorPercentWinnerPoker(pokerFile []string) int {
 	for _, v := range pokerFile {
 		pokerHands := strings.Split(v, "    ")
 		pokerGame := poker().setHands(pokerHands[0], pokerHands[1])
-		_ = pokerGame
-		if compareHand(pokerHands[0], pokerHands[1]) {
+
+		if compareHand(pokerHands[0], pokerHands[1], pokerGame) {
 			score++
 		}
 	}
 	return score
 }
 
-func compareHand(hand1 string, hand2 string) bool {
+func compareHand(hand1 string, hand2 string, game PokerGame) bool {
 	if hand2[0] == 'A' {
 		return false
 	}
