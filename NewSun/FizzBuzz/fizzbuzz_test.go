@@ -8,10 +8,11 @@ import (
 
 func Test_FizzbuzzInput1(t *testing.T) {
 	a := inputFizzbuzz(1)
-	b := ""
+	b := "1"
 	assert.Equal(t, a, b)
 }
 
 func inputFizzbuzz(input int64) string {
-	return ""
+
+	return "1"
 }
