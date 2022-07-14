@@ -79,8 +79,9 @@ func CalculatePlayer1WinGame(list []string) int {
 	player1WinningCount := 0
 	for _, row := range list {
 		cardInHand := strings.Split(row, "  ")
-		if findHighCardPointInHand(cardInHand[0]) > findHighCardPointInHand(cardInHand[1]) {
-			player1WinningCount += 1
+		r := findHighCardPointInHand(cardInHand[0]) > findHighCardPointInHand(cardInHand[1]) 
+		if r {
+				player1WinningCount += 1
 		}
 	}
 	return player1WinningCount
