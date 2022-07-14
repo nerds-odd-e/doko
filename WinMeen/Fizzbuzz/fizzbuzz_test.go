@@ -7,5 +7,5 @@ import (
 )
 
 func TestNumber1(t *testing.T) {
-	assert.Equal(t, Fizzbuzz(), "")
+	assert.Equal(t, Fizzbuzz(0), "")
 }

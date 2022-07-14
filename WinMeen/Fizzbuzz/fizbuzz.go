@@ -1,6 +1,6 @@
 // Package main provides ...
 package winmeen
 
-func Fizzbuzz() string {
+func Fizzbuzz(num int) string {
 	return ""
 }
