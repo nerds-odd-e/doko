@@ -49,6 +49,11 @@ func TestPlayer1Win2In2Game(t *testing.T) {
 	assert.Equal(t, 2, ValidatePokerFile(pokerFile))
 }
 
+func TestPlayer1Win2In3Game(t *testing.T) {
+	pokerFile := []string{winingHighCard + " " + losingHighCard, winingHighCard + " " + losingHighCard, losingHighCard + " " + winingHighCard}
+	assert.Equal(t, 2, ValidatePokerFile(pokerFile))
+}
+
 func ValidatePokerFile(list []string) int {
 	player1WinningCount := 0
 	for _, row := range list {
