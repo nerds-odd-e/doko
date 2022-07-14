@@ -1,11 +1,5 @@
 package meennew
 
-import "strings"
-
-type Round struct {
-	value string
-}
-
 func PokerHand(records []string) int {
 
 	countP1Winner := 0
@@ -19,18 +13,4 @@ func PokerHand(records []string) int {
 		}
 	}
 	return countP1Winner
-}
-
-func (r *Round) isPlayer1Winner() bool {
-	sortRank := []string{"A", "K", "Q"}
-	for _, rank := range sortRank {
-		founded := strings.Index(r.value, rank)
-		if founded < 14 && founded >= 0 {
-			return true
-		}
-		if founded >= 14 {
-			return false
-		}
-	}
-	return false
 }
