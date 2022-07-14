@@ -76,7 +76,7 @@ func TestPlayer1WinOnceUn1GameWithTenCardAndUnSortHighCard(t *testing.T) {
 }
 
 type Game struct {
-	game string
+	value string
 }
 
 func CalculatePlayer1WinGame(list []string) int {
@@ -90,6 +90,6 @@ func CalculatePlayer1WinGame(list []string) int {
 }
 
 func isPlayerOneWin(game Game) bool {
-	cardInHand := strings.Split(game.game, "  ")
+	cardInHand := strings.Split(game.value, "  ")
 	return findHighCardPointInHand(cardInHand[0]) > findHighCardPointInHand(cardInHand[1])
 }
