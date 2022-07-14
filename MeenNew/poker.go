@@ -1,6 +1,6 @@
 package meennew
 
-func PokerHand(records []string, records2 []string) int {
+func PokerHand(records2 []string) int {
 	if len(records2) == 0 {
 		return 0
 	}
