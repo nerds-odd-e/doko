@@ -83,5 +83,5 @@ func TestCompareP1WinHighCardWithJack(t *testing.T) {
 		"5S JS TS 3H 2S 4H 2H 5H 6S TS",
 	}
 	winRateP1 := PokerHand(records)
-	assert.Equal(t, winRateP1, 0)
+	assert.Equal(t, winRateP1, 1)
 }
