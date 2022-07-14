@@ -20,3 +20,8 @@ func TestP1WinWithQueen(t *testing.T) {
 	round := Round{value: "5S 9S QS 3H 2S 4H 2H 5H 6S 7S"}
 	assert.Equal(t, round.isPlayer1Winner(), true)
 }
+
+func TestP1WinWithJack(t *testing.T) {
+	round := Round{value: "5S 9S JS 3H 2S 4H 2H 5H 6S 7S"}
+	assert.Equal(t, round.isPlayer1Winner(), true)
+}
