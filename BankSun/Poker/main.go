@@ -1,6 +1,9 @@
 package main
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 type PokerGame struct {
 	Hand1 string
@@ -22,6 +25,8 @@ func calculatorPercentWinnerPoker(pokerFile []string) int {
 	var score int
 	for _, v := range pokerFile {
 		pokerHands := strings.Split(v, "    ")
+		pokerGame := poker().setHands(pokerHands[0], pokerHands[1])
+		fmt.Println("pokerGame :", pokerGame)
 		if compareHand(pokerHands[0], pokerHands[1]) {
 			score++
 		}
