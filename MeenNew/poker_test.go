@@ -37,7 +37,7 @@ func TestPlayerOneLose(t *testing.T) {
 
 func TestPlayerOneWinInTwoRound(t *testing.T) {
 	records := []string{
-		"5S 6D TS 3H 2S 4H 2H 5H 6S 9S",
+		"5S 6D TS 3H 2S 4H 2H 5H 6S QS",
 		"5S AD TS 3H 2S 4H 2H 5H 6S 9S",
 	}
 	winRateP1 := PokerHand(records)
