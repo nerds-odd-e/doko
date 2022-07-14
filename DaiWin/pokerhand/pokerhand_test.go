@@ -2,6 +2,7 @@ package main
 
 import (
 	"strconv"
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -83,8 +84,8 @@ func TestPlayer1WinOnceUn1GameWithTenCard(t *testing.T) {
 func ValidatePokerFile(list []string) int {
 	player1WinningCount := 0
 	for _, row := range list {
-		if isPlayer1Win(row) { // list   "2H 3H 4H 5H 8S 2H 3H 4H 5H 8S","2H 3H 4H 5H 8S 2H 3H 4H 5H 8S"
-			// findHighCardPointInHand(first) > findHighCardPointInHand(second)
+		hand := strings.Split(row, "  ")
+		if findHighCardPointInHand(hand[0]) > findHighCardPointInHand(hand[1]) { // list   "2H 3H 4H 5H 8S 2H 3H 4H 5H 8S","2H 3H 4H 5H 8S 2H 3H 4H 5H 8S"
 			player1WinningCount += 1
 		}
 	}
