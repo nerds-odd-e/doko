@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -15,7 +14,9 @@ func poker() PokerGame {
 }
 
 func (p PokerGame) setHands(Hand1 string, Hand2 string) PokerGame {
-	return PokerGame{Hand1: Hand1, Hand2: Hand2}
+	p.Hand1 = Hand1
+	p.Hand2 = Hand2
+	return p
 }
 
 func calculatorPercentWinnerPoker(pokerFile []string) int {
@@ -26,7 +27,7 @@ func calculatorPercentWinnerPoker(pokerFile []string) int {
 	for _, v := range pokerFile {
 		pokerHands := strings.Split(v, "    ")
 		pokerGame := poker().setHands(pokerHands[0], pokerHands[1])
-		fmt.Println("pokerGame :", pokerGame)
+		_ = pokerGame
 		if compareHand(pokerHands[0], pokerHands[1]) {
 			score++
 		}
