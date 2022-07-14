@@ -13,7 +13,7 @@ func TestNoRecord(t *testing.T) {
 }
 
 func TestOneRecord(t *testing.T) {
-	records2 := []string{"5S TD TS 3H 2S 4H 2H AH 6S QS"}
-	winRateP1 := PokerHand(records2)
+	records := []string{"5S TD TS 3H 2S 4H 2H AH 6S QS"}
+	winRateP1 := PokerHand(records)
 	assert.Equal(t, winRateP1, 1)
 }
