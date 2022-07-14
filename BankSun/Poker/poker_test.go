@@ -6,130 +6,100 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_pokerEmptyRow(t *testing.T) {
-	pokerFile := []string{}
-	a := calculatorPercentWinnerPoker(pokerFile)
-	b := float64(0)
-	assert.Equal(t, a, b)
+func TestPlayerWin0Game(t *testing.T) {
+	a := []string{}
+	assert.Equal(t, findWinnerPoker(a), 0)
 }
 
-func Test_pokerOneRow(t *testing.T) {
-	pokerFile := []string{
-		"TH JH QH KH AH    6H 5H 2H 3H 4H",
+func TestPlayerWin1Game(t *testing.T) {
+	a := []string{
+		"9H 9C 9D AS 9H    8H 9C 9D AS 8H",
 	}
-	a := calculatorPercentWinnerPoker(pokerFile)
-	b := float64(100)
-	assert.Equal(t, a, b)
+	assert.Equal(t, findWinnerPoker(a), 1)
 }
-
-func Test_pokerTwoRow(t *testing.T) {
-	pokerFile := []string{
-		"TH JH QH KH AH    6H 5H 2H 3H 4H",
-		"TH JH QH KH AH    6H 5H 2H 3H 4H",
+func TestPlayerWin2Game(t *testing.T) {
+	a := []string{
+		"9H 9C 9D AS 9H    8H 9C 9D AS 8H",
+		"9H 9C 9D AS 9H    8H 9C 9D AS 8H",
 	}
-	a := calculatorPercentWinnerPoker(pokerFile)
-	b := float64(100)
-	assert.Equal(t, a, b)
+	assert.Equal(t, findWinnerPoker(a), 2)
 }
 
-func Test_pokerTwoRowFifttyPercentWinRate(t *testing.T) {
-	pokerFile := []string{
-		"TH JH QH KH AH    6H 5H 2H 3H 4H",
-		"6H 5H 2H 3H 4H    TH JH QH KH AH",
+func TestPlayerWin1in2Game(t *testing.T) {
+	a := []string{
+		"8H 9C 9D AS 9H    7H 9C 9D AS 9H",
+		"8H 9C 9D AS 9H    9H 9C 9D AS 9H",
 	}
-	a := calculatorPercentWinnerPoker(pokerFile)
-	b := float64(50)
-	assert.Equal(t, a, b)
+	assert.Equal(t, findWinnerPoker(a), 1)
 }
 
-func Test_pokerThreeRowSixtySixPercentWinRate(t *testing.T) {
-	pokerFile := []string{
-		"TH JH QH KH AH    6H 5H 2H 3H 4H",
-		"TH JH QH KH AH    6H 5H 2H 3H 4H",
-		"6H 5H 2H 3H 4H    TH JH QH KH AH",
+func TestPlayerWin2in2Game(t *testing.T) {
+	a := []string{
+		"9H 9C 9D AS 9H    8H 9C 9D AS 9H",
+		"9H 9C 9D AS 9H    8H 9C 9D AS 9H",
 	}
-	a := calculatorPercentWinnerPoker(pokerFile)
-	b := float64(66.66666666666667)
-	assert.Equal(t, a, b)
+	assert.Equal(t, findWinnerPoker(a), 2)
 }
 
-func Test_pokerTwoRowZeroWinRate(t *testing.T) {
-	pokerFile := []string{
-		"6H 5H 2H 3H 4H    TH JH QH KH AH",
-		"6H 5H 2H 3H 4H    TH JH QH KH AH",
+type PokerHandBuilder struct {
+	highestHighcard string
+}
+
+func pokerHand() PokerHandBuilder {
+	return PokerHandBuilder{}
+}
+
+func (b PokerHandBuilder) highCardOf(card string) PokerHandBuilder {
+	b.highestHighcard = card
+	return b
+}
+
+func (b PokerHandBuilder) please() string {
+	return b.highestHighcard + "H 2C 3D 4S 6H"
+}
+
+func aGameOfTwoHighCards(p1HighCard string, p2HighCard string) []string {
+	return []string{pokerHand().highCardOf(p1HighCard).please() + "    " + pokerHand().highCardOf(p2HighCard).please()}
+}
+
+func twoGameOfTwoHighCards(p1HighCard []string, p2HighCard []string) []string {
+	return []string{
+		pokerHand().highCardOf(p1HighCard[0]).please() + "    " + pokerHand().highCardOf(p2HighCard[0]).please(),
+		pokerHand().highCardOf(p1HighCard[1]).please() + "    " + pokerHand().highCardOf(p2HighCard[1]).please(),
 	}
-	a := calculatorPercentWinnerPoker(pokerFile)
-	b := float64(0)
-	assert.Equal(t, a, b)
 }
 
-func Test_pokerTwoRow100WinRate(t *testing.T) {
-	pokerFile := []string{
-		"TH JH QH KH AH    6H 5H 2H 3H 4H",
-		"TH JH QH KH AH    6H 5H 2H 3H 4H",
-	}
-	a := calculatorPercentWinnerPoker(pokerFile)
-	b := float64(100)
-	assert.Equal(t, a, b)
+func TestP1WinByHighcard(t *testing.T) {
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("A", "K")), 1)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("K", "Q")), 1)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("Q", "J")), 1)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("J", "T")), 1)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("T", "9")), 1)
+	assert.Equal(t, findWinnerPoker(twoGameOfTwoHighCards([]string{"T", "J"}, []string{"9", "T"})), 2)
 }
 
-func Test_pokerRoyalflush(t *testing.T) {
-	a := calculatorPokerHand("TH JH QH KH AH")
-	b := 10
-	assert.Equal(t, a, b)
+func TestPlayer1LostByHighCard(t *testing.T) {
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("K", "A")), 0)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("Q", "A")), 0)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("J", "A")), 0)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("T", "A")), 0)
+	assert.Equal(t, findWinnerPoker(twoGameOfTwoHighCards([]string{"T", "J"}, []string{"A", "A"})), 0)
+}
+func TestPlayer1LostInTwoGameByHighCard(t *testing.T) {
+	assert.Equal(t, findWinnerPoker(twoGameOfTwoHighCards([]string{"T", "T"}, []string{"A", "8"})), 1)
 }
 
-func Test_pokerStraightflush(t *testing.T) {
-	a := calculatorPokerHand("6H 5H 2H 3H 4H")
-	b := 9
-	assert.Equal(t, a, b)
-}
-
-func Test_pokerFourOfKind(t *testing.T) {
-	a := calculatorPokerHand("9H 9H 9H 9H 4H")
-	b := 8
-	assert.Equal(t, a, b)
-}
-
-func Test_pokerFullhouse(t *testing.T) {
-	a := calculatorPokerHand("9H 9C 9D AS AH")
-	b := 7
-	assert.Equal(t, a, b)
-}
-
-func Test_pokerFlush(t *testing.T) {
-	a := calculatorPokerHand("AD JD 7D 9D AD")
-	b := 6
-	assert.Equal(t, a, b)
-}
-func Test_pokerStraight(t *testing.T) {
-	a := calculatorPokerHand("9H 8C 7D 6S 5H")
-	b := 5
-	assert.Equal(t, a, b)
-}
-func Test_pokerThreeofKind(t *testing.T) {
-	a := calculatorPokerHand("5H QC 2D 2S 2H")
-	b := 4
-	assert.Equal(t, a, b)
-}
-func Test_pokerTwoPair(t *testing.T) {
-	a := calculatorPokerHand("AH AC KD KS 9H")
-	b := 3
-	assert.Equal(t, a, b)
-}
-func Test_pokerOnePair(t *testing.T) {
-	a := calculatorPokerHand("4H 5C 8D AS AH")
-	b := 2
-	assert.Equal(t, a, b)
-}
-func Test_pokerHighCard_1(t *testing.T) {
-	a := calculatorPokerHand("5H 6C JD QS AH")
-	b := 1
-	assert.Equal(t, a, b)
-}
-
-func xTest_pokerHighCard_2(t *testing.T) {
-	a := calculatorPokerHand("JH 6C JD QS QH")
-	b := 1
-	assert.Equal(t, a, b)
+func TestFindHighest(t *testing.T) {
+	a := "4H JH TH AH 3H"
+	assert.Equal(t, findHighest(a), "A")
+	a = "4H JH AH 8H 3H"
+	assert.Equal(t, findHighest(a), "A")
+	a = "4H AH JH 8H 3H"
+	assert.Equal(t, findHighest(a), "A")
+	a = "AH 4H JH 8H 3H"
+	assert.Equal(t, findHighest(a), "A")
+	a = "QH 4H JH 8H 3H"
+	assert.Equal(t, findHighest(a), "Q")
+	a = "QH 4H JH KH 3H"
+	assert.Equal(t, findHighest(a), "Q")
 }

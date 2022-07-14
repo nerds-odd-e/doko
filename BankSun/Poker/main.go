@@ -4,62 +4,51 @@ import (
 	"strings"
 )
 
-func calculatorPercentWinnerPoker(pokerFile []string) float64 {
+type PokerGame struct {
+	hand1 string
+	hand2 string
+}
+
+func poker() PokerGame {
+	return PokerGame{}
+}
+
+func (p PokerGame) setHands(Hand1 string, Hand2 string) PokerGame {
+	p.hand1 = Hand1
+	p.hand2 = Hand2
+	return p
+}
+
+func findWinnerPoker(pokerFile []string) int {
 	if len(pokerFile) == 0 {
 		return 0
 	}
-	score := int64(0)
+	var score int
 	for _, v := range pokerFile {
 		pokerHands := strings.Split(v, "    ")
-		calculatorPokerHand(pokerHands[0])
-		if calculatorPokerHand(pokerHands[0]) > calculatorPokerHand(pokerHands[1]) {
+		if poker().setHands(pokerHands[0], pokerHands[1]).compareHand() {
 			score++
 		}
 	}
-	result := float64(float64(score*int64(100)) / float64(len(pokerFile)))
-	return result
+	return score
 }
-func calculatorPokerHand(hand string) int {
-	// valueOfCard := map[string]int{
-	// 	"T": 10,
-	// 	"J": 11,
-	// 	"Q": 12,
-	// 	"K": 13,
-	// 	"A": 14,
-	// }
-	// for _, v := range strings.Split(string, "") {
-	// 	rank := v[0:0]
-	// 	valueofRank := valueOfCard[rank]
-	// }
-	if hand == "TH JH QH KH AH" {
-		return 10
+
+func (game PokerGame) compareHand() bool {
+	if game.hand2[0] == 'A' {
+		return false
 	}
-	if hand == "6H 5H 2H 3H 4H" {
-		return 9
+	return game.hand1[0] == 'A' || game.hand1[0] > game.hand2[0] || (game.hand1[0] == 'K' && game.hand2[0] == 'Q') || (game.hand1[0] == 'J' && game.hand2[0] == 'T')
+}
+
+func findHighest(cards string) string {
+	// highest := cards[0]
+	for i := 0; i < len(cards); i++ {
+		if cards[i] == 'A' {
+			return string(cards[i])
+		}
+		if cards[i] == 'Q' {
+			return string(cards[i])
+		}
 	}
-	if hand == "9H 9H 9H 9H 4H" {
-		return 8
-	}
-	if hand == "9H 9C 9D AS AH" {
-		return 7
-	}
-	if hand == "AD JD 7D 9D AD" {
-		return 6
-	}
-	if hand == "9H 8C 7D 6S 5H" {
-		return 5
-	}
-	if hand == "5H QC 2D 2S 2H" {
-		return 4
-	}
-	if hand == "AH AC KD KS 9H" {
-		return 3
-	}
-	if hand == "4H 5C 8D AS AH" {
-		return 2
-	}
-	if hand == "5H 6C JD QS AH" {
-		return 1
-	}
-	return 0
+	return string(cards[9])
 }
