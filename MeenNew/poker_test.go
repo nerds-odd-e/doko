@@ -29,8 +29,7 @@ func TestTwoRecord(t *testing.T) {
 
 func TestPlayerOneWin1Time(t *testing.T) {
 	records := []string{
-		"5S 6D 7S 8H TS 4H 2H AH 6S 3S",
-		"5S 6D 7S 8H 3S 4H 2H AH 6S 9S",
+		"5S 6D TS 3H 2S 4H 2H AH 6S QS",
 	}
 	winRateP1 := PokerHand(records)
 	assert.Equal(t, winRateP1, 1)
