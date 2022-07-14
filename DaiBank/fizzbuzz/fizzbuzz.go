@@ -11,5 +11,4 @@ func findFizzBuzz(num int) string {
 		return "Buzz"
 	}
 	return fmt.Sprint(num)
-	return "1"
 }
