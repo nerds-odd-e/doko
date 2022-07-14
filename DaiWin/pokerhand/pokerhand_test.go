@@ -11,8 +11,8 @@ const highCardWithEigth = "2H 3H 4H 5H 8S"
 const highCardWithNine = "2H 3H 4H 5H 9S"
 const highCardWithKing = "2H 3H 4H 5H KS"
 const highCardWithAce = "2H 3H 5H 4H AS"
-const highCardWithQueen = "2H 3H 4H QS 5H"
-const highCardWithJack = "2H 3H 4H 5H JS"
+const highCardWithQueen = "2H 3H 4H 5H QS"
+const highCardWithJack = "2H 3H 4H JS 5H"
 const highCardWithTen = "2H TS 3H 4H 5H"
 const highCardWithSeven = "2H 3H 4H 5H 7S"
 
@@ -65,12 +65,12 @@ func TestPlayer1WinOnceUn1GameWithQueenCard(t *testing.T) {
 	assert.Equal(t, 1, CalculatePlayer1WinGame(pokerFile))
 }
 
-func TestPlayer1WinOnceUn1GameWithJackCard(t *testing.T) {
+func TestPlayer1WinOnceUn1GameWithJackCardAndUnSortHighCard(t *testing.T) {
 	pokerFile := []string{highCardWithJack + "  " + highCardWithTen}
 	assert.Equal(t, 1, CalculatePlayer1WinGame(pokerFile))
 }
 
-func TestPlayer1WinOnceUn1GameWithTenCard(t *testing.T) {
+func TestPlayer1WinOnceUn1GameWithTenCardAndUnSortHighCard(t *testing.T) {
 	pokerFile := []string{highCardWithTen + "  " + highCardWithNine}
 	assert.Equal(t, 1, CalculatePlayer1WinGame(pokerFile))
 }
