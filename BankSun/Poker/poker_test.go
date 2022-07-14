@@ -96,5 +96,5 @@ func TestFindHighest(t *testing.T) {
 
 func TestFindHighest2(t *testing.T) {
 	a := "4H JH AH 8H 3H"
-	assert.Equal(t, findHighest(a), "8")
+	assert.Equal(t, findHighest(a), "A")
 }
