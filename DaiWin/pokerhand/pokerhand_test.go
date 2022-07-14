@@ -1,7 +1,6 @@
 package main
 
 import (
-	"strconv"
 	"strings"
 	"testing"
 
@@ -85,30 +84,9 @@ func ValidatePokerFile(list []string) int {
 	player1WinningCount := 0
 	for _, row := range list {
 		hand := strings.Split(row, "  ")
-		if findHighCardPointInHand(hand[0]) > findHighCardPointInHand(hand[1]) { // list   "2H 3H 4H 5H 8S 2H 3H 4H 5H 8S","2H 3H 4H 5H 8S 2H 3H 4H 5H 8S"
+		if findHighCardPointInHand(hand[0]) > findHighCardPointInHand(hand[1]) {
 			player1WinningCount += 1
 		}
 	}
 	return player1WinningCount
-}
-
-func isPlayer1Win(row string) bool {
-	mapPointWithHonorCard := map[string]string{
-		"A": "14",
-		"K": "13",
-		"Q": "12",
-		"J": "11",
-		"T": "10",
-		"9": "9",
-		"8": "8",
-		"7": "7",
-		"6": "6",
-		"5": "5",
-		"4": "4",
-		"3": "3",
-		"2": "2",
-	}
-	p1CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(row[12])])
-	p2CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(row[28])])
-	return p1CardPoint > p2CardPoint
 }
