@@ -17,6 +17,7 @@ func PokerHand(records []string) int {
 }
 
 func isWinner(card string) bool {
+	
 	hasAce := strings.Index(card, "A")
 	if hasAce < 14 && hasAce >= 0 {
 		return true
