@@ -2,6 +2,7 @@ package models
 
 import (
 	"strconv"
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -92,7 +93,7 @@ func TestSortCardInHand(t *testing.T) {
 }
 
 func TestSortCardInHandWithTenAndKing(t *testing.T) {
-	assert.Equal(t, 10, sortCardInHand(unSortCardWithTenAndKing))
+	assert.Equal(t, 13, sortCardInHand(unSortCardWithTenAndKing))
 }
 
 func ValidatePokerFile(list []string) int {
@@ -143,17 +144,19 @@ func sortCardInHand(hand string) int {
 		"3": "3",
 		"2": "2",
 	}
-	p1CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(hand[6])])
-	return p1CardPoint
+
+	splitStr := strings.Split(hand, " ")
+	da := splitStr[0]                                              // 2H
+	by := da[0]                                                    //2 type byte
+	highCard, _ := strconv.Atoi(mapPointWithHonorCard[string(by)]) // 2 int
+	for _, v := range splitStr {
+		ddd := v[0]                                                 //2
+		strddd := string(ddd)                                       //2 string
+		pointCard, _ := strconv.Atoi(mapPointWithHonorCard[strddd]) // 2 int
+		if highCard < pointCard {
+			highCard = pointCard
+		}
+
+	}
+	return highCard
 }
-
-// splitStr := strings.Split(hand, " ")
-// 	highCard, _ := strconv.Atoi(mapPointWithHonorCard[splitStr[0]])
-
-// 	for _, v := range splitStr {
-// 		intPointCard, _ := strconv.Atoi(mapPointWithHonorCard[mapPointWithHonorCard[v]])
-// 		if highCard < intPointCard {
-// 			highCard = intPointCard
-// 		}
-
-// 	}
