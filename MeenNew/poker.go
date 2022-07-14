@@ -23,11 +23,11 @@ func PokerHand(records []string) int {
 func isPlayer1Winner(round Round) bool {
 	sortRank := []string{"A", "K", "Q"}
 	for _, rank := range sortRank {
-		hasQueen := strings.Index(round.value, rank)
-		if hasQueen < 14 && hasQueen >= 0 {
+		founded := strings.Index(round.value, rank)
+		if founded < 14 && founded >= 0 {
 			return true
 		}
-		if hasQueen >= 14 {
+		if founded >= 14 {
 			return false
 		}
 	}
