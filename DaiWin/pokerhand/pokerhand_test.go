@@ -59,13 +59,18 @@ func TestPlayer1Win2In3Game(t *testing.T) {
 	assert.Equal(t, 2, ValidatePokerFile(pokerFile))
 }
 
-func TestPlayer1WinOnceUn1GameWithHonorCard(t *testing.T) {
+func TestPlayer1WinOnceUn1GameWithKingCard(t *testing.T) {
 	pokerFile := []string{winingHighCard3 + " " + losingHighCard}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceUn1GameWithAceCard(t *testing.T) {
 	pokerFile := []string{winingHighCard4 + " " + winingHighCard3}
+	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
+}
+
+func TestPlayer1WinOnceUn1GameWithQueenCard(t *testing.T) {
+	pokerFile := []string{winingHighCard5 + " " + winingHighCard6}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
@@ -90,6 +95,13 @@ func isPlayer1Win(row string) bool {
 		covertP1Card = "14"
 	}
 
+	if row[12] == 'Q' {
+		covertP1Card = "12"
+	}
+
+	if row[12] == 'J' {
+		covertP1Card = "11"
+	}
 	if row[27] == 'K' {
 		covertP2Card = "13"
 	}
@@ -97,7 +109,13 @@ func isPlayer1Win(row string) bool {
 	if row[27] == 'A' {
 		covertP2Card = "14"
 	}
+	if row[27] == 'Q' {
+		covertP2Card = "12"
+	}
 
+	if row[27] == 'J' {
+		covertP2Card = "11"
+	}
 	p1CardPoint, err := strconv.Atoi(covertP1Card)
 	if err != nil {
 		panic(err)
