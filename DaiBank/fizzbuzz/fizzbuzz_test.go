@@ -10,6 +10,7 @@ func TestNormalNumber(t *testing.T) {
 	assert.Equal(t, "1", findFizzBuzz(1))
 	assert.Equal(t, "2", findFizzBuzz(2))
 	assert.Equal(t, "4", findFizzBuzz(4))
+	assert.Equal(t, "6", findFizzBuzz(6))
 }
 
 func TestFizz(t *testing.T) {
