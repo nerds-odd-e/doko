@@ -14,6 +14,7 @@ import (
 const winingHighCard = "2H 3H 4H 5H 8S"
 const winingHighCard2 = "2H 3H 4H 5H 9S"
 const winingHighCard3 = "2H 3H 4H 5H KS"
+const winingHighCard4 = "2H 3H 4H 5H AS"
 const losingHighCard = "2H 3H 4H 5H 7S"
 
 func TestPlayer1Win0TimesWhenNoGamePlayed(t *testing.T) {
@@ -59,6 +60,12 @@ func TestPlayer1WinOnceUn1GameWithHonorCard(t *testing.T) {
 	pokerFile := []string{winingHighCard3 + " " + losingHighCard}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
+
+func TestPlayer1WinOnceUn1GameWithAceCard(t *testing.T) {
+	pokerFile := []string{winingHighCard4 + " " + losingHighCard}
+	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
+}
+
 func ValidatePokerFile(list []string) int {
 	player1WinningCount := 0
 	for _, row := range list {
