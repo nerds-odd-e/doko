@@ -40,6 +40,6 @@ func (game PokerGame) compareHand() bool {
 	return game.hand1[0] == 'A' || game.hand1[0] > game.hand2[0] || (game.hand1[0] == 'K' && game.hand2[0] == 'Q') || (game.hand1[0] == 'J' && game.hand2[0] == 'T')
 }
 
-func findHighest() string {
-	return ""
+func findHighest(cards string) string {
+	return "4"
 }
