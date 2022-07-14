@@ -91,5 +91,5 @@ func TestPlayer1LostInTwoGameByHighCard(t *testing.T) {
 
 func TestFindHighest(t *testing.T) {
 	a := "4H JH TH AH 3H"
-	assert.Equal(t, findHighest(a), "4")
+	assert.Equal(t, findHighest(a), "A")
 }
