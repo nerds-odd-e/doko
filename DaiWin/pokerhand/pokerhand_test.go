@@ -87,6 +87,5 @@ func CalculatePlayer1WinGame(list []string) int {
 
 func xxx(row string) bool {
 	cardInHand := strings.Split(row, "  ")
-	r := findHighCardPointInHand(cardInHand[0]) > findHighCardPointInHand(cardInHand[1])
-	return r
+	return findHighCardPointInHand(cardInHand[0]) > findHighCardPointInHand(cardInHand[1])
 }
