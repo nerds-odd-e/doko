@@ -91,9 +91,9 @@ func TestSortCardInHand(t *testing.T) {
 	assert.Equal(t, 10, sortCardInHand(unSortCard))
 }
 
-// func TestSortCardInHandWithTenAndKing(t *testing.T) {
-// 	assert.Equal(t, 10, sortCardInHand(unSortCardWithTenAndKing))
-// }
+func TestSortCardInHandWithTenAndKing(t *testing.T) {
+	assert.Equal(t, 10, sortCardInHand(unSortCardWithTenAndKing))
+}
 
 func ValidatePokerFile(list []string) int {
 	player1WinningCount := 0
