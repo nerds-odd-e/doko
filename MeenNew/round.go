@@ -13,12 +13,7 @@ func (r *Round) isPlayer1Winner() bool {
 		if founded < 0 {
 			continue
 		}
-		if foundAtPlayer1(founded) {
-			return true
-		}
-		if !foundAtPlayer1(founded) {
-			return false
-		}
+		return foundAtPlayer1(founded)
 	}
 	return false
 }
