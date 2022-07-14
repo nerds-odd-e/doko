@@ -190,10 +190,8 @@ func aGameOfTwoHighCards(p1HighCard string, p2HighCard string) []string {
 	return []string{pokerHand().highCardOf(p1HighCard).please() + "    " + pokerHand().highCardOf(p2HighCard).please()}
 }
 
-func TestPlayerWin1in2GameHighAK(t *testing.T) {
+func TestP1WinByHighcard(t *testing.T) {
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("A", "K")), 1)
-}
-func TestPlayerWin1in2GameHighKQ(t *testing.T) {
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("K", "Q")), 1)
 }
 
