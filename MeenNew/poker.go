@@ -12,5 +12,6 @@ func PokerHand(records []string) int {
 		}
 		countP1Winner += 1
 	}
+	return countP1Winner
 	return len(records)
 }
