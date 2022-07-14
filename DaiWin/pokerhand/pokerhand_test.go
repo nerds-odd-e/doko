@@ -78,11 +78,15 @@ func TestPlayer1WinOnceUn1GameWithTenCardAndUnSortHighCard(t *testing.T) {
 func CalculatePlayer1WinGame(list []string) int {
 	player1WinningCount := 0
 	for _, row := range list {
-		cardInHand := strings.Split(row, "  ")
-		r := findHighCardPointInHand(cardInHand[0]) > findHighCardPointInHand(cardInHand[1]) 
-		if r {
-				player1WinningCount += 1
+		if xxx(row) {
+			player1WinningCount += 1
 		}
 	}
 	return player1WinningCount
+}
+
+func xxx(row string) bool {
+	cardInHand := strings.Split(row, "  ")
+	r := findHighCardPointInHand(cardInHand[0]) > findHighCardPointInHand(cardInHand[1])
+	return r
 }
