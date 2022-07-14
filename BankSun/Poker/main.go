@@ -3,7 +3,6 @@ package main
 import "strings"
 
 func calculatorPercentWinnerPoker(pokerFile []string) int {
-	// pokerHands := strings.Split(v, "    ")
 	if len(pokerFile) == 0 {
 		return 0
 	}
@@ -17,14 +16,6 @@ func calculatorPercentWinnerPoker(pokerFile []string) int {
 			score++
 		}
 	}
-	// return len(pokerFile)
-	// for _, v := range pokerFile {
-	// 	pokerHands := strings.Split(v, "    ")
-	// 	if pokerHands[0][0] > pokerHands[1][0] {
-	// 		score++
-	// 	}
-	// }
-	// result := float64(float64(score*int64(100)) / float64(len(pokerFile)))
 	return score
 }
 func calculatorPokerHand(hand string) int {
