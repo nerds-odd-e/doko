@@ -2,5 +2,5 @@
 package main
 
 func findFizzBuzz(num int) string {
-	return "BUZZ"
+	return "0"
 }

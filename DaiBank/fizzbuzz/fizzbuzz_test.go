@@ -6,6 +6,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestFizz(t *testing.T) {
-	assert.Equal(t, "BUZZ", findFizzBuzz(3))
+func TestNormalNumber(t *testing.T) {
+	assert.Equal(t, "0", findFizzBuzz(1))
 }
