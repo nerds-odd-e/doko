@@ -66,9 +66,7 @@ func inputFizzbuzz(input int64) string {
 		if input%5 == 0 {
 			return fizz + buzz
 		}
-		if input%3 == 0 {
-			return fizz
-		}
+		return fizz
 	}
 
 	if input%5 == 0 {
