@@ -105,6 +105,11 @@ func isPlayer1Win(row string) bool {
 		"9": "9",
 		"8": "8",
 		"7": "7",
+		"6": "6",
+		"5": "5",
+		"4": "4",
+		"3": "3",
+		"2": "2",
 	}
 	covertP1Card := string(row[12])
 	covertP2Card := string(row[27])
