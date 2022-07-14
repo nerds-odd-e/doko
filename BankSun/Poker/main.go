@@ -2,6 +2,19 @@ package main
 
 import "strings"
 
+type PokerGame struct {
+	Hand1 string
+	Hand2 string
+}
+
+func poker() PokerGame {
+	return PokerGame{}
+}
+
+func (p PokerGame) setHands(Hand1 string, Hand2 string) PokerGame {
+	return PokerGame{Hand1: Hand1, Hand2: Hand2}
+}
+
 func calculatorPercentWinnerPoker(pokerFile []string) int {
 	if len(pokerFile) == 0 {
 		return 0
