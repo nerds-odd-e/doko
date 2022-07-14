@@ -52,6 +52,6 @@ func TestP1DrawWithTen(t *testing.T) {
 }
 
 func TestP1Twopair(t *testing.T) {
-	round := Round{value: "2C TD TS 3H 2S 4C 2H 5H 8H 9H"}
+	round := Round{value: "2C TD 5S 3H 2S 4C 2H 5H TH 9H"}
 	assert.Equal(t, round.isPlayer1Winner(), false)
 }
