@@ -96,12 +96,13 @@ func ValidatePokerFile(list []string) int {
 }
 
 func isPlayer1Win(row string) bool {
-
+	mapPointWithHonorCard := map[string]string{
+		"K": "13",
+	}
 	covertP1Card := string(row[12])
 	covertP2Card := string(row[27])
-
 	if covertP1Card == "K" {
-		covertP1Card = "13"
+		covertP1Card = mapPointWithHonorCard[covertP1Card]
 	}
 
 	if covertP1Card == "A" {
