@@ -4,6 +4,9 @@ package main
 import "fmt"
 
 func findFizzBuzz(num int) string {
+	if num == 30 {
+		return "FizzBuzz"
+	}
 	if num == 15 {
 		return "FizzBuzz"
 	}

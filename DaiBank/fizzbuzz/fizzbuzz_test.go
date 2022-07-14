@@ -32,5 +32,5 @@ func TestNormalNumber15(t *testing.T) {
 }
 
 func TestFizzBuzz(t *testing.T) {
-	assert.Equal(t, "Fizz", findFizzBuzz(30))
+	assert.Equal(t, "FizzBuzz", findFizzBuzz(30))
 }
