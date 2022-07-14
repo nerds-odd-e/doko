@@ -10,7 +10,7 @@ import (
 const highCardWithEigth = "2H 3H 4H 5H 8S"
 const highCardWithNine = "2H 3H 4H 5H 9S"
 const highCardWithKing = "2H 3H 4H 5H KS"
-const highCardWithAce = "2H 3H AS 5H 4H"
+const highCardWithAce = "2H 3H 5H 4H AS"
 const highCardWithQueen = "2H 3H 4H QS 5H"
 const highCardWithJack = "2H 3H 4H 5H JS"
 const highCardWithTen = "2H 3H 4H 5H TS"
