@@ -134,7 +134,14 @@ import (
 // 	assert.Equal(t, a, b)
 // }
 
-func TestPlayerWin1Game(t *testing.T) {
+func TestPlayerWin0Game(t *testing.T) {
 	a := []string{}
+	assert.Equal(t, calculatorPercentWinnerPoker(a), 0)
+}
+
+func TestPlayerWin1Game(t *testing.T) {
+	a := []string{
+		"9H 9C 9D AS 9H    9H 9C 9D AS 8H",
+	}
 	assert.Equal(t, calculatorPercentWinnerPoker(a), 0)
 }
