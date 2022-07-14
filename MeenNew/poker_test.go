@@ -53,3 +53,11 @@ func TestPlayer2WinOf3Round(t *testing.T) {
 	winRateP1 := PokerHand(records)
 	assert.Equal(t, winRateP1, 2)
 }
+
+func TestCompareP1WinHighCard(t *testing.T) {
+	records := []string{
+		"5S 6D TS 3H 2S 4H 2H 5H 6S QS",
+	}
+	winRateP1 := PokerHand(records)
+	assert.Equal(t, winRateP1, 0)
+}
