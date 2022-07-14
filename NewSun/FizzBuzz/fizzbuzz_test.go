@@ -60,15 +60,15 @@ func Test_FizzbuzzInput45(t *testing.T) {
 }
 
 func inputFizzbuzz(input int64) string {
+	const fizz = "Fizz"
+	const buzz = "Buzz"
 	if input%3 == 0 && input%5 == 0 {
 		return "FizzBuzz"
 	}
 	if input%3 == 0 {
-		const fizz = "Fizz"
 		return fizz
 	}
 	if input%5 == 0 {
-		const buzz = "Buzz"
 		return buzz
 	}
 	return fmt.Sprint(input)
