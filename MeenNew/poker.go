@@ -21,5 +21,5 @@ func isWinner(card string) bool {
 	if hasAce < 14 && hasAce >= 0 {
 		return true
 	}
-	return hasAce < 14 && hasAce >= 0
+	return false
 }
