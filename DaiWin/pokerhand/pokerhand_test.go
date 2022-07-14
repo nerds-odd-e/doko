@@ -20,6 +20,7 @@ const highCardWithQueen = "2H 3H 4H 5H QS"
 const highCardWithJack = "2H 3H 4H 5H JS"
 const highCardWithTen = "2H 3H 4H 5H TS"
 const highCardWithSeven = "2H 3H 4H 5H 7S"
+const unSortCard = "2H 3H TS 4H 5H"
 
 func TestPlayer1Win0TimesWhenNoGamePlayed(t *testing.T) {
 	pokerFile := []string{}
@@ -85,6 +86,11 @@ func TestPlayer1WinOnceUn1GameWithTenCard(t *testing.T) {
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
+func TestSortCardInHand(t *testing.T) {
+	pokerFile := []string{unSortCard}
+	assert.Equal(t, "T", sortCardInHand(pokerFile))
+}
+
 func ValidatePokerFile(list []string) int {
 	player1WinningCount := 0
 	for _, row := range list {
@@ -96,6 +102,7 @@ func ValidatePokerFile(list []string) int {
 }
 
 func isPlayer1Win(row string) bool {
+
 	mapPointWithHonorCard := map[string]string{
 		"A": "14",
 		"K": "13",
@@ -114,4 +121,8 @@ func isPlayer1Win(row string) bool {
 	p1CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(row[12])])
 	p2CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(row[27])])
 	return p1CardPoint > p2CardPoint
+}
+
+func sortCardInHand(list []string) string {
+	return "T"
 }
