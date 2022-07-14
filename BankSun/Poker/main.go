@@ -19,7 +19,7 @@ func (p PokerGame) setHands(Hand1 string, Hand2 string) PokerGame {
 	return p
 }
 
-func calculatorPercentWinnerPoker(pokerFile []string) int {
+func findWinnerPoker(pokerFile []string) int {
 	if len(pokerFile) == 0 {
 		return 0
 	}
@@ -38,4 +38,8 @@ func (game PokerGame) compareHand() bool {
 		return false
 	}
 	return game.hand1[0] == 'A' || game.hand1[0] > game.hand2[0] || (game.hand1[0] == 'K' && game.hand2[0] == 'Q') || (game.hand1[0] == 'J' && game.hand2[0] == 'T')
+}
+
+func findHighest() string {
+	return ""
 }

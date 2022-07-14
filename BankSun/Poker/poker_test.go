@@ -8,21 +8,21 @@ import (
 
 func TestPlayerWin0Game(t *testing.T) {
 	a := []string{}
-	assert.Equal(t, calculatorPercentWinnerPoker(a), 0)
+	assert.Equal(t, findWinnerPoker(a), 0)
 }
 
 func TestPlayerWin1Game(t *testing.T) {
 	a := []string{
 		"9H 9C 9D AS 9H    8H 9C 9D AS 8H",
 	}
-	assert.Equal(t, calculatorPercentWinnerPoker(a), 1)
+	assert.Equal(t, findWinnerPoker(a), 1)
 }
 func TestPlayerWin2Game(t *testing.T) {
 	a := []string{
 		"9H 9C 9D AS 9H    8H 9C 9D AS 8H",
 		"9H 9C 9D AS 9H    8H 9C 9D AS 8H",
 	}
-	assert.Equal(t, calculatorPercentWinnerPoker(a), 2)
+	assert.Equal(t, findWinnerPoker(a), 2)
 }
 
 func TestPlayerWin1in2Game(t *testing.T) {
@@ -30,7 +30,7 @@ func TestPlayerWin1in2Game(t *testing.T) {
 		"8H 9C 9D AS 9H    7H 9C 9D AS 9H",
 		"8H 9C 9D AS 9H    9H 9C 9D AS 9H",
 	}
-	assert.Equal(t, calculatorPercentWinnerPoker(a), 1)
+	assert.Equal(t, findWinnerPoker(a), 1)
 }
 
 func TestPlayerWin2in2Game(t *testing.T) {
@@ -38,7 +38,7 @@ func TestPlayerWin2in2Game(t *testing.T) {
 		"9H 9C 9D AS 9H    8H 9C 9D AS 9H",
 		"9H 9C 9D AS 9H    8H 9C 9D AS 9H",
 	}
-	assert.Equal(t, calculatorPercentWinnerPoker(a), 2)
+	assert.Equal(t, findWinnerPoker(a), 2)
 }
 
 type PokerHandBuilder struct {
@@ -70,21 +70,25 @@ func twoGameOfTwoHighCards(p1HighCard []string, p2HighCard []string) []string {
 }
 
 func TestP1WinByHighcard(t *testing.T) {
-	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("A", "K")), 1)
-	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("K", "Q")), 1)
-	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("Q", "J")), 1)
-	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("J", "T")), 1)
-	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("T", "9")), 1)
-	assert.Equal(t, calculatorPercentWinnerPoker(twoGameOfTwoHighCards([]string{"T", "J"}, []string{"9", "T"})), 2)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("A", "K")), 1)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("K", "Q")), 1)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("Q", "J")), 1)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("J", "T")), 1)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("T", "9")), 1)
+	assert.Equal(t, findWinnerPoker(twoGameOfTwoHighCards([]string{"T", "J"}, []string{"9", "T"})), 2)
 }
 
 func TestPlayer1LostByHighCard(t *testing.T) {
-	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("K", "A")), 0)
-	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("Q", "A")), 0)
-	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("J", "A")), 0)
-	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("T", "A")), 0)
-	assert.Equal(t, calculatorPercentWinnerPoker(twoGameOfTwoHighCards([]string{"T", "J"}, []string{"A", "A"})), 0)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("K", "A")), 0)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("Q", "A")), 0)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("J", "A")), 0)
+	assert.Equal(t, findWinnerPoker(aGameOfTwoHighCards("T", "A")), 0)
+	assert.Equal(t, findWinnerPoker(twoGameOfTwoHighCards([]string{"T", "J"}, []string{"A", "A"})), 0)
 }
 func TestPlayer1LostInTwoGameByHighCard(t *testing.T) {
-	assert.Equal(t, calculatorPercentWinnerPoker(twoGameOfTwoHighCards([]string{"T", "T"}, []string{"A", "8"})), 1)
+	assert.Equal(t, findWinnerPoker(twoGameOfTwoHighCards([]string{"T", "T"}, []string{"A", "8"})), 1)
+}
+
+func TestSortCards(t *testing.T) {
+	assert.Equal(t, findHighest(), "")
 }
