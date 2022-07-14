@@ -96,45 +96,47 @@ func ValidatePokerFile(list []string) int {
 }
 
 func isPlayer1Win(row string) bool {
+
 	covertP1Card := string(row[12])
 	covertP2Card := string(row[27])
-	if row[12] == 'K' {
+
+	if covertP1Card == "K" {
 		covertP1Card = "13"
 	}
 
-	if row[12] == 'A' {
+	if covertP1Card == "A" {
 		covertP1Card = "14"
 	}
 
-	if row[12] == 'Q' {
+	if covertP1Card == "Q" {
 		covertP1Card = "12"
 	}
 
-	if row[12] == 'J' {
+	if covertP1Card == "J" {
 		covertP1Card = "11"
 	}
 
-	if row[12] == 'T' {
+	if covertP1Card == "T" {
 		covertP1Card = "10"
 	}
 
-	if row[27] == 'K' {
+	if covertP2Card == "K" {
 		covertP2Card = "13"
 	}
 
-	if row[27] == 'A' {
+	if covertP2Card == "A" {
 		covertP2Card = "14"
 	}
 
-	if row[27] == 'Q' {
+	if covertP2Card == "Q" {
 		covertP2Card = "12"
 	}
 
-	if row[27] == 'J' {
+	if covertP2Card == "J" {
 		covertP2Card = "11"
 	}
 
-	if row[27] == 'T' {
+	if covertP2Card == "T" {
 		covertP2Card = "10"
 	}
 
