@@ -174,5 +174,5 @@ func TestPlayerWin1in2GameHigh(t *testing.T) {
 		"AH 9C 9D AS 9H    KH 9C 9D AS 9H",
 		"8H 9C 9D AS 9H    9H 9C 9D AS 9H",
 	}
-	assert.Equal(t, calculatorPercentWinnerPoker(a), 0)
+	assert.Equal(t, calculatorPercentWinnerPoker(a), 1)
 }
