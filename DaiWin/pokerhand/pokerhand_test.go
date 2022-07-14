@@ -75,17 +75,21 @@ func TestPlayer1WinOnceUn1GameWithTenCardAndUnSortHighCard(t *testing.T) {
 	assert.Equal(t, 1, CalculatePlayer1WinGame(pokerFile))
 }
 
+type Game struct {
+	game string
+}
+
 func CalculatePlayer1WinGame(list []string) int {
 	player1WinningCount := 0
 	for _, row := range list {
-		if isPlayerOneWin(row) {
+		if isPlayerOneWin(Game{row}) {
 			player1WinningCount += 1
 		}
 	}
 	return player1WinningCount
 }
 
-func isPlayerOneWin(match string) bool {
-	cardInHand := strings.Split(match, "  ")
+func isPlayerOneWin(game Game) bool {
+	cardInHand := strings.Split(game.game, "  ")
 	return findHighCardPointInHand(cardInHand[0]) > findHighCardPointInHand(cardInHand[1])
 }
