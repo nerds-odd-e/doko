@@ -190,12 +190,20 @@ func aGameOfTwoHighCards(p1HighCard string, p2HighCard string) []string {
 	return []string{pokerHand().highCardOf(p1HighCard).please() + "    " + pokerHand().highCardOf(p2HighCard).please()}
 }
 
+func twoGameOfTwoHighCards(p1HighCard string, p2HighCard string) []string {
+	return []string{
+		pokerHand().highCardOf(p1HighCard).please() + "    " + pokerHand().highCardOf(p2HighCard).please(),
+		pokerHand().highCardOf(p1HighCard).please() + "    " + pokerHand().highCardOf(p2HighCard).please(),
+	}
+}
+
 func TestP1WinByHighcard(t *testing.T) {
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("A", "K")), 1)
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("K", "Q")), 1)
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("Q", "J")), 1)
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("J", "T")), 1)
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("T", "9")), 1)
+	assert.Equal(t, calculatorPercentWinnerPoker(twoGameOfTwoHighCards("T", "9")), 2)
 }
 
 func TestPlayer1LostByHighCard(t *testing.T) {
