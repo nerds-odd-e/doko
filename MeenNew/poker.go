@@ -1,31 +1,15 @@
 package meennew
 
-import "math"
-
-func PokerHand(records []string) float64 {
-	// winRecord := 0
-	// if records[0] == "5S TD TS 3H 2S" {
-
-	// }
+func PokerHand(records []string) int {
+	countP1Winner := 0
 	if len(records) == 0 {
-		return 0
+		return countP1Winner
 	}
-	round := float64(len(records) / 2)
-	if len(records) == 2 {
-		return math.Floor(1.0/round*100*100) / 100
-	}
-	for i := 0; i < len(records); i += 2 {
-		if winning(records[2]) {
-			return math.Floor(1.0/round*100*100) / 100
+	for _, value := range records {
+		round := Round{value}
+		if round.isPlayer1Winner() {
+			countP1Winner += 1
 		}
 	}
-	if winning(records[2]) {
-		return math.Floor(2.0/round*100*100) / 100
-	}
-
-	return 0
-}
-
-func winning(pokerHand string) bool {
-	return pokerHand == "5S TD TS 3H 2S"
+	return countP1Winner
 }
