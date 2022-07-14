@@ -85,3 +85,6 @@ func TestPlayer1LostByHighCard(t *testing.T) {
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("T", "A")), 0)
 	assert.Equal(t, calculatorPercentWinnerPoker(twoGameOfTwoHighCards([]string{"T", "J"}, []string{"A", "A"})), 0)
 }
+func TestPlayer1LostInTwoGameByHighCard(t *testing.T) {
+	assert.Equal(t, calculatorPercentWinnerPoker(twoGameOfTwoHighCards([]string{"T", "T"}, []string{"A", "8"})), 1)
+}
