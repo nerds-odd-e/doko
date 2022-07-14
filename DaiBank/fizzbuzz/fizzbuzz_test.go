@@ -27,8 +27,8 @@ func TestNormalNumber6(t *testing.T) {
 	assert.Equal(t, "Fizz", findFizzBuzz(6))
 }
 
-func TestNormalNumber99(t *testing.T) {
-	assert.Equal(t, "Fizz", findFizzBuzz(99))
+func TestNormalNumber60(t *testing.T) {
+	assert.Equal(t, "FizzBuzz", findFizzBuzz(60))
 }
 
 func TestNormalNumber15(t *testing.T) {
