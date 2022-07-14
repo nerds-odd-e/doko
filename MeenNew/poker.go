@@ -10,6 +10,7 @@ func PokerHand(records []string) int {
 		if v[3] == '6' {
 			return countP1Winner
 		}
+		countP1Winner += 1
 	}
 	return len(records)
 }
