@@ -1,9 +1,7 @@
 package models
 
 import (
-	"sort"
 	"strconv"
-	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -90,11 +88,11 @@ func TestPlayer1WinOnceUn1GameWithTenCard(t *testing.T) {
 }
 
 func TestSortCardInHand(t *testing.T) {
-	assert.Equal(t, "TS", sortCardInHand(unSortCard))
+	assert.Equal(t, 5, sortCardInHand(unSortCard))
 }
 
 func TestSortCardInHandWithTenAndKing(t *testing.T) {
-	assert.Equal(t, "TS", sortCardInHand(unSortCardWithTenAndKing))
+	assert.Equal(t, 5, sortCardInHand(unSortCardWithTenAndKing))
 }
 
 func ValidatePokerFile(list []string) int {
@@ -108,7 +106,6 @@ func ValidatePokerFile(list []string) int {
 }
 
 func isPlayer1Win(row string) bool {
-
 	mapPointWithHonorCard := map[string]string{
 		"A": "14",
 		"K": "13",
@@ -129,9 +126,34 @@ func isPlayer1Win(row string) bool {
 	return p1CardPoint > p2CardPoint
 }
 
-func sortCardInHand(hand string) string {
+func sortCardInHand(hand string) int {
 	//hand = "2H 3H TS 4H 5H"
-	splitStr := strings.Split(hand, " ")
-	sort.Strings(splitStr)
-	return splitStr[4]
+	mapPointWithHonorCard := map[string]string{
+		"A": "14",
+		"K": "13",
+		"Q": "12",
+		"J": "11",
+		"T": "10",
+		"9": "9",
+		"8": "8",
+		"7": "7",
+		"6": "6",
+		"5": "5",
+		"4": "4",
+		"3": "3",
+		"2": "2",
+	}
+	p1CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(hand[12])])
+	return p1CardPoint
 }
+
+// splitStr := strings.Split(hand, " ")
+// 	highCard, _ := strconv.Atoi(mapPointWithHonorCard[splitStr[0]])
+
+// 	for _, v := range splitStr {
+// 		intPointCard, _ := strconv.Atoi(mapPointWithHonorCard[mapPointWithHonorCard[v]])
+// 		if highCard < intPointCard {
+// 			highCard = intPointCard
+// 		}
+
+// 	}
