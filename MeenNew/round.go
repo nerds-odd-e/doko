@@ -24,5 +24,5 @@ func (r *Round) isPlayer1Winner() bool {
 }
 
 func foundAtPlayer1(founded int) bool {
-	return founded < 14 && founded >= 0
+	return founded < 14
 }
