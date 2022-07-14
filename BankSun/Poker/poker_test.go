@@ -178,7 +178,6 @@ func TestPlayerWin1in2GameHighAK(t *testing.T) {
 func TestPlayerWin1in2GameHighKQ(t *testing.T) {
 	a := []string{
 		"KH 9C 9D AS 9H    QH 9C 9D AS 9H",
-		"8H 9C 9D AS 9H    9H 9C 9D AS 9H",
 	}
 	assert.Equal(t, calculatorPercentWinnerPoker(a), 1)
 }
@@ -186,7 +185,6 @@ func TestPlayerWin1in2GameHighKQ(t *testing.T) {
 func TestPlayerWin0in2GameHighKA(t *testing.T) {
 	a := []string{
 		"KH 9C 9D AS 9H    AH 9C 9D AS 9H",
-		"8H 9C 9D AS 9H    9H 9C 9D AS 9H",
 	}
 	assert.Equal(t, calculatorPercentWinnerPoker(a), 1)
 }
@@ -194,7 +192,6 @@ func TestPlayerWin0in2GameHighKA(t *testing.T) {
 func TestPlayerWin1in2GameHighQJ(t *testing.T) {
 	a := []string{
 		"QH 9C 9D AS 9H    JH 9C 9D AS 9H",
-		"8H 9C 9D AS 9H    9H 9C 9D AS 9H",
 	}
 	assert.Equal(t, calculatorPercentWinnerPoker(a), 1)
 }
