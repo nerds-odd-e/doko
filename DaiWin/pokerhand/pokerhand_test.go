@@ -12,14 +12,14 @@ import (
 // 	LosingHighCard string
 // }
 
-const winingHighCard = "2H 3H 4H 5H 8S"
-const winingHighCard2 = "2H 3H 4H 5H 9S"
-const winingHighCard3 = "2H 3H 4H 5H KS"
-const winingHighCard4 = "2H 3H 4H 5H AS"
-const winingHighCard5 = "2H 3H 4H 5H QS"
-const winingHighCard6 = "2H 3H 4H 5H JS"
-const winingHighCard7 = "2H 3H 4H 5H TS"
-const losingHighCard = "2H 3H 4H 5H 7S"
+const highCardWithEigth = "2H 3H 4H 5H 8S"
+const highCardWithNine = "2H 3H 4H 5H 9S"
+const highCardWithKing = "2H 3H 4H 5H KS"
+const highCardWithAce = "2H 3H 4H 5H AS"
+const highCardWithQueen = "2H 3H 4H 5H QS"
+const highCardWithJack = "2H 3H 4H 5H JS"
+const highCardWithTen = "2H 3H 4H 5H TS"
+const highCardWithSeven = "2H 3H 4H 5H 7S"
 
 func TestPlayer1Win0TimesWhenNoGamePlayed(t *testing.T) {
 	pokerFile := []string{}
@@ -27,61 +27,61 @@ func TestPlayer1Win0TimesWhenNoGamePlayed(t *testing.T) {
 }
 
 func TestPlayer1WinOnceIn1Game(t *testing.T) {
-	pokerFile := []string{winingHighCard + " " + losingHighCard}
+	pokerFile := []string{highCardWithEigth + " " + highCardWithSeven}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 func TestPlayer1WinOnceIn1Game1(t *testing.T) {
-	pokerFile := []string{winingHighCard2 + " " + losingHighCard}
+	pokerFile := []string{highCardWithNine + " " + highCardWithSeven}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceIn2Game(t *testing.T) {
-	pokerFile := []string{winingHighCard + " " + losingHighCard, losingHighCard + " " + winingHighCard}
+	pokerFile := []string{highCardWithEigth + " " + highCardWithSeven, highCardWithSeven + " " + highCardWithEigth}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1LoseOnceIn1Game(t *testing.T) {
-	pokerFile := []string{losingHighCard + " " + winingHighCard}
+	pokerFile := []string{highCardWithSeven + " " + highCardWithEigth}
 	assert.Equal(t, 0, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1LoseOnceIn2Game(t *testing.T) {
-	pokerFile := []string{losingHighCard + " " + winingHighCard, winingHighCard + " " + losingHighCard}
+	pokerFile := []string{highCardWithSeven + " " + highCardWithEigth, highCardWithEigth + " " + highCardWithSeven}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1Win2In2Game(t *testing.T) {
-	pokerFile := []string{winingHighCard + " " + losingHighCard, winingHighCard + " " + losingHighCard}
+	pokerFile := []string{highCardWithEigth + " " + highCardWithSeven, highCardWithEigth + " " + highCardWithSeven}
 	assert.Equal(t, 2, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1Win2In3Game(t *testing.T) {
-	pokerFile := []string{winingHighCard + " " + losingHighCard, winingHighCard + " " + losingHighCard, losingHighCard + " " + losingHighCard}
+	pokerFile := []string{highCardWithEigth + " " + highCardWithSeven, highCardWithEigth + " " + highCardWithSeven, highCardWithSeven + " " + highCardWithSeven}
 	assert.Equal(t, 2, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceUn1GameWithKingCard(t *testing.T) {
-	pokerFile := []string{winingHighCard3 + " " + losingHighCard}
+	pokerFile := []string{highCardWithKing + " " + highCardWithSeven}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceUn1GameWithAceCard(t *testing.T) {
-	pokerFile := []string{winingHighCard4 + " " + winingHighCard3}
+	pokerFile := []string{highCardWithAce + " " + highCardWithKing}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceUn1GameWithQueenCard(t *testing.T) {
-	pokerFile := []string{winingHighCard5 + " " + winingHighCard6}
+	pokerFile := []string{highCardWithQueen + " " + highCardWithJack}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceUn1GameWithJackCard(t *testing.T) {
-	pokerFile := []string{winingHighCard6 + " " + winingHighCard7}
+	pokerFile := []string{highCardWithJack + " " + highCardWithTen}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceUn1GameWithTenCard(t *testing.T) {
-	pokerFile := []string{winingHighCard7 + " " + winingHighCard2}
+	pokerFile := []string{highCardWithTen + " " + highCardWithNine}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
