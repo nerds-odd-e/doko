@@ -15,5 +15,5 @@ func PokerHand(records []string) int {
 }
 
 func isWinner(v string) bool {
-	return v[3] == 'A'
+	return v[3] == 'A' || v[5] == 'T'
 }
