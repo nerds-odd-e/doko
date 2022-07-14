@@ -111,13 +111,7 @@ func isPlayer1Win(row string) bool {
 		"3": "3",
 		"2": "2",
 	}
-	p1CardPoint, err := strconv.Atoi(mapPointWithHonorCard[string(row[12])])
-	if err != nil {
-		panic(err)
-	}
-	p2CardPoint, err := strconv.Atoi(mapPointWithHonorCard[string(row[27])])
-	if err != nil {
-		panic(err)
-	}
+	p1CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(row[12])])
+	p2CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(row[27])])
 	return p1CardPoint > p2CardPoint
 }
