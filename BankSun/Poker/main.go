@@ -4,11 +4,11 @@ import (
 	"strings"
 )
 
-func calculatorPercentWinnerPoker(pokerFile []string) float64 {
+func calculatorPercentWinnerPoker(pokerFile []string) int {
 	if len(pokerFile) == 0 {
 		return 0
 	}
-	score := int64(0)
+	score := 0
 	for _, v := range pokerFile {
 		pokerHands := strings.Split(v, "    ")
 		calculatorPokerHand(pokerHands[0])
@@ -16,8 +16,8 @@ func calculatorPercentWinnerPoker(pokerFile []string) float64 {
 			score++
 		}
 	}
-	result := float64(float64(score*int64(100)) / float64(len(pokerFile)))
-	return result
+	// result := float64(float64(score*int64(100)) / float64(len(pokerFile)))
+	return score
 }
 func calculatorPokerHand(hand string) int {
 	// valueOfCard := map[string]int{
