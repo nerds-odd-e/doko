@@ -15,7 +15,6 @@ func PokerHand(records []string) float64 {
 		return math.Floor(1.0/round*100*100) / 100
 	}
 	for i := 0; i < len(records); i += 2 {
-		var p1win float64
 		if winning(records[2]) {
 			return math.Floor(1.0/round*100*100) / 100
 		}
