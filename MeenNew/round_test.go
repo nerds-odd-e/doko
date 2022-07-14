@@ -28,10 +28,10 @@ func TestP1WinWithJack(t *testing.T) {
 
 func TestP1WinWithNine(t *testing.T) {
 	round := Round{value: "5S 9S 8S 3H 2S 4H 2H 5H 6S 7S"}
-	assert.Equal(t, round.isPlayer1Winner(), false)
+	assert.Equal(t, round.isPlayer1Winner(), true)
 }
 
 func TestP1WinWithEight(t *testing.T) {
 	round := Round{value: "5S 8S 7S 3H 2S 4H 2H 5H 6S 7S"}
-	assert.Equal(t, round.isPlayer1Winner(), false)
+	assert.Equal(t, round.isPlayer1Winner(), true)
 }
