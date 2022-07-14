@@ -99,7 +99,8 @@ func TestSortCardInHandWithTenAndKing(t *testing.T) {
 func ValidatePokerFile(list []string) int {
 	player1WinningCount := 0
 	for _, row := range list {
-		if isPlayer1Win(row) {
+		if isPlayer1Win(row) { // list   "2H 3H 4H 5H 8S 2H 3H 4H 5H 8S","2H 3H 4H 5H 8S 2H 3H 4H 5H 8S"
+			// findHighCardPointInHand(first) > findHighCardPointInHand(second)
 			player1WinningCount += 1
 		}
 	}
@@ -128,7 +129,6 @@ func isPlayer1Win(row string) bool {
 }
 
 func findHighCardPointInHand(hand string) int {
-	//hand = "2H 3H TS 4H 5H"
 	mapPointWithHonorCard := map[string]string{
 		"A": "14",
 		"K": "13",
@@ -146,10 +146,10 @@ func findHighCardPointInHand(hand string) int {
 	}
 
 	arrCardInHand := strings.Split(hand, " ")
-	firstCard := arrCardInHand[0]                                            // 2H
-	highCard, _ := strconv.Atoi(mapPointWithHonorCard[string(firstCard[0])]) // 2 int
+	firstCard := arrCardInHand[0]
+	highCard, _ := strconv.Atoi(mapPointWithHonorCard[string(firstCard[0])])
 	for _, v := range arrCardInHand {
-		pointCard, _ := strconv.Atoi(mapPointWithHonorCard[string(v[0])]) // 2 int
+		pointCard, _ := strconv.Atoi(mapPointWithHonorCard[string(v[0])])
 		if highCard < pointCard {
 			highCard = pointCard
 		}
