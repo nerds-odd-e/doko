@@ -27,56 +27,56 @@ func TestPlayer1Win0TimesWhenNoGamePlayed(t *testing.T) {
 }
 
 func TestPlayer1WinOnceIn1Game(t *testing.T) {
-	pokerFile := []string{highCardWithEigth + " " + highCardWithSeven}
+	pokerFile := []string{highCardWithEigth + "  " + highCardWithSeven}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 func TestPlayer1WinOnceIn1Game1(t *testing.T) {
-	pokerFile := []string{highCardWithNine + " " + highCardWithSeven}
+	pokerFile := []string{highCardWithNine + "  " + highCardWithSeven}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceIn2Game(t *testing.T) {
-	pokerFile := []string{highCardWithEigth + " " + highCardWithSeven, highCardWithSeven + " " + highCardWithEigth}
+	pokerFile := []string{highCardWithEigth + "  " + highCardWithSeven, highCardWithSeven + "  " + highCardWithEigth}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1LoseOnceIn1Game(t *testing.T) {
-	pokerFile := []string{highCardWithSeven + " " + highCardWithEigth}
+	pokerFile := []string{highCardWithSeven + "  " + highCardWithEigth}
 	assert.Equal(t, 0, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1LoseOnceIn2Game(t *testing.T) {
-	pokerFile := []string{highCardWithSeven + " " + highCardWithEigth, highCardWithEigth + " " + highCardWithSeven}
+	pokerFile := []string{highCardWithSeven + "  " + highCardWithEigth, highCardWithEigth + "  " + highCardWithSeven}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1Win2In2Game(t *testing.T) {
-	pokerFile := []string{highCardWithEigth + " " + highCardWithSeven, highCardWithEigth + " " + highCardWithSeven}
+	pokerFile := []string{highCardWithEigth + "  " + highCardWithSeven, highCardWithEigth + "  " + highCardWithSeven}
 	assert.Equal(t, 2, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceUn1GameWithKingCard(t *testing.T) {
-	pokerFile := []string{highCardWithKing + " " + highCardWithSeven}
+	pokerFile := []string{highCardWithKing + "  " + highCardWithSeven}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceUn1GameWithAceCard(t *testing.T) {
-	pokerFile := []string{highCardWithAce + " " + highCardWithKing}
+	pokerFile := []string{highCardWithAce + "  " + highCardWithKing}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceUn1GameWithQueenCard(t *testing.T) {
-	pokerFile := []string{highCardWithQueen + " " + highCardWithJack}
+	pokerFile := []string{highCardWithQueen + "  " + highCardWithJack}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceUn1GameWithJackCard(t *testing.T) {
-	pokerFile := []string{highCardWithJack + " " + highCardWithTen}
+	pokerFile := []string{highCardWithJack + "  " + highCardWithTen}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
 func TestPlayer1WinOnceUn1GameWithTenCard(t *testing.T) {
-	pokerFile := []string{highCardWithTen + " " + highCardWithNine}
+	pokerFile := []string{highCardWithTen + "  " + highCardWithNine}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
@@ -108,6 +108,6 @@ func isPlayer1Win(row string) bool {
 		"2": "2",
 	}
 	p1CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(row[12])])
-	p2CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(row[27])])
+	p2CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(row[28])])
 	return p1CardPoint > p2CardPoint
 }
