@@ -46,6 +46,9 @@ func findHighest(cards string) string {
 		if cards[i] == 'A' {
 			return string(cards[i])
 		}
+		if cards[i] == 'Q' {
+			return string(cards[i])
+		}
 	}
 	return string(cards[9])
 }
