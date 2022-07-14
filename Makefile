@@ -1,6 +1,3 @@
-include .env
-export
-
 test:
 	@DB_NAME=$(DB_NAME)_test \
 	DB_HOST=localhost \
