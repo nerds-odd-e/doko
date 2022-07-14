@@ -23,6 +23,7 @@ func calculatorPercentWinnerPoker(pokerFile []string) int {
 	if len(pokerFile) == 0 {
 		return 0
 	}
+	findHighest()
 	var score int
 	for _, v := range pokerFile {
 		pokerHands := strings.Split(v, "    ")
@@ -38,4 +39,8 @@ func (game PokerGame) compareHand() bool {
 		return false
 	}
 	return game.hand1[0] == 'A' || game.hand1[0] > game.hand2[0] || (game.hand1[0] == 'K' && game.hand2[0] == 'Q') || (game.hand1[0] == 'J' && game.hand2[0] == 'T')
+}
+
+func findHighest() {
+
 }
