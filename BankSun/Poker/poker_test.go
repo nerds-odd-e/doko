@@ -211,4 +211,5 @@ func TestPlayer1LostByHighCard(t *testing.T) {
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("Q", "A")), 0)
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("J", "A")), 0)
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("T", "A")), 0)
+	assert.Equal(t, calculatorPercentWinnerPoker(twoGameOfTwoHighCards("T", "A")), 0)
 }
