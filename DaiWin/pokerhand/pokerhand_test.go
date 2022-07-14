@@ -14,6 +14,7 @@ const highCardWithAce = "2H 3H 5H 4H AS"
 const highCardWithQueen = "2H 3H 4H 5H QS"
 const highCardWithJack = "2H 3H 4H JS 5H"
 const highCardWithTen = "2H TS 3H 4H 5H"
+const highCardWithTenDifferenceSuit = "2H TH 3H 4H 5H"
 const highCardWithSeven = "2H 3H 4H 5H 7S"
 
 func TestPlayer1Win0TimesWhenNoGamePlayed(t *testing.T) {
@@ -77,6 +78,11 @@ func TestPlayer1WinOnceUn1GameWithTenCardAndUnSortHighCard(t *testing.T) {
 
 func TestPlayer1AndPlayer2HaveSamePointHighCard(t *testing.T) {
 	pokerFile := []string{highCardWithTen + "  " + highCardWithTen}
+	assert.Equal(t, 0, CalculatePlayer1WinGame(pokerFile))
+}
+
+func TestPlayer1AndPlayer2HaveAsamePointAndDifferenceSuitHighCard(t *testing.T) {
+	pokerFile := []string{highCardWithTen + "  " + highCardWithTenDifferenceSuit}
 	assert.Equal(t, 0, CalculatePlayer1WinGame(pokerFile))
 }
 
