@@ -30,6 +30,11 @@ func Test_FizzbuzzInput5(t *testing.T) {
 	b := "Buzz"
 	assert.Equal(t, a, b)
 }
+func Test_FizzbuzzInput6(t *testing.T) {
+	a := inputFizzbuzz(6)
+	b := "6"
+	assert.Equal(t, a, b)
+}
 
 func inputFizzbuzz(input int64) string {
 	if input == 3 {
