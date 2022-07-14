@@ -1,8 +1,7 @@
-package models
+package main
 
 import (
 	"strconv"
-	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -21,8 +20,6 @@ const highCardWithQueen = "2H 3H 4H 5H QS"
 const highCardWithJack = "2H 3H 4H 5H JS"
 const highCardWithTen = "2H 3H 4H 5H TS"
 const highCardWithSeven = "2H 3H 4H 5H 7S"
-const unSortCard = "2H 3H TS 4H 5H"
-const unSortCardWithTenAndKing = "2H 3H TS KH 5H"
 
 func TestPlayer1Win0TimesWhenNoGamePlayed(t *testing.T) {
 	pokerFile := []string{}
@@ -58,11 +55,6 @@ func TestPlayer1Win2In2Game(t *testing.T) {
 	assert.Equal(t, 2, ValidatePokerFile(pokerFile))
 }
 
-func TestPlayer1Win2In3Game(t *testing.T) {
-	pokerFile := []string{highCardWithEigth + " " + highCardWithSeven, highCardWithEigth + " " + highCardWithSeven, highCardWithSeven + " " + highCardWithSeven}
-	assert.Equal(t, 2, ValidatePokerFile(pokerFile))
-}
-
 func TestPlayer1WinOnceUn1GameWithKingCard(t *testing.T) {
 	pokerFile := []string{highCardWithKing + " " + highCardWithSeven}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
@@ -86,14 +78,6 @@ func TestPlayer1WinOnceUn1GameWithJackCard(t *testing.T) {
 func TestPlayer1WinOnceUn1GameWithTenCard(t *testing.T) {
 	pokerFile := []string{highCardWithTen + " " + highCardWithNine}
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
-}
-
-func TestSortCardInHand(t *testing.T) {
-	assert.Equal(t, 10, findHighCardPointInHand(unSortCard))
-}
-
-func TestSortCardInHandWithTenAndKing(t *testing.T) {
-	assert.Equal(t, 13, findHighCardPointInHand(unSortCardWithTenAndKing))
 }
 
 func ValidatePokerFile(list []string) int {
@@ -126,34 +110,4 @@ func isPlayer1Win(row string) bool {
 	p1CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(row[12])])
 	p2CardPoint, _ := strconv.Atoi(mapPointWithHonorCard[string(row[27])])
 	return p1CardPoint > p2CardPoint
-}
-
-func findHighCardPointInHand(hand string) int {
-	mapPointWithHonorCard := map[string]string{
-		"A": "14",
-		"K": "13",
-		"Q": "12",
-		"J": "11",
-		"T": "10",
-		"9": "9",
-		"8": "8",
-		"7": "7",
-		"6": "6",
-		"5": "5",
-		"4": "4",
-		"3": "3",
-		"2": "2",
-	}
-
-	arrCardInHand := strings.Split(hand, " ")
-	firstCard := arrCardInHand[0]
-	highCard, _ := strconv.Atoi(mapPointWithHonorCard[string(firstCard[0])])
-	for _, v := range arrCardInHand {
-		pointCard, _ := strconv.Atoi(mapPointWithHonorCard[string(v[0])])
-		if highCard < pointCard {
-			highCard = pointCard
-		}
-
-	}
-	return highCard
 }
