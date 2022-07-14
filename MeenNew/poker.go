@@ -7,10 +7,9 @@ func PokerHand(records []string) int {
 		return countP1Winner
 	}
 	for _, v := range records {
-		if v[3] == '6' {
-			return countP1Winner
+		if v[3] == 'A' {
+			countP1Winner += 1
 		}
-		countP1Winner += 1
 	}
 	return countP1Winner
 }
