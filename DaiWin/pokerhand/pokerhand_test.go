@@ -18,6 +18,7 @@ const winingHighCard3 = "2H 3H 4H 5H KS"
 const winingHighCard4 = "2H 3H 4H 5H AS"
 const winingHighCard5 = "2H 3H 4H 5H QS"
 const winingHighCard6 = "2H 3H 4H 5H JS"
+const winingHighCard7 = "2H 3H 4H 5H TS"
 const losingHighCard = "2H 3H 4H 5H 7S"
 
 func TestPlayer1Win0TimesWhenNoGamePlayed(t *testing.T) {
@@ -74,6 +75,11 @@ func TestPlayer1WinOnceUn1GameWithQueenCard(t *testing.T) {
 	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
 }
 
+func TestPlayer1WinOnceUn1GameWithJackCard(t *testing.T) {
+	pokerFile := []string{winingHighCard6 + " " + winingHighCard7}
+	assert.Equal(t, 1, ValidatePokerFile(pokerFile))
+}
+
 func ValidatePokerFile(list []string) int {
 	player1WinningCount := 0
 	for _, row := range list {
@@ -102,6 +108,11 @@ func isPlayer1Win(row string) bool {
 	if row[12] == 'J' {
 		covertP1Card = "11"
 	}
+
+	if row[12] == 'T' {
+		covertP1Card = "10"
+	}
+
 	if row[27] == 'K' {
 		covertP2Card = "13"
 	}
@@ -109,6 +120,7 @@ func isPlayer1Win(row string) bool {
 	if row[27] == 'A' {
 		covertP2Card = "14"
 	}
+
 	if row[27] == 'Q' {
 		covertP2Card = "12"
 	}
@@ -116,6 +128,11 @@ func isPlayer1Win(row string) bool {
 	if row[27] == 'J' {
 		covertP2Card = "11"
 	}
+
+	if row[27] == 'T' {
+		covertP2Card = "10"
+	}
+
 	p1CardPoint, err := strconv.Atoi(covertP1Card)
 	if err != nil {
 		panic(err)
