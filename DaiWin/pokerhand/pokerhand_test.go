@@ -89,11 +89,11 @@ func TestPlayer1WinOnceUn1GameWithTenCard(t *testing.T) {
 }
 
 func TestSortCardInHand(t *testing.T) {
-	assert.Equal(t, 10, sortCardInHand(unSortCard))
+	assert.Equal(t, 10, findHighCardPointInHand(unSortCard))
 }
 
 func TestSortCardInHandWithTenAndKing(t *testing.T) {
-	assert.Equal(t, 13, sortCardInHand(unSortCardWithTenAndKing))
+	assert.Equal(t, 13, findHighCardPointInHand(unSortCardWithTenAndKing))
 }
 
 func ValidatePokerFile(list []string) int {
@@ -127,7 +127,7 @@ func isPlayer1Win(row string) bool {
 	return p1CardPoint > p2CardPoint
 }
 
-func sortCardInHand(hand string) int {
+func findHighCardPointInHand(hand string) int {
 	//hand = "2H 3H TS 4H 5H"
 	mapPointWithHonorCard := map[string]string{
 		"A": "14",
