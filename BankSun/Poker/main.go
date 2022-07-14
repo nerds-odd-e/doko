@@ -18,7 +18,7 @@ func calculatorPercentWinnerPoker(pokerFile []string) int {
 
 func compareHand(hand1 string, hand2 string) bool {
 	if hand1[0] == 'K' && hand2[0] == 'Q' {
-		return hand1[0] == 'K' && hand2[0] == 'Q'
+		return true
 	}
 	return hand1[0] == 'A' || hand1[0] > hand2[0]
 }
