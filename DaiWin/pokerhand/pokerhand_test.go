@@ -1,7 +1,9 @@
 package models
 
 import (
+	"sort"
 	"strconv"
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -87,8 +89,7 @@ func TestPlayer1WinOnceUn1GameWithTenCard(t *testing.T) {
 }
 
 func TestSortCardInHand(t *testing.T) {
-	pokerFile := []string{unSortCard}
-	assert.Equal(t, "T", sortCardInHand(pokerFile))
+	assert.Equal(t, "TS", sortCardInHand(unSortCard))
 }
 
 func ValidatePokerFile(list []string) int {
@@ -123,6 +124,9 @@ func isPlayer1Win(row string) bool {
 	return p1CardPoint > p2CardPoint
 }
 
-func sortCardInHand(list []string) string {
-	return "T"
+func sortCardInHand(hand string) string {
+	//hand = "2H 3H TS 4H 5H"
+	splitStr := strings.Split(hand, " ")
+	sort.Strings(splitStr)
+	return splitStr[4]
 }
