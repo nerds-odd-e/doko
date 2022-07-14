@@ -23,6 +23,7 @@ const highCardWithJack = "2H 3H 4H 5H JS"
 const highCardWithTen = "2H 3H 4H 5H TS"
 const highCardWithSeven = "2H 3H 4H 5H 7S"
 const unSortCard = "2H 3H TS 4H 5H"
+const unSortCardWithTenAndKing = "2H 3H TS KH 5H"
 
 func TestPlayer1Win0TimesWhenNoGamePlayed(t *testing.T) {
 	pokerFile := []string{}
@@ -90,6 +91,10 @@ func TestPlayer1WinOnceUn1GameWithTenCard(t *testing.T) {
 
 func TestSortCardInHand(t *testing.T) {
 	assert.Equal(t, "TS", sortCardInHand(unSortCard))
+}
+
+func TestSortCardInHandWithTenAndKing(t *testing.T) {
+	assert.Equal(t, "TS", sortCardInHand(unSortCardWithTenAndKing))
 }
 
 func ValidatePokerFile(list []string) int {
