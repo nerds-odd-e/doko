@@ -13,14 +13,15 @@ func PokerHand(records []string) int {
 		return countP1Winner
 	}
 	for _, value := range records {
-		if isPlayer1Winner(Round{value}) {
+		round := Round{value}
+		if round.isPlayer1Winner(round) {
 			countP1Winner += 1
 		}
 	}
 	return countP1Winner
 }
 
-func isPlayer1Winner(round Round) bool {
+func (r *Round) isPlayer1Winner(round Round) bool {
 	sortRank := []string{"A", "K", "Q"}
 	for _, rank := range sortRank {
 		founded := strings.Index(round.value, rank)
