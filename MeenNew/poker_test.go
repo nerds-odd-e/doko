@@ -75,5 +75,5 @@ func TestCompareP2WinHighCardWithQueen(t *testing.T) {
 		"5S KS TS 3H 2S 4H 2H 5H 6S AS",
 	}
 	winRateP1 := PokerHand(records)
-	assert.Equal(t, winRateP1, 1)
+	assert.Equal(t, winRateP1, 0)
 }

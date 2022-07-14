@@ -23,6 +23,9 @@ func isWinner(card string) bool {
 		if hasQueen < 14 && hasQueen >= 0 {
 			return true
 		}
+		if hasQueen >= 14 {
+			return false
+		}
 	}
 	return false
 }
