@@ -33,5 +33,5 @@ func TestPlayerOneWin1Time(t *testing.T) {
 		"5S 6D 7S 8H 3S 4H 2H AH 6S 9S",
 	}
 	winRateP1 := PokerHand(records)
-	assert.Equal(t, winRateP1, 2)
+	assert.Equal(t, winRateP1, 1)
 }
