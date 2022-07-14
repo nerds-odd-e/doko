@@ -27,8 +27,8 @@ func isWinner(card string) bool {
 	if hasAce < 14 && hasAce >= 0 {
 		return true
 	}
-	hasTen := strings.Index(card, "K")
-	if hasTen < 14 && hasTen >= 0 {
+	hasKing := strings.Index(card, "K")
+	if hasKing < 14 && hasKing >= 0 {
 		return true
 	}
 	return false
