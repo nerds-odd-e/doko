@@ -145,11 +145,11 @@ func findHighCardPointInHand(hand string) int {
 		"2": "2",
 	}
 
-	splitStr := strings.Split(hand, " ")
-	da := splitStr[0]                                              // 2H
-	by := da[0]                                                    //2 type byte
+	arrCardInHand := strings.Split(hand, " ")
+	firstCard := arrCardInHand[0]                                  // 2H
+	by := firstCard[0]                                             //2 type byte
 	highCard, _ := strconv.Atoi(mapPointWithHonorCard[string(by)]) // 2 int
-	for _, v := range splitStr {
+	for _, v := range arrCardInHand {
 		ddd := v[0]                                                 //2
 		strddd := string(ddd)                                       //2 string
 		pointCard, _ := strconv.Atoi(mapPointWithHonorCard[strddd]) // 2 int
