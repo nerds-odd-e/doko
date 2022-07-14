@@ -30,24 +30,24 @@ func TestPlayer1WinOnceIn1Game1(t *testing.T) {
 	assert.Equal(t, 1, CalculatePlayer1WinGame(pokerFile))
 }
 
-func TestPlayer1WinOnceIn2Game(t *testing.T) {
-	pokerFile := []string{highCardWithEigth + "  " + highCardWithSeven, highCardWithSeven + "  " + highCardWithEigth}
-	assert.Equal(t, 1, CalculatePlayer1WinGame(pokerFile))
-}
-
 func TestPlayer1LoseOnceIn1Game(t *testing.T) {
 	pokerFile := []string{highCardWithSeven + "  " + highCardWithEigth}
 	assert.Equal(t, 0, CalculatePlayer1WinGame(pokerFile))
 }
 
-func TestPlayer1LoseOnceIn2Game(t *testing.T) {
-	pokerFile := []string{highCardWithSeven + "  " + highCardWithEigth, highCardWithEigth + "  " + highCardWithSeven}
-	assert.Equal(t, 1, CalculatePlayer1WinGame(pokerFile))
-}
-
 func TestPlayer1Win2In2Game(t *testing.T) {
 	pokerFile := []string{highCardWithEigth + "  " + highCardWithSeven, highCardWithEigth + "  " + highCardWithSeven}
 	assert.Equal(t, 2, CalculatePlayer1WinGame(pokerFile))
+}
+
+func TestPlayer1WinOnceIn2Game(t *testing.T) {
+	pokerFile := []string{highCardWithEigth + "  " + highCardWithSeven, highCardWithSeven + "  " + highCardWithEigth}
+	assert.Equal(t, 1, CalculatePlayer1WinGame(pokerFile))
+}
+
+func TestPlayer1LoseOnceIn2Game(t *testing.T) {
+	pokerFile := []string{highCardWithSeven + "  " + highCardWithEigth, highCardWithEigth + "  " + highCardWithSeven}
+	assert.Equal(t, 1, CalculatePlayer1WinGame(pokerFile))
 }
 
 func TestPlayer1WinOnceUn1GameWithKingCard(t *testing.T) {
