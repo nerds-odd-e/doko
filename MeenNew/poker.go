@@ -14,6 +14,15 @@ func PokerHand(records []string) int {
 	return countP1Winner
 }
 
-func isWinner(v string) bool {
-	return v[3] == 'A' || v[5] == 'T'
+func isWinner(card string) bool {
+	for k, v := range card {
+		if v == 'A' && k == 3 {
+			return true
+		}
+		if v == 'T' && k == 5 {
+			return true
+		}
+	}
+
+	return card[3] == 'A' || card[5] == 'T'
 }
