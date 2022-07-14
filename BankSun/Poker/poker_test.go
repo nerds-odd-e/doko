@@ -191,7 +191,6 @@ func aGameOfTwoHighCards(p1HighCard string, p2HighCard string) string {
 }
 
 func TestPlayerWin1in2GameHighAK(t *testing.T) {
-	pokerHand().highCardOf("A").please()
 	a := []string{
 		aGameOfTwoHighCards("A", "K"),
 	}
