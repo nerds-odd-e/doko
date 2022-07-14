@@ -75,6 +75,11 @@ func TestPlayer1WinOnceUn1GameWithTenCardAndUnSortHighCard(t *testing.T) {
 	assert.Equal(t, 1, CalculatePlayer1WinGame(pokerFile))
 }
 
+func TestPlayer1AndPlayer2HaveSamePointHighCard(t *testing.T) {
+	pokerFile := []string{highCardWithTen + "  " + highCardWithTen}
+	assert.Equal(t, 0, CalculatePlayer1WinGame(pokerFile))
+}
+
 type Game struct {
 	value string
 }
