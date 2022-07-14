@@ -82,14 +82,14 @@ type Game struct {
 func CalculatePlayer1WinGame(list []string) int {
 	player1WinningCount := 0
 	for _, row := range list {
-		if isPlayerOneWin(Game{row}) {
+		if Game.isPlayerOneWin(Game{row}) {
 			player1WinningCount += 1
 		}
 	}
 	return player1WinningCount
 }
 
-func isPlayerOneWin(game Game) bool {
+func (game Game) isPlayerOneWin() bool {
 	cardInHand := strings.Split(game.value, "  ")
 	return findHighCardPointInHand(cardInHand[0]) > findHighCardPointInHand(cardInHand[1])
 }
