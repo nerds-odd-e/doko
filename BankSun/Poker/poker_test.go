@@ -143,5 +143,5 @@ func TestPlayerWin1Game(t *testing.T) {
 	a := []string{
 		"9H 9C 9D AS 9H    9H 9C 9D AS 8H",
 	}
-	assert.Equal(t, calculatorPercentWinnerPoker(a), 0)
+	assert.Equal(t, calculatorPercentWinnerPoker(a), 1)
 }

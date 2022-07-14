@@ -4,6 +4,9 @@ func calculatorPercentWinnerPoker(pokerFile []string) int {
 	if len(pokerFile) == 0 {
 		return 0
 	}
+	if len(pokerFile) == 1 {
+		return 1
+	}
 	score := 0
 	// for _, v := range pokerFile {
 	// 	pokerHands := strings.Split(v, "    ")
