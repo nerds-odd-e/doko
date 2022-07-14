@@ -1,6 +1,7 @@
 package models
 
 import (
+	"strconv"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -77,5 +78,31 @@ func ValidatePokerFile(list []string) int {
 }
 
 func isPlayer1Win(row string) bool {
-	return row[12] > row[27]
+	covertP1Card := string(row[12])
+	covertP2Card := string(row[27])
+	if row[12] == 'K' {
+		covertP1Card = "13"
+	}
+
+	if row[12] == 'A' {
+		covertP1Card = "14"
+	}
+
+	if row[27] == 'K' {
+		covertP2Card = "13"
+	}
+
+	if row[27] == 'A' {
+		covertP2Card = "14"
+	}
+
+	p1CardPoint, err := strconv.Atoi(covertP1Card)
+	if err != nil {
+		panic(err)
+	}
+	p2CardPoint, err := strconv.Atoi(covertP2Card)
+	if err != nil {
+		panic(err)
+	}
+	return p1CardPoint > p2CardPoint
 }
