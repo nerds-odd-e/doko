@@ -7,16 +7,11 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-// type PokerHandExamples struct {
-// 	WiningHighCard string
-// 	LosingHighCard string
-// }
-
 const highCardWithEigth = "2H 3H 4H 5H 8S"
 const highCardWithNine = "2H 3H 4H 5H 9S"
 const highCardWithKing = "2H 3H 4H 5H KS"
-const highCardWithAce = "2H 3H 4H 5H AS"
-const highCardWithQueen = "2H 3H 4H 5H QS"
+const highCardWithAce = "2H 3H AS 5H 4H"
+const highCardWithQueen = "2H 3H 4H QS 5H"
 const highCardWithJack = "2H 3H 4H 5H JS"
 const highCardWithTen = "2H 3H 4H 5H TS"
 const highCardWithSeven = "2H 3H 4H 5H 7S"
@@ -83,8 +78,8 @@ func TestPlayer1WinOnceUn1GameWithTenCard(t *testing.T) {
 func ValidatePokerFile(list []string) int {
 	player1WinningCount := 0
 	for _, row := range list {
-		hand := strings.Split(row, "  ")
-		if findHighCardPointInHand(hand[0]) > findHighCardPointInHand(hand[1]) {
+		cardInHand := strings.Split(row, "  ")
+		if findHighCardPointInHand(cardInHand[0]) > findHighCardPointInHand(cardInHand[1]) {
 			player1WinningCount += 1
 		}
 	}
