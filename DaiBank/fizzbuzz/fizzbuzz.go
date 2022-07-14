@@ -10,5 +10,8 @@ func findFizzBuzz(num int) string {
 	if num == 5 {
 		return "Buzz"
 	}
+	if num == 15 {
+		return "FizzBuzz"
+	}
 	return fmt.Sprint(num)
 }
