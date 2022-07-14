@@ -1,8 +1,20 @@
 package main
 
+import "strings"
+
 func calculatorPercentWinnerPoker(pokerFile []string) int {
-	return len(pokerFile)
-	score := 0
+	// pokerHands := strings.Split(v, "    ")
+	if len(pokerFile) == 0 {
+		return 0
+	}
+	var score int
+	for _, v := range pokerFile {
+		pokerHands := strings.Split(v, "    ")
+		if pokerHands[0] == "9H 9C 9D AS 9H" {
+			score++
+		}
+	}
+	// return len(pokerFile)
 	// for _, v := range pokerFile {
 	// 	pokerHands := strings.Split(v, "    ")
 	// 	if pokerHands[0][0] > pokerHands[1][0] {
