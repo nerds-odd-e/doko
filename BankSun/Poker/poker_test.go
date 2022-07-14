@@ -169,12 +169,18 @@ func TestPlayerWin2in2Game(t *testing.T) {
 	assert.Equal(t, calculatorPercentWinnerPoker(a), 2)
 }
 
-func pokerGame() {
-
+type PokerHandBuilder struct {
 }
 
+func pokerHand() PokerHandBuilder {
+	return PokerHandBuilder{}
+}
+
+func (b PokerHandBuilder) highCardOf(card string) PokerHandBuilder {
+	return b
+}
 func TestPlayerWin1in2GameHighAK(t *testing.T) {
-	pokerGame();
+	pokerHand().highCardOf("A")
 	a := []string{
 		"AH 9C 9D AS 9H    KH 9C 9D AS 9H",
 	}
