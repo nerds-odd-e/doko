@@ -18,3 +18,7 @@ func TestFizz(t *testing.T) {
 func TestBuzz(t *testing.T) {
 	assert.Equal(t, "Buzz", findFizzBuzz(5))
 }
+
+func TestFizzBuzz(t *testing.T) {
+	assert.Equal(t, "15", findFizzBuzz(15))
+}
