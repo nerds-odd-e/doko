@@ -11,5 +11,5 @@ func TestNormalNumber(t *testing.T) {
 }
 
 func TestFizz(t *testing.T) {
-	assert.Equal(t, "1", findFizzBuzz(3))
+	assert.Equal(t, "Fizz", findFizzBuzz(3))
 }
