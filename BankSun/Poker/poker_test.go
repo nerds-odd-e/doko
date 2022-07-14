@@ -160,3 +160,17 @@ func TestPlayerWin1in2Game(t *testing.T) {
 	}
 	assert.Equal(t, calculatorPercentWinnerPoker(a), 1)
 }
+func TestPlayerWin2in2Game(t *testing.T) {
+	a := []string{
+		"9H 9C 9D AS 9H    8H 9C 9D AS 9H",
+		"9H 9C 9D AS 9H    9H 9C 9D AS 9H",
+	}
+	assert.Equal(t, calculatorPercentWinnerPoker(a), 2)
+}
+func TestPlayerWin0in2Game(t *testing.T) {
+	a := []string{
+		"8H 9C 9D AS 9H    8H 9C 9D AS 9H",
+		"8H 9C 9D AS 9H    9H 9C 9D AS 9H",
+	}
+	assert.Equal(t, calculatorPercentWinnerPoker(a), 0)
+}
