@@ -179,8 +179,13 @@ func pokerHand() PokerHandBuilder {
 func (b PokerHandBuilder) highCardOf(card string) PokerHandBuilder {
 	return b
 }
+
+func (b PokerHandBuilder) please() string {
+	return ""
+}
+
 func TestPlayerWin1in2GameHighAK(t *testing.T) {
-	pokerHand().highCardOf("A")
+	pokerHand().highCardOf("A").please()
 	a := []string{
 		"AH 9C 9D AS 9H    KH 9C 9D AS 9H",
 	}
