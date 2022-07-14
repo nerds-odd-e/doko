@@ -41,5 +41,5 @@ func (game PokerGame) compareHand() bool {
 }
 
 func findHighest(cards string) string {
-	return "4"
+	return string(cards[0])
 }
