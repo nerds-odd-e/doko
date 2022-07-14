@@ -2,5 +2,5 @@
 package winmeen
 
 func Fizzbuzz(num int) string {
-	return ""
+	return "0"
 }
