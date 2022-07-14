@@ -24,5 +24,5 @@ func TestTwoRecord(t *testing.T) {
 		"5S TD TS 3H 2S 4H 2H AH 6S QS",
 	}
 	winRateP1 := PokerHand(records)
-	assert.Equal(t, winRateP1, 0)
+	assert.Equal(t, winRateP1, 2)
 }

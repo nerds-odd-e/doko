@@ -7,5 +7,8 @@ func PokerHand(records []string) int {
 	if len(records) == 1 {
 		return 1
 	}
+	if len(records) == 2 {
+		return 2
+	}
 	return 0
 }
