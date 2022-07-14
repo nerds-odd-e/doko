@@ -1,7 +1,7 @@
 package meennew
 
 func PokerHand(records []string, records2 []string) int {
-	if len(records) == 0 {
+	if len(records2) == 0 {
 		return 0
 	}
 	if len(records) == 2 {
