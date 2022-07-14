@@ -54,7 +54,7 @@ func Test_FizzbuzzInput30(t *testing.T) {
 }
 
 func inputFizzbuzz(input int64) string {
-	if input%3 == 0 && input%5 == 0 {
+	if input%15 == 0 {
 		return "FizzBuzz"
 	}
 	if input%3 == 0 {
