@@ -2,6 +2,10 @@ package meennew
 
 import "strings"
 
+type Round struct {
+	value string
+}
+
 func PokerHand(records []string) int {
 
 	countP1Winner := 0
