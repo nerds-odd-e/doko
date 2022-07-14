@@ -187,7 +187,7 @@ func (b PokerHandBuilder) please() string {
 func TestPlayerWin1in2GameHighAK(t *testing.T) {
 	pokerHand().highCardOf("A").please()
 	a := []string{
-		pokerHand().highCardOf("A").please() + "    KH 9C 9D AS 9H",
+		pokerHand().highCardOf("A").please() + "    " + pokerHand().highCardOf("K").please(),
 	}
 	assert.Equal(t, calculatorPercentWinnerPoker(a), 1)
 }
