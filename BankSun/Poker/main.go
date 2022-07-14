@@ -5,8 +5,8 @@ import (
 )
 
 type PokerGame struct {
-	Hand1 string
-	Hand2 string
+	hand1 string
+	hand2 string
 }
 
 func poker() PokerGame {
@@ -14,8 +14,8 @@ func poker() PokerGame {
 }
 
 func (p PokerGame) setHands(Hand1 string, Hand2 string) PokerGame {
-	p.Hand1 = Hand1
-	p.Hand2 = Hand2
+	p.hand1 = Hand1
+	p.hand2 = Hand2
 	return p
 }
 
@@ -36,8 +36,8 @@ func calculatorPercentWinnerPoker(pokerFile []string) int {
 }
 
 func compareHand(hand1 string, hand2 string, game PokerGame) bool {
-	if game.Hand2[0] == 'A' {
+	if game.hand2[0] == 'A' {
 		return false
 	}
-	return hand1[0] == 'A' || hand1[0] > hand2[0] || (hand1[0] == 'K' && hand2[0] == 'Q') || (hand1[0] == 'J' && hand2[0] == 'T')
+	return game.hand1[0] == 'A' || game.hand1[0] > game.hand2[0] || (game.hand1[0] == 'K' && game.hand2[0] == 'Q') || (game.hand1[0] == 'J' && game.hand2[0] == 'T')
 }
