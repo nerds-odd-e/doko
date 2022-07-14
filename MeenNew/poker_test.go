@@ -6,18 +6,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestDatasetNotFound(t *testing.T) {
-	records := []string{}
-	winRateP1 := SummaryWinner(records)
-	assert.Equal(t, winRateP1, 0)
-}
-
-func TestPlayer1(t *testing.T) {
-	records := []string{}
-	winRateP1 := SummaryWinner(records)
-	assert.Equal(t, winRateP1, 0)
-}
-
 func TestNoRecord(t *testing.T) {
 	records := []string{}
 	winRateP1 := PokerHand(records, records)
