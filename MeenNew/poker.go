@@ -17,12 +17,19 @@ func PokerHand(records []string) int {
 }
 
 func isWinner(card string) bool {
+	sortRank := []string{"A", "K", "Q"}
+
+	for _, v := range sortRank {
+		hasQueen := strings.Index(card, v)
+		if hasQueen < 14 && hasQueen >= 0 {
+			return true
+		}
+	}
 
 	hasQueen := strings.Index(card, "Q")
 	if hasQueen < 14 && hasQueen >= 0 {
 		return true
 	}
-
 	hasAce := strings.Index(card, "A")
 	if hasAce < 14 && hasAce >= 0 {
 		return true
