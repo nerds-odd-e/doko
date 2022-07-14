@@ -194,18 +194,12 @@ func TestP1WinByHighcard(t *testing.T) {
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("A", "K")), 1)
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("K", "Q")), 1)
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("Q", "J")), 1)
+	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("J", "T")), 1)
 }
 
 func TestPlayerWin0in2GameHighKA(t *testing.T) {
 	a := []string{
 		"KH 9C 9D AS 9H    AH 9C 9D AS 9H",
-	}
-	assert.Equal(t, calculatorPercentWinnerPoker(a), 1)
-}
-
-func TestPlayerWin1in2GameHighQJ(t *testing.T) {
-	a := []string{
-		"QH 9C 9D AS 9H    JH 9C 9D AS 9H",
 	}
 	assert.Equal(t, calculatorPercentWinnerPoker(a), 1)
 }
