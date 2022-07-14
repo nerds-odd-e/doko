@@ -11,9 +11,6 @@ func PokerHand(records []string) int {
 			return countP1Winner
 		}
 	}
-	if len(records) == 0 {
-		return countP1Winner
-	}
 	if records[0][3] == '6' {
 		return countP1Winner
 	}
