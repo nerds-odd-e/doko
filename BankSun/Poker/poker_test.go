@@ -170,6 +170,7 @@ func TestPlayerWin2in2Game(t *testing.T) {
 }
 
 type PokerHandBuilder struct {
+	highestHighcard string
 }
 
 func pokerHand() PokerHandBuilder {
@@ -177,11 +178,12 @@ func pokerHand() PokerHandBuilder {
 }
 
 func (b PokerHandBuilder) highCardOf(card string) PokerHandBuilder {
+	b.highestHighcard = card
 	return b
 }
 
 func (b PokerHandBuilder) please() string {
-	return "AH 9C 9D AS 9H"
+	return b.highestHighcard + "H 2C 3D 4S 6H"
 }
 
 func TestPlayerWin1in2GameHighAK(t *testing.T) {
