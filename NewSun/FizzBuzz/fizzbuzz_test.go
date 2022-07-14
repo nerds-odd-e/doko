@@ -64,7 +64,7 @@ func inputFizzbuzz(input int64) string {
 		return "FizzBuzz"
 	}
 	if input%3 == 0 {
-		fizz := "Fizz"
+		const fizz = "Fizz"
 		return fizz
 	}
 	if input%5 == 0 {
