@@ -193,6 +193,7 @@ func aGameOfTwoHighCards(p1HighCard string, p2HighCard string) []string {
 func TestP1WinByHighcard(t *testing.T) {
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("A", "K")), 1)
 	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("K", "Q")), 1)
+	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("Q", "J")), 1)
 }
 
 func TestPlayerWin0in2GameHighKA(t *testing.T) {
