@@ -37,7 +37,7 @@ func TestP1WinWithEight(t *testing.T) {
 }
 
 func TestP1WinWithSeven(t *testing.T) {
-	round := Round{value: "8S 8S 7S 3H 2S 4H 2H 5H 6S 7S"}
+	round := Round{value: "7S 6S 5S 3H 2S 4H 2H 5H 6S 1S"}
 	assert.Equal(t, round.isPlayer1Winner(), true)
 }
 
