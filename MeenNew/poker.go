@@ -10,10 +10,6 @@ func PokerHand(records []string, records2 []string) int {
 	return 0
 }
 
-func SummaryWinner(records []string) int {
-	return 0
-}
-
 func winning(pokerHand string) bool {
 	return pokerHand == "5S TD TS 3H 2S"
 }
