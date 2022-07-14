@@ -23,6 +23,5 @@ func isWinner(card string) bool {
 			return true
 		}
 	}
-
-	return card[3] == 'A' || card[5] == 'T'
+	return false
 }
