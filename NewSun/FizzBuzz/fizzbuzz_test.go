@@ -68,7 +68,8 @@ func inputFizzbuzz(input int64) string {
 		return fizz
 	}
 	if input%5 == 0 {
-		return "Buzz"
+		const buzz = "Buzz"
+		return buzz
 	}
 	return fmt.Sprint(input)
 }
