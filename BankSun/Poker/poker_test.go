@@ -191,9 +191,7 @@ func aGameOfTwoHighCards(p1HighCard string, p2HighCard string) []string {
 }
 
 func TestPlayerWin1in2GameHighAK(t *testing.T) {
-	a := aGameOfTwoHighCards("A", "K")
-
-	assert.Equal(t, calculatorPercentWinnerPoker(a), 1)
+	assert.Equal(t, calculatorPercentWinnerPoker(aGameOfTwoHighCards("A", "K")), 1)
 }
 func TestPlayerWin1in2GameHighKQ(t *testing.T) {
 	a := []string{
