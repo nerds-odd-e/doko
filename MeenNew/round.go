@@ -13,7 +13,7 @@ func (r *Round) isPlayer1Winner() bool {
 		if foundAtPlayer1(founded) {
 			return true
 		}
-		if founded >= 14 {
+		if founded >= 14 && founded >= -1 {
 			return false
 		}
 	}
