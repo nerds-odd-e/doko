@@ -131,5 +131,12 @@ func TestFindWinner(t *testing.T) {
 }
 
 func TestConvertPoint(t *testing.T) {
-	assert.Equal(t, 10, 10)
+	assert.Equal(t, 10, ConvertPoint("A"))
+	assert.Equal(t, 9, ConvertPoint("K"))
+	assert.Equal(t, 8, ConvertPoint("Q"))
+	assert.Equal(t, 7, ConvertPoint("J"))
+	assert.Equal(t, 6, ConvertPoint("T"))
+	assert.Equal(t, 5, ConvertPoint("9"))
+	assert.Equal(t, 4, ConvertPoint("8"))
+	assert.Equal(t, 3, ConvertPoint("7"))
 }

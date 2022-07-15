@@ -65,6 +65,24 @@ func findHighest(cards string) string {
 	return string(cards[9])
 }
 
-func ConvertPoint(string) int {
+func ConvertPoint(cardPoint string) int {
+	switch cardPoint {
+	case "A":
+		return 10
+	case "K":
+		return 9
+	case "Q":
+		return 8
+	case "J":
+		return 7
+	case "T":
+		return 6
+	case "9":
+		return 5
+	case "8":
+		return 4
+	case "7":
+		return 3
+	}
 	return 0
 }
