@@ -1,4 +1,4 @@
-package bankwin
+package meennew
 
 import "strings"
 
