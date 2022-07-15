@@ -94,10 +94,10 @@ func TestCompareP1WinHighCardWithTen(t *testing.T) {
 	assert.Equal(t, winRateP1, 1)
 }
 
-func TestCompareP1WinHighCardWithSeven(t *testing.T) {
+func TestCompareP1WinHighCardWithSix(t *testing.T) {
 	records := []string{
-		"5S 4S 3S 7H 2S 4H 2H 5H 6S 3S",
+		"5S 4S 3S 6H 2S 4H 2H 5H 2S 3S",
 	}
 	winRateP1 := PokerHand(records)
-	assert.Equal(t, winRateP1, 1)
+	assert.Equal(t, winRateP1, 0)
 }
