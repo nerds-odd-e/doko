@@ -64,3 +64,7 @@ func findHighest(cards string) string {
 
 	return string(cards[9])
 }
+
+func ConvertPoint(string) int {
+	return 0
+}
