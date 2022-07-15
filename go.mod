@@ -3,11 +3,14 @@ module tdd.com/v1
 go 1.17
 
 require (
+	github.com/BurntSushi/toml v0.3.1
 	github.com/aws/aws-sdk-go v1.43.45
 	github.com/go-pg/migrations/v8 v8.1.0
 	github.com/go-pg/pg/v10 v10.10.6
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/julienschmidt/httprouter v1.3.0
+	github.com/mattn/go-runewidth v0.0.13
+	github.com/nsf/termbox-go v1.1.1
 	github.com/romanyx/polluter v1.2.2
 	github.com/stretchr/testify v1.7.1
 	github.com/thoas/go-funk v0.9.2
@@ -18,6 +21,7 @@ require (
 	github.com/go-redis/redis v6.14.0+incompatible // indirect
 	github.com/mailru/easyjson v0.0.0-20180823135443-60711f1a8329 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
+	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/romanyx/jwalk v1.0.0 // indirect
 )
 
