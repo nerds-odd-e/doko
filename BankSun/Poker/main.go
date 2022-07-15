@@ -25,8 +25,12 @@ func findWinnerPoker(pokerFile []string) int {
 	}
 	var score int
 	for _, v := range pokerFile {
-		pokerHands := strings.Split(v, "    ")
-		if poker().setHands(pokerHands[0], pokerHands[1]).compareHand() {
+		if v == "" {
+			continue
+		}
+		pokerHandsP1 := v[0:14]
+		pokerHandsP2 := v[14:]
+		if poker().setHands(pokerHandsP1, pokerHandsP2).compareHand() {
 			score++
 		}
 	}
@@ -34,21 +38,29 @@ func findWinnerPoker(pokerFile []string) int {
 }
 
 func (game PokerGame) compareHand() bool {
-	if game.hand2[0] == 'A' {
-		return false
-	}
-	return game.hand1[0] == 'A' || game.hand1[0] > game.hand2[0] || (game.hand1[0] == 'K' && game.hand2[0] == 'Q') || (game.hand1[0] == 'J' && game.hand2[0] == 'T')
+	return findHighest(game.hand1) > findHighest(game.hand2)
 }
 
 func findHighest(cards string) string {
-	// highest := cards[0]
-	for i := 0; i < len(cards); i++ {
-		if cards[i] == 'A' {
-			return string(cards[i])
-		}
-		if cards[i] == 'Q' {
-			return string(cards[i])
+	rankList := []string{"A", "K", "Q", "J", "T", "9", "8", "7"}
+	for _, rank := range rankList {
+		index := strings.Index(cards, rank)
+		if index >= 0 {
+			if rank == "A" {
+				return "Z"
+			}
+			if rank == "K" {
+				return "Y"
+			}
+			if rank == "Q" {
+				return "X"
+			}
+			if rank == "J" {
+				return "W"
+			}
+			return rank
 		}
 	}
+
 	return string(cards[9])
 }
