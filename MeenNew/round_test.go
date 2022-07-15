@@ -1,4 +1,4 @@
-package meennew
+package main
 
 import (
 	"testing"
@@ -51,7 +51,12 @@ func TestP1DrawWithTen(t *testing.T) {
 	assert.Equal(t, round.isPlayer1Winner(), false)
 }
 
-func TestP1Twopair(t *testing.T) {
-	round := Round{value: "2C TD TS 3H 2S 4C 2H 5H TH 9H"}
+func TestP1Onepair(t *testing.T) {
+	round := Round{value: "2C TD 9S 3H 2S 4C 6H 5H 8H 7H"}
 	assert.Equal(t, round.isPlayer1Winner(), true)
 }
+
+// func TestP1Twopair(t *testing.T) {
+// 	round := Round{value: "2C TD TS 3H 2S 4C 2H 5H TH 9H"}
+// 	assert.Equal(t, round.isPlayer1Winner(), true)
+// }
