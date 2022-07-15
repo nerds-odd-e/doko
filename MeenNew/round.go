@@ -7,7 +7,7 @@ type Round struct {
 }
 
 func (r Round) isPlayer1Winner() bool {
-	sortRank := []string{"A", "K", "Q", "J", "T", "9", "8", "7"}
+	sortRank := []string{"A", "K", "Q", "J", "T", "9", "8", "7", "6"}
 	for _, rank := range sortRank {
 		isPlayerOnePair := strings.Count(r.value[0:14], rank)
 		if isPlayerOnePair > 1 {
