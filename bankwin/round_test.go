@@ -1,4 +1,4 @@
-package meennew
+package bankwin
 
 import (
 	"testing"
