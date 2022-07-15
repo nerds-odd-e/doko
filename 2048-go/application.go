@@ -4,14 +4,13 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
+	"github.com/BurntSushi/toml"
+	"github.com/mattn/go-runewidth"
+	"github.com/nsf/termbox-go"
 	"log"
 	"os"
 	"path/filepath"
 	"strconv"
-
-	"github.com/BurntSushi/toml"
-	"github.com/mattn/go-runewidth"
-	"github.com/nsf/termbox-go"
 )
 
 const GAME_WIDTH = 80

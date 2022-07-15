@@ -1,4 +1,4 @@
-package main
+package meennew
 
 import (
 	"testing"
@@ -70,9 +70,9 @@ func TestCompareP1WinHighCardWithQueen(t *testing.T) {
 	assert.Equal(t, winRateP1, 1)
 }
 
-func TestCompareP2WinHighCardWithKing(t *testing.T) {
+func TestCompareP2WinHighCardWithQueen(t *testing.T) {
 	records := []string{
-		"5S 4S TS 3H 2S 4H 2H QH 6S AS",
+		"5S KS TS 3H 2S 4H 2H 5H 6S AS",
 	}
 	winRateP1 := PokerHand(records)
 	assert.Equal(t, winRateP1, 0)
@@ -86,26 +86,14 @@ func TestCompareP1WinHighCardWithJack(t *testing.T) {
 	assert.Equal(t, winRateP1, 1)
 }
 
-func TestCompareP1WinHighCardWithTen(t *testing.T) {
+func TestCountP1(t *testing.T) {
 	records := []string{
-		"5S 4S TS 3H 2S 4H 2H 5H 6S 8S",
+		"5S 9S TS 3H 2S 4H 2H 5H 6S 7S",
+		"5S 9S TS 3H 2S 4H 2H 5H 6S 7S",
+		"5S 9S KS 3H 2S 4H 2H 5H 6S 7S",
+		"AC JC 5S 3H 2S 4C 2H 5H AH JH",
+		"6C 4C 5S 3H 9S 4C 2H 5H 8H AH",
 	}
 	winRateP1 := PokerHand(records)
-	assert.Equal(t, winRateP1, 1)
-}
-
-func TestCompareP1WinHighCardWithSix(t *testing.T) {
-	records := []string{
-		"5S 4S 3S 6H 2S 4H 2H 5H 2S 3S",
-	}
-	winRateP1 := PokerHand(records)
-	assert.Equal(t, winRateP1, 1)
-}
-
-func TestCompareP1Draw(t *testing.T) {
-	records := []string{
-		"5S KD TS 3H 2S 4S KD 6S 3H 2S",
-	}
-	winRateP1 := PokerHand(records)
-	assert.Equal(t, winRateP1, 0)
+	assert.Equal(t, winRateP1, 3)
 }

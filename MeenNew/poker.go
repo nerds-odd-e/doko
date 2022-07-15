@@ -1,4 +1,4 @@
-package main
+package meennew
 
 func PokerHand(records []string) int {
 	countP1Winner := 0

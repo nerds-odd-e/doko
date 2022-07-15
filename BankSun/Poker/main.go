@@ -25,12 +25,8 @@ func findWinnerPoker(pokerFile []string) int {
 	}
 	var score int
 	for _, v := range pokerFile {
-		if v == "" {
-			continue
-		}
-		pokerHandsP1 := v[0:14]
-		pokerHandsP2 := v[14:]
-		if poker().setHands(pokerHandsP1, pokerHandsP2).compareHand() {
+		pokerHands := strings.Split(v, "    ")
+		if poker().setHands(pokerHands[0], pokerHands[1]).compareHand() {
 			score++
 		}
 	}
@@ -38,39 +34,21 @@ func findWinnerPoker(pokerFile []string) int {
 }
 
 func (game PokerGame) compareHand() bool {
-	return ConvertPoint(findHighest(game.hand1)) > ConvertPoint(findHighest(game.hand2))
+	if game.hand2[0] == 'A' {
+		return false
+	}
+	return game.hand1[0] == 'A' || game.hand1[0] > game.hand2[0] || (game.hand1[0] == 'K' && game.hand2[0] == 'Q') || (game.hand1[0] == 'J' && game.hand2[0] == 'T')
 }
 
 func findHighest(cards string) string {
-	rankList := []string{"A", "K", "Q", "J", "T", "9", "8", "7"}
-	for _, rank := range rankList {
-		index := strings.Index(cards, rank)
-		if index >= 0 {
-			return rank
+	// highest := cards[0]
+	for i := 0; i < len(cards); i++ {
+		if cards[i] == 'A' {
+			return string(cards[i])
+		}
+		if cards[i] == 'Q' {
+			return string(cards[i])
 		}
 	}
-
 	return string(cards[9])
-}
-
-func ConvertPoint(cardPoint string) int {
-	switch cardPoint {
-	case "A":
-		return 10
-	case "K":
-		return 9
-	case "Q":
-		return 8
-	case "J":
-		return 7
-	case "T":
-		return 6
-	case "9":
-		return 5
-	case "8":
-		return 4
-	case "7":
-		return 3
-	}
-	return 0
 }

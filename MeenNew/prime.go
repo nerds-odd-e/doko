@@ -1,4 +1,4 @@
-package main
+package meennew
 
 func PrimeNumber(number int) []int {
 
