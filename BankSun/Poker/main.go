@@ -38,7 +38,7 @@ func findWinnerPoker(pokerFile []string) int {
 }
 
 func (game PokerGame) compareHand() bool {
-	return findHighest(game.hand1) > findHighest(game.hand2)
+	return ConvertPoint(findHighest(game.hand1)) > ConvertPoint(findHighest(game.hand2))
 }
 
 func findHighest(cards string) string {
@@ -46,18 +46,6 @@ func findHighest(cards string) string {
 	for _, rank := range rankList {
 		index := strings.Index(cards, rank)
 		if index >= 0 {
-			if rank == "A" {
-				return "Z"
-			}
-			if rank == "K" {
-				return "Y"
-			}
-			if rank == "Q" {
-				return "X"
-			}
-			if rank == "J" {
-				return "W"
-			}
 			return rank
 		}
 	}

@@ -92,7 +92,7 @@ func TestPlayer1LostInTwoGameByHighCard(t *testing.T) {
 	assert.Equal(t, findWinnerPoker(twoGameOfTwoHighCards([]string{"T", "T"}, []string{"A", "8"})), 1)
 }
 
-func xTestFindHighest(t *testing.T) {
+func TestFindHighest(t *testing.T) {
 	a := "4H JH TH AH 3H"
 	assert.Equal(t, findHighest(a), "A")
 	a = "4H JH AH 8H 3H"
