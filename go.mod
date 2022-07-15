@@ -16,7 +16,9 @@ require (
 )
 
 require (
+	github.com/go-pg/migrations/v8 v8.1.0 // indirect
 	github.com/go-redis/redis v6.14.0+incompatible // indirect
+	github.com/julienschmidt/httprouter v1.3.0 // indirect
 	github.com/mailru/easyjson v0.0.0-20180823135443-60711f1a8329 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
