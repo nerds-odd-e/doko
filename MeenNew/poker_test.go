@@ -1,4 +1,4 @@
-package meennew
+package main
 
 import (
 	"testing"
@@ -100,4 +100,12 @@ func TestCompareP1WinHighCardWithSix(t *testing.T) {
 	}
 	winRateP1 := PokerHand(records)
 	assert.Equal(t, winRateP1, 1)
+}
+
+func TestCompareP1Draw(t *testing.T) {
+	records := []string{
+		"5S KD TS 3H 2S 4S KD 6S 3H 2S",
+	}
+	winRateP1 := PokerHand(records)
+	assert.Equal(t, winRateP1, 0)
 }

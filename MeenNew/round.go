@@ -1,6 +1,8 @@
-package meennew
+package main
 
-import "strings"
+import (
+	"strings"
+)
 
 type Round struct {
 	value string
@@ -9,23 +11,16 @@ type Round struct {
 func (r Round) isPlayer1Winner() bool {
 	sortRank := []string{"A", "K", "Q", "J", "T", "9", "8", "7", "6", "5", "4", "3", "2"}
 	for _, rank := range sortRank {
-		isPlayerOnePair := strings.Count(r.value[0:14], rank)
-		if isPlayerOnePair > 1 {
+		if strings.Count(r.value[0:14], rank) == 2 {
 			return true
 		}
-		count := strings.Count(r.value, rank)
-		if count > 1 {
+		if strings.Count(r.value, rank) > 1 {
 			return false
 		}
-		founded := strings.Index(r.value, rank)
-		if founded < 0 {
+		if strings.Index(r.value, rank) < 0 {
 			continue
 		}
-		return foundAtPlayer1(founded)
+		return strings.Index(r.value, rank) < 14
 	}
 	return false
-}
-
-func foundAtPlayer1(founded int) bool {
-	return founded < 14
 }

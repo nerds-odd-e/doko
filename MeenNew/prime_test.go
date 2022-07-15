@@ -1,4 +1,4 @@
-package meennew
+package main
 
 import (
 	"testing"
