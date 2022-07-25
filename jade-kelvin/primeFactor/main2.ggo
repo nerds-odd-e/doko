@@ -1,0 +1,23 @@
+package primefactor
+
+func PrimeFactors(n int) []int {
+	if n == 1 {
+		return []int{}
+	}
+
+	return PrimeFactorsInner(n, 2)
+
+}
+
+func PrimeFactorsInner(n int, divisor int) []int {
+	if divisor > n {
+		return []int{}
+	}
+
+	if n%divisor == 0 {
+		newResult := PrimeFactorsInner(n/divisor, divisor)
+		return append([]int{divisor}, newResult...)
+	}
+
+	return PrimeFactorsInner(n, divisor+1)
+}
