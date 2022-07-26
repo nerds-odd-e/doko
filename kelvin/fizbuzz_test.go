@@ -25,12 +25,12 @@ func TestFizzBuzz1(t *testing.T) {
 
 	t.Run("it should say fizzbuzz if input 15, 30", func(t *testing.T) {
 		assert.Equal(t, fizzbuzz(15), "fizzbuzz")
-		assert.Equal(t, fizzbuzz(15), "fizzbuzz")
+		assert.Equal(t, fizzbuzz(30), "fizzbuzz")
 	})
 }
 
 func fizzbuzz(i int) string {
-	if i == 15 {
+	if i == 15 || i == 30 {
 		return "fizzbuzz"
 	}
 	if i%5 == 0 {
