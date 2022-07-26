@@ -38,12 +38,16 @@ func runGames(games string) float64 {
 func compareHand(game string) string {
 
 	for cardPos := 1; cardPos <= 5; cardPos++ {
-		if strings.Contains("AKQT98", getNthCardRank(game, cardPos)) {
+		if newFunction(game, cardPos) {
 			return "win"
 		}
 	}
 
 	return "lose"
+}
+
+func newFunction(game string, cardPos int) bool {
+	return strings.Contains("AKQT98", getNthCardRank(game, cardPos))
 }
 
 func getNthCardRank(game string, cardPos int) string {
