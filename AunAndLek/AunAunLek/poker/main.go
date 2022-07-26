@@ -5,7 +5,7 @@ func IsP1Win(game string) bool {
 	return game == wincase
 }
 
-func Player1Win(games []string) int {
+func Player1WinCount(games []string) int {
 	p1WinCount := 0
 	for i := 0; i < len(games); i++ {
 		if IsP1Win(games[i]) {
