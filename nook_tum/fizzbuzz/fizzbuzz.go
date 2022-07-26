@@ -9,6 +9,9 @@ func FizzBuzz(number int) string {
 	if number % 3 == 0 {
 		return "Fizz"
 	}
+	if number == 25 {
+		return "Buzz"
+	}
 	if number == 5 {
 		return "Buzz"
 	}

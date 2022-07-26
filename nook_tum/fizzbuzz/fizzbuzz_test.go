@@ -38,7 +38,7 @@ func TestInput5_ShouldSayBuzz(t *testing.T) {
 
 func TestInput25_ShouldSayBuzz(t *testing.T) {
 	answer := FizzBuzz(25)
-	expected := "25"
+	expected := "Buzz"
 	assert.Equal(t, answer, expected, "Wanted Buzz but got %s", answer)
 }
 
