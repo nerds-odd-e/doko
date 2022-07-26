@@ -34,7 +34,7 @@ func FindPokerWinPercentage(s []string) float64 {
 		p1 := cardList[0:5]
 		// p2 := cardList[5:]
 		for _, card := range p1 {
-			if string(card[0]) == "A" || string(card[0]) == "K" {
+			if string(card[0]) == "A" || string(card[0]) == "K" || string(card[0]) == "Q" {
 				win += 1
 				break
 			}
