@@ -34,6 +34,9 @@ func TestPokerHand(t *testing.T) {
 }
 
 func runGames(games string) float64 {
+	if len(games) == 0 {
+		return 0.0
+	}
 	return 0.0
 }
 
