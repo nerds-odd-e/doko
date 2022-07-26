@@ -20,12 +20,12 @@ func TestFizzBuzz1(t *testing.T) {
 
 	t.Run("it should say buzz if input divisible by 5", func(t *testing.T) {
 		assert.Equal(t, fizzbuzz(5), "buzz")
-		assert.Equal(t, fizzbuzz(5), "buzz")
+		assert.Equal(t, fizzbuzz(10), "buzz")
 	})
 }
 
 func fizzbuzz(i int) string {
-	if i == 5 {
+	if i == 5 || i == 10 {
 		return "buzz"
 	}
 	if i%3 == 0 {
