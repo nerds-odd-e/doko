@@ -9,18 +9,18 @@ import (
 func GetPlayer1Winrate(game []string) float64 {
 	if len(game) <= 0 {
 		return 0.0
-	}  else {
+	} else {
 		return decimalFormat(player1WinCount(game) / float64(len(game)) * 100)
 	}
 }
 
 func decimalFormat(percent float64) float64 {
-	return math.Round(percent * 100) / 100
+	return math.Round(percent*100) / 100
 }
 
 func player1WinCount(game []string) float64 {
 	n := 0.0
-	for _, item := range(game) {
+	for _, item := range game {
 		if Player1Win(item) {
 			n++
 		}
@@ -49,13 +49,13 @@ func SortCards(cards []Card) []Card {
 
 func Player1Win(hands string) bool {
 	// sortedPlayer1Hand := getSortedHand(strings.Split(hands, " ")[:5])
-	player1Cards := CreateCards(hands)[:5]
-	player1HighestRank := getRank(cgetHighestCard(player1Cards))
-	player2HighestRank := getRank(getHighestCard(strings.Split(hands, " ")[5:]))
+	cards := CreateCards(hands)
+	player1HighestRank := getRank(getHighestCard(cards[:5]))
+	player2HighestRank := getRank(getHighestCard(cards[5:]))
 	return player1HighestRank > player2HighestRank
 }
 
-func cgetHighestCard(cards []Card) string {
+func getHighestCard(cards []Card) string {
 	SortCards(cards)
 	return cards[4].Val[:1]
 }
@@ -65,10 +65,10 @@ func getSortedHand(hand []string) []string {
 	return hand
 }
 
-func getHighestCard(hand []string) string {
-	sort.Strings(hand)
-	return hand[4][:1]
-}
+// func getHighestCard(hand []string) string {
+// 	sort.Strings(hand)
+// 	return hand[4][:1]
+// }
 
 func getRank(rankStr string) int {
 	return map[string]int{
