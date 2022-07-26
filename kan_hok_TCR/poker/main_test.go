@@ -32,6 +32,6 @@ func TestTwoGameLoseWithHighCard(t *testing.T) {
 }
 
 func TestOneGameWinWithHighCardIsNotFirstCard(t *testing.T) {
-	result := getFirstPlayerWinCount("./files/one_game_win_high_card_that_not_the_1st.txt")
-	assert.Equal(t, result, 0, "Input file is one_game_win_high_card_that_not_the_1st.txt, should get 1")
+	result := isPlayer1Win("5C 4S KC 3H 2S QD 5S 4D 3S 2C")
+	assert.Equal(t, result, false, "Input highest score card is in third index, should get true")
 }
