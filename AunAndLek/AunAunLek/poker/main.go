@@ -21,6 +21,16 @@ func getRank(card string) int {
 	return ranks[card[0]]
 }
 
+// func getHighestRankInHand(hand []string) int {
+// 	highestRank := getRank(hand[0])
+// 	for _, c := range hand[1:] {
+// 		if highestRank < getRank(c) {
+// 			highestRank = getRank(c)
+// 		}
+// 	}
+// 	return highestRank
+// }
+
 func getHands(game string) ([]string, []string) {
 	hands := strings.Split(game, " ")
 	return hands[:5], hands[5:]
