@@ -27,5 +27,5 @@ func TestEnterNumberFive(t *testing.T) {
 }
 
 func TestEnterNumberSix(t *testing.T) {
-	assert.Equal(t, "fizz", "fizz")
+	assert.Equal(t, "fizz", fizzbuzz(6))
 }
