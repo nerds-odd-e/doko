@@ -24,12 +24,6 @@ func IsP1Win(game string) bool {
 	if ranks[p1Hand[0][0]] > ranks[p2Hand[0][0]] {
 		return true
 	}
-	if game == "AC 2C TC JC 5C KC JC 6C 2C QC" {
-		return true
-	}
-	if game == "KC 2C TC JC 5C TC JC 6C 2C QC" {
-		return true
-	}
 	return false
 }
 
