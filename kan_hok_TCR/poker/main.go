@@ -2,6 +2,7 @@ package poker
 
 import (
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -15,5 +16,6 @@ func getFirstPlayerWinCount(fileName string) int {
 }
 
 func getScoreByHighCard(gameStr string) int {
+	log.Println(gameStr)
 	return 1
 }
