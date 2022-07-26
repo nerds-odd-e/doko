@@ -25,7 +25,7 @@ func TestPlayer1Win(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		t.Run(fmt.Sprintf("%v game Player 1 win %v time(s)", len(c.input), c.expected), func(t *testing.T) {
+		t.Run(fmt.Sprintf("%v game(s) Player 1 win %v time(s)", len(c.input), c.expected), func(t *testing.T) {
 			assert.Equal(t, c.expected, Player1Win(c.input))
 		})
 	}
