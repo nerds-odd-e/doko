@@ -73,5 +73,5 @@ func TestThreeGamesPlayer_win66_67Percentage(t *testing.T) {
 }
 
 func TestPlayer1Wind2Pair(t *testing.T) {
-	// assert.Equal(t, true, Player1Win("8C TS 2C 2H 4S 7D 3S 9S 5D 2S"))
+	assert.Equal(t, true, Player1Win("8C TS 2C 2H 4S 7D 3S 9S 5D 2S"))
 }
