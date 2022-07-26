@@ -27,18 +27,13 @@ func runGames(games string) float64 {
 		return 0.0
 	}
 
-	if compareHand(games) == "win" {
+	if compareHand(games) {
 		return 1.0
 	}
 
 	return 0.0
 }
 
-func compareHand(game string) string {
-	if game[12] == '8' {
-		return "win"
-
-	}
-
-	return "lose"
+func compareHand(game string) bool {
+	return game[12] == '8'
 }
