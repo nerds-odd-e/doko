@@ -15,10 +15,18 @@ func IsPlayer1Win(cards string) bool {
 	if player1[0][0] == 'A' && player2[0][0] == 'A' && player1[1][0] == 'K' {
 		return true
 	}
-	for i := 0; i < len(player2); i++ {
-		if player2[i][0] == 'A' {
-			return false
-		}
+	if haveACard(player2) {
+		return false
+
 	}
 	return true
+}
+
+func haveACard(player2 []string) bool {
+	for i := 0; i < len(player2); i++ {
+		if player2[i][0] == 'A' {
+			return true
+		}
+	}
+	return false
 }
