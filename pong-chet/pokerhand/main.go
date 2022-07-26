@@ -26,9 +26,9 @@ type Hand struct {
 	cards []string
 }
 
-func get_score(hand Hand) int {
+func (h Hand) high_card() int {
 	score := 0.0
-	for _, card := range hand.cards {
+	for _, card := range h.cards {
 		score = math.Max(score, float64(CARD_SCORE[string(card[0])]))
 	}
 	return int(score)
@@ -67,7 +67,7 @@ func player_one_win(hand1 Hand, hand2 Hand) bool {
 	if hand1.pair() > 0 || hand2.pair() > 0 {
 		return hand1.pair() > hand2.pair()
 	}
-	return get_score(hand1) > get_score(hand2)
+	return hand1.high_card() > hand2.high_card()
 }
 
 func Poker(f string) float64 {
