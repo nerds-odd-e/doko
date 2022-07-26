@@ -19,7 +19,7 @@ func TestPlayer1Win(t *testing.T) {
 		{expected: 0, input: []string{}},
 		{expected: 1, input: []string{wincase}},
 		{expected: 2, input: []string{wincase, wincase}},
-		{expected: 2, input: []string{"AH 7H 6S KC JS QH TD JC 2D KS", "TH 7H 6S KC JS QH TD JC 2D 9S", losecase}},
+		{expected: 2, input: []string{wincase, wincase, losecase}},
 	}
 
 	for _, c := range cases {
