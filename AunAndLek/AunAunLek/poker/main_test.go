@@ -8,6 +8,17 @@ import (
 )
 
 func TestPlayer1Win(t *testing.T) {
+	t.Run("Player 1 win with highest card K", func(t *testing.T) {
+		input := "3H 7H 6S KC JS QH TD JC 2D 8S"
+		expected := true
+
+		result := IsP1Win(input)
+
+		assert.Equal(t, expected, result)
+	})
+}
+
+func TestPlayer1WinCount(t *testing.T) {
 	type testcase struct {
 		expected int
 		input    []string
