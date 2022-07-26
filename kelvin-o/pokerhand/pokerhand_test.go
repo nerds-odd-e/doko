@@ -24,9 +24,7 @@ func TestPokerHand(t *testing.T) {
 	})
 
 	t.Run("it should win 1 with high Q", func(t *testing.T) {
-		if false {
-			assert.Equal(t, runGames("2C TS QC 9H 4S 7D 2S 5D 3S 4C"), 1.0)
-		}
+		assert.Equal(t, runGames("2C TS QC 9H 4S 7D 2S 5D 3S 4C"), 1.0)
 	})
 }
 
@@ -48,6 +46,9 @@ func compareHand(game string) string {
 			return "win"
 		}
 		if getP1NthCardRank(game, cardPos) == "K" {
+			return "win"
+		}
+		if getP1NthCardRank(game, cardPos) == "Q" {
 			return "win"
 		}
 	}
