@@ -3,7 +3,7 @@ package fizzbuzz
 import "testing"
 
 func TestFizzBuzz1(t *testing.T) {
-	if 1 == 2 {
+	if "fizzbuzz(1)" == "1" {
 		t.Errorf("This should fail")
 	}
 }
