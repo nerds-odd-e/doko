@@ -30,33 +30,34 @@ func player1WinCount(game []string) float64 {
 
 type Card struct {
 	Val string
+	Rank int
 }
 
 func CreateCards(hands string) []Card {
 	cards := []Card{}
 	for _, v := range strings.Split(hands, " ") {
-		cards = append(cards, Card{Val: v})
+		cards = append(cards, Card{Val: v, Rank: getRank(v[:1])})
 	}
 	return cards
 }
 
-func SortCards(cards []Card) []Card {
+func SortCardsByRank(cards []Card) []Card {
 	sort.Slice(cards, func(i, j int) bool {
-		return cards[i].Val < cards[j].Val
+		return cards[i].Rank < cards[j].Rank
 	})
 	return cards
 }
 
 func Player1Win(hands string) bool {
 	cards := CreateCards(hands)
-	player1HighestRank := getRank(getHighestCard(cards[:5]))
-	player2HighestRank := getRank(getHighestCard(cards[5:]))
+	player1HighestRank := getHighestCard(cards[:5]).Rank
+	player2HighestRank := getHighestCard(cards[5:]).Rank
 	return player1HighestRank > player2HighestRank
 }
 
-func getHighestCard(cards []Card) string {
-	SortCards(cards)
-	return cards[4].Val[:1]
+func getHighestCard(cards []Card) Card {
+	SortCardsByRank(cards)
+	return cards[4]
 }
 
 func getRank(rankStr string) int {
