@@ -25,8 +25,3 @@ func TestNGameWithFirstPlayerWinLose(t *testing.T) {
 	result := getFirstPlayerWinRate("two_game_win_lose.txt")
 	assert.Equal(t, result, 0.5, "In two_game_win_lose.txt, the first player win rate should be 0.5")
 }
-
-func TestNGameWithTheSecondHighestScore(t *testing.T) {
-	result := getFirstPlayerWinRate("one_game_win_second_highest_score.txt")
-	assert.Equal(t, result, 1, "In one_game_win_second_highest_score.txt, the first player win rate should be 1")
-}
