@@ -59,11 +59,6 @@ func getHighestCard(cards []Card) string {
 	return cards[4].Val[:1]
 }
 
-func getSortedHand(hand []string) []string {
-	sort.Strings(hand)
-	return hand
-}
-
 func getRank(rankStr string) int {
 	return map[string]int{
 		"A": 14,
