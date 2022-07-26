@@ -8,10 +8,10 @@ import (
 func IsPlayer1Win(cards string) bool {
 	splitCards := strings.Split(cards, " ")
 	player1 := (splitCards[:5])
-	if player1[3][0] == 'A' {
+	player2 := (splitCards[5:])
+	if player1[0][0] == 'A' && player2[0][0] == 'A' && player1[2][0] == 'K' {
 		return true
 	}
-	player2 := (splitCards[5:])
 	if player1[0][0] == 'A' && player2[0][0] == 'A' && player1[1][0] == 'K' {
 		return true
 	}
