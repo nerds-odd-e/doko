@@ -22,6 +22,10 @@ var CARD_SCORE = map[string]int{
 	"A": 14,
 }
 
+type Hand struct {
+	cards []string
+}
+
 func get_score(hand []string) int {
 	score := 0.0
 	for _, card := range hand {
