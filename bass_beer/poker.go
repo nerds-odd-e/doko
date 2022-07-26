@@ -29,7 +29,15 @@ func player1WinCount(game []string) float64 {
 }
 
 type Card struct {
-	Rank int
+	Val string
+}
+
+func CreateCards(hands string) []Card {
+	cards := []Card{}
+	for _, v := range strings.Split(hands, " ") {
+		cards = append(cards, Card{Val: v})
+	}
+	return cards
 }
 
 func Player1Win(hands string) bool {
