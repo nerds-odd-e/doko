@@ -22,10 +22,4 @@ func TestPlayer1Win(t *testing.T) {
 			assert.Equal(t, c.expected, Player1Win(c.input))
 		})
 	}
-
-	expected := cases[0].expected
-	input := cases[0].input
-	t.Run(fmt.Sprintf("%v game Player 1 win %v time(s)", len(input), expected), func(t *testing.T) {
-		assert.Equal(t, expected, Player1Win(input))
-	})
 }
