@@ -139,7 +139,7 @@ func TestFactorOf50(t *testing.T) {
 
 func TestFactorOf13(t *testing.T) {
 	input := 13
-	expect := []int{}
+	expect := []int{13}
 
 	assert := PrimeFactors(input)
 
