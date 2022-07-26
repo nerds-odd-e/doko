@@ -1,4 +1,4 @@
-package AunAndChet
+package fizzbuzz
 
 import (
 	"testing"
@@ -7,5 +7,7 @@ import (
 )
 
 func TestInput1_ShouldSay1(t *testing.T) {
-	assert.Equal(t, 1,1, "")
+	answer := FizzBuzz(1)
+	expected := "1"
+	assert.Equal(t, answer, expected, "")
 }
