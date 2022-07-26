@@ -10,7 +10,7 @@ func Player1Win(input []string) int {
 		return len(input) - 1
 	}
 	if len(input) == 3 && IsP1Lose(input[len(input)-1]) {
-		return 2
+		return len(input) - 1
 	}
 	return len(input)
 }
