@@ -31,5 +31,5 @@ func Test_input_multiple_games(t *testing.T) {
 }
 
 func Test_input_multiple_games_all_win(t *testing.T) {
-	assert.Equal(t, 0.5, Poker("multiple_game_1.txt"))
+	assert.Equal(t, 1.0, Poker("multiple_game_1.txt"))
 }

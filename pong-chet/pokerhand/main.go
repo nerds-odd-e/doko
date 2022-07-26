@@ -35,16 +35,15 @@ func Poker(f string) float64 {
 	game_data := string(data)
 	if err == nil {
 		games := strings.Split(game_data, "\n")
-		if len(games) > 1 {
-			return 0.5
+		score := 0
+		for _, game := range games {
+			cards := strings.Split(game, " ")
+			hand1, hand2 := cards[0:5], cards[5:]
+			if get_score(hand1) > get_score(hand2) {
+				score += 1
+			}
 		}
-
-		cards := strings.Split(games[0], " ")
-		hand1, hand2 := cards[0:5], cards[5:]
-
-		if get_score(hand1) > get_score(hand2) {
-			return 1.0
-		}
+		return float64(score) / float64(len(games))
 	}
 	return 0.0
 }
