@@ -57,17 +57,6 @@ func getGameScore(cardList []string) float64 {
 	return 0.0
 }
 
-func getPlayerScore(cardList []string) int {
-	max := 0
-	for _, card := range cardList {
-		x := getScore(card)
-		if max < x {
-			max = x
-		}
-	}
-	return max
-}
-
 func getPlayerSecondScore(cardList []string) []int {
 	scoreList := []int{}
 	for _, card := range cardList {
