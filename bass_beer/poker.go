@@ -9,11 +9,8 @@ func AWin(hands string) bool {
 }
 
 func getRank(rankStr string) int {
-	if rankStr == "A" {
-		return 14
-	}
-	if rankStr == "K" {
-		return 13
-	}
-	return 0
+	return map[string]int{
+		"A": 14,
+		"K": 13,
+	}[rankStr]
 }
