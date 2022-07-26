@@ -10,7 +10,7 @@ require (
 	github.com/mattn/go-runewidth v0.0.13
 	github.com/nsf/termbox-go v1.1.1
 	github.com/romanyx/polluter v1.2.2
-	github.com/stretchr/testify v1.7.1
+	github.com/stretchr/testify v1.8.0
 	github.com/thoas/go-funk v0.9.2
 	gopkg.in/yaml.v2 v2.3.0
 )
@@ -39,6 +39,6 @@ require (
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	golang.org/x/crypto v0.0.0-20210921155107-089bfa567519 // indirect
 	golang.org/x/sys v0.0.0-20211216021012-1d35b9e2eb4e // indirect
-	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 	mellium.im/sasl v0.2.1 // indirect
 )
