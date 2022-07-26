@@ -2,6 +2,7 @@ package poker
 
 import (
 	"os"
+	"sort"
 	"strings"
 )
 
@@ -20,12 +21,35 @@ func getFirstPlayerWinCount(fileName string) int {
 	return winAmount
 }
 
+var cardScore = map[string]int{
+	"2": 2,
+	"3": 3,
+	"4": 4,
+	"5": 5,
+	"6": 6,
+	"7": 7,
+	"8": 8,
+	"9": 9,
+	"T": 10,
+	"J": 11,
+	"Q": 12,
+	"K": 13,
+	"A": 14,
+}
+
 func isPlayer1Win(game string) bool {
 	p1Cards := strings.Split(game, " ")[0:5]
-	for _, p1card := range p1Cards {
-		if p1card[0:1] == "K" || p1card[0:1] == "9" || p1card[0:1] == "A" {
-			return true
-		}
+	p2Cards := strings.Split(game, " ")[5:10]
+	p1HighestScore := getHigheScore(p1Cards)
+	p2HighestScore := getHigheScore(p2Cards)
+	return p1HighestScore > p2HighestScore
+}
+
+func getHigheScore(cards []string) int {
+	score := []int{}
+	for _, card := range cards {
+		score = append(score, cardScore[card[0:1]])
 	}
-	return false
+	sort.Ints(score)
+	return score[len(cards)-1]
 }
