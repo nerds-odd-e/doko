@@ -10,12 +10,12 @@ func getFirstPlayerWinCount(fileName string) int {
 		return 0
 	}
 	games := string(file)
-	if games[0] == 'K' {
+	if player1Win((games)) {
 		return 1
 	}
 	return 0
 }
 
 func player1Win(game string) bool {
-	return true
+	return game[0] == 'K'
 }
