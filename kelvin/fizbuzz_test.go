@@ -8,11 +8,10 @@ import (
 )
 
 func TestFizzBuzz1(t *testing.T) {
-	assert.Equal(t, fizzbuzz(1), "1")
-}
-
-func TestFizzBuzz2(t *testing.T) {
-	assert.Equal(t, fizzbuzz(2), "2")
+	t.Run("it should return number by default", func(t *testing.T) {
+		assert.Equal(t, fizzbuzz(1), "1")
+		assert.Equal(t, fizzbuzz(2), "2")
+	})
 }
 
 func fizzbuzz(i int) string {
