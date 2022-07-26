@@ -15,7 +15,7 @@ func TestInput1_ShouldSay1(t *testing.T) {
 func TestInputNumber_ShouldSaySameNumber(t *testing.T) {
 	answer := FizzBuzz(4)
 	expected := "1"
-	assert.Equal(t, answer, expected, "Wanted FizzBuzz but got %s", answer)
+	assert.Equal(t, answer, expected, "Wanted 4 but got %s", answer)
 }
 
 func TestInput1_ShouldSay3(t *testing.T) {
