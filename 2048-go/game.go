@@ -155,10 +155,10 @@ func (g *Game) movesAvailable() bool {
 
 func (g *Game) move(direction int) {
 	vector := g.getVector(direction)
-	g.newmove(vector)
+	g.moveWith(vector)
 }
 
-func (g *Game) newmove(vector Vector) {
+func (g *Game) moveWith(vector Vector) {
 
 	if g.IsGameTerminated() {
 		return
