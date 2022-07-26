@@ -41,8 +41,8 @@ func FindPokerWinPercentage(s []string) float64 {
 }
 
 func getGameScore(cardList []string) float64 {
-	p1Score := getPlayerSecondScore(cardList[0:5])
-	p2Score := getPlayerSecondScore(cardList[5:])
+	p1Score := getPlayerScoreCards(cardList[0:5])
+	p2Score := getPlayerScoreCards(cardList[5:])
 
 	for i := len(p1Score) - 1; i >= 0; i-- {
 		if p1Score[i] > p2Score[i] {
@@ -51,13 +51,12 @@ func getGameScore(cardList []string) float64 {
 		if p1Score[i] < p2Score[i] {
 			return 0.0
 		}
-
 	}
 
 	return 0.0
 }
 
-func getPlayerSecondScore(cardList []string) []int {
+func getPlayerScoreCards(cardList []string) []int {
 	scoreList := []int{}
 	for _, card := range cardList {
 		x := getScore(card)
