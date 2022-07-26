@@ -16,5 +16,11 @@ func getRank(rankStr string) int {
 		"A": 14,
 		"K": 13,
 		"J": 11,
+		"T": 10,
+		"9": 9,
+		"8": 8,
+		"7": 7,
+		"6": 6,
+		"5": 5,
 	}[rankStr]
 }
