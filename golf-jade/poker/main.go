@@ -45,6 +45,14 @@ func getGameScore(cardList []string) float64 {
 	p2Score := getPlayerScoreCards(cardList[5:])
 
 	for i := len(p1Score) - 1; i >= 0; i-- {
+		for j := i - 1; j >= 0; j-- {
+			if p1Score[i] == p1Score[j] {
+				return 1.0
+			}
+		}
+	}
+
+	for i := len(p1Score) - 1; i >= 0; i-- {
 		if p1Score[i] > p2Score[i] {
 			return 1.0
 		}
