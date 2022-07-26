@@ -13,8 +13,11 @@ func TestFizzBuzz(t *testing.T) {
 		expected string
 		input    int
 	}
+	cases := []testcase{
+		{expected: "1", input: 1},
+	}
 	expected := "1"
-	input := 1
+	input := cases[0].input
 	t.Run(fmt.Sprintf("Input %v get '%v'", input, expected), func(t *testing.T) {
 		assert.Equal(t, expected, FizzBuzz(input))
 	})
