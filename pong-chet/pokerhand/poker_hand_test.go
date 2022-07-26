@@ -55,3 +55,7 @@ func Test_three_of_a_kind_have_a_bug(t *testing.T) {
 	h := Hand{[]string{"3H", "7H", "7H", "6S", "6D"}}
 	assert.Equal(t, 0, h.three_of_a_kind())
 }
+
+func Test_two_pair(t *testing.T) {
+	assert.Equal(t, false, player_one_win(Hand{[]string{"4H", "4D", "5H", "5D", "8C"}}, Hand{[]string{"6H", "6D", "AH", "JD", "9C"}}))
+}
