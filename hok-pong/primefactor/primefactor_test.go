@@ -2,6 +2,7 @@ package primefactor_test
 
 import (
 	"reflect"
+	"sort"
 	"testing"
 
 	"tdd.com/v1/hok-pong/primefactor"
@@ -101,6 +102,30 @@ func Test_Primefactor_input_twelve_expected_array_of_2_2_3(t *testing.T) {
 	input := 12
 	result := primefactor.PrimeFactor(input)
 	expect := []int{2, 2, 3}
+	sort.Ints(result)
+	sort.Ints(expect)
+	if !reflect.DeepEqual(result, expect) {
+		t.Fatalf("PrimeFactor(%v) = %v should be %v", input, result, expect)
+	}
+}
+
+func Test_Primefactor_input_fourteen_expected_array_of_2_7(t *testing.T) {
+	input := 14
+	result := primefactor.PrimeFactor(input)
+	expect := []int{2, 7}
+	sort.Ints(result)
+	sort.Ints(expect)
+	if !reflect.DeepEqual(result, expect) {
+		t.Fatalf("PrimeFactor(%v) = %v should be %v", input, result, expect)
+	}
+}
+
+func Test_Primefactor_input_twentyfive_expected_array_of_5_5(t *testing.T) {
+	input := 25
+	result := primefactor.PrimeFactor(input)
+	expect := []int{5, 5}
+	sort.Ints(result)
+	sort.Ints(expect)
 	if !reflect.DeepEqual(result, expect) {
 		t.Fatalf("PrimeFactor(%v) = %v should be %v", input, result, expect)
 	}

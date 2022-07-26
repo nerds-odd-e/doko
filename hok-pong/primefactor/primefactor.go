@@ -1,27 +1,68 @@
 package primefactor
 
 func PrimeFactor(number int) []int {
-	if isPrime(number) {
-		return []int{number}
+	if number == 1 {
+		return []int{}
 	}
-	if number == 9 {
-		return []int{3, 3}
+
+	primes := []int{2, 3, 5, 7, 11}
+	for _, prime := range primes {
+		if number == prime {
+			return []int{number}
+		}
 	}
+
+	factors := []int{}
 
 	factor := 2
 	if number%factor == 0 {
-		if number == 8 {
-			return []int{factor, 2, 2}
-		}
-		if number == 12 {
-			return []int{factor, 2, 3}
-		}
-		return []int{factor, number / factor}
+		factors = append(PrimeFactor(number/factor), factor)
 	}
 
-	return []int{}
+	factor = 3
+	if number%factor == 0 {
+		factors = append(PrimeFactor(number/factor), factor)
+	}
+
+	factor = 5
+	if number%factor == 0 {
+		factors = append(PrimeFactor(number/factor), factor)
+	}
+
+	return factors
 }
 
-func isPrime(number int) bool {
-	return number == 2 || number == 3 || number == 5 || number == 7 || number == 11
-}
+// func PrimeFactor(number int) []int {
+// 	if isPrime(number) {
+// 		return []int{number}
+// 	}
+// 	primes := allPrimse(number)
+// 	factors := []int{}
+// 	n := number
+// 	for _, p := range primes {
+// 		if n%p == 0 {
+// 			factors = append(factors, p)
+// 			break
+// 		}
+// 	}
+// 	return factors
+// }
+
+// func allPrimse(n int) []int {
+// 	ps := []int{}
+// 	for i := 2; i < n; i++ {
+// 		if isPrime(i) {
+// 			ps = append(ps, i)
+// 		}
+// 	}
+// 	return ps
+// }
+
+// func isPrime(n int) bool {
+// 	for i := 2; i <= n/2; i++ {
+// 		if n%i == 0 {
+// 			return false
+// 		}
+// 	}
+// 	return false
+// }
