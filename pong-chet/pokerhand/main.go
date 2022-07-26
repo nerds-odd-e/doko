@@ -78,8 +78,8 @@ func Poker(f string) float64 {
 		score := 0
 		for _, game := range games {
 			cards := strings.Split(game, " ")
-			hand1, hand2 := cards[0:5], cards[5:]
-			if player_one_win(hand1, hand2) {
+			hand1, hand2 := Hand{cards[0:5]}, Hand{cards[5:]}
+			if player_one_win(hand1.cards, hand2.cards) {
 				score += 1
 			}
 		}
