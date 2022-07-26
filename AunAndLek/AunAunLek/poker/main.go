@@ -21,10 +21,7 @@ func IsP1Win(game string) bool {
 	hands := strings.Split(game, " ")
 	p1Hand := hands[:5]
 	p2Hand := hands[5:]
-	if ranks[p1Hand[0][0]] > ranks[p2Hand[0][0]] {
-		return true
-	}
-	return false
+	return ranks[p1Hand[0][0]] > ranks[p2Hand[0][0]]
 }
 
 func Player1WinCount(games []string) int {
