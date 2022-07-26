@@ -41,6 +41,17 @@ func pair(hand []string) int {
 	return 0
 }
 
+func game_func(hand1 []string, hand2 []string) bool {
+	if pair(hand1) > pair(hand2) {
+		return true
+	} else if pair(hand2) > pair(hand1) {
+		//Do Nothings.
+	} else if get_score(hand1) > get_score(hand2) {
+		return true
+	}
+	return false
+}
+
 func Poker(f string) float64 {
 	data, err := os.ReadFile(f)
 	game_data := string(data)
@@ -50,11 +61,7 @@ func Poker(f string) float64 {
 		for _, game := range games {
 			cards := strings.Split(game, " ")
 			hand1, hand2 := cards[0:5], cards[5:]
-			if pair(hand1) > pair(hand2) {
-				score += 1
-			} else if pair(hand2) > pair(hand1) {
-				//Do Nothings.
-			} else if get_score(hand1) > get_score(hand2) {
+			if game_func(hand1, hand2) {
 				score += 1
 			}
 		}
