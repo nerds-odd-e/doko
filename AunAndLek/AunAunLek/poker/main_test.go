@@ -33,6 +33,15 @@ func TestPlayer1Win(t *testing.T) {
 
 		assert.Equal(t, expected, result)
 	})
+
+	t.Run("Player 1 win with highest card A on 2nd card", func(t *testing.T) {
+		input := "2C AC TC JC 5C KC JC 6C 2C QC"
+		expected := false
+
+		result := IsP1Win(input)
+
+		assert.Equal(t, expected, result)
+	})
 }
 
 // func TestPlayer1WinCount(t *testing.T) {
