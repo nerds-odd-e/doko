@@ -17,12 +17,12 @@ func IsPlayer1Win(cards string) string {
 	if player2[3][0] == 'A' {
 		return "false"
 	}
-	for i := 0; i < 5; i++ {
+	for i := 0; i < len(player1); i++ {
 		if player1[i][0] == 'A' {
 			return "true"
 		}
 	}
-	for i := 0; i < 5; i++ {
+	for i := 0; i < len(player2); i++ {
 		if player2[i][0] == 'A' {
 			return "true"
 		}
