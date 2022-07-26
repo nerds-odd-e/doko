@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -29,8 +30,13 @@ func main() {
 func FindPokerWinPercentage(s []string) float64 {
 	win := 0
 	for _, game := range s {
-		if game == "AC TS KC 9H 4S 7D 2S 5D 3S KC" {
-			win += 1
+		cardList := strings.Split(game, " ")
+		p1 := cardList[0:5]
+		// p2 := cardList[5:]
+		for _, card := range p1 {
+			if string(card[0]) == "A" {
+				win += 1
+			}
 		}
 	}
 
