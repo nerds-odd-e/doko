@@ -18,5 +18,5 @@ func getFirstPlayerWinCount(fileName string) int {
 func getScoreByHighCard(gameStr string) int {
 	game := strings.Split(gameStr, " ")
 	fmt.Println(game)
-	return 1
+	return 2
 }
