@@ -2,6 +2,7 @@ package poker
 
 import (
 	"os"
+	"strings"
 )
 
 func getFirstPlayerWinCount(fileName string) int {
@@ -9,11 +10,15 @@ func getFirstPlayerWinCount(fileName string) int {
 	if len(string(file)) == 0 {
 		return 0
 	}
-	games := string(file)
-	if player1Win((games)) {
-		return 1
+	games := strings.Split(string(file), "\n")
+	count := 0
+	for _, game := range games {
+		if player1Win((game)) {
+			count++
+		}
 	}
-	return 0
+
+	return count
 }
 
 func player1Win(game string) bool {
