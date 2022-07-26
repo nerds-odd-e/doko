@@ -48,11 +48,7 @@ func game_func(hand1 []string, hand2 []string) bool {
 	if pair(hand2) > pair(hand1) {
 		return false
 	}
-	// if get_score(hand1) > get_score(hand2) {
-	// 	return true
-	// }
 	return get_score(hand1) > get_score(hand2)
-	// return false
 }
 
 func Poker(f string) float64 {
