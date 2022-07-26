@@ -7,20 +7,17 @@ import (
 	"tdd.com/v1/pong-chet/fizzbuzz"
 )
 
-func Test_FizzBuzz_1_1(t *testing.T) {
+func Test_FizzBuzz_say_the_number_by_default(t *testing.T) {
 	assert.Equal(t, "1", fizzbuzz.FizzBuzz(1))
-}
-
-func Test_FizzBuzz_2_2(t *testing.T) {
 	assert.Equal(t, "2", fizzbuzz.FizzBuzz(2))
 }
 
-func Test_FizzBuzz_3_Fizz(t *testing.T) {
+func Test_FizzBuzz_say_Fizz_when_divisible_by_3(t *testing.T) {
 	assert.Equal(t, "Fizz", fizzbuzz.FizzBuzz(3))
+	assert.Equal(t, "Fizz", fizzbuzz.FizzBuzz(6))
 }
 
 func Test_FizzBuzz_6_Fizz(t *testing.T) {
-	assert.Equal(t, "Fizz", fizzbuzz.FizzBuzz(6))
 }
 
 func Test_FizzBuzz_5_Buzz(t *testing.T) {
