@@ -9,6 +9,10 @@ import (
 
 func TestFizzBuzz(t *testing.T) {
 
+	type testcase struct {
+		expected string
+		input    int
+	}
 	expected := "1"
 	input := 1
 	t.Run(fmt.Sprintf("Input %v get '%v'", input, expected), func(t *testing.T) {
