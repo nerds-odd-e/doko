@@ -21,10 +21,15 @@ func getRank(card string) int {
 	return ranks[card[0]]
 }
 
-func IsP1Win(game string) bool {
+func getHands(game string) ([]string, []string) {
 	hands := strings.Split(game, " ")
 	p1Hand := hands[:5]
 	p2Hand := hands[5:]
+	return p1Hand, p2Hand
+}
+
+func IsP1Win(game string) bool {
+	p1Hand, p2Hand := getHands(game)
 	rankP1 := getRank(p1Hand[0])
 	rankP2 := getRank(p2Hand[0])
 	return rankP1 > rankP2
