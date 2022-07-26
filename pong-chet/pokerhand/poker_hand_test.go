@@ -47,5 +47,5 @@ func Test_pair(t *testing.T) {
 }
 
 func Test_three_of_a_kind(t *testing.T) {
-	assert.Equal(t, false, player_one_win([]string{"3H", "7H", "6H", "6S", "6D"}, []string{"8D", "AD", "JD", "TD", "8S"}))
+	assert.Equal(t, true, player_one_win([]string{"3H", "7H", "6H", "6S", "6D"}, []string{"8D", "AD", "JD", "TD", "8S"}))
 }
