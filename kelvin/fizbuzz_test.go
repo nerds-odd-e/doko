@@ -20,7 +20,7 @@ func TestFizzBuzz1(t *testing.T) {
 }
 
 func fizzbuzz(i int) string {
-	if i == 3 || i == 6 {
+	if i%3 == 0 {
 		return "fizz"
 	}
 	return fmt.Sprintf("%d", i)
