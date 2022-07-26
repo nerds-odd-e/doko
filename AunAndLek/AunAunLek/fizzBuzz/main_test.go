@@ -9,8 +9,9 @@ import (
 func TestFizzBuzz(t *testing.T) {
 
 	expected := "1"
+	input := 1
 	t.Run("Input 1 get '1'", func(t *testing.T) {
-		assert.Equal(t, expected, FizzBuzz(1))
+		assert.Equal(t, expected, FizzBuzz(input))
 	})
 
 	t.Run("Input 2 get '2'", func(t *testing.T) {
