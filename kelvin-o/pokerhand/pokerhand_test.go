@@ -23,8 +23,8 @@ func TestPokerHand(t *testing.T) {
 	})
 
 	t.Run("player1 win twice", func(t *testing.T) {
-		// games := p1WinByHighCard + "\n" + p1WinByHighCard
-		// assert.Equal(t, runGames(games), 1.0)
+		games := p1WinByHighCard + "\n" + p1WinByHighCard
+		assert.Equal(t, runGames(games), 1.0)
 	})
 
 }
