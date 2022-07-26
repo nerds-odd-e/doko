@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func GetPlayer1Winrate(game []string) float32 {
+func GetPlayer1Winrate(game []string) float64 {
 	return 0.0
 }
 

@@ -36,6 +36,6 @@ func TestPlayer1WinHighCard(t *testing.T) {
 }
 
 func TestPlayer1WinPercentage(t *testing.T) {
-	var want float32 = 0.0
+	var want float64 = 0.0
 	assert.Equal(t, want, GetPlayer1Winrate([]string{"8C TS 2C 9H 4S 7D 3S 9S 5D 2S"}))
 }
