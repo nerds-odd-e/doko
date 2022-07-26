@@ -39,5 +39,5 @@ func Test_input_lose_with_pair(t *testing.T) {
 }
 
 func Test_input_another_lose_with_pair(t *testing.T) {
-	assert.Equal(t, 1.0, Poker("pair_win_game_1.txt"))
+	assert.Equal(t, 0.0, Poker("pair_win_game_1.txt"))
 }

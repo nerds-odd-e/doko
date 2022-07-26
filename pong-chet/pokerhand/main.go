@@ -3,7 +3,6 @@ package pokerhand
 import (
 	"math"
 	"os"
-	"reflect"
 	"strings"
 )
 
@@ -31,6 +30,17 @@ func get_score(hand []string) int {
 	return int(score)
 }
 
+func pair(hand []string) int {
+	for i, card1 := range hand {
+		for _, card2 := range hand[i+1:] {
+			if string(card1[0]) == string(card2[0]) {
+				return CARD_SCORE[string(card1[0])]
+			}
+		}
+	}
+	return 0
+}
+
 func Poker(f string) float64 {
 	data, err := os.ReadFile(f)
 	game_data := string(data)
@@ -40,10 +50,11 @@ func Poker(f string) float64 {
 		for _, game := range games {
 			cards := strings.Split(game, " ")
 			hand1, hand2 := cards[0:5], cards[5:]
-			if reflect.DeepEqual(hand2, []string{"JD", "JS", "TH", "7D", "5D"}) {
-				continue
-			}
-			if get_score(hand1) > get_score(hand2) {
+			if pair(hand1) > pair(hand2) {
+				score += 1
+			} else if pair(hand2) > pair(hand1) {
+				//Do Nothings.
+			} else if get_score(hand1) > get_score(hand2) {
 				score += 1
 			}
 		}
