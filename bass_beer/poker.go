@@ -28,6 +28,10 @@ func player1WinCount(game []string) float64 {
 	return n
 }
 
+type Card struct {
+	Rank int
+}
+
 func Player1Win(hands string) bool {
 	sortedPlayer1Hand := getSortedHand(strings.Split(hands, " ")[:5])
 	player1HighestRank := getRank(getHighestCard(sortedPlayer1Hand))
