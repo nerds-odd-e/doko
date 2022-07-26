@@ -5,6 +5,10 @@ import (
 	"strings"
 )
 
+func GetPlayer1Winrate(game []string) float32 {
+	return 0.0
+}
+
 func Player1Win(hands string) bool {
 	player1HighestRank := getRank(getHighestCard(strings.Split(hands, " ")[:5]))
 	player2HighestRank := getRank(getHighestCard(strings.Split(hands, " ")[5:]))
