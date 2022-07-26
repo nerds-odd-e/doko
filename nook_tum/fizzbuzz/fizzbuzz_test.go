@@ -47,3 +47,9 @@ func TestInput15_ShouldSayFizzBuzz(t *testing.T) {
 	expected := "FizzBuzz"
 	assert.Equal(t, answer, expected, "Wanted FizzBuzz but got %s", answer)
 }
+
+func TestInput30_ShouldSayFizzBuzz(t *testing.T) {
+	answer := FizzBuzz(30)
+	expected := "Fizz"
+	assert.Equal(t, answer, expected, "Wanted FizzBuzz but got %s", answer)
+}
