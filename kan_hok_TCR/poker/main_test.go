@@ -40,3 +40,8 @@ func TestOneGameWinWithHighCardIsNine(t *testing.T) {
 	result := isPlayer1Win("9C 4S 2C 3H 2S 8D 5S 4D 3S 2C")
 	assert.Equal(t, result, true, "Input highest card of the player 1 is number nine, should get true")
 }
+
+func TestOneGameWinWithHighCardIsA(t *testing.T) {
+	result := isPlayer1Win("AC 4S 2C 3H 2S 8D 5S 4D 3S 2C")
+	assert.Equal(t, result, false, "Input highest card of the player 1 is Ae, should get true")
+}
