@@ -20,7 +20,6 @@ func main() {
 	var lines []string
 	for fileScanner.Scan() {
 		lines = append(lines, fileScanner.Text())
-
 	}
 	readFile.Close()
 
