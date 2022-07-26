@@ -26,18 +26,18 @@ type Hand struct {
 	cards []string
 }
 
-func get_score(hand []string) int {
+func get_score(hand Hand) int {
 	score := 0.0
-	for _, card := range hand {
+	for _, card := range hand.cards {
 		score = math.Max(score, float64(CARD_SCORE[string(card[0])]))
 	}
 	return int(score)
 }
 
-func three_of_a_kind(hand []string) int {
+func three_of_a_kind(hand Hand) int {
 	count := 0
-	for i, card1 := range hand {
-		for _, card2 := range hand[i+1:] {
+	for i, card1 := range hand.cards {
+		for _, card2 := range hand.cards[i+1:] {
 			if string(card1[0]) == string(card2[0]) {
 				count += 1
 			}
@@ -49,9 +49,9 @@ func three_of_a_kind(hand []string) int {
 	return 0
 }
 
-func pair(hand []string) int {
-	for i, card1 := range hand {
-		for _, card2 := range hand[i+1:] {
+func pair(hand Hand) int {
+	for i, card1 := range hand.cards {
+		for _, card2 := range hand.cards[i+1:] {
 			if string(card1[0]) == string(card2[0]) {
 				return CARD_SCORE[string(card1[0])]
 			}
@@ -61,13 +61,13 @@ func pair(hand []string) int {
 }
 
 func player_one_win(hand1 Hand, hand2 Hand) bool {
-	if three_of_a_kind(hand1.cards) > 0 || three_of_a_kind(hand2.cards) > 0 {
-		return three_of_a_kind(hand1.cards) > three_of_a_kind(hand2.cards)
+	if three_of_a_kind(hand1) > 0 || three_of_a_kind(hand2) > 0 {
+		return three_of_a_kind(hand1) > three_of_a_kind(hand2)
 	}
-	if pair(hand1.cards) > 0 || pair(hand2.cards) > 0 {
-		return pair(hand1.cards) > pair(hand2.cards)
+	if pair(hand1) > 0 || pair(hand2) > 0 {
+		return pair(hand1) > pair(hand2)
 	}
-	return get_score(hand1.cards) > get_score(hand2.cards)
+	return get_score(hand1) > get_score(hand2)
 }
 
 func Poker(f string) float64 {
