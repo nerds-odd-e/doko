@@ -29,9 +29,15 @@ func player1WinCount(game []string) float64 {
 }
 
 func Player1Win(hands string) bool {
-	player1HighestRank := getRank(getHighestCard(strings.Split(hands, " ")[:5]))
+	sortedPlayer1Hand := getSortedHand(strings.Split(hands, " ")[:5])
+	player1HighestRank := getRank(getHighestCard(sortedPlayer1Hand))
 	player2HighestRank := getRank(getHighestCard(strings.Split(hands, " ")[5:]))
 	return player1HighestRank > player2HighestRank
+}
+
+func getSortedHand(hand []string) []string {
+	sort.Strings(hand)
+	return hand
 }
 
 func getHighestCard(hand []string) string {
