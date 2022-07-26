@@ -18,5 +18,9 @@ func IsPlayer1Win(cards string) string {
 		// fmt.Printf("%v\n", player2[3])
 		return "false"
 	}
+	if player1[4][0] == 'A' {
+		// fmt.Printf("%v\n", player2[4])
+		return "true"
+	}
 	return ""
 }
