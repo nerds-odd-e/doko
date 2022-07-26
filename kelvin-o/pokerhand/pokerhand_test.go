@@ -20,9 +20,7 @@ func TestPokerHand(t *testing.T) {
 	})
 
 	t.Run("it should win 1 with high K", func(t *testing.T) {
-		if false {
-			assert.Equal(t, runGames("2C TS KC 9H 4S 7D 2S 5D 3S QC"), 1.0)
-		}
+		assert.Equal(t, runGames("2C TS KC 9H 4S 7D 2S 5D 3S QC"), 1.0)
 	})
 }
 
