@@ -39,13 +39,7 @@ func Poker(f string) float64 {
 
 		if get_score(hand1) > get_score(hand2) {
 			return 1.0
-		} else {
-			return 0.0
 		}
-		// if reflect.DeepEqual(hand1, []string{"KH", "JD", "TH", "7S", "6S"}) {
-		// 	return 0.0
-		// }
-		// return 1.0
 	}
 	return 0.0
 }
