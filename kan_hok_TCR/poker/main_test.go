@@ -21,7 +21,12 @@ func TestOneGameLoseWithHighCard(t *testing.T) {
 	assert.Equal(t, result, 0, "Input file is one_game_lose_high_card.txt, should get 0")
 }
 
-func TestTwoGameLoseWithHighCard(t *testing.T) {
+func TestTwoGameWinWithHighCard(t *testing.T) {
 	result := getFirstPlayerWinCount("./files/two_game_win_high_card.txt")
 	assert.Equal(t, result, 2, "Input file is two_game_win_high_card.txt, should get 2")
+}
+
+func TestTwoGameLoseWithHighCard(t *testing.T) {
+	result := getFirstPlayerWinCount("./files/two_game_lose_high_card.txt")
+	assert.Equal(t, result, 0, "Input file is two_game_lose_high_card.txt, should get 0")
 }
