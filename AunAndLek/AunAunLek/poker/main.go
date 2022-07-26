@@ -12,5 +12,8 @@ func Player1Win(input []string) int {
 	if len(input) == 2 && IsP1Lose(input[0]) && !IsP1Lose(input[1]) {
 		return 1
 	}
+	if len(input) == 3 && IsP1Lose(input[0]) && !IsP1Lose(input[1]) && !IsP1Lose(input[2]) {
+		return 2
+	}
 	return len(input)
 }
