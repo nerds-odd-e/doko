@@ -62,12 +62,6 @@ func compareHand(game string) string {
 		}
 	}
 
-	for cardPos := 6; cardPos <= 10; cardPos++ {
-		if strings.Contains("AKQT98", getNthCardRank(game, cardPos)) {
-			return "lose"
-		}
-	}
-
 	return "lose"
 }
 
