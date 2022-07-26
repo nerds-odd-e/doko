@@ -60,14 +60,14 @@ func pair(hand []string) int {
 	return 0
 }
 
-func player_one_win(hand1 []string, hand2 []string) bool {
-	if three_of_a_kind(hand1) > 0 || three_of_a_kind(hand2) > 0 {
-		return three_of_a_kind(hand1) > three_of_a_kind(hand2)
+func player_one_win(hand1 Hand, hand2 Hand) bool {
+	if three_of_a_kind(hand1.cards) > 0 || three_of_a_kind(hand2.cards) > 0 {
+		return three_of_a_kind(hand1.cards) > three_of_a_kind(hand2.cards)
 	}
-	if pair(hand1) > 0 || pair(hand2) > 0 {
-		return pair(hand1) > pair(hand2)
+	if pair(hand1.cards) > 0 || pair(hand2.cards) > 0 {
+		return pair(hand1.cards) > pair(hand2.cards)
 	}
-	return get_score(hand1) > get_score(hand2)
+	return get_score(hand1.cards) > get_score(hand2.cards)
 }
 
 func Poker(f string) float64 {
@@ -79,7 +79,7 @@ func Poker(f string) float64 {
 		for _, game := range games {
 			cards := strings.Split(game, " ")
 			hand1, hand2 := Hand{cards[0:5]}, Hand{cards[5:]}
-			if player_one_win(hand1.cards, hand2.cards) {
+			if player_one_win(hand1, hand2) {
 				score += 1
 			}
 		}
