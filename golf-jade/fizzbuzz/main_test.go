@@ -36,8 +36,8 @@ func TestFizzBuzz6(t *testing.T) {
 	assert.Equal(t, got, want)
 }
 
-func TestFizzBuzz7(t *testing.T) {
-	got := FizzBuzz(6)
-	want := "fizz"
+func TestFizzBuzz10(t *testing.T) {
+	got := FizzBuzz(10)
+	want := "10"
 	assert.Equal(t, got, want)
 }
