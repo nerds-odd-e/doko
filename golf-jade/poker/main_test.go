@@ -45,7 +45,7 @@ func TestHighCardWinQ(t *testing.T) {
 	assert.Equal(t, want, got)
 }
 
-func xTestHighCardLoseA2(t *testing.T) {
+func TestHighCardLoseA2(t *testing.T) {
 	got := FindPokerWinPercentage([]string{p1WinByHighCard, p2WinByHighCard, p2WinByHighCard})
 	want := 33.33
 	assert.Equal(t, want, got)

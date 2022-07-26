@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"strings"
 )
@@ -36,7 +37,8 @@ func FindPokerWinPercentage(s []string) float64 {
 		win += getPlayerScore(p1)
 	}
 
-	return 100.0 * (float64(win) / float64(len(s)))
+	percentage := 100.0 * (float64(win) / float64(len(s)))
+	return math.Floor(percentage*100) / 100
 }
 
 func getPlayerScore(p1 []string) int {
