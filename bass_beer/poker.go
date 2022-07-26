@@ -64,6 +64,10 @@ func Player1Win(hands string) bool {
 	return getHighestCard(cards[:5]).Rank > getHighestCard(cards[5:]).Rank
 }
 
+func compareHihgestScore() {
+
+}
+
 func getHighestCard(cards []Card) Card {
 	SortCardsByRank(cards)
 	return cards[4]
