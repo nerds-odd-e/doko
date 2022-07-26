@@ -19,9 +19,10 @@ func TestPokerHand(t *testing.T) {
 }
 
 func compareHand(game string) string {
-	p1FirstCardRank := string(game[0])
-	p1SecondCardRank := string(game[3])
-	p1ThirdCardRank := string(game[6])
+
+	p1FirstCardRank := getP1NthCardRank(game, 1)
+	p1SecondCardRank := getP1NthCardRank(game, 2)
+	p1ThirdCardRank := getP1NthCardRank(game, 3)
 	if p1FirstCardRank == "A" || p1SecondCardRank == "A" || p1ThirdCardRank == "A" {
 		return "win"
 	}
