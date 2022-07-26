@@ -35,3 +35,8 @@ func Test_FizzBuzz_input_15(t *testing.T) {
 	result := fizzBuzz(15)
 	assert.Equal(t, result, "FizzBuzz", "Input is 15 which is FizzBuzz, so we should get FizzBuzz")
 }
+
+func Test_FizzBuzz_input_30(t *testing.T) {
+	result := fizzBuzz(30)
+	assert.Equal(t, result, "Fizz", "Input is 30 which is FizzBuzz, so we should get FizzBuzz")
+}
