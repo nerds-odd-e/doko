@@ -1,1 +1,5 @@
 package pokerhand
+
+func Test() {
+
+}
