@@ -74,6 +74,28 @@ func compareHand(game string) string {
 			return "win"
 		}
 	}
+
+	for cardPos := 6; cardPos <= 10; cardPos++ {
+		if getP1NthCardRank(game, cardPos) == "A" {
+			return "lose"
+		}
+		if getP1NthCardRank(game, cardPos) == "K" {
+			return "lose"
+		}
+		if getP1NthCardRank(game, cardPos) == "Q" {
+			return "lose"
+		}
+		if getP1NthCardRank(game, cardPos) == "T" {
+			return "lose"
+		}
+		if getP1NthCardRank(game, cardPos) == "9" {
+			return "lose"
+		}
+		if getP1NthCardRank(game, cardPos) == "8" {
+			return "lose"
+		}
+	}
+
 	return "lose"
 }
 
