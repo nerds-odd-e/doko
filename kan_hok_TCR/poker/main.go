@@ -1,7 +1,6 @@
 package poker
 
 import (
-	"fmt"
 	"os"
 	"sort"
 	"strings"
@@ -25,24 +24,23 @@ var cardScoreMap = map[string]int{
 
 func getFirstPlayerWinCount(fileName string) int {
 	file, _ := os.ReadFile(fileName)
-	fmt.Println(len(string(file)))
 	if len(string(file)) == 0 {
 		return 0
 	}
 	cards := strings.Split(string(file), " ")
-	p1Scores := []int{}
-	p2Scores := []int{}
-	for index, card := range cards {
-		if index < 5 {
-			p1Scores = append(p1Scores, cardScoreMap[card[0:1]])
-		}
-		p2Scores = append(p2Scores, cardScoreMap[card[0:1]])
-	}
-	sort.Ints(p1Scores)
-	sort.Ints(p2Scores)
+	p1Scores, p2Scores := getHighCardScores(cards[0:5]), getHighCardScores(cards[5:10])
 
 	if p1Scores[4] > p2Scores[4] {
 		return 1
 	}
 	return 0
+}
+
+func getHighCardScores(playerCards []string) []int {
+	scores := []int{}
+	for _, card := range playerCards {
+		scores = append(scores, cardScoreMap[card[0:1]])
+	}
+	sort.Ints(scores)
+	return scores
 }
