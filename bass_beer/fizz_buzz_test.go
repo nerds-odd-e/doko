@@ -7,5 +7,5 @@ import (
 )
 
 func TestEnterNumberOne(t *testing.T) {
-	assert.True(t, true)
+	assert.Equal(t, 1, 1)
 }
