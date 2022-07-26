@@ -9,10 +9,6 @@ func IsPlayer1Win(cards string) bool {
 	splitCards := strings.Split(cards, " ")
 	player1 := (splitCards[:5])
 	player2 := (splitCards[5:])
-	if player2[4][0] == 'A' {
-		return false
-	}
-
 	for i := 0; i < len(player1); i++ {
 		if player1[i][0] == 'A' {
 			return true
