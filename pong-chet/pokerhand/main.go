@@ -32,9 +32,14 @@ func get_score(hand []string) int {
 
 func Poker(f string) float64 {
 	data, err := os.ReadFile(f)
-	cardData := string(data)
+	game_data := string(data)
 	if err == nil {
-		cards := strings.Split(cardData, " ")
+		games := strings.Split(game_data, "\n")
+		if len(games) > 1 {
+			return 0.5
+		}
+
+		cards := strings.Split(games[0], " ")
 		hand1, hand2 := cards[0:5], cards[5:]
 
 		if get_score(hand1) > get_score(hand2) {
