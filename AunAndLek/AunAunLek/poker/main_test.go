@@ -15,7 +15,12 @@ func TestPlayer1Win(t *testing.T) {
 
 	cases := []testcase{
 		{expected: 0, input: []string{}},
-		{expected: 1, input: []string{"3H 7H 6S KC JS QH TD JC 2D 8S"}},
+	}
+
+	for _, c := range cases {
+		t.Run(fmt.Sprintf("%v game Player 1 win %v time(s)", len(c.input), c.expected), func(t *testing.T) {
+			assert.Equal(t, c.expected, Player1Win(c.input))
+		})
 	}
 
 	expected := cases[0].expected
