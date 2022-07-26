@@ -17,7 +17,6 @@ func IsPlayer1Win(cards string) bool {
 	}
 	if haveACard(player2) {
 		return false
-
 	}
 	return true
 }
