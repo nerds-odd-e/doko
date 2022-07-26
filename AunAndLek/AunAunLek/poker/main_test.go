@@ -10,11 +10,11 @@ import (
 func TestPlayer1Win(t *testing.T) {
 	type testcase struct {
 		expected int
-		input    [][]string
+		input    []string
 	}
 
 	cases := []testcase{
-		{expected: 0, input: [][]string{}},
+		{expected: 0, input: []string{}},
 	}
 
 	expected := cases[0].expected
