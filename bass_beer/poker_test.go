@@ -44,5 +44,5 @@ func TestPlayer1WinZeroPercentage(t *testing.T) {
 }
 
 func TestEmptyGameZeroPercentage(t *testing.T) {
-	// assert.Equal(t, 0.0, GetPlayer1Winrate([]string{}))
+	assert.Equal(t, 0.0, GetPlayer1Winrate([]string{}))
 }
