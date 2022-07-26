@@ -7,8 +7,8 @@ import (
 )
 
 func TestPlayer1Win(t *testing.T) {
-	t.Run("Player 1 win with highest card K", func(t *testing.T) {
-		input := "3H 7H 6S KC JS QH TD JC 2D 8S"
+	t.Run("Player 1 win with highest card A", func(t *testing.T) {
+		input := "AC 2C TC JC 5C KC JC 6C 2C QC"
 		expected := true
 
 		result := IsP1Win(input)
