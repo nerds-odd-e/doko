@@ -8,8 +8,10 @@ import (
 
 func TestPokerHand(t *testing.T) {
 	t.Run("it should win 0", func(t *testing.T) {
+		assert.Equal(t, runGames(""), 0.0)
 		assert.Equal(t, runGames("8C TS KC 9H 4S 7D 2S 5D 3S AC"), 0.0)
 	})
+
 	if false {
 		t.Run("it should lose with high A", func(t *testing.T) {
 			assert.Equal(t, compareHand("8C TS KC 9H 4S 7D 2S 5D 3S AC"), "lose")
