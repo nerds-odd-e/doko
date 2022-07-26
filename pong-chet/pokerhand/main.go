@@ -43,7 +43,7 @@ func pair(hand []string) int {
 
 func game_func(hand1 []string, hand2 []string) bool {
 	if pair(hand1) > pair(hand2) {
-		return true
+		return pair(hand1) > pair(hand2)
 	} else if pair(hand2) > pair(hand1) {
 		//Do Nothings.
 	} else if get_score(hand1) > get_score(hand2) {
