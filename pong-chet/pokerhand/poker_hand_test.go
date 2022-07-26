@@ -7,6 +7,9 @@ import (
 )
 
 func Test_Input_empty_File(t *testing.T) {
-	result := Poker("empty.txt")
-	assert.Equal(t, 0.0, result)
+	assert.Equal(t, 0.0, Poker("empty.txt"))
+}
+
+func Test_Input_one_game_file(t *testing.T) {
+	assert.Equal(t, 0.0, Poker("one_game.txt"))
 }
