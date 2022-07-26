@@ -26,3 +26,7 @@ func TestPlayer1LoseWithKing(t *testing.T) {
 func TestPlayer1LoseWithKingOnNewPosition(t *testing.T) {
 	assert.Equal(t, false, Player1Win("8C TS QC 9H 4S 7D 2S 5D KS 3S"))
 }
+
+func TestPlayer1LoseWithJ(t *testing.T) {
+	assert.Equal(t, true, Player1Win("8C TS 2C 9H 4S 7D 2S 5D JS 3S"))
+}
