@@ -28,3 +28,7 @@ func compareHand(game string) string {
 
 	return "lose"
 }
+
+func getP1NthCardRank(game string, cardPos int) string {
+	return string(game[(cardPos-1)*3])
+}
