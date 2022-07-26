@@ -154,17 +154,17 @@ func (g *Game) movesAvailable() bool {
 }
 
 func (g *Game) move(direction int) {
-	g.newmove(direction)
+	vector := g.getVector(direction)
+	g.newmove(vector)
 }
 
-func (g *Game) newmove(direction int) {
+func (g *Game) newmove(vector Vector) {
 
 	if g.IsGameTerminated() {
 		return
 	}
 
 	moved := false
-	vector := g.getVector(direction)
 	traversals := g.BuildTraversals(vector)
 
 	for i := 0; i < len(traversals.x); i++ {
