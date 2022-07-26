@@ -57,8 +57,8 @@ func pair(hand []string) int {
 }
 
 func player_one_win(hand1 []string, hand2 []string) bool {
-	if three_of_a_kind(hand1) > 0 {
-		return true
+	if three_of_a_kind(hand1) > 0 || three_of_a_kind(hand2) > 0 {
+		return three_of_a_kind(hand1) > three_of_a_kind(hand2)
 	}
 	if pair(hand1) > 0 || pair(hand2) > 0 {
 		return pair(hand1) > pair(hand2)
