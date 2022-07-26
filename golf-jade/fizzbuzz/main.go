@@ -5,13 +5,15 @@ import (
 )
 
 func FizzBuzz(n int) string {
-	if n%3 == 0 && n%5 == 0 {
+	isFizz := n%3 == 0
+	isBuzz := n%5 == 0
+	if isFizz && isBuzz {
 		return "fizzbuzz"
 	}
-	if n%3 == 0 {
+	if isFizz {
 		return "fizz"
 	}
-	if n%5 == 0 {
+	if isBuzz {
 		return "buzz"
 	}
 
