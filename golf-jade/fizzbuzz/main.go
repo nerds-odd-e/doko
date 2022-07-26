@@ -1,11 +1,13 @@
 package main
 
+import (
+	"strconv"
+)
+
 func FizzBuzz(n int) string {
 	if n == 3 {
 		return "fizz"
 	}
-	if n == 2 {
-		return "2"
-	}
-	return "1"
+
+	return strconv.Itoa(n)
 }
