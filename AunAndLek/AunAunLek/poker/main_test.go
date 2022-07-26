@@ -18,7 +18,7 @@ func TestPlayer1Win(t *testing.T) {
 	cases := []testcase{
 		{expected: 0, input: []string{}},
 		{expected: 1, input: []string{wincase}},
-		{expected: 1, input: []string{losecase}},
+		{expected: 0, input: []string{losecase}},
 		{expected: 2, input: []string{wincase, wincase}},
 		// {expected: 2, input: []string{wincase, wincase, losecase}},
 	}
