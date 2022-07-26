@@ -48,16 +48,32 @@ func FindPokerWinPercentage(s []string) float64 {
 }
 
 func getPlayerScore(cardList []string) int {
+	max := 0
 	for _, card := range cardList {
 		x := getScore(card)
-		if x {
-			return 1
+		if max < x {
+			max = x
 		}
 	}
-	return 0
+	return max
 }
 
-func getScore(card string) bool {
-	x := string(card[0]) == "A" || string(card[0]) == "K" || string(card[0]) == "Q"
-	return x
+func getScore(card string) int {
+	cardScore := map[string]int{
+		"A": 14,
+		"K": 13,
+		"Q": 12,
+		"J": 11,
+		"T": 10,
+		"9": 9,
+		"8": 8,
+		"7": 7,
+		"6": 6,
+		"5": 5,
+		"4": 4,
+		"3": 3,
+		"2": 2,
+	}
+
+	return cardScore[string(card[0])]
 }
