@@ -21,6 +21,14 @@ func getFirstPlayerWinCount(fileName string) int {
 	return winAmount
 }
 
+func isPlayer1Win(game string) bool {
+	p1Cards := strings.Split(game, " ")[0:5]
+	p2Cards := strings.Split(game, " ")[5:10]
+	p1HighestScore := getHigheScore(p1Cards)
+	p2HighestScore := getHigheScore(p2Cards)
+	return p1HighestScore > p2HighestScore
+}
+
 var cardScore = map[string]int{
 	"2": 2,
 	"3": 3,
@@ -35,14 +43,6 @@ var cardScore = map[string]int{
 	"Q": 12,
 	"K": 13,
 	"A": 14,
-}
-
-func isPlayer1Win(game string) bool {
-	p1Cards := strings.Split(game, " ")[0:5]
-	p2Cards := strings.Split(game, " ")[5:10]
-	p1HighestScore := getHigheScore(p1Cards)
-	p2HighestScore := getHigheScore(p2Cards)
-	return p1HighestScore > p2HighestScore
 }
 
 func getHigheScore(cards []string) int {
