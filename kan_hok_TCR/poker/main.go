@@ -7,20 +7,19 @@ import (
 
 func getFirstPlayerWinCount(fileName string) int {
 	file, _ := os.ReadFile(fileName)
+	winAmount := 0
 	if len(string(file)) == 0 {
-		return 0
+		return winAmount
 	}
 	games := strings.Split(string(file), "\n")
-	count := 0
 	for _, game := range games {
-		if player1Win((game)) {
-			count++
+		if isPlayer1Win((game)) {
+			winAmount++
 		}
 	}
-
-	return count
+	return winAmount
 }
 
-func player1Win(game string) bool {
+func isPlayer1Win(game string) bool {
 	return game[0] == 'K'
 }
