@@ -4,7 +4,7 @@ import "testing"
 
 func TestFizzBuzz1(t *testing.T) {
 	if fizzbuzz(1) == "1" {
-		t.Errorf("This should fail")
+		t.Errorf("Expected %q, but got %q", "1", fizzbuzz(1))
 	}
 }
 
