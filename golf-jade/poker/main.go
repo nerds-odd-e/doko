@@ -33,15 +33,15 @@ func FindPokerWinPercentage(s []string) float64 {
 		cardList := strings.Split(game, " ")
 		p1 := cardList[0:5]
 		// p2 := cardList[5:]
-		win += newFunction1(p1)
+		win += getPlayerScore(p1)
 	}
 
 	return 100.0 * (float64(win) / float64(len(s)))
 }
 
-func newFunction1(p1 []string) int {
+func getPlayerScore(p1 []string) int {
 	for _, card := range p1 {
-		x := newFunction(card)
+		x := getScore(card)
 		if x {
 			return 1
 		}
@@ -49,7 +49,7 @@ func newFunction1(p1 []string) int {
 	return 0
 }
 
-func newFunction(card string) bool {
+func getScore(card string) bool {
 	x := string(card[0]) == "A" || string(card[0]) == "K" || string(card[0]) == "Q"
 	return x
 }
