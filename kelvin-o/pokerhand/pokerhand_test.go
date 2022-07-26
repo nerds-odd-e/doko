@@ -13,15 +13,14 @@ func TestPokerHand(t *testing.T) {
 
 	t.Run("it should win with high A", func(t *testing.T) {
 		assert.Equal(t, compareHand("AC TS KC 9H 4S 7D 2S 5D 3S QC"), "win")
-		if false {
-			assert.Equal(t, compareHand("TS AC KC 9H 4S 7D 2S 5D 3S QC"), "win")
-		}
+		assert.Equal(t, compareHand("TS AC KC 9H 4S 7D 2S 5D 3S QC"), "win")
 	})
 }
 
 func compareHand(game string) string {
 	p1FirstCardRank := string(game[0])
-	if p1FirstCardRank == "A" {
+	p1SecondCardRank := string(game[3])
+	if p1FirstCardRank == "A" || p1SecondCardRank == "A" {
 		return "win"
 	}
 
