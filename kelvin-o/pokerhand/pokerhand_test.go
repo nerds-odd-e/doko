@@ -1,7 +1,6 @@
 package pokerhand
 
 import (
-	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -42,12 +41,4 @@ func compareHand(game string) string {
 	}
 
 	return "lose"
-}
-
-func player1Win(game string, cardPos int) bool {
-	return strings.Contains("AKQT98", getNthCardRank(game, cardPos))
-}
-
-func getNthCardRank(game string, cardPos int) string {
-	return string(game[(cardPos-1)*3])
 }
