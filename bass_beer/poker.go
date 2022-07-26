@@ -1,10 +1,14 @@
 package main
 
-import "strings"
+import (
+	"sort"
+	"strings"
+)
 
 func Player1Win(hands string) bool {
 	player1 := strings.Split(hands, " ")[:5]
 	player2 := strings.Split(hands, " ")[5:]
+	sort.Strings(player2)
 	player2HighestRank := getRank(player2[4][:1])
 	if player2HighestRank > getRank(player1[2][:1]) ||
 		getRank(player2[3][:1]) >= 11 {
