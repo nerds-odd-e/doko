@@ -42,7 +42,7 @@ func pair(hand []string) int {
 }
 
 func game_func(hand1 []string, hand2 []string) bool {
-	if pair(hand2) > 0 {
+	if pair(hand1) > 0 || pair(hand2) > 0 {
 		return pair(hand1) > pair(hand2)
 	}
 	// if pair(hand2) > pair(hand1) {
