@@ -13,5 +13,5 @@ func TestGetFirstPlayerWinCount(t *testing.T) {
 
 func TestOneGameWinWithHighCard(t *testing.T) {
 	result := getFirstPlayerWinCount("./files/one_game_win_high_card.txt")
-	assert.Equal(t, result, 0, "Input file is one_game_win_high_card.txt, should get 1")
+	assert.Equal(t, result, 1, "Input file is one_game_win_high_card.txt, should get 1")
 }
