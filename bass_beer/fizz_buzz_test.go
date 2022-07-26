@@ -30,6 +30,3 @@ func TestEnterNumberSix(t *testing.T) {
 	assert.Equal(t, "fizz", fizzbuzz(6))
 }
 
-func TestEnterNumberSeven(t *testing.T) {
-	assert.Equal(t, "7", fizzbuzz(7))
-}
