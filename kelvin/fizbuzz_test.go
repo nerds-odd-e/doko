@@ -17,6 +17,10 @@ func TestFizzBuzz1(t *testing.T) {
 		assert.Equal(t, fizzbuzz(3), "fizz")
 		assert.Equal(t, fizzbuzz(6), "fizz")
 	})
+
+	t.Run("it should say buzz if input equal 5", func(t *testing.T) {
+		assert.Equal(t, fizzbuzz(3), "fizz")
+	})
 }
 
 func fizzbuzz(i int) string {
