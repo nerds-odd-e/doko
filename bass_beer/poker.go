@@ -8,11 +8,15 @@ import (
 func GetPlayer1Winrate(game []string) float64 {
 	if len(game) <= 0 {
 		return 0.0
-	} 
-	if Player1Win(game[0]) {
-		return 100.0
+	}  else {
+		var n float64 = 0.0
+		for _, item := range(game) {
+			if Player1Win(item) {
+				n++
+			}
+		}
+		return n / float64(len(game)) * 100
 	}
-	return 0.0
 }
 
 func Player1Win(hands string) bool {
