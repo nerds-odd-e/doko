@@ -34,10 +34,10 @@ func get_score(hand Hand) int {
 	return int(score)
 }
 
-func three_of_a_kind(hand Hand) int {
+func (h Hand) three_of_a_kind() int {
 	count := 0
-	for i, card1 := range hand.cards {
-		for _, card2 := range hand.cards[i+1:] {
+	for i, card1 := range h.cards {
+		for _, card2 := range h.cards[i+1:] {
 			if string(card1[0]) == string(card2[0]) {
 				count += 1
 			}
@@ -61,8 +61,8 @@ func pair(hand Hand) int {
 }
 
 func player_one_win(hand1 Hand, hand2 Hand) bool {
-	if three_of_a_kind(hand1) > 0 || three_of_a_kind(hand2) > 0 {
-		return three_of_a_kind(hand1) > three_of_a_kind(hand2)
+	if hand1.three_of_a_kind() > 0 || hand2.three_of_a_kind() > 0 {
+		return hand1.three_of_a_kind() > hand2.three_of_a_kind()
 	}
 	if pair(hand1) > 0 || pair(hand2) > 0 {
 		return pair(hand1) > pair(hand2)
