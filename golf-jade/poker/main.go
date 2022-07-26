@@ -44,21 +44,12 @@ func getGameScore(cardList []string) float64 {
 	p1Score := getPlayerScoreCards(cardList[0:5])
 	p2Score := getPlayerScoreCards(cardList[5:])
 
-	p1Pair := isPair(p1Score)
-	p2Pair := isPair(p2Score)
-	if p1Pair && p2Pair {
-		p1PairScore := getPairCard(p1Score)
-		p2PairScore := getPairCard(p2Score)
+	p1PairScore := getPairCard(p1Score)
+	p2PairScore := getPairCard(p2Score)
+	if p1PairScore != 0 || p2PairScore != 0 {
 		if p1PairScore > p2PairScore {
 			return 1.0
 		}
-		return 0.0
-	}
-
-	if p1Pair {
-		return 1.0
-	}
-	if p2Pair {
 		return 0.0
 	}
 
