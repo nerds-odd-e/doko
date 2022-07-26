@@ -8,5 +8,5 @@ import (
 )
 
 func Test_FizzBuzz_1_1(t *testing.T) {
-	assert.Equal(t, fizzbuzz.FizzBuzz(1), "")
+	assert.Equal(t, "1", fizzbuzz.FizzBuzz(1))
 }
