@@ -6,11 +6,11 @@ import (
 )
 
 func Player1Win(hands string) bool {
-	player1 := strings.Split(hands, " ")[:5]
+	// player1 := 
 	player2 := strings.Split(hands, " ")[5:]
-	sort.Strings(player1)
+	
 	sort.Strings(player2)
-	player1HighestRank := getRank(getHighestCard(player1))
+	player1HighestRank := getRank(getHighestCard(strings.Split(hands, " ")[:5]))
 	player2HighestRank := getRank(player2[4][:1])
 	if player2HighestRank > player1HighestRank {
 		return false
@@ -19,6 +19,7 @@ func Player1Win(hands string) bool {
 }
 
 func getHighestCard(hand []string) string {
+	sort.Strings(hand)
 	return hand[4][:1]
 }
 
