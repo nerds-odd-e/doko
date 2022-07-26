@@ -33,5 +33,5 @@ func TestTwoGameLoseWithHighCard(t *testing.T) {
 
 func TestOneGameWinWithHighCardIsNotFirstCard(t *testing.T) {
 	result := isPlayer1Win("5C 4S KC 3H 2S QD 5S 4D 3S 2C")
-	assert.Equal(t, result, false, "Input highest score card of the player 1 is in third index, should get true")
+	assert.Equal(t, result, true, "Input highest score card of the player 1 is in third index, should get true")
 }
