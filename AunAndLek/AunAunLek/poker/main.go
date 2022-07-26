@@ -38,9 +38,7 @@ func getHands(game string) ([]string, []string) {
 
 func IsP1Win(game string) bool {
 	p1Hand, p2Hand := getHands(game)
-	rankP1 := getHighestRankInHand(p1Hand)
-	rankP2 := getHighestRankInHand(p2Hand)
-	return rankP1 > rankP2
+	return getHighestRankInHand(p1Hand) > getHighestRankInHand(p2Hand)
 }
 
 func Player1WinCount(games []string) int {
