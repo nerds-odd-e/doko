@@ -64,10 +64,10 @@ func TestTwoGamesPlayer_win50Percentage(t *testing.T) {
 }
 
 func TestThreeGamesPlayer_win66_67Percentage(t *testing.T) {
-	// games := []string {
-	// 	"8C TS 2C 9H 4S 7D 3S 9S 5D 2S",
-	// 	"8C TS 2C 9H 4S 7D 3S 9S 5D 2S",
-	// 	"8C TS 2C 9H 4S 7D 3S 9S 5D KS",
-	// }
-	// assert.Equal(t, 66.67, GetPlayer1Winrate(games))
+	games := []string {
+		"8C TS 2C 9H 4S 7D 3S 9S 5D 2S",
+		"8C TS 2C 9H 4S 7D 3S 9S 5D 2S",
+		"8C TS 2C 9H 4S 7D 3S 9S 5D KS",
+	}
+	assert.Equal(t, 66.67, GetPlayer1Winrate(games))
 }

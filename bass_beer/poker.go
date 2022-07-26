@@ -1,6 +1,7 @@
 package main
 
 import (
+	"math"
 	"sort"
 	"strings"
 )
@@ -9,7 +10,7 @@ func GetPlayer1Winrate(game []string) float64 {
 	if len(game) <= 0 {
 		return 0.0
 	}  else {
-		return player1WinCount(game) / float64(len(game)) * 100
+		return math.Round(player1WinCount(game) / float64(len(game)) * 100 * 100) / 100
 	}
 }
 
