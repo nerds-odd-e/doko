@@ -22,7 +22,7 @@ func IsPlayer1Win(cards string) bool {
 	}
 	for i := 0; i < len(player2); i++ {
 		if player2[i][0] == 'A' {
-			return true
+			return false
 		}
 	}
 	return true
