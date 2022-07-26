@@ -30,3 +30,7 @@ func Test_FizzBuzz_5_Buzz(t *testing.T) {
 func Test_FizzBuzz_10_Buzz(t *testing.T) {
 	assert.Equal(t, "Buzz", fizzbuzz.FizzBuzz(10))
 }
+
+func Test_FizzBuzz_15_FizzBuzz(t *testing.T) {
+	assert.Equal(t, "Buzz", fizzbuzz.FizzBuzz(15))
+}
