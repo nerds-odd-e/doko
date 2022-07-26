@@ -23,14 +23,14 @@ func TestFizzBuzz1(t *testing.T) {
 		assert.Equal(t, fizzbuzz(10), "buzz")
 	})
 
-	t.Run("it should say fizzbuzz if input 15, 30", func(t *testing.T) {
+	t.Run("it should say fizzbuzz if input divisible by 15", func(t *testing.T) {
 		assert.Equal(t, fizzbuzz(15), "fizzbuzz")
 		assert.Equal(t, fizzbuzz(30), "fizzbuzz")
 	})
 }
 
 func fizzbuzz(i int) string {
-	if i == 15 || i == 30 {
+	if i%3 == 0 && i%5 == 0 {
 		return "fizzbuzz"
 	}
 	if i%5 == 0 {
