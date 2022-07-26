@@ -13,9 +13,7 @@ func TestPokerHand(t *testing.T) {
 	})
 
 	t.Run("it should win 1 with high A", func(t *testing.T) {
-		if false {
-			assert.Equal(t, runGames("AC TS KC 9H 4S 7D 2S 5D 3S QC"), 1.0)
-		}
+		assert.Equal(t, runGames("AC TS KC 9H 4S 7D 2S 5D 3S QC"), 1.0)
 	})
 
 	if false {
@@ -37,6 +35,11 @@ func runGames(games string) float64 {
 	if len(games) == 0 {
 		return 0.0
 	}
+
+	if compareHand(games) == "win" {
+		return 1.0
+	}
+
 	return 0.0
 }
 
