@@ -9,9 +9,7 @@ func GetPlayer1Winrate(game []string) float64 {
 	if len(game) <= 0 {
 		return 0.0
 	}  else {
-		n := player1WinCount(game)
-		
-		return n / float64(len(game)) * 100
+		return player1WinCount(game) / float64(len(game)) * 100
 	}
 }
 
