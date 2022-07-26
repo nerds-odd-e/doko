@@ -3,7 +3,7 @@ package fizzbuzz
 import "strconv"
 
 func FizzBuzz(n int) string {
-	if n == 15 {
+	if n%3 == 0 && n%5 == 0 {
 		return "FizzBuzz"
 	}
 	if n%5 == 0 {
