@@ -55,8 +55,7 @@ func SortCardsByRank(cards []Card) []Card {
 func Player1Win(hands string) bool {
 	cards := CreateCards(hands)
 	if getHighestCard(cards[:5]).Rank == getHighestCard(cards[5:]).Rank {
-		
-		return true
+		return SortCardsByRank(cards[:5])[3].Rank > SortCardsByRank(cards[5:])[3].Rank
 	}
 
 	return getHighestCard(cards[:5]).Rank > getHighestCard(cards[5:]).Rank

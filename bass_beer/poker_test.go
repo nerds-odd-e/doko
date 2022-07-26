@@ -77,7 +77,7 @@ func TestPlayer1WinSecondHighCard(t *testing.T) {
 }
 
 func TestPlayer1LoseSecondHighCard(t *testing.T) {
-	//assert.Equal(t, false, Player1Win("8C TS 5C 7H 4S 9D 3S TS 5D 2S"))
+	assert.Equal(t, false, Player1Win("8C TS 5C 7H 4S 9D 3S TS 5D 2S"))
 }
 
 func TestPlayer1Win2Pair(t *testing.T) {
