@@ -21,9 +21,9 @@ func IsPlayer1Win(cards string) bool {
 	return true
 }
 
-func haveACard(player2 []string) bool {
-	for i := 0; i < len(player2); i++ {
-		if player2[i][0] == 'A' {
+func haveACard(player []string) bool {
+	for i := 0; i < len(player); i++ {
+		if player[i][0] == 'A' {
 			return true
 		}
 	}
