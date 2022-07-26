@@ -9,5 +9,8 @@ func getFirstPlayerWinCount(fileName string) int {
 	if len(string(file)) == 0 {
 		return 0
 	}
+	if string(file)[0] == 'Q' {
+		return 0
+	}
 	return 1
 }
