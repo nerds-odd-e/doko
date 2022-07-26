@@ -3,8 +3,9 @@ package main
 import "strings"
 
 func Player1Win(hands string) bool {
-	B := strings.Split(hands, " ")[5:]
-	if getRank(B[4][:1]) >= 11 || getRank(B[3][:1]) >= 11 {
+	//player1 := strings.Split(hands, " ")[:5]
+	player2 := strings.Split(hands, " ")[5:]
+	if getRank(player2[4][:1]) >= 11 || getRank(player2[3][:1]) >= 11 {
 		return false
 	}
 	return true
