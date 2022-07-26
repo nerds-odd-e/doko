@@ -25,17 +25,9 @@ var CARD_SCORE = map[string]int{
 func get_score(hand []string) int {
 	score := 0
 	for _, card := range hand {
-		rank := CARD_SCORE[string(card[0])]
-		score = int(math.Max(float64(score), float64(rank)))
+		score = int(math.Max(float64(score), float64(CARD_SCORE[string(card[0])])))
 	}
 	return score
-}
-
-func game(hand1 []string, hand2 []string) bool {
-	hand1_score := get_score(hand1)
-	hand2_score := get_score(hand2)
-	return hand1_score > hand2_score
-
 }
 
 func Poker(f string) float64 {
@@ -45,7 +37,7 @@ func Poker(f string) float64 {
 		cards := strings.Split(cardData, " ")
 		hand1, hand2 := cards[0:5], cards[5:]
 
-		if game(hand1, hand2) {
+		if get_score(hand1) > get_score(hand2) {
 			return 1.0
 		} else {
 			return 0.0
