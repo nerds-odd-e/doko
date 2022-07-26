@@ -48,5 +48,5 @@ func TestOneGameWinWithHighCardIsA(t *testing.T) {
 
 func TestOneGameWinWith2ndHighCardIsInPlayer2(t *testing.T) {
 	result := isPlayer1Win("AC 9S 2C 3H 2S AD 4S 4D 3S 2C")
-	assert.Equal(t, result, false, "Input highest card is the same but second highest card is in A, should get true")
+	assert.Equal(t, result, false, "Input highest card is the same but the second highest card is in A, should get true")
 }
