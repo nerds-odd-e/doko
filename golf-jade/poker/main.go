@@ -65,17 +65,6 @@ func getGameScore(cardList []string) float64 {
 	return 0.0
 }
 
-func isPair(scoreCard []int) bool {
-	for i := len(scoreCard) - 1; i >= 0; i-- {
-		for j := i - 1; j >= 0; j-- {
-			if scoreCard[i] == scoreCard[j] {
-				return true
-			}
-		}
-	}
-	return false
-}
-
 func getPairCard(scoreCard []int) int {
 	for i := len(scoreCard) - 1; i >= 0; i-- {
 		for j := i - 1; j >= 0; j-- {
