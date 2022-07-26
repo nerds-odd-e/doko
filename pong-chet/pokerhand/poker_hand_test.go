@@ -42,6 +42,6 @@ func Test_input_another_lose_with_pair(t *testing.T) {
 	assert.Equal(t, 0.0, Poker("pair_win_game_1.txt"))
 }
 
-//func Test_three_of_a_kind(t *testing.T) {
-//	assert.Equal(t, true, game_func([]string{"", "", "", "", ""}, []string{"", "", "", "", ""}))
-//}
+func Test_three_of_a_kind(t *testing.T) {
+	assert.Equal(t, false, game_func([]string{"3H", "7H", "6H", "6S", "6D"}, []string{"8D", "AD", "JD", "TD", "8S"}))
+}
