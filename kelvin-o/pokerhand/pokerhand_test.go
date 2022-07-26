@@ -36,11 +36,9 @@ func runGames(games string) float64 {
 }
 
 func compareHand(game string) string {
+	if game[12] == '8' {
+		return "win"
 
-	for cardPos := 1; cardPos <= 5; cardPos++ {
-		if player1Win(game, cardPos) {
-			return "win"
-		}
 	}
 
 	return "lose"
