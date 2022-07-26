@@ -1,6 +1,10 @@
 package fizzbuzz
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func TestFizzBuzz1(t *testing.T) {
 	if fizzbuzz(1) != "1" {
@@ -9,9 +13,7 @@ func TestFizzBuzz1(t *testing.T) {
 }
 
 func TestFizzBuzz2(t *testing.T) {
-	if fizzbuzz(1) != "1" {
-		t.Errorf("Expected %q, but got %q", "1", fizzbuzz(1))
-	}
+	assert.Equal(t, fizzbuzz(1), "1")
 }
 
 func fizzbuzz(i int) string {
