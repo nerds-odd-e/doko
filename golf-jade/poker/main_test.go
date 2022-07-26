@@ -10,6 +10,7 @@ const p2WinByHighCard = "3C TS 4C 9H 6S 7D 2S AD 3S 8C"
 const p1WinByHighCard = "3H 7H 6S KC JS 5H TD JC 2D 8S"
 const drawGameCard = "3H 7H 6S KC JS JH KD 7C 6D 3S"
 const p1WinByHighNumberCard = "2H 4H 6S 8C 9S 8H 7D 6C 5D 4S"
+const p1WinByHighCardSecondCard = "2H 4H 6S TC AS 8H AD 6C JD 4S"
 
 func TestHighCardWinA(t *testing.T) {
 	got := FindPokerWinPercentage([]string{"AC TS 8C 9H 6S 7D 2S 5D 3S 4C"})
@@ -62,5 +63,11 @@ func TestDrawGame(t *testing.T) {
 func TestWinByHighNumberCard(t *testing.T) {
 	got := FindPokerWinPercentage([]string{p1WinByHighNumberCard})
 	want := 100.0
+	assert.Equal(t, want, got)
+}
+
+func xTestLoseByHighCardSecondCard(t *testing.T) {
+	got := FindPokerWinPercentage([]string{p1WinByHighCardSecondCard})
+	want := 0.0
 	assert.Equal(t, want, got)
 }
