@@ -25,8 +25,8 @@ func Test_Player1WinWithHighCard_BothHasA(t *testing.T) {
 }
 
 func Test_Player2WinWithSecondCard(t *testing.T) {
-	answer := IsPlayer1Win("QH TH 7C 6H 4S QS TD 8C 7D 4S")
-	expected := true
+	answer := IsPlayer1Win("AH TH 7C 6H 4S AS TD 8C 7D 4S")
+	expected := false
 	assert.Equal(t, expected, answer, "expected player1 loose get %v", answer)
 }
 
