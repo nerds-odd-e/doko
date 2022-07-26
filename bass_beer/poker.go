@@ -8,10 +8,7 @@ import (
 func Player1Win(hands string) bool {
 	player1HighestRank := getRank(getHighestCard(strings.Split(hands, " ")[:5]))
 	player2HighestRank := getRank(getHighestCard(strings.Split(hands, " ")[5:]))
-	if player2HighestRank > player1HighestRank {
-		return false
-	}
-	return true
+	return player1HighestRank > player2HighestRank
 }
 
 func getHighestCard(hand []string) string {
