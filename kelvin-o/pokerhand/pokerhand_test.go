@@ -15,14 +15,17 @@ func TestPokerHand(t *testing.T) {
 		assert.Equal(t, compareHand("AC TS KC 9H 4S 7D 2S 5D 3S QC"), "win")
 		assert.Equal(t, compareHand("TS AC KC 9H 4S 7D 2S 5D 3S QC"), "win")
 		assert.Equal(t, compareHand("TS KC AC 9H 4S 7D 2S 5D 3S QC"), "win")
+		assert.Equal(t, compareHand("TS KC 9H AC 4S 7D 2S 5D 3S QC"), "win")
+		assert.Equal(t, compareHand("TS KC 9H 4S AC 7D 2S 5D 3S QC"), "win")
 	})
 }
 
 func compareHand(game string) string {
-	if getP1NthCardRank(game, 1) == "A" || getP1NthCardRank(game, 2) == "A" || getP1NthCardRank(game, 3) == "A" {
-		return "win"
+	for i := 1; i <= 5; i++ {
+		if getP1NthCardRank(game, i) == "A" {
+			return "win"
+		}
 	}
-
 	return "lose"
 }
 
