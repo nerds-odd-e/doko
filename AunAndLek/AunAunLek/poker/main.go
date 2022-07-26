@@ -6,9 +6,6 @@ func IsP1Lose(input string) bool {
 }
 
 func Player1Win(input []string) int {
-	if len(input) == 0 {
-		return 0
-	}
 	if len(input) == 1 && IsP1Lose(input[0]) {
 		return 0
 	}
