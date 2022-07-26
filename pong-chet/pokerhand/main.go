@@ -41,7 +41,7 @@ func pair(hand []string) int {
 	return 0
 }
 
-func game_func(hand1 []string, hand2 []string) bool {
+func player_one_win(hand1 []string, hand2 []string) bool {
 	if pair(hand1) > 0 || pair(hand2) > 0 {
 		return pair(hand1) > pair(hand2)
 	}
@@ -57,7 +57,7 @@ func Poker(f string) float64 {
 		for _, game := range games {
 			cards := strings.Split(game, " ")
 			hand1, hand2 := cards[0:5], cards[5:]
-			if game_func(hand1, hand2) {
+			if player_one_win(hand1, hand2) {
 				score += 1
 			}
 		}
