@@ -23,11 +23,11 @@ var CARD_SCORE = map[string]int{
 }
 
 func get_score(hand []string) int {
-	score := 0
+	score := 0.0
 	for _, card := range hand {
-		score = int(math.Max(float64(score), float64(CARD_SCORE[string(card[0])])))
+		score = math.Max(score, float64(CARD_SCORE[string(card[0])]))
 	}
-	return score
+	return int(score)
 }
 
 func Poker(f string) float64 {
