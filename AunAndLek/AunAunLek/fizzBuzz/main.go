@@ -3,15 +3,14 @@ package main
 import "fmt"
 
 func FizzBuzz(input int) string {
-	result := ""
+	if input%3 == 0 && input%5 == 0 {
+		return "fizzbuzz"
+	}
 	if input%3 == 0 {
-		result += "fizz"
+		return "fizz"
 	}
 	if input%5 == 0 {
-		result += "buzz"
-	}
-	if result != "" {
-		return result
+		return "buzz"
 	}
 	return fmt.Sprintf("%d", input)
 }
