@@ -11,3 +11,9 @@ func TestInput1_ShouldSay1(t *testing.T) {
 	expected := "1"
 	assert.Equal(t, answer, expected, "")
 }
+
+func TestInput1_ShouldSay3(t *testing.T) {
+	answer := FizzBuzz(3)
+	expected := "1"
+	assert.Equal(t, answer, expected, "Fizz")
+}
