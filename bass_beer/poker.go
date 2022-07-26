@@ -1,8 +1,12 @@
 package main
 
+import "strings"
+
 func AWin(hands string) bool {
-	str := hands[len(hands)-2:]
-	if getRank(str[:1]) >= 13 {
+	B := strings.Split(hands, " ")[5:]
+	
+	// str := hands[len(hands)-2:]
+	if getRank(B[4][:1]) >= 13 || getRank(B[3][:1]) >= 13 {
 		return false
 	}
 	return true
