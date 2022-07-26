@@ -36,7 +36,7 @@ func (g *Game) setup(gameInfo GameInfo) {
 	}
 
 	add("up", func(message *Message) {
-		g.move(0)
+		g.moveWith(Vector{x: 0, y: -1})
 	})
 	add("right", func(message *Message) {
 		g.move(1)
