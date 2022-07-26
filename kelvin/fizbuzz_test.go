@@ -25,7 +25,7 @@ func TestFizzBuzz1(t *testing.T) {
 }
 
 func fizzbuzz(i int) string {
-	if i == 5 || i == 10 {
+	if i%5 == 0 {
 		return "buzz"
 	}
 	if i%3 == 0 {
