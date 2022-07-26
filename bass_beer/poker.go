@@ -40,11 +40,24 @@ func CreateCards(hands string) []Card {
 	return cards
 }
 
+func SortCards(cards []Card) []Card {
+	sort.Slice(cards, func(i, j int) bool {
+		return cards[i].Val < cards[j].Val
+	})
+	return cards
+}
+
 func Player1Win(hands string) bool {
-	sortedPlayer1Hand := getSortedHand(strings.Split(hands, " ")[:5])
-	player1HighestRank := getRank(getHighestCard(sortedPlayer1Hand))
+	// sortedPlayer1Hand := getSortedHand(strings.Split(hands, " ")[:5])
+	player1Cards := CreateCards(hands)[:5]
+	player1HighestRank := getRank(cgetHighestCard(player1Cards))
 	player2HighestRank := getRank(getHighestCard(strings.Split(hands, " ")[5:]))
 	return player1HighestRank > player2HighestRank
+}
+
+func cgetHighestCard(cards []Card) string {
+	SortCards(cards)
+	return cards[4].Val[:1]
 }
 
 func getSortedHand(hand []string) []string {
