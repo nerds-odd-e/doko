@@ -27,7 +27,7 @@ func TestPlayer1Win(t *testing.T) {
 
 	t.Run("Player 1 win with highest card K", func(t *testing.T) {
 		input := "KC 2C TC JC 5C TC JC 6C 2C QC"
-		expected := false
+		expected := true
 
 		result := IsP1Win(input)
 
