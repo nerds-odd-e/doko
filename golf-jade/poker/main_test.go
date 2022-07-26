@@ -33,13 +33,13 @@ func TestHighCardDrawA(t *testing.T) {
 }
 
 func TestHighCardWinK(t *testing.T) {
-	got := FindPokerWinPercentage([]string{"KC TS 4C 9H 2S 7D 2S 4D 3S 5C", "QC TS KC 9H 4S 7D 2S 5D 3S 7C"})
+	got := FindPokerWinPercentage([]string{"KC TS 4C 9H 2S 7D 2S 4D 3S 5C", "QC TS KC 9H 4S 7D 2S 5D 3S 6C"})
 	want := 100.0
 	assert.Equal(t, want, got)
 }
 
 func TestHighCardLoseK(t *testing.T) {
-	got := FindPokerWinPercentage([]string{"KC TS 4C 9H 2S 7D 2S 4D 3S 5C", "QC TS KC 9H 4S 7D 2S 5D 3S 7C"})
+	got := FindPokerWinPercentage([]string{"KC TS 4C 9H 2S 7D 2S 4D 3S 5C", "QC TS KC 9H 4S 7D 2S 5D 3S 6C"})
 	want := 100.0
 	assert.Equal(t, want, got)
 }
@@ -80,7 +80,7 @@ func TestWinByPairCard(t *testing.T) {
 	assert.Equal(t, want, got)
 }
 
-func xTestLoseByPairCard(t *testing.T) {
+func TestLoseByPairCard(t *testing.T) {
 	got := FindPokerWinPercentage([]string{p2WinByPairCard})
 	want := 0.0
 	assert.Equal(t, want, got)
