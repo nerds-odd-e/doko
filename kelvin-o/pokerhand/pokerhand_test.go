@@ -21,8 +21,8 @@ func TestPokerHand(t *testing.T) {
 }
 
 func compareHand(game string) string {
-	for i := 1; i <= 5; i++ {
-		if getP1NthCardRank(game, i) == "A" {
+	for cardPos := 1; cardPos <= 5; cardPos++ {
+		if getP1NthCardRank(game, cardPos) == "A" {
 			return "win"
 		}
 	}
