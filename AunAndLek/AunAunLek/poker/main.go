@@ -21,15 +21,15 @@ func getRank(card string) int {
 	return ranks[card[0]]
 }
 
-// func getHighestRankInHand(hand []string) int {
-// 	highestRank := getRank(hand[0])
-// 	for _, c := range hand[1:] {
-// 		if highestRank < getRank(c) {
-// 			highestRank = getRank(c)
-// 		}
-// 	}
-// 	return highestRank
-// }
+func getHighestRankInHand(hand []string) int {
+	highestRank := getRank(hand[0])
+	for _, c := range hand[1:] {
+		if highestRank < getRank(c) {
+			highestRank = getRank(c)
+		}
+	}
+	return highestRank
+}
 
 func getHands(game string) ([]string, []string) {
 	hands := strings.Split(game, " ")
@@ -38,8 +38,8 @@ func getHands(game string) ([]string, []string) {
 
 func IsP1Win(game string) bool {
 	p1Hand, p2Hand := getHands(game)
-	rankP1 := getRank(p1Hand[0])
-	rankP2 := getRank(p2Hand[0])
+	rankP1 := getHighestRankInHand(p1Hand)
+	rankP2 := getHighestRankInHand(p2Hand)
 	return rankP1 > rankP2 || getRank(p1Hand[1]) > getRank(p2Hand[1])
 }
 
