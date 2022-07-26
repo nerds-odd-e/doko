@@ -21,3 +21,7 @@ func TestEnterNumberThree(t *testing.T) {
 func TestEnterNumberFour(t *testing.T) {
 	assert.Equal(t, "4", fizzbuzz(4))
 }
+
+func TestEnterNumberFive(t *testing.T) {
+	assert.Equal(t, "5", "5")
+}
