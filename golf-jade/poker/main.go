@@ -47,7 +47,12 @@ func getGameScore(cardList []string) float64 {
 	p1Pair := isPair(p1Score)
 	p2Pair := isPair(p2Score)
 	if p1Pair && p2Pair {
-		return compareHighCard(p1Score, p2Score)
+		p1PairScore := getPairCard(p1Score)
+		p2PairScore := getPairCard(p2Score)
+		if p1PairScore > p2PairScore {
+			return 1.0
+		}
+		return 0.0
 	}
 
 	if p1Pair {
@@ -57,10 +62,6 @@ func getGameScore(cardList []string) float64 {
 		return 0.0
 	}
 
-	return compareHighCard(p1Score, p2Score)
-}
-
-func compareHighCard(p1Score []int, p2Score []int) float64 {
 	for i := len(p1Score) - 1; i >= 0; i-- {
 		if p1Score[i] > p2Score[i] {
 			return 1.0
@@ -69,6 +70,7 @@ func compareHighCard(p1Score []int, p2Score []int) float64 {
 			return 0.0
 		}
 	}
+
 	return 0.0
 }
 
@@ -81,6 +83,17 @@ func isPair(scoreCard []int) bool {
 		}
 	}
 	return false
+}
+
+func getPairCard(scoreCard []int) int {
+	for i := len(scoreCard) - 1; i >= 0; i-- {
+		for j := i - 1; j >= 0; j-- {
+			if scoreCard[i] == scoreCard[j] {
+				return scoreCard[i]
+			}
+		}
+	}
+	return 0
 }
 
 func getPlayerScoreCards(cardList []string) []int {
