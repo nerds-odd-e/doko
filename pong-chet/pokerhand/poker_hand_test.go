@@ -15,5 +15,5 @@ func Test_Input_one_game_file(t *testing.T) {
 }
 
 func Test_Input_one_game_another_file(t *testing.T) {
-	assert.Equal(t, 0.0, Poker("one_game_2.txt"))
+	assert.Equal(t, 1.0, Poker("one_game_2.txt"))
 }
