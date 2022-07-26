@@ -12,5 +12,5 @@ func Test_FizzBuzz_1_1(t *testing.T) {
 }
 
 func Test_FizzBuzz_2_2(t *testing.T) {
-	assert.Equal(t, "1", fizzbuzz.FizzBuzz(2))
+	assert.Equal(t, "2", fizzbuzz.FizzBuzz(2))
 }
