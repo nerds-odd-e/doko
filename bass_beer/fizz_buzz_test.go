@@ -33,3 +33,7 @@ func TestEnterNumberSix(t *testing.T) {
 func TestEnterNumberTen(t *testing.T) {
 	assert.Equal(t, "buzz", fizzbuzz(10))
 }
+
+func TestEnterNumberFifthteen(t *testing.T) {
+	assert.Equal(t, "fizzbuzz", "fizzbuzz")
+}
