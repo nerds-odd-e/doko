@@ -33,10 +33,14 @@ type Card struct {
 	Rank int
 }
 
+func NewCard(card string) Card {
+	return Card{Val: card, Rank: getRank(card[:1])}
+}
+
 func CreateCards(hands string) []Card {
 	cards := []Card{}
 	for _, v := range strings.Split(hands, " ") {
-		cards = append(cards, Card{Val: v, Rank: getRank(v[:1])})
+		cards = append(cards, NewCard(v))
 	}
 	return cards
 }
