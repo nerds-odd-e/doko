@@ -10,8 +10,12 @@ func GetPlayer1Winrate(game []string) float64 {
 	if len(game) <= 0 {
 		return 0.0
 	}  else {
-		return math.Round(player1WinCount(game) / float64(len(game)) * 100 * 100) / 100
+		return decimalFormat(player1WinCount(game) / float64(len(game)) * 100)
 	}
+}
+
+func decimalFormat(percent float64) float64 {
+	return math.Round(percent * 100) / 100
 }
 
 func player1WinCount(game []string) float64 {
