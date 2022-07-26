@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -10,7 +11,7 @@ func TestFizzBuzz(t *testing.T) {
 
 	expected := "1"
 	input := 1
-	t.Run("Input 1 get '1'", func(t *testing.T) {
+	t.Run(fmt.Sprintf("Input 1 get '1'"), func(t *testing.T) {
 		assert.Equal(t, expected, FizzBuzz(input))
 	})
 
