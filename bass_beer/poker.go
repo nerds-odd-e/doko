@@ -9,14 +9,20 @@ func GetPlayer1Winrate(game []string) float64 {
 	if len(game) <= 0 {
 		return 0.0
 	}  else {
-		n := 0.0
-		for _, item := range(game) {
-			if Player1Win(item) {
-				n++
-			}
-		}
+		n := player1WinCount(game)
+		
 		return n / float64(len(game)) * 100
 	}
+}
+
+func player1WinCount(game []string) float64 {
+	n := 0.0
+	for _, item := range(game) {
+		if Player1Win(item) {
+			n++
+		}
+	}
+	return n
 }
 
 func Player1Win(hands string) bool {
