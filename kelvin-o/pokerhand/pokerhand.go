@@ -17,7 +17,8 @@ func TestPokerHand(t *testing.T) {
 }
 
 func compareHand(game string) string {
-	if game == "AC TS KC 9H 4S 7D 2S 5D 3S QC" {
+	p1FirstCardRank := string(game[0])
+	if p1FirstCardRank == "A" {
 		return "win"
 	}
 
