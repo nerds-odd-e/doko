@@ -5,10 +5,7 @@ import (
 )
 
 func FizzBuzz(n int) string {
-	if n == 6 {
-		return "fizz"
-	}
-	if n == 3 {
+	if n%3 == 0 {
 		return "fizz"
 	}
 	if n == 5 {
