@@ -15,6 +15,7 @@ func TestPlayer1Win(t *testing.T) {
 
 	cases := []testcase{
 		{expected: 0, input: []string{}},
+		{expected: 1, input: []string{"3H 7H 6S KC JS QH TD JC 2D 8S"}},
 	}
 
 	for _, c := range cases {
