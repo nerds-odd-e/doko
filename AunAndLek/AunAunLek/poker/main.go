@@ -23,9 +23,7 @@ func getRank(card string) int {
 
 func getHands(game string) ([]string, []string) {
 	hands := strings.Split(game, " ")
-	p1Hand := hands[:5]
-	p2Hand := hands[5:]
-	return p1Hand, p2Hand
+	return hands[:5], hands[5:]
 }
 
 func IsP1Win(game string) bool {
