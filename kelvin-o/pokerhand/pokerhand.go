@@ -16,8 +16,8 @@ func TestPokerHand(t *testing.T) {
 	})
 }
 
-func compareHand(s string) string {
-	if s == "AC TS KC 9H 4S 7D 2S 5D 3S QC" {
+func compareHand(game string) string {
+	if game == "AC TS KC 9H 4S 7D 2S 5D 3S QC" {
 		return "win"
 	}
 
