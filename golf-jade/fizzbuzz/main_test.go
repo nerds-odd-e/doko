@@ -44,6 +44,6 @@ func TestFizzBuzz10(t *testing.T) {
 
 func TestFizzBuzz15(t *testing.T) {
 	got := FizzBuzz(15)
-	want := "fizz"
+	want := "fizzbuzz"
 	assert.Equal(t, got, want)
 }
