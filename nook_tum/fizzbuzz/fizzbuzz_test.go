@@ -8,6 +8,6 @@ import (
 
 func TestInput1_ShouldSay1(t *testing.T) {
 	answer := FizzBuzz(1)
-	expected := ""
+	expected := "1"
 	assert.Equal(t, answer, expected, "")
 }
