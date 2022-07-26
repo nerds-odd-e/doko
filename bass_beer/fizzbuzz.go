@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func fizzbuzz(n int) string {
-	if n == 15 {
+	if n % 15 == 0 {
 		return "fizzbuzz"
 	}
 	if n % 5 == 0 {
