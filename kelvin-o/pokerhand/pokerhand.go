@@ -1,5 +1,7 @@
 package pokerhand
 
-func Test() {
+import "testing"
+
+func TestPokerHand(t *testing.T) {
 
 }
