@@ -154,6 +154,10 @@ func (g *Game) movesAvailable() bool {
 }
 
 func (g *Game) move(direction int) {
+	g.newmove(direction)
+}
+
+func (g *Game) newmove(direction int) {
 
 	if g.IsGameTerminated() {
 		return
