@@ -11,7 +11,7 @@ func TestFizzBuzz(t *testing.T) {
 
 	expected := "1"
 	input := 1
-	t.Run(fmt.Sprintf("Input 1 get '%v'", expected), func(t *testing.T) {
+	t.Run(fmt.Sprintf("Input %v get '%v'", input, expected), func(t *testing.T) {
 		assert.Equal(t, expected, FizzBuzz(input))
 	})
 
