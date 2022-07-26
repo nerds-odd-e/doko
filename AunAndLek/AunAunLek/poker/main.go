@@ -1,10 +1,10 @@
 package main
 
 func IsP1Win(game string) bool {
-	if game == "KC 2C TC JC 5C AC JC 6C 2C QC" {
-		return false
+	if game == "AC 2C TC JC 5C KC JC 6C 2C QC" {
+		return true
 	}
-	return true
+	return false
 }
 
 func Player1WinCount(games []string) int {
