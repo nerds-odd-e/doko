@@ -18,4 +18,8 @@ func TestFizzBuzz(t *testing.T) {
 	t.Run("Input 3 get 'fizz'", func(t *testing.T) {
 		assert.Equal(t, "fizz", FizzBuzz(3))
 	})
+
+	t.Run("Input 5 get 'buzz'", func(t *testing.T) {
+		assert.Equal(t, "buzz", FizzBuzz(5))
+	})
 }
