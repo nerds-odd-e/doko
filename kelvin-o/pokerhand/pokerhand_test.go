@@ -13,13 +13,13 @@ func TestPokerHand(t *testing.T) {
 	})
 
 	t.Run("it should win 1 with high A", func(t *testing.T) {
-		p1WinByHighCard := "AC TS KC 9H 4S 7D 2S 5D 3S QC"
+		p1WinByHighCard := "2C 3S 4C 5H 8S 2D 3S 4D 5S 7C"
 		assert.Equal(t, runGames(p1WinByHighCard), 1.0)
 	})
 
 	t.Run("it should win 0 with P2 high A", func(t *testing.T) {
 		if false {
-			p2WinByHighCard := "2D 3S 4D 5S 7C AC TS KC 9H 4S"
+			p2WinByHighCard := "2C 3S 4C 5H 7S 2D 3S 4D 5S 8C"
 			assert.Equal(t, runGames(p2WinByHighCard), 0.0)
 		}
 	})
