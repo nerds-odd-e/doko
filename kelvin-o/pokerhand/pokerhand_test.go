@@ -1,6 +1,7 @@
 package pokerhand
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -54,23 +55,9 @@ func runGames(games string) float64 {
 }
 
 func compareHand(game string) string {
+
 	for cardPos := 1; cardPos <= 5; cardPos++ {
-		if getP1NthCardRank(game, cardPos) == "A" {
-			return "win"
-		}
-		if getP1NthCardRank(game, cardPos) == "K" {
-			return "win"
-		}
-		if getP1NthCardRank(game, cardPos) == "Q" {
-			return "win"
-		}
-		if getP1NthCardRank(game, cardPos) == "T" {
-			return "win"
-		}
-		if getP1NthCardRank(game, cardPos) == "9" {
-			return "win"
-		}
-		if getP1NthCardRank(game, cardPos) == "8" {
+		if strings.Contains("AKQT98", getP1NthCardRank(game, cardPos)) {
 			return "win"
 		}
 	}
