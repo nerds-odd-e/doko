@@ -11,6 +11,9 @@ func IsP1Win(input string) bool {
 }
 
 func Player1Win(input []string) int {
+	if len(input) == 1 && IsP1Win(input[0]) {
+		return 1
+	}
 	if len(input) >= 1 && IsP1Lose(input[len(input)-1]) {
 		return len(input) - 1
 	}
