@@ -48,7 +48,6 @@ func SortCards(cards []Card) []Card {
 }
 
 func Player1Win(hands string) bool {
-	// sortedPlayer1Hand := getSortedHand(strings.Split(hands, " ")[:5])
 	cards := CreateCards(hands)
 	player1HighestRank := getRank(getHighestCard(cards[:5]))
 	player2HighestRank := getRank(getHighestCard(cards[5:]))
@@ -64,11 +63,6 @@ func getSortedHand(hand []string) []string {
 	sort.Strings(hand)
 	return hand
 }
-
-// func getHighestCard(hand []string) string {
-// 	sort.Strings(hand)
-// 	return hand[4][:1]
-// }
 
 func getRank(rankStr string) int {
 	return map[string]int{
