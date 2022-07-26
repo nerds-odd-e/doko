@@ -41,9 +41,11 @@ func (h Hand) three_of_a_kind() int {
 			if string(card1[0]) == string(card2[0]) {
 				count += 1
 			}
-			if count == 2 {
-				return CARD_SCORE[string(card1[0])]
-			}
+		}
+		if count == 2 {
+			return CARD_SCORE[string(card1[0])]
+		} else {
+			count = 0
 		}
 	}
 	return 0

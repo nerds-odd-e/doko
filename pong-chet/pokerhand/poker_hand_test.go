@@ -53,5 +53,5 @@ func Test_three_of_a_kind(t *testing.T) {
 
 func Test_three_of_a_kind_have_a_bug(t *testing.T) {
 	h := Hand{[]string{"3H", "7H", "7H", "6S", "6D"}}
-	assert.Equal(t, 6, h.three_of_a_kind())
+	assert.Equal(t, 0, h.three_of_a_kind())
 }
