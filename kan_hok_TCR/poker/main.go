@@ -23,7 +23,7 @@ func getFirstPlayerWinCount(fileName string) int {
 func isPlayer1Win(game string) bool {
 	p1Cards := strings.Split(game, " ")[0:5]
 	for _, p1card := range p1Cards {
-		if p1card[0:1] == "K" || p1card[0:1] == "9" {
+		if p1card[0:1] == "K" || p1card[0:1] == "9" || p1card[0:1] == "A" {
 			return true
 		}
 	}
