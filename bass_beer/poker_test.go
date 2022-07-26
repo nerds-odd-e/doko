@@ -22,3 +22,7 @@ func TestALoseWithAce(t *testing.T) {
 func TestALoseWithKing(t *testing.T) {
 	assert.Equal(t, false, AWin("8C TS QC 9H 4S 7D 2S 5D 3S KS"))
 }
+
+func TestALoseWithKingOnNewPosition(t *testing.T) {
+	assert.Equal(t, true, AWin("8C TS QC 9H 4S 7D 2S 5D KS 3S"))
+}
