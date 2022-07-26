@@ -2,7 +2,7 @@ package main
 
 import "strings"
 
-func IsP1Win(game string) bool {
+func getRank(card string) int {
 	ranks := map[byte]int{
 		'2': 2,
 		'3': 3,
@@ -18,10 +18,16 @@ func IsP1Win(game string) bool {
 		'K': 13,
 		'A': 14,
 	}
+	return ranks[card[0]]
+}
+
+func IsP1Win(game string) bool {
 	hands := strings.Split(game, " ")
 	p1Hand := hands[:5]
 	p2Hand := hands[5:]
-	return ranks[p1Hand[0][0]] > ranks[p2Hand[0][0]]
+	rankP1 := getRank(p1Hand[0])
+	rankP2 := getRank(p2Hand[0])
+	return rankP1 > rankP2
 }
 
 func Player1WinCount(games []string) int {
