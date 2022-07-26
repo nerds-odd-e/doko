@@ -15,6 +15,6 @@ func TestALose(t *testing.T) {
 }
 
 func TestALoseWithAce(t *testing.T) {
-	assert.Equal(t, true, AWin("8C TS KC 9H 4S 7D 2S 5D 3S AS"))
+	assert.Equal(t, false, AWin("8C TS KC 9H 4S 7D 2S 5D 3S AS"))
 
 }
