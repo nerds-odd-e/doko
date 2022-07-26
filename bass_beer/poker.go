@@ -6,7 +6,9 @@ import (
 )
 
 func GetPlayer1Winrate(game []string) float64 {
-
+	if !Player1Win(game[0]) {
+		return 0.0
+	}
 	return 100.0
 }
 
