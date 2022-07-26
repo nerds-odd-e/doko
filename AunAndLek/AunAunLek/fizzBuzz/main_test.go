@@ -20,7 +20,7 @@ func TestFizzBuzz(t *testing.T) {
 		{expected: "buzz", input: 5},
 		{expected: "fizz", input: 6},
 		{expected: "buzz", input: 10},
-		{expected: "fizzbuzz", input: 15},
+		{expected: "fizzbuzz", input: 30},
 	}
 	for _, c := range cases {
 		t.Run(fmt.Sprintf("Input %v get '%v'", c.input, c.expected), func(t *testing.T) {
