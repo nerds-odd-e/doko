@@ -29,3 +29,7 @@ func Test_input_another_one_games_lose(t *testing.T) {
 func Test_input_multiple_games(t *testing.T) {
 	assert.Equal(t, 0.5, Poker("multiple_game.txt"))
 }
+
+func Test_input_multiple_games_all_win(t *testing.T) {
+	assert.Equal(t, 0.5, Poker("multiple_game_1.txt"))
+}
