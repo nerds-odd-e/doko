@@ -45,7 +45,7 @@ func P1Win(game string) bool {
 		return false
 	}
 	p1HighestRank = game[6]
-	p2HighestRank = game[9]
+	p2HighestRank = game[24]
 	if cardRankMap[p2HighestRank] > cardRankMap[p1HighestRank] {
 		return false
 	}
