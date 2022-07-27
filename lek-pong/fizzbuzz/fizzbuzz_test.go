@@ -16,6 +16,7 @@ type TestCase struct {
 func TestFizzBuzz(t *testing.T) {
 	cases := []TestCase{
 		{name: "fizzbuzz 1", input: 1, expected: "1"},
+		{name: "fizzbuzz 2", input: 2, expected: "1"},
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
