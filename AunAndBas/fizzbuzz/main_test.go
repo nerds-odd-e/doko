@@ -16,6 +16,6 @@ func TestFizzBuzz(t *testing.T) {
 		output := FizzBuzz(input)
 
 		// Then
-		assert.Equal(t, output, expected)
+		assert.Equal(t, expected, output)
 	})
 }
