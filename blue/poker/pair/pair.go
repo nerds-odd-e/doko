@@ -25,9 +25,9 @@ func IsPair(game string) bool {
 
 	for i := 0; i < len(p1); i++ {
 		for j := i + 1; j < len(p1); j++ {
-			returnValue := isMatchCard(p1, i, j)
-			if returnValue {
-				return returnValue
+			score := getMatchPairScoreCard(p1, i, j)
+			if score > 0 {
+				return true
 			}
 
 		}
