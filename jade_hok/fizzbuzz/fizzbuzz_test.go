@@ -11,6 +11,6 @@ func Test_FizzBuzzInput1Output1(t *testing.T) {
 	assert.Equal(t, "1", fizzbuzz.FizzBuzz(1))
 }
 
-func xTestFizzBuzzInput2Output2(t *testing.T) {
+func TestFizzBuzzInput2Output2(t *testing.T) {
 	assert.Equal(t, "2", fizzbuzz.FizzBuzz(2))
 }
