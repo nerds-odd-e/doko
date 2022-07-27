@@ -19,18 +19,6 @@ func TestFizzBuzz(t *testing.T) {
 		})
 	}
 
-	t.Run(fmt.Sprintf("Input 2 should get '%s'", testcase[2]), func(t *testing.T) {
-		// Given
-		input:= 2
-		expected:= testcase[input]
-
-		// When
-		output := FizzBuzz(input)
-
-		// Then
-		assert.Equal(t, expected, output)
-	})
-
 	t.Run("Input 3 should get 'fizz'", func(t *testing.T) {
 		// Given
 		input:= 3
