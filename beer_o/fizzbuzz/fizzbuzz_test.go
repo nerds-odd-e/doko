@@ -13,8 +13,8 @@ func TestFizzBuzz(t *testing.T) {
 	})
 
 	t.Run("it should say fizz if input devisible by 3", func(t *testing.T) {
-		assert.Equal(t, Fizzbuzz(3), "fizz")
-		assert.Equal(t, Fizzbuzz(6), "fizz")
-		assert.Equal(t, Fizzbuzz(9), "fizz")
+		for _, input := range []int{3, 6, 9} {
+			assert.Equal(t, Fizzbuzz(input), "fizz")
+		}
 	})
 }
