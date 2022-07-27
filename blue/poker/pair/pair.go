@@ -24,7 +24,6 @@ func IsPair(game string) bool {
 	p2 := cards[5:]
 
 	p1Score := 0
-	p2Score := 0
 	for i := 0; i < len(p1); i++ {
 		for j := i + 1; j < len(p1); j++ {
 			p1Score = getMatchPairScoreCard(p1, i, j)
@@ -37,6 +36,7 @@ func IsPair(game string) bool {
 		}
 	}
 
+	p2Score := 0
 	for i := 0; i < len(p2); i++ {
 		for j := i + 1; j < len(p2); j++ {
 			p2Score = getMatchPairScoreCard(p2, i, j)
