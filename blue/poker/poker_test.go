@@ -9,11 +9,11 @@ import (
 func TestWinrate(t *testing.T) {
 	t.Run("Empty game", func(t *testing.T) {
 		game := []string{}
-		assert.Equal(t, 0.0, P1Winrate(game))
+		assert.Equal(t, 0.0, P1Winrate(game), "Input is empty game, should get 0.0")
 	})
 	t.Run("P1 win one game", func(t *testing.T) {
 		game := []string{"AC 9S 7D 3C 2C QS 5C 4H 3D 2C"}
-		assert.Equal(t, 1.0, P1Winrate(game))
+		assert.Equal(t, 1.0, P1Winrate(game), "Input is player 1 win one game, should get 1.0")
 	})
 }
 
@@ -49,7 +49,7 @@ func TestOpenEmptyFile_ReturnEmptyGame(t *testing.T) {
 }
 
 func TestOpenFile(t *testing.T) {
-	t.Run("One line file return 1 game", func (t *testing.T) {
+	t.Run("One line file return 1 game", func(t *testing.T) {
 		input := "data/one_line.txt"
 		expected := []string{"AA AA AA AA AA AA AA AA AA AA"}
 
