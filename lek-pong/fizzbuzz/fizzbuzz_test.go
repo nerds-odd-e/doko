@@ -19,6 +19,7 @@ func TestFizzBuzz(t *testing.T) {
 		{name: "fizzbuzz 2", input: 2, expected: "2"},
 		{name: "fizzbuzz 3", input: 3, expected: "Fizz"},
 		{name: "fizzbuzz 6", input: 6, expected: "Fizz"},
+		{name: "fizzbuzz 5", input: 5, expected: "5"},
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
