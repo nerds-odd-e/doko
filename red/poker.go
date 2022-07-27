@@ -5,7 +5,7 @@ func WinRate(games []string) float64 {
 		return 0
 	}
 	if len(games) > 0 {
-		return 1.0
+		return 1
 	}
-	return 0.0
+	return 0
 }
