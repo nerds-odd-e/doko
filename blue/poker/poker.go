@@ -1,6 +1,6 @@
 package poker
 
-func OpenFile() interface{} {
+func OpenFile(filename string) interface{} {
 	return nil
 }
 
