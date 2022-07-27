@@ -19,7 +19,7 @@ func TestFizzBuzz(t *testing.T) {
 		TestCase{"Input is 3", 3, "fizz", "Input is 3, should get fizz"},
 		TestCase{"Input is 5", 5, "Buzz", "Input is 5, should get Buzz"},
 		TestCase{"Input is 6", 6, "fizz", "Input is 6, should get fizz"},
-		TestCase{"Input is 6", 10, "10", "Input is 10, should get Buzz"},
+		TestCase{"Input is 6", 10, "Buzz", "Input is 10, should get Buzz"},
 	}
 
 	for _, testCase := range testCases {
