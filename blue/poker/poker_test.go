@@ -17,7 +17,7 @@ func TestWinrate(t *testing.T) {
 	})
 	t.Run("P1 lose one game", func(t *testing.T) {
 		game := []string{"QS 5C 4H 3D 2C AC 9S 7D 3C 2C"}
-		assert.Equal(t, 1.0, P1Winrate(game), "Input is player 1 lose one game, should get 0.0")
+		assert.Equal(t, 0.0, P1Winrate(game), "Input is player 1 lose one game, should get 0.0")
 	})
 }
 
