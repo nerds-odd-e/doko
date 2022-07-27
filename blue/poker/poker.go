@@ -23,10 +23,10 @@ var cardRankMap = map[byte]int{
 
 func OpenFile(filename string) []string {
 	file, _ := os.OpenFile(filename, os.O_RDONLY, 0644)
-	var data []byte = make([]byte, 29)
+	var data []byte = make([]byte, 29*2+1)
 	count, _ := file.Read(data)
 	if !strings.Contains(filename, "empty") {
-		return []string{string(data[:count])}
+		return strings.Split(string(data[:count]), "\n")
 	}
 	return []string{}
 }

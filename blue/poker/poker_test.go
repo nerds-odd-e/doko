@@ -80,6 +80,7 @@ func TestOpenFile(t *testing.T) {
 		input := "data/two_line.txt"
 		expected := []string{
 			"8C TS KC 9H 4S 7D 2S 5D 3S AC",
+			"8C TS KC 9H 4S 7D 2S 5D 3S AC",
 		}
 
 		assert.Equal(t, expected, OpenFile(input))
