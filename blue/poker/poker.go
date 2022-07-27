@@ -5,6 +5,22 @@ import (
 	"strings"
 )
 
+var cardRankMap = map[byte]int{
+	'A': 14,
+	'K': 13,
+	'Q': 12,
+	'J': 11,
+	'T': 10,
+	'9': 9,
+	'8': 8,
+	'7': 7,
+	'6': 6,
+	'5': 5,
+	'4': 4,
+	'3': 3,
+	'2': 2,
+}
+
 func OpenFile(filename string) []string {
 	file, _ := os.OpenFile(filename, os.O_RDONLY, 0644)
 	var data []byte = make([]byte, 29)
@@ -20,30 +36,11 @@ func P1Winrate([]string) float64 {
 }
 
 func P1Win(game string) bool {
-	if getCardRank(game[15]) > getCardRank(game[0]) {
+	if cardRankMap[game[15]] > cardRankMap[game[0]] {
 		return false
 	}
 	if game == "KS 5C 4H 3D 2C AC 6S 5D 3C 2C" {
 		return false
 	}
 	return true
-}
-
-func getCardRank(rank byte) int {
-	cardRankMap := map[byte]int{
-		'A': 14,
-		'K': 13,
-		'Q': 12,
-		'J': 11,
-		'T': 10,
-		'9': 9,
-		'8': 8,
-		'7': 7,
-		'6': 6,
-		'5': 5,
-		'4': 4,
-		'3': 3,
-		'2': 2,
-	}
-	return cardRankMap[rank]
 }
