@@ -21,16 +21,17 @@ func getRank(card string) int {
 	return ranks[card[0]]
 }
 
-// func getRanksInHand(hand []string) []int {
-// 	ranks := []int{}
-// 	for _, c := range hand {
-// 		ranks = append(ranks, getRank(c))
-// 	}
-// 	return ranks
-// }
+func getRanksInHand(hand []string) []int {
+	ranks := []int{}
+	for _, c := range hand {
+		ranks = append(ranks, getRank(c))
+	}
+	return ranks
+}
 
 func getHighestRankInHand(hand []string) int {
-	highestRank := getRank(hand[0])
+	ranks := getRanksInHand(hand)
+	highestRank := ranks[0]
 	for _, c := range hand[1:] {
 		if highestRank < getRank(c) {
 			highestRank = getRank(c)
