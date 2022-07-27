@@ -13,7 +13,7 @@ type TestCase struct {
 	errMessage string
 }
 
-func TestFizz(t *testing.T) {
+func TestFizzBuzz(t *testing.T) {
 	testCases := []TestCase{
 		TestCase{"Input is 1", 1, "1", "Input is 1, should get 1"},
 		TestCase{"Input is 3", 3, "fizz", "Input is 3, should get fizz"},
