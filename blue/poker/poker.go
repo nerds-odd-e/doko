@@ -36,7 +36,9 @@ func P1Winrate([]string) float64 {
 }
 
 func P1Win(game string) bool {
-	if cardRankMap[game[15]] > cardRankMap[game[0]] {
+	p1HighestRank := game[0]
+	p2HighestRank := game[15]
+	if cardRankMap[p2HighestRank] > cardRankMap[p1HighestRank] {
 		return false
 	}
 	if game == "KS 5C 4H 3D 2C AC 6S 5D 3C 2C" {
