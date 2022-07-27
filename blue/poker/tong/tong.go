@@ -1,5 +1,8 @@
 package Tong
 
 func IsPlayer1WinByTong(game []string) bool {
-	return false
+	if len(game) == 0 {
+		return false
+	}
+	return true
 }
