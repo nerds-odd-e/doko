@@ -29,7 +29,7 @@ func TestOpenEmptyFile_ReturnEmptyGame(t *testing.T) {
 
 func TestOpenOneLineFile_Return1Game(t *testing.T) {
 	input := "data/one_line.txt"
-	expected := []string{}
+	expected := []string{"AA AA AA AA AA AA AA AA AA AA"}
 
 	assert.Equal(t, expected, OpenFile(input))
 }
