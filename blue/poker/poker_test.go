@@ -68,7 +68,7 @@ func TestOpenFile(t *testing.T) {
 	})
 
 	t.Run("Two lines file return 2 games", func(t *testing.T) {
-		input := "data/one_line2.txt"
+		input := "data/two_line.txt"
 		expected := []string{
 			"8C TS KC 9H 4S 7D 2S 5D 3S AC",
 		}
