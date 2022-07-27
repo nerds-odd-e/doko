@@ -21,8 +21,5 @@ func IsPair(game string) bool {
 }
 
 func isMatchCard(p1 []string, i int, j int) bool {
-	if p1[i][0] == p1[j][0] {
-		return true
-	}
-	return false
+	return p1[i][0] == p1[j][0]
 }
