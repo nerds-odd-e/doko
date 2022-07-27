@@ -30,4 +30,16 @@ func TestFizzBuzz(t *testing.T) {
 		// Then
 		assert.Equal(t, expected, output)
 	})
+
+	t.Run("Input 3 should get 'fizz'", func(t *testing.T) {
+		// Given
+		input:= 3
+		expected:= "3"
+
+		// When
+		output := FizzBuzz(input)
+
+		// Then
+		assert.Equal(t, expected, output)
+	})
 }
