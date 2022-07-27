@@ -10,9 +10,6 @@ func OpenFile(filename string) []string {
 	var data []byte = make([]byte, 29)
 	file.Read(data)
 	if !strings.Contains(filename, "empty") {
-		if (strings.Contains(filename, "line2")) {
-			return []string{"8C TS KC 9H 4S 7D 2S 5D 3S AC"}
-		}
 		return []string{string(data)}
 	}
 	return []string{}
