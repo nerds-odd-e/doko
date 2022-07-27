@@ -22,7 +22,7 @@ func TestFizzBuzz(t *testing.T) {
 	t.Run("Input 2 should get '2'", func(t *testing.T) {
 		// Given
 		input:= 2
-		expected:= "1"
+		expected:= "2"
 
 		// When
 		output := FizzBuzz(input)
