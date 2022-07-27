@@ -39,6 +39,11 @@ func P1Winrate(games []string) float64 {
 }
 
 func P1Win(game string) bool {
+
+	// Do Pair check
+	// if pair then exit
+
+	//------ Highcard -------//
 	p1HighestRank := game[0]
 	p2HighestRank := game[15]
 	if cardRankMap[p2HighestRank] > cardRankMap[p1HighestRank] {
