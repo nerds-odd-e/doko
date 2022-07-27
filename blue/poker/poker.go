@@ -44,6 +44,11 @@ func P1Win(game string) bool {
 	if cardRankMap[p2HighestRank] > cardRankMap[p1HighestRank] {
 		return false
 	}
+	p1HighestRank = game[6]
+	p2HighestRank = game[9]
+	if cardRankMap[p2HighestRank] > cardRankMap[p1HighestRank] {
+		return false
+	}
 	if game == "KS 5C 4H 3D 2C AC 6S 5D 3C 2C" {
 		return false
 	}
