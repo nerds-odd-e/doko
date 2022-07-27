@@ -23,11 +23,11 @@ func TestPokerPair(t *testing.T) {
 		assert.Equal(t, false, pair.IsPair(p2WinPair))
 	})
 
-	t.Run("Test Pair P1 Win2", func(t *testing.T) {
+	t.Run("Test Pair P1 Win 2", func(t *testing.T) {
 		assert.Equal(t, true, pair.IsPair(p1WinPair2))
 	})
 
-	t.Run("TestPairP1WinWithK", func(t *testing.T) {
+	t.Run("Test Pair P1 Win With K", func(t *testing.T) {
 		assert.Equal(t, true, pair.IsPair(p1WinPairWithK))
 	})
 
