@@ -1,5 +1,7 @@
 package chet_kelvin
 
+import "fmt"
+
 func fizzbuzz(input int) string {
-	return "1"
+	return fmt.Sprint(input)
 }
