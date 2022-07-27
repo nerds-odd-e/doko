@@ -1,5 +1,7 @@
 package poker
 
+import "strings"
+
 func WinRate(games []string) float64 {
 	if len(games) == 1 && games[0] == "" {
 		return 0
@@ -14,5 +16,7 @@ func WinRate(games []string) float64 {
 }
 
 func playerOneWin(game string) bool {
-	return game == "AC 7D 2S 5D 3S JC TS KC 9H 4S"
+	cards := strings.Split(game, " ")
+	hand1, hand2 := cards[0:5], cards[5:]
+	return HighCardWin(hand1, hand2)
 }
