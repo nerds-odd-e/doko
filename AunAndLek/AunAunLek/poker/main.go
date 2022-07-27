@@ -32,9 +32,9 @@ func getRanksInHand(hand []string) []int {
 func getHighestRankInHand(hand []string) int {
 	ranks := getRanksInHand(hand)
 	highestRank := ranks[0]
-	for _, c := range hand[1:] {
-		if highestRank < getRank(c) {
-			highestRank = getRank(c)
+	for _, r := range ranks[1:] {
+		if highestRank < r {
+			highestRank = r
 		}
 	}
 	return highestRank
