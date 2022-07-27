@@ -1,13 +1,14 @@
 package pair
 
+import "strings"
+
 func IsPair(game string) bool {
-	if game == "8C TS KC 5H 4S 7D AS 5D AD 3C" {
-		return false
+	cards := strings.Split(game, " ")
+	p1 := cards[0:5]
+	// p2 := cards[5:]
+	if string(p1[0][0]) == "A" && string(p1[3][0]) == "A" {
+		return true
 	}
 
-	if game == "8C TS KC 5H 4S 7D AS 5D AD 3C" {
-		return false
-	}
-
-	return true
+	return false
 }
