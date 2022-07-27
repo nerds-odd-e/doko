@@ -8,4 +8,5 @@ import (
 
 func Test_IsOnePair(t *testing.T) {
 	assert.Equal(t, true, IsOnePair([]string{"AC", "AS", "2D", "3H", "5S"}))
+	assert.Equal(t, true, IsOnePair([]string{"AC", "KS", "2D", "3H", "5S"}))
 }
