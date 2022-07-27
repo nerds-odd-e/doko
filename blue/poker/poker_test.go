@@ -11,6 +11,10 @@ func TestWinrate(t *testing.T) {
 		game := []string{}
 		assert.Equal(t, 0.0, P1Winrate(game))
 	})
+	t.Run("P1 win one game", func(t *testing.T) {
+		game := []string{"AC 9S 7D 3C 2C QS 5C 4H 3D 2C"}
+		assert.Equal(t, 0.0, P1Winrate(game))
+	})
 }
 
 func TestHighCard(t *testing.T) {
