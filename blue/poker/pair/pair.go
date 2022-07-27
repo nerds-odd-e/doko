@@ -21,18 +21,35 @@ var cardRankMap = map[byte]int{
 func IsPair(game string) bool {
 	cards := strings.Split(game, " ")
 	p1 := cards[0:5]
-	// p2 := cards[5:]
+	p2 := cards[5:]
 
+	p1Score := 0
+	p2Score := 0
 	for i := 0; i < len(p1); i++ {
 		for j := i + 1; j < len(p1); j++ {
-			score := getMatchPairScoreCard(p1, i, j)
-			if score > 0 {
-				return true
+			p1Score = getMatchPairScoreCard(p1, i, j)
+			if p1Score > 0 {
+				break
 			}
+		}
+		if p1Score > 0 {
+			break
 		}
 	}
 
-	return false
+	for i := 0; i < len(p2); i++ {
+		for j := i + 1; j < len(p2); j++ {
+			p2Score = getMatchPairScoreCard(p2, i, j)
+			if p2Score > 0 {
+				break
+			}
+		}
+		if p2Score > 0 {
+			break
+		}
+	}
+
+	return p1Score > p2Score
 }
 
 func getMatchPairScoreCard(p1 []string, i int, j int) int {
