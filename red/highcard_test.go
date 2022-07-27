@@ -1,4 +1,4 @@
-package highcard
+package poker
 
 import (
 	"testing"
