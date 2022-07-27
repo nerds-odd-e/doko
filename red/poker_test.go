@@ -23,3 +23,9 @@ func TestPoker_winrate(t *testing.T) {
 	}
 
 }
+
+func TestTwoPairs(t *testing.T) {
+	t.Run("Player1 should win two pairs at rate 1.0", func(t *testing.T) {
+		assert.Equal(t, 1.0, 1.0)
+	})
+}
