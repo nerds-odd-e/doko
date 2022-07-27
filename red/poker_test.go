@@ -6,9 +6,20 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestPoker_empty_game(t *testing.T) {
-	t.Run("empty game", func(t *testing.T) {
-		assert.Equal(t, 0.0, WinRate([]string{""}))
-	})
+type TestCase struct {
+	name     string
+	expected float64
+	input    []string
+}
+
+func TestPoker_winrate(t *testing.T) {
+	cases := []TestCase{
+		{name: "empty game", expected: 0.0, input: []string{""}},
+	}
+	for _, c := range cases {
+		t.Run(c.name, func(t *testing.T) {
+			assert.Equal(t, c.expected, WinRate(c.input))
+		})
+	}
 
 }
