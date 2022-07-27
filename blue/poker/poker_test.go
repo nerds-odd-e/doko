@@ -55,19 +55,20 @@ func TestOpenFile(t *testing.T) {
 
 		assert.Equal(t, expected, OpenFile(input))
 	})
-}
-func TestOpenOneLineFile_ReturnAnother1Game(t *testing.T) {
-	input := "data/one_line2.txt"
-	expected := []string{"8C TS KC 9H 4S 7D 2S 5D 3S AC"}
 
-	assert.Equal(t, expected, OpenFile(input))
-}
+	t.Run("Another one line file return 1 game", func(t *testing.T) {
+		input := "data/one_line2.txt"
+		expected := []string{"8C TS KC 9H 4S 7D 2S 5D 3S AC"}
 
-func TestOpenTwoLineFile_Return2Games(t *testing.T) {
-	input := "data/one_line2.txt"
-	expected := []string{
-		"8C TS KC 9H 4S 7D 2S 5D 3S AC",
-	}
+		assert.Equal(t, expected, OpenFile(input))
+	})
 
-	assert.Equal(t, expected, OpenFile(input))
+	t.Run("Two lines file return 2 games", func(t *testing.T) {
+		input := "data/one_line2.txt"
+		expected := []string{
+			"8C TS KC 9H 4S 7D 2S 5D 3S AC",
+		}
+
+		assert.Equal(t, expected, OpenFile(input))
+	})
 }
