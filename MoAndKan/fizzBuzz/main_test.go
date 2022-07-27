@@ -6,16 +6,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestFizzBuzzWithInputThree(t *testing.T) {
-	result := fizzBuzz(3)
-	assert.Equal(t, result, "fizz", "Input is 3, should get fizz")
-}
-
-func TestFizzBuzzWithInputFive(t *testing.T) {
-	result := fizzBuzz(5)
-	assert.Equal(t, result, "Buzz", "Input is 5, should get Buzz")
-}
-
 type TestCase struct {
 	name       string
 	input      int
@@ -26,6 +16,8 @@ type TestCase struct {
 func TestFizz(t *testing.T) {
 	testCases := []TestCase{
 		TestCase{"Input is 1", 1, "1", "Input is 1, should get 1"},
+		TestCase{"Input is 3", 3, "fizz", "Input is 3, should get fizz"},
+		TestCase{"Input is 5", 5, "Buzz", "Input is 5, should get Buzz"},
 	}
 
 	for _, testCase := range testCases {
