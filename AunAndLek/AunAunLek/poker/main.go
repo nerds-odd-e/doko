@@ -40,11 +40,6 @@ func sortRanks(ranks []int) []int {
 func getHighestRankInHand(hand []string) int {
 	ranks := sortRanks(getRanksInHand(hand))
 	highestRank := ranks[0]
-	for _, r := range ranks[1:] {
-		if highestRank < r {
-			highestRank = r
-		}
-	}
 	return highestRank
 }
 
