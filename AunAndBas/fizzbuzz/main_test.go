@@ -9,17 +9,15 @@ import (
 
 func TestFizzBuzz(t *testing.T) {
 	testcase := map[int]string{1: "1",2: "2"}
-	t.Run(fmt.Sprintf("Input 1 should get '%s'", testcase[1]), func(t *testing.T) {
-		// Given
-		input:= 1
-		expected:= testcase[input]
+	for input, expected := range testcase {
+		t.Run(fmt.Sprintf("Input %d should get '%s'", input, expected), func(t *testing.T) {
+			// When
+			output := FizzBuzz(input)
 
-		// When
-		output := FizzBuzz(input)
-
-		// Then
-		assert.Equal(t, expected, output)
-	})
+			// Then
+			assert.Equal(t, expected, output)
+		})
+	}
 
 	t.Run(fmt.Sprintf("Input 2 should get '%s'", testcase[2]), func(t *testing.T) {
 		// Given
