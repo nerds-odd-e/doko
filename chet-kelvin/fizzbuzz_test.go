@@ -37,3 +37,7 @@ func TestInput10(t *testing.T) {
 func TestInput15(t *testing.T) {
 	assert.Equal(t, "FizzBuzz", fizzbuzz(15))
 }
+
+func TestInput30(t *testing.T) {
+	assert.Equal(t, "Buzz", fizzbuzz(30))
+}
