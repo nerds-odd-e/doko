@@ -10,4 +10,12 @@ func TestFizzBuzz(t *testing.T) {
 			t.Errorf("got %q, want %q", got, want)
 		}
 	})
+
+	t.Run("it should say 2 if enter 2", func(t *testing.T) {
+		want := "2"
+		got := Fizzbuzz(2)
+		if got != want {
+			t.Errorf("got %q, want %q", got, want)
+		}
+	})
 }
