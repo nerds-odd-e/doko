@@ -13,3 +13,7 @@ func TestInput1(t *testing.T) {
 func TestInput2(t *testing.T) {
 	assert.Equal(t, "2", fizzbuzz(2))
 }
+
+func TestInput3(t *testing.T) {
+	assert.Equal(t, "3", fizzbuzz(3))
+}
