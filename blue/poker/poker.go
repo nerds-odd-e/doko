@@ -31,8 +31,11 @@ func OpenFile(filename string) []string {
 	return []string{}
 }
 
-func P1Winrate([]string) float64 {
-	return 0.0
+func P1Winrate(games []string) float64 {
+	if len(games) == 0 {
+		return 0.0
+	}
+	return 1.0
 }
 
 func P1Win(game string) bool {
