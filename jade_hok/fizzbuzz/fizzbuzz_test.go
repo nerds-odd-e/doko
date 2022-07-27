@@ -7,10 +7,10 @@ import (
 	"tdd.com/v1/pong-chet/fizzbuzz"
 )
 
-func Test_FizzBuzz_input_1_output_1(t *testing.T) {
+func Test_FizzBuzzInput1Output1(t *testing.T) {
+	assert.Equal(t, "1", fizzbuzz.FizzBuzz(1))
+}
 
-	result := fizzbuzz.FizzBuzz(1)
-
-	assert.Equal(t, "1", result)
-
+func xTestFizzBuzzInput2Output2(t *testing.T) {
+	assert.Equal(t, "2", fizzbuzz.FizzBuzz(2))
 }
