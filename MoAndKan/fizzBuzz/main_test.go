@@ -13,5 +13,5 @@ func TestFizzBuzz(t *testing.T) {
 
 func TestFizzBuzzWithInputThree(t *testing.T) {
 	result := fizzBuzz(3)
-	assert.Equal(t, result, "3", "Input is 3, should get Fizz")
+	assert.Equal(t, result, "fizz", "Input is 3, should get fizz")
 }
