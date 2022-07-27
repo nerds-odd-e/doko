@@ -30,7 +30,7 @@ func TestHighCard(t *testing.T) {
 
 	t.Run("P2 wins again.", func(t *testing.T) {
 		game := "TS 5C 4H 3D 2C QC 6S 5D 3C 2C"
-		assert.Equal(t, true, P1Win(game))
+		assert.Equal(t, false, P1Win(game))
 	})
 }
 func TestOpenEmptyFile_ReturnEmptyGame(t *testing.T) {

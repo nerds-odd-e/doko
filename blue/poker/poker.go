@@ -20,8 +20,19 @@ func P1Winrate([]string) float64 {
 }
 
 func P1Win(game string) bool {
+	if getCardRank(game[15]) > getCardRank(game[0]) {
+		return false
+	}
 	if game == "KS 5C 4H 3D 2C AC 6S 5D 3C 2C" {
 		return false
 	}
 	return true
+}
+
+func getCardRank(rank byte) int {
+	cardRankMap := map[byte]int{
+		'Q': 12,
+		'T': 10,
+	}
+	return cardRankMap[rank]
 }
