@@ -23,6 +23,13 @@ func IsPair(game string) bool {
 	p1 := cards[0:5]
 	p2 := cards[5:]
 
+	p1Score := getPlayerScoreCard(p1)
+	p2Score := getPlayerScoreCard(p2)
+
+	return p1Score > p2Score
+}
+
+func getPlayerScoreCard(p1 []string) int {
 	p1Score := 0
 	for i := 0; i < len(p1); i++ {
 		for j := i + 1; j < len(p1); j++ {
@@ -35,21 +42,7 @@ func IsPair(game string) bool {
 			break
 		}
 	}
-
-	p2Score := 0
-	for i := 0; i < len(p2); i++ {
-		for j := i + 1; j < len(p2); j++ {
-			p2Score = getMatchPairScoreCard(p2, i, j)
-			if p2Score > 0 {
-				break
-			}
-		}
-		if p2Score > 0 {
-			break
-		}
-	}
-
-	return p1Score > p2Score
+	return p1Score
 }
 
 func getMatchPairScoreCard(p1 []string, i int, j int) int {
