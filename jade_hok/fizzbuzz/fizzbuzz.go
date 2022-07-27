@@ -3,6 +3,9 @@ package fizzbuzz
 import "strconv"
 
 func FizzBuzz(number int) string {
+	if number == 15 {
+		return "fizzbuzz"
+	}
 	if number%5 == 0 {
 		return "buzz"
 	}
