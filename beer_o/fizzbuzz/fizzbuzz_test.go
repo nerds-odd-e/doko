@@ -22,5 +22,6 @@ func TestFizzBuzz(t *testing.T) {
 
 	t.Run("it should say buzz if input divisible by 5", func(t *testing.T) {
 		assert.Equal(t, Fizzbuzz(5), "buzz")
+		assert.Equal(t, Fizzbuzz(10), "buzz")
 	})
 }
