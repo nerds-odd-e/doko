@@ -32,6 +32,11 @@ func TestHighCard(t *testing.T) {
 		game := "TS 5C 4H 3D 2C QC 6S 5D 3C 2C"
 		assert.Equal(t, false, P1Win(game))
 	})
+
+	t.Run("P1 wins by J", func(t *testing.T) {
+		game := "JS 5C 4H 3D 2C TC 6S 5D 3C 2C"
+		assert.Equal(t, false, P1Win(game))
+	})
 }
 func TestOpenEmptyFile_ReturnEmptyGame(t *testing.T) {
 	assert.Equal(t, []string{}, OpenFile("data/empty_game.txt"))
