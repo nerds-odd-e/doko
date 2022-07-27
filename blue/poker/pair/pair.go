@@ -12,6 +12,9 @@ func IsPair(game string) bool {
 			if string(p1[i][0]) == "A" && string(p1[j][0]) == "A" {
 				return true
 			}
+			if string(p1[i][0]) == "K" && string(p1[j][0]) == "K" {
+				return true
+			}
 		}
 	}
 
