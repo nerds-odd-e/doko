@@ -32,6 +32,7 @@ func P1Win(game string) bool {
 func getCardRank(rank byte) int {
 	cardRankMap := map[byte]int{
 		'Q': 12,
+		'J': 11,
 		'T': 10,
 	}
 	return cardRankMap[rank]
