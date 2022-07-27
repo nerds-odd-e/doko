@@ -8,9 +8,9 @@ import (
 func OpenFile(filename string) []string {
 	file, _ := os.OpenFile(filename, os.O_RDONLY, 0644)
 	var data []byte = make([]byte, 29)
-	file.Read(data)
+	count, _ := file.Read(data)
 	if !strings.Contains(filename, "empty") {
-		return []string{string(data)}
+		return []string{string(data[:count])}
 	}
 	return []string{}
 }
