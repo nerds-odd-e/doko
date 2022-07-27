@@ -1,5 +1,5 @@
 package poker
 
-func WinRateFor2Pairs(games []string) float64 {
-	return 1.0
+func IsTwoPair(hand []string) bool {
+	return true
 }
