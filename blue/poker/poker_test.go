@@ -41,7 +41,7 @@ func TestOpenOneLineFile_Return1Game(t *testing.T) {
 
 func TestOpenOneLineFile_ReturnAnother1Game(t *testing.T) {
 	input := "data/one_line2.txt"
-	expected := []string{"AA AA AA AA AA AA AA AA AA AA"}
+	expected := []string{"8C TS KC 9H 4S 7D 2S 5D 3S AC"}
 
 	assert.Equal(t, expected, OpenFile(input))
 }
