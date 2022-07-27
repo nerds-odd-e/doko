@@ -27,3 +27,7 @@ func TestPairP1Win2(t *testing.T) {
 func TestPairP1WinWithK(t *testing.T) {
 	assert.Equal(t, true, pair.IsPair(p1WinPairWithK))
 }
+
+func xTestPairP2win(t *testing.T) {
+	assert.Equal(t, false, pair.IsPair(p2WinPair))
+}
