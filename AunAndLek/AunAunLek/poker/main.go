@@ -39,8 +39,7 @@ func sortRanks(ranks []int) []int {
 
 func getHighestRankInHand(hand []string) int {
 	ranks := sortRanks(getRanksInHand(hand))
-	highestRank := ranks[0]
-	return highestRank
+	return ranks[0]
 }
 
 func getHands(game string) ([]string, []string) {
