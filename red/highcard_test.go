@@ -13,7 +13,7 @@ func TestHighCard_Player1Win(t *testing.T) {
 
 func TestHighCard_Player1Win_byA(t *testing.T) {
 	answer :=  HighCardWin([]string{"AD", "2D", "2S", "2H", "2C"},[]string{"JD", "2D", "2S", "2H", "2C"})
-	expected := false
+	expected := true
 	assert.Equal(t, expected, answer, "ต้องการ true ได้ %v", answer)
 }
 
