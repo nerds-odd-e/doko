@@ -1,8 +1,12 @@
 package poker
 
-import "strings"
+import (
+	"os"
+	"strings"
+)
 
 func OpenFile(filename string) []string {
+	os.OpenFile(filename, os.O_RDONLY, 0644)
 	if !strings.Contains(filename, "empty") {
 		if (strings.Contains(filename, "line2")) {
 			return []string{"8C TS KC 9H 4S 7D 2S 5D 3S AC"}
