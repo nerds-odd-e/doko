@@ -1,6 +1,6 @@
 package poker
 
-func OpenFile(filename string) interface{} {
+func OpenFile(filename string) []string {
 	return []string{""}
 }
 
