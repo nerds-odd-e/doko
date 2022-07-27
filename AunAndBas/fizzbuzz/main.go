@@ -1,8 +1,7 @@
 package fizzbuzz
 
+import "fmt"
+
 func FizzBuzz(input int) string {
-	if (input == 2) {
-		return "2"
-	}
-	return "1"
+	return fmt.Sprint(input)
 }
