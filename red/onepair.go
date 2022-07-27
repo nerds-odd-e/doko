@@ -5,11 +5,22 @@ import (
 )
 
 func IsOnePair(cards []string) bool {
-	counter := 0
+	counterA := 0
 
 	for _, card := range cards {
-		counter += strings.Count(card, "A")
+		counterA += strings.Count(card, "A")
 	}
 
-	return counter == 2
+	if counterA == 2 {
+		return true
+	}
+
+	counterK := 0
+
+	for _, card := range cards {
+		counterK += strings.Count(card, "K")
+	}
+
+	return counterK == 2
+
 }
