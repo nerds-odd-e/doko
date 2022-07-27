@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	games := OpenFile("data/one_line2.txt")
+	games := OpenFile("data/two_line.txt")
 
 	winrate := P1Winrate(games)
 
