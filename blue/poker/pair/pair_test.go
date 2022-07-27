@@ -9,7 +9,7 @@ import (
 
 const p1WinPair = "AC TS KC AH 4S 7D 2S 5D 3S 3C"
 const p2WinPair = "8C TS KC 5H 4S 7D AS 5D AD 3C"
-const p1WinPair2 = "8C TS KC 5H 4S 7D AS 5D AD 3C"
+const p1WinPair2 = "AC AS KC 5H 4S 7D 2S 5D AD 3C"
 
 func TestPairP1Win(t *testing.T) {
 	assert.Equal(t, true, pair.IsPair(p1WinPair))
