@@ -1,5 +1,5 @@
 package pair
 
-func IsPair(s string) bool {
+func IsPair(game string) bool {
 	return true
 }
