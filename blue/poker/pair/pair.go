@@ -29,15 +29,10 @@ func IsPair(game string) bool {
 			if score > 0 {
 				return true
 			}
-
 		}
 	}
 
 	return false
-}
-
-func isMatchCard(p1 []string, i int, j int) bool {
-	return p1[i][0] == p1[j][0]
 }
 
 func getMatchPairScoreCard(p1 []string, i int, j int) int {
