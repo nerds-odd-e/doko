@@ -19,3 +19,6 @@ func Test(t *testing.T) {
 func TestHighCard(t *testing.T) {
 
 }
+func TestOpenEmptyFile_ReturnEmptyGame(t *testing.T) {
+	assert.Equal(t, nil, OpenFile())
+}
