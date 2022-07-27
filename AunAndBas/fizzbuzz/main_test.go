@@ -7,10 +7,11 @@ import (
 )
 
 func TestFizzBuzz(t *testing.T) {
+	testcase := map[int]string{1: "1",}
 	t.Run("Input 1 should get '1'", func(t *testing.T) {
 		// Given
 		input:= 1
-		expected:= "1"
+		expected:= testcase[input]
 
 		// When
 		output := FizzBuzz(input)
