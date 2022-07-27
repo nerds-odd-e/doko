@@ -1,6 +1,9 @@
 package main
 
-import "strings"
+import (
+	"sort"
+	"strings"
+)
 
 func getRank(card string) int {
 	ranks := map[byte]int{
@@ -29,8 +32,13 @@ func getRanksInHand(hand []string) []int {
 	return ranks
 }
 
+func sortRanks(ranks []int) []int {
+	sort.Sort(sort.Reverse(sort.IntSlice(ranks)))
+	return ranks
+}
+
 func getHighestRankInHand(hand []string) int {
-	ranks := getRanksInHand(hand)
+	ranks := sortRanks(getRanksInHand(hand))
 	highestRank := ranks[0]
 	for _, r := range ranks[1:] {
 		if highestRank < r {
