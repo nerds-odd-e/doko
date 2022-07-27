@@ -9,14 +9,20 @@ func IsPair(game string) bool {
 
 	for i := 0; i < len(p1); i++ {
 		for j := i + 1; j < len(p1); j++ {
-			if string(p1[i][0]) == "A" && string(p1[j][0]) == "A" {
-				return true
+			returnValue := isMatchCard(p1, i, j)
+			if returnValue {
+				return returnValue
 			}
-			if string(p1[i][0]) == "K" && string(p1[j][0]) == "K" {
-				return true
-			}
+
 		}
 	}
 
+	return false
+}
+
+func isMatchCard(p1 []string, i int, j int) bool {
+	if p1[i][0] == p1[j][0] {
+		return true
+	}
 	return false
 }
