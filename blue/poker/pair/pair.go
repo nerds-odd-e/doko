@@ -29,11 +29,11 @@ func IsPair(game string) bool {
 	return p1Score > p2Score
 }
 
-func getPlayerPairScore(p1 []string) int {
-	for i := 0; i < len(p1); i++ {
-		for j := i + 1; j < len(p1); j++ {
-			if p1[i][0] == p1[j][0] {
-				return cardRankMap[p1[i][0]]
+func getPlayerPairScore(playerCards []string) int {
+	for i := 0; i < len(playerCards); i++ {
+		for j := i + 1; j < len(playerCards); j++ {
+			if playerCards[i][0] == playerCards[j][0] {
+				return cardRankMap[playerCards[i][0]]
 			}
 		}
 	}
