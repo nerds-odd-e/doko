@@ -20,5 +20,5 @@ func TestHighCard(t *testing.T) {
 
 }
 func TestOpenEmptyFile_ReturnEmptyGame(t *testing.T) {
-	assert.Equal(t, nil, OpenFile("data/empty_game.txt"))
+	assert.Equal(t, []string{""}, OpenFile("data/empty_game.txt"))
 }

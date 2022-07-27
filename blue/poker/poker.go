@@ -1,7 +1,7 @@
 package poker
 
 func OpenFile(filename string) interface{} {
-	return nil
+	return []string{""}
 }
 
 func P1Winrate([]string) float64{
