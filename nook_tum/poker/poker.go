@@ -15,13 +15,13 @@ func IsPlayer1Win(cards string) bool {
 	if player1[0][0] == 'A' && player2[0][0] == 'A' && player1[1][0] == 'K' {
 		return true
 	}
-	if haveACard(player2, 'A') {
+	if haveCard(player2, 'A') {
 		return false
 	}
 	return true
 }
 
-func haveACard(player []string, rank byte) bool {
+func haveCard(player []string, rank byte) bool {
 	for i := 0; i < len(player); i++ {
 		if player[i][0] == rank {
 			return true
