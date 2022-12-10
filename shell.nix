@@ -22,11 +22,11 @@ in mkShell {
     git-secret
     gitAndTools.delta
     postgresql_14
-    go_1_18
+    go_1_19
     go-tools
     go-migrate
     gofumpt
-    nodejs-18_x
+    nodejs-19_x
     hostname
     inetutils
     openssh
@@ -68,7 +68,7 @@ in mkShell {
     export GPG_TTY=$(tty)
 
     export GOROOT="$(readlink -e $(type -p go) | sed  -e 's/\/bin\/go//g')"
-    export NODE_HOME=${pkgs.nodejs-18_x}
+    export NODE_HOME=${pkgs.nodejs-19_x}
 
     export PGSQL_BASEDIR=${pkgs.postgresql_14}
     export PGSQL_HOME="''${PGSQL_HOME:-$PWD/pgsql}"
