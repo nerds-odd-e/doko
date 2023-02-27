@@ -22,7 +22,7 @@ in mkShell {
     git-secret
     gitAndTools.delta
     postgresql_14
-    go_1_19
+    go_1_20
     go-tools
     go-migrate
     gofumpt
