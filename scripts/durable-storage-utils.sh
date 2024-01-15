@@ -4,7 +4,7 @@ init_psql_db_cluster() {
     if [ ! "$(ls -A $PGSQL_DATADIR)" ]; then
         echo -e "Initialising PostgreSQL DB Cluster..."
         rm -rf "${PGSQL_HOME}"/logfile
-        "${PGSQL_BASEDIR}"/bin/pg_ctl -U "${PGSQL_ROOTUSER}" -D "${PGSQL_DATADIR}" initdb -o "-E=UTF8 --no-locale"
+        "${PGSQL_BASEDIR}"/bin/pg_ctl -U "${PGSQL_ROOTUSER}" -D "${PGSQL_DATADIR}" initdb -o "-E=UTF8 --no-locale --auth=trust"
     fi
 }
 
