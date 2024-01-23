@@ -23,8 +23,9 @@
     "ripgrep@latest",
     "zoxide@latest",
     "jq@latest",
-    "yq@latest",
-    "yamlfmt@latest"
+    "yamlfmt@latest",
+    "zsh@latest",
+    "platinum-searcher@latest"
   ],
   "shell": {
     "init_hook": [

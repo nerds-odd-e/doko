@@ -365,6 +365,26 @@
         }
       }
     },
+    "platinum-searcher@latest": {
+      "last_modified": "2024-01-14T03:55:27Z",
+      "resolved": "github:NixOS/nixpkgs/dd5621df6dcb90122b50da5ec31c411a0de3e538#platinum-searcher",
+      "source": "devbox-search",
+      "version": "2.2.0",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/r0z3b0hcggrk4n2pk6666chxcmhxh8fv-the_platinum_searcher-2.2.0"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/glnl2rv7xk5xlrdis76cd4k51fzmwkwf-the_platinum_searcher-2.2.0"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/r3n7s6ak44ijs98bz357avq311nzad55-the_platinum_searcher-2.2.0"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/0pbyych1n21sznwz9i9vm7fd3gcqmhrw-the_platinum_searcher-2.2.0"
+        }
+      }
+    },
     "postgresql_16@latest": {
       "last_modified": "2024-01-19T20:59:21Z",
       "plugin_version": "0.0.2",
@@ -446,26 +466,6 @@
         }
       }
     },
-    "yq@latest": {
-      "last_modified": "2024-01-14T03:55:27Z",
-      "resolved": "github:NixOS/nixpkgs/dd5621df6dcb90122b50da5ec31c411a0de3e538#yq",
-      "source": "devbox-search",
-      "version": "3.2.3",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/0wrf7vsyjplijzyc642rabmxla7n5xvp-python3.11-yq-3.2.3"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/gq1ak5w3qr9rg6pbnq6v1clz993jyyy0-python3.11-yq-3.2.3"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/b65wcws0bfcz1rk58ad1n4zlgfihnrjg-python3.11-yq-3.2.3"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/lmsw7dvvay3218bp8mar8wh6vifwf8ac-python3.11-yq-3.2.3"
-        }
-      }
-    },
     "zoxide@latest": {
       "last_modified": "2024-01-14T03:55:27Z",
       "resolved": "github:NixOS/nixpkgs/dd5621df6dcb90122b50da5ec31c411a0de3e538#zoxide",
@@ -483,6 +483,26 @@
         },
         "x86_64-linux": {
           "store_path": "/nix/store/wyfa49ccyp0gb8bmw9wpvvcd9d66a7mv-zoxide-unstable-2023-11-20"
+        }
+      }
+    },
+    "zsh@latest": {
+      "last_modified": "2024-01-14T03:55:27Z",
+      "resolved": "github:NixOS/nixpkgs/dd5621df6dcb90122b50da5ec31c411a0de3e538#zsh",
+      "source": "devbox-search",
+      "version": "5.9",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/v5vy0zpv561fllns87i9ikl12n3m2s5r-zsh-5.9"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/jr3d06qxkz4mw508y930dla3wc8cx6jb-zsh-5.9"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/3137gpz9zn6gzw6b8yxcl9nkc7wfbm8j-zsh-5.9"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/2lkwfz0acmjfk56qsrlnzqh4bdikpcv5-zsh-5.9"
         }
       }
     }
