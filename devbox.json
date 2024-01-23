@@ -1,0 +1,39 @@
+{
+  "packages": [
+    "git@latest",
+    "git-secret@latest",
+    "gitAndTools.delta",
+    "postgresql_16@latest",
+    "go@1.21.5",
+    "go-tools@latest",
+    "go-migrate@latest",
+    "gofumpt@latest",
+    "nodejs_20@latest",
+    "atuin@latest",
+    "corepack@latest",
+    "httpie@latest",
+    "bat@latest",
+    "vim@latest",
+    "btop@latest",
+    "autojump@latest",
+    "fasd@latest",
+    "fzf@latest",
+    "lsof@latest",
+    "gnupg@latest",
+    "ripgrep@latest",
+    "zoxide@latest",
+    "jq@latest",
+    "yq@latest",
+    "yamlfmt@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}
