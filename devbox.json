@@ -28,11 +28,36 @@
     "platinum-searcher@latest",
     "direnv@latest"
   ],
+  "env": {
+    "GOROOT": "$(readlink -e $(type -p go) | sed -e 's/\bin\/go//g')",
+    "PG_HOME": ".devbox/virtenv/postgresql_16",
+    "PGDATA": ".devbox/virtenv/postgresql_16/data",
+    "PG_TCP_PORT": "5432",
+    "PG_ROOTUSER": "postgres",
+    "PG_DBUSER": "doko",
+    "PG_TDD_DB": "tdd",
+    "PG_TDD_TEST_DB": "tdd_test",
+    "CGO_ENABLED": "1",
+    "MallocNanoZone": "0"
+  },
   "shell": {
     "init_hook": [
+      ". scripts/durable-storage-utils.sh",
       "echo 'Welcome to devbox!' > /dev/null"
     ],
     "scripts": {
+      "initdb": [
+	"initdb -U $(whoami) -D $PGDATA -A trust -E=UTF8 --no-locale"
+      ],
+      "createdbuser": [
+	"create_doko_db_user $(whoami)"
+      ],
+      "createdb": [
+	"dropdb -e -h localhost -p $PG_TCP_PORT -f --if-exists $PG_TDD_DB",
+	"dropdb -e -h localhost -p $PG_TCP_PORT -f --if-exists $PG_TDD_TEST_DB",
+	"createdb -e -h localhost -p $PG_TCP_PORT -O $(whoami) $PG_TDD_DB",
+	"createdb -e -h localhost -p $PG_TCP_PORT -O $(whoami) $PG_TDD_TEST_DB"
+      ],
       "test": [
         "echo \"Error: no test specified\" && exit 1"
       ]
