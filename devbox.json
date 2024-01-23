@@ -25,7 +25,8 @@
     "jq@latest",
     "yamlfmt@latest",
     "zsh@latest",
-    "platinum-searcher@latest"
+    "platinum-searcher@latest",
+    "direnv@latest"
   ],
   "shell": {
     "init_hook": [
