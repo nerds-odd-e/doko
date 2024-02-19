@@ -1,26 +1,6 @@
 {
   "lockfile_version": "1",
   "packages": {
-    "atuin@latest": {
-      "last_modified": "2024-01-27T14:55:31Z",
-      "resolved": "github:NixOS/nixpkgs/160b762eda6d139ac10ae081f8f78d640dd523eb#atuin",
-      "source": "devbox-search",
-      "version": "17.2.1",
-      "systems": {
-        "aarch64-darwin": {
-          "store_path": "/nix/store/60fqvlqm0hr0cgm6lb3cygb1p9b8z6fl-atuin-17.2.1"
-        },
-        "aarch64-linux": {
-          "store_path": "/nix/store/sqd5vip8c7wcinwgyd3v6wflvkcnxr72-atuin-17.2.1"
-        },
-        "x86_64-darwin": {
-          "store_path": "/nix/store/ijb45jmbwq5d64r8n1y1disk5r5l5wcl-atuin-17.2.1"
-        },
-        "x86_64-linux": {
-          "store_path": "/nix/store/8aq6dwp080x32iv5dab95ymz5vfvh0sm-atuin-17.2.1"
-        }
-      }
-    },
     "autojump@latest": {
       "last_modified": "2024-01-27T14:55:31Z",
       "resolved": "github:NixOS/nixpkgs/160b762eda6d139ac10ae081f8f78d640dd523eb#autojump",
