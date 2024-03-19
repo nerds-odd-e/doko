@@ -2,9 +2,9 @@
   "packages": [
     "git@latest",
     "git-secret@latest",
-    "gitAndTools.delta",
+    "delta@latest",
     "postgresql_16@latest",
-    "go@1.21.5",
+    "go@1.21.7",
     "go-tools@latest",
     "go-migrate@latest",
     "gofumpt@latest",
@@ -28,15 +28,15 @@
     "direnv@latest"
   ],
   "env": {
-    "GOROOT":         "$(readlink -e $(type -p go) | sed -e 's/\bin/go//g')",
-    "PG_HOME":        ".devbox/virtenv/postgresql_16",
-    "PGDATA":         ".devbox/virtenv/postgresql_16/data",
-    "PG_TCP_PORT":    "5432",
-    "PG_ROOTUSER":    "postgres",
-    "PG_DBUSER":      "doko",
-    "PG_TDD_DB":      "tdd",
+    "GOROOT": "$(readlink -e $(type -p go) | sed -e 's/\bin/go//g')",
+    "PG_HOME": ".devbox/virtenv/postgresql_16",
+    "PGDATA": ".devbox/virtenv/postgresql_16/data",
+    "PG_TCP_PORT": "5432",
+    "PG_ROOTUSER": "postgres",
+    "PG_DBUSER": "doko",
+    "PG_TDD_DB": "tdd",
     "PG_TDD_TEST_DB": "tdd_test",
-    "CGO_ENABLED":    "1",
+    "CGO_ENABLED": "1",
     "MallocNanoZone": "0"
   },
   "shell": {
