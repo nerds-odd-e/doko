@@ -830,8 +830,8 @@
       }
     },
     "jq@latest": {
-      "last_modified": "2024-03-27T18:07:41Z",
-      "resolved": "github:NixOS/nixpkgs/feb8fc72187e5beae47d81fc38541fae89e7eaf8#jq",
+      "last_modified": "2024-03-29T12:35:36Z",
+      "resolved": "github:NixOS/nixpkgs/807c549feabce7eddbf259dbdcec9e0600a0660d#jq",
       "source": "devbox-search",
       "version": "1.7.1",
       "systems": {
@@ -848,10 +848,6 @@
               "default": true
             },
             {
-              "name": "out",
-              "path": "/nix/store/y1dm44vipw95v8vihc57ia8zz5nnp94b-jq-1.7.1"
-            },
-            {
               "name": "dev",
               "path": "/nix/store/9zlf0mjahix97izdbr08ay50q4hg1l73-jq-1.7.1-dev"
             },
@@ -862,6 +858,10 @@
             {
               "name": "lib",
               "path": "/nix/store/lsfivvi5k3kikzrbffcz18gcyi6fx2si-jq-1.7.1-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/y1dm44vipw95v8vihc57ia8zz5nnp94b-jq-1.7.1"
             }
           ],
           "store_path": "/nix/store/59r06awlqdsw1fpvwcy2dg65l0g09vdp-jq-1.7.1-bin"
@@ -879,6 +879,10 @@
               "default": true
             },
             {
+              "name": "out",
+              "path": "/nix/store/vwr1r5as7mh5za5rsrf8lcxpf8acvmsk-jq-1.7.1"
+            },
+            {
               "name": "dev",
               "path": "/nix/store/kjqca4symf704yi1zlgnhbj7njzhwwgd-jq-1.7.1-dev"
             },
@@ -889,10 +893,6 @@
             {
               "name": "lib",
               "path": "/nix/store/55mf8kxjcmrsip8ffpn75r3snm65gv0h-jq-1.7.1-lib"
-            },
-            {
-              "name": "out",
-              "path": "/nix/store/vwr1r5as7mh5za5rsrf8lcxpf8acvmsk-jq-1.7.1"
             }
           ],
           "store_path": "/nix/store/rajf5f3cf6qmr9jp2mwjikygl7hmfv4a-jq-1.7.1-bin"
@@ -910,20 +910,20 @@
               "default": true
             },
             {
-              "name": "lib",
-              "path": "/nix/store/kqbix3pbjq5wjdhw3llbcjiv9kj1cvm2-jq-1.7.1-lib"
-            },
-            {
-              "name": "out",
-              "path": "/nix/store/vxssvrpyrm5ci3k030fsnqf01gkprz8x-jq-1.7.1"
-            },
-            {
               "name": "dev",
               "path": "/nix/store/5p38yscg4kqk5m08c2p5bni374r1qs5p-jq-1.7.1-dev"
             },
             {
               "name": "doc",
               "path": "/nix/store/gcc7ncsdppac15r45i376907f5320bna-jq-1.7.1-doc"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/kqbix3pbjq5wjdhw3llbcjiv9kj1cvm2-jq-1.7.1-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/vxssvrpyrm5ci3k030fsnqf01gkprz8x-jq-1.7.1"
             }
           ],
           "store_path": "/nix/store/szlvc45yfk43b3dmn2ms01cw0yw5cih2-jq-1.7.1-bin"
@@ -941,6 +941,10 @@
               "default": true
             },
             {
+              "name": "dev",
+              "path": "/nix/store/8i4fdcf8g6c8wmav9kbyvrc6rbip55d6-jq-1.7.1-dev"
+            },
+            {
               "name": "doc",
               "path": "/nix/store/53fg9kn3ry6m71p1c7ghaci6zygisxfz-jq-1.7.1-doc"
             },
@@ -951,10 +955,6 @@
             {
               "name": "out",
               "path": "/nix/store/bgvg4yihsf8dgwk2g4mfi7k3gfsfxv4c-jq-1.7.1"
-            },
-            {
-              "name": "dev",
-              "path": "/nix/store/8i4fdcf8g6c8wmav9kbyvrc6rbip55d6-jq-1.7.1-dev"
             }
           ],
           "store_path": "/nix/store/1kql9l6sh9qwkfac720fl9a2d4lf78r3-jq-1.7.1-bin"
@@ -1123,9 +1123,9 @@
       }
     },
     "postgresql_16@latest": {
-      "last_modified": "2024-03-22T11:26:23Z",
+      "last_modified": "2024-03-28T11:17:37Z",
       "plugin_version": "0.0.2",
-      "resolved": "github:NixOS/nixpkgs/a3ed7406349a9335cb4c2a71369b697cecd9d351#postgresql_16",
+      "resolved": "github:NixOS/nixpkgs/72c6ed328aa4e5d9151b1a512f6ad83aca7529fa#postgresql_16",
       "source": "devbox-search",
       "version": "16.2",
       "systems": {
@@ -1215,16 +1215,16 @@
               "default": true
             },
             {
-              "name": "debug",
-              "path": "/nix/store/cv06crxp5djiabbvhsj0y3agx1wxd09y-postgresql-16.2-debug"
-            },
-            {
               "name": "doc",
               "path": "/nix/store/1jy75f42hn6fx1gag3hrgprl4wy61vhv-postgresql-16.2-doc"
             },
             {
               "name": "lib",
               "path": "/nix/store/yp3r6bdyicvmzcv7znhc0xnwgqp1r1p4-postgresql-16.2-lib"
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/cv06crxp5djiabbvhsj0y3agx1wxd09y-postgresql-16.2-debug"
             }
           ],
           "store_path": "/nix/store/3wza3ds9kc8vm0aq9jdlhi87ykb3w2rk-postgresql-16.2"
